@@ -27,7 +27,7 @@ The SDK includes a `vendor` folder containing the runtime dependencies of the SD
 
 ### Example
 
-This example shows a complete working Go file which will list the names of all Backup Jobs and demonstrate how to configure the timeout logic that will cancel the request if it takes too long. This example highlights how to login to a VBR server with trusted or self-signed certs, make a request, handle the error, and process the response.
+This example shows a complete working Go file which will list the names of all Backup Jobs and demonstrate how to configure the timeout logic that will cancel the request if it takes too long. This example highlights how to login to a VBR server with trusted or self-signed certs, make a request, handle the error, process the response, and then logout.
 
 ```go
 package main
@@ -51,9 +51,9 @@ import (
 func main() {
 	// Setting variables
 	host := "vbr.contoso.local:9419"  // default API port 9419
-	u := "contoso\\jsmith"  // VBR username
+	u := "contoso\\jsmith"            // VBR username
 	p := strfmt.Password("password")  // VBR password
-	timeout := 15 * time.Second  // 15 seconds
+	timeout := 15 * time.Second       // 15 seconds
 
 	// Using untrusted (self-signed) certificates
 	skipTlsClient := &http.Client{
@@ -80,18 +80,18 @@ func main() {
 	params.Password = &p
 
 	// Authenticating to VBR API
-	login, err := veeam.Login.CreateToken(params)
+	l, err := veeam.Login.CreateToken(params)
 	if err != nil {
 		panic(err)
 	}
-	token := *login.Payload.AccessToken
+	token := *l.Payload.AccessToken
 
 	// Setting authorization
 	// From this point, all calls will require the 'auth' variable
 	auth := httptransport.BearerToken(token)
 
 	// Retrieving all backup jobs
-	jobs, err := veeam.Jobs.GetAllJobs(
+	allJobs, err := veeam.Jobs.GetAllJobs(
 		jobs.NewGetAllJobsParams().WithDefaults(),
 		auth)
 	if err != nil {
@@ -101,9 +101,14 @@ func main() {
 	// Printing out job names
 	// Working with the response payload
 	fmt.Printf("Job Names:\n\n")
-	for _, job := range jobs.Payload.Data {
+	for _, job := range allJobs.Payload.Data {
 		fmt.Println(*job.Name)
 	}
+
+	// Logging out session
+	veeam.Login.Logout(
+		login.NewLogoutParams().WithDefaults(),
+		auth)
 }
 ```
 
