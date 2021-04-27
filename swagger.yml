@@ -3744,7 +3744,7 @@ paths:
           schema:
             $ref: '#/definitions/CredentialsSpec'
       responses:
-        '201':
+        '200':
           description: Account has been added.
           schema:
             $ref: '#/definitions/CredentialsModel'

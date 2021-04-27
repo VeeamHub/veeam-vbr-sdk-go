@@ -36,7 +36,7 @@ type ClientService interface {
 
 	ChangeRootPasswordForCreds(params *ChangeRootPasswordForCredsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ChangeRootPasswordForCredsOK, error)
 
-	CreateCreds(params *CreateCredsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateCredsCreated, error)
+	CreateCreds(params *CreateCredsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateCredsOK, error)
 
 	DeleteCreds(params *DeleteCredsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DeleteCredsNoContent, error)
 
@@ -177,7 +177,7 @@ func (a *Client) ChangeRootPasswordForCreds(params *ChangeRootPasswordForCredsPa
 
   The HTTP POST request to the `/api/v1/credentials` path allows you to add a credentials record.
 */
-func (a *Client) CreateCreds(params *CreateCredsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateCredsCreated, error) {
+func (a *Client) CreateCreds(params *CreateCredsParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CreateCredsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCreateCredsParams()
@@ -203,7 +203,7 @@ func (a *Client) CreateCreds(params *CreateCredsParams, authInfo runtime.ClientA
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CreateCredsCreated)
+	success, ok := result.(*CreateCredsOK)
 	if ok {
 		return success, nil
 	}

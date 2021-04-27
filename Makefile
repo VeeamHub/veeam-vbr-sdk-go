@@ -1,4 +1,4 @@
-all: generate dependency
+default: generate dependency
 
 # Removes currently generated client files
 cleanup:

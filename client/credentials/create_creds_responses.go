@@ -23,8 +23,8 @@ type CreateCredsReader struct {
 // ReadResponse reads a server response into the received o.
 func (o *CreateCredsReader) ReadResponse(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 	switch response.Code() {
-	case 201:
-		result := NewCreateCredsCreated()
+	case 200:
+		result := NewCreateCredsOK()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
 			return nil, err
 		}
@@ -58,27 +58,27 @@ func (o *CreateCredsReader) ReadResponse(response runtime.ClientResponse, consum
 	}
 }
 
-// NewCreateCredsCreated creates a CreateCredsCreated with default headers values
-func NewCreateCredsCreated() *CreateCredsCreated {
-	return &CreateCredsCreated{}
+// NewCreateCredsOK creates a CreateCredsOK with default headers values
+func NewCreateCredsOK() *CreateCredsOK {
+	return &CreateCredsOK{}
 }
 
-/* CreateCredsCreated describes a response with status code 201, with default header values.
+/* CreateCredsOK describes a response with status code 200, with default header values.
 
 Account has been added.
 */
-type CreateCredsCreated struct {
+type CreateCredsOK struct {
 	Payload *models.CredentialsModel
 }
 
-func (o *CreateCredsCreated) Error() string {
-	return fmt.Sprintf("[POST /api/v1/credentials][%d] createCredsCreated  %+v", 201, o.Payload)
+func (o *CreateCredsOK) Error() string {
+	return fmt.Sprintf("[POST /api/v1/credentials][%d] createCredsOK  %+v", 200, o.Payload)
 }
-func (o *CreateCredsCreated) GetPayload() *models.CredentialsModel {
+func (o *CreateCredsOK) GetPayload() *models.CredentialsModel {
 	return o.Payload
 }
 
-func (o *CreateCredsCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+func (o *CreateCredsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.CredentialsModel)
 
