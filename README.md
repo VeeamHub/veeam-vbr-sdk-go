@@ -2,7 +2,7 @@
 
 veeam-vbr-sdk-go is the unofficial Veeam Backup & Replication SDK for the Go programming language.
 
-This SDK was generated using [go-swagger](https://github.com/go-swagger/go-swagger). As such, any API call in the [Veeam Backup & Replication v11 REST API](https://helpcenter.veeam.com/docs/backup/vbr_rest/overview.html?ver=110) is present in this SDK.
+This SDK was generated using the [OpenAPI Generator](https://openapi-generator.tech/). As such, any API call in the [Veeam Backup & Replication v11 REST API](https://helpcenter.veeam.com/docs/backup/vbr_rest/overview.html?ver=110) is present in this SDK.
 
 ## 📗 Documentation
 
@@ -33,16 +33,14 @@ This example shows a complete working Go file which will list the names of all B
 package main
 
 import (
+	"context"
 	"crypto/tls"
 	"fmt"
 	"net/http"
+	"os"
 	"time"
 
-	httptransport "github.com/go-openapi/runtime/client"
-	"github.com/go-openapi/strfmt"
 	"github.com/veeamhub/veeam-vbr-sdk-go/client"
-	"github.com/veeamhub/veeam-vbr-sdk-go/client/jobs"
-	"github.com/veeamhub/veeam-vbr-sdk-go/client/login"
 )
 
 // Retrieves and prints out all Backup Job names of the specified VBR server.
@@ -51,65 +49,65 @@ import (
 func main() {
 	// Setting variables
 	host := "vbr.contoso.local:9419"  // default API port 9419
-	u := "contoso\\jsmith"            // VBR username
-	p := strfmt.Password("password")  // VBR password
-	timeout := 15 * time.Second       // 15 seconds
+	username := "contoso\\jsmith"     // VBR username
+	password = "password"             // VBR password
 
-	// Using untrusted (self-signed) certificates
-	skipTlsClient := &http.Client{
+	// Setting constants
+	const (
+		apiVersion = "1.0-rev1"       // default API version (1.0-rev1)
+		skipTls    = true             // skip TLS certificate verification
+		timeout    = 30 * time.Second // 30 seconds
+	)
+
+	// Generating API client
+	tlsClient := &http.Client{
 		Transport: &http.Transport{
 			TLSClientConfig: &tls.Config{
-				InsecureSkipVerify: true,
+				InsecureSkipVerify: skipTls,
 			},
 		},
-		Timeout: timeout,
 	}
-	transport := httptransport.NewWithClient(host, "/", []string{"https"}, skipTlsClient)
-	veeam := client.New(transport, nil)
-
-	// Using trusted certificates
-	// veeam := client.NewHTTPClientWithConfig(nil, &client.TransportConfig{
-	//     Host:     host,
-	//     BasePath: "/",
-	//     Schemes:  []string{"https"},
-	// })
-
-	// Settings parameters
-	params := login.NewCreateTokenParams().WithDefaults()
-	params.Username = &u
-	params.Password = &p
+	config := client.NewConfiguration()
+	config.HTTPClient = tlsClient
+	config.Host = host
+	config.HTTPClient.Timeout = timeout
+	config.Scheme = "https"
+	veeam := client.NewAPIClient(config)
 
 	// Authenticating to VBR API
-	l, err := veeam.Login.CreateToken(params)
+	login, r, err := veeam.LoginApi.CreateToken(context.Background()).XApiVersion(apiVersion).GrantType("password").Username(username).Password(password).Execute()
 	if err != nil {
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 		panic(err)
 	}
-	token := *l.Payload.AccessToken
 
 	// Setting authorization
-	// From this point, all calls will require the 'auth' variable
-	auth := httptransport.BearerToken(token)
+	// From this point, all calls will 'auth' as the context
+	auth := context.WithValue(context.Background(), client.ContextAccessToken,
+		login.AccessToken)
 
 	// Retrieving all backup jobs
-	allJobs, err := veeam.Jobs.GetAllJobs(
-		jobs.NewGetAllJobsParams().WithDefaults(),
-		auth)
+	jobs, r, err := veeam.JobsApi.GetAllJobs(auth).XApiVersion(apiVersion).Execute()
 	if err != nil {
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 		panic(err)
 	}
 
 	// Printing out job names
 	// Working with the response payload
 	fmt.Printf("Job Names:\n\n")
-	for _, job := range allJobs.Payload.Data {
-		fmt.Println(*job.Name)
+	for _, job := range jobs.Data {
+		fmt.Println(job.Name)
 	}
 
 	// Logging out session
-	veeam.Login.Logout(
-		login.NewLogoutParams().WithDefaults(),
-		auth)
+	_, r, err = veeam.LoginApi.Logout(auth).XApiVersion(apiVersion).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+		panic(err)
+	}
 }
+
 ```
 
 ## ✍ Contributions

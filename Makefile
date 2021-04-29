@@ -3,31 +3,30 @@ default: generate dependency
 # Removes currently generated client files
 cleanup:
 	@echo "Removing current client files"
-	rm -rf models client
+	rm -rf client/*
+
 
 # Validating Swagger spec
 #
-# https://goswagger.io/usage/validate.html
+# https://openapi-generator.tech/docs/usage/#validate
 validate:
 	@echo "Validating Swagger spec"
-	swagger validate ./swagger.yml
+	openapi-generator validate -i swagger.json
 
 # Generating API client
 # 
-# https://goswagger.io/generate/server.html
-# https://goswagger.io/generate/client.html
+# https://openapi-generator.tech/docs/generators/go
 generate: cleanup validate
 	@echo "Generating API client"
-#	swagger generate server \
-		--skip-validation \
-		--exclude-main \
-		--target=./ \
-		--spec=./swagger.yml \
-		--name=veeam_vbr
-	swagger generate client \
-		--skip-validation \
-		--spec=./swagger.yml \
-		--name=veeam_vbr
+	openapi-generator generate \
+		-i swagger.json \
+		-g go \
+		-o client \
+		--package-name client \
+		--global-property skipFormModel=false \
+		-p enumClassPrefix=true
+	@echo "Removing generated dependencies file"
+	rm -rf client/go.*
 
 # Adding new dependencies
 dependency:
