@@ -1,4 +1,4 @@
-{
+﻿{
   "openapi": "3.0.1",
   "info": {
     "title": "Veeam Backup & Replication REST API",
@@ -6,7 +6,8 @@
     "contact": {
       "email": "support@veeam.com"
     },
-    "version": "1.0-rev1"
+    "version": "1.0-rev2",
+    "x-veeam-prev-version": "1.0-rev1"
   },
   "servers": [
     {
@@ -21,7 +22,7 @@
   "tags": [
     {
       "name": "Login",
-      "description": "The authorization process involves obtaining an access token and a refresh token.<br> For details on the authorization process and security settings, see the [Authorization and Security](https://helpcenter.veeam.com/docs/backup/vbr_rest/authorization_security.html) section of the Veeam Backup & Replication REST API Reference.\n"
+      "description": "The authorization process involves obtaining an access token and a refresh token.<br> For details on the authorization process and security settings, see the [Authorization and Security](https://helpcenter.veeam.com/docs/backup/vbr_rest/authorization_security.html?ver=110) section of the Veeam Backup & Replication REST API Reference.\n<SecurityDefinitions />\n"
     },
     {
       "name": "Service",
@@ -97,7 +98,7 @@
     },
     {
       "name": "Automation",
-      "description": "The Automation section defines paths and operations for granular import and export of objects available in the REST API. It can be useful, for example, if you set up the backup infrastructure using JSON specification or migrate the infrastructure to another backup server. For details, see [Mass Deployment](https://helpcenter.veeam.com/docs/backup/vbr_rest/automation.html).\n"
+      "description": "The Automation section defines paths and operations for granular import and export of objects available in the REST API. It can be useful, for example, if you set up the backup infrastructure using JSON specification or migrate the infrastructure to another backup server. For details, see [Mass Deployment](https://helpcenter.veeam.com/docs/backup/vbr_rest/automation.html?ver=110).\n"
     }
   ],
   "paths": {
@@ -329,7 +330,7 @@
           "Login"
         ],
         "summary": "Get Authorization Code",
-        "description": "The HTTP POST request to the `/api/oauth2/authorization_code` path allows you to get an authorization code that is used to obtain an access token. For more information on authorization process, see [Requesting Authorization](https://helpcenter.veeam.com/docs/backup/vbr_rest/requesting_authorization.html).",
+        "description": "The HTTP POST request to the `/api/oauth2/authorization_code` path allows you to get an authorization code that is used to obtain an access token. For more information on authorization process, see [Requesting Authorization](https://helpcenter.veeam.com/docs/backup/vbr_rest/requesting_authorization.html?ver=110).",
         "operationId": "CreateAuthorizationCode",
         "parameters": [
           {
@@ -1842,10 +1843,22 @@
           },
           {
             "name": "vmbApiFilter",
-            "description": "Filters repositories by VM Backup API parameters converted to the base64 string.<br>\nTo compose the base64 string:<br>\n<ol>\n  <li>Prepare VM Backup API parameters in the JSON format.</li>\n  <code>{<br>\n  \"protocolVersion\":\"string\",<br>\n  \"assemblyVersion\":\"string\",<br>\n  \"productId\":\"string\",<br>\n  \"versionFlags\":\"string\"<br>\n  }<br></code>\n  <li>Convert the JSON object into a string.</li>\n  <li>Encode the string with base64 encoding.</li>\n</ol>\n",
+            "description": "Filters repositories by VM Backup API parameters converted to the base64 string.<br>\n",
             "in": "query",
             "schema": {
               "type": "string"
+            },
+            "x-veeam-spec": {
+              "$ref": "#/components/schemas/RepositoriesFilters"
+            }
+          },
+          {
+            "name": "vmbApiPlatform",
+            "description": "TODO Sets a platform for vmb API to work with",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
             },
             "x-veeam-spec": {
               "$ref": "#/components/schemas/RepositoriesFilters"
@@ -5291,6 +5304,105 @@
       }
     },
     "/api/v1/restore/instantRecovery/vmware/fcd/": {
+      "get": {
+        "tags": [
+          "Restore"
+        ],
+        "x-veeam-authorize": {
+          "claims": [
+            "ViewIRMountedDisks"
+          ]
+        },
+        "summary": "Get All FCD Mounts Information",
+        "description": "The HTTP GET request to the `/api/v1/restore/instantRecovery/vmware/vm/` [TODO]",
+        "operationId": "GetAllVmwareFcdInstantRecoveryMountModels",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/apiVersionParam"
+          },
+          {
+            "name": "skip",
+            "description": "Number of restore points to skip.",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-veeam-spec": {
+              "$ref": "#/components/schemas/VmwareFcdInstantRecoveryMountsFilters"
+            }
+          },
+          {
+            "name": "limit",
+            "description": "Maximum number of restore points to return.",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-veeam-spec": {
+              "$ref": "#/components/schemas/VmwareFcdInstantRecoveryMountsFilters"
+            }
+          },
+          {
+            "name": "orderColumn",
+            "description": "Sorts restore points by one of the restore point parameters.",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/EVmwareFcdInstantRecoveryMountsFiltersOrderColumn"
+            },
+            "x-veeam-spec": {
+              "$ref": "#/components/schemas/VmwareFcdInstantRecoveryMountsFilters"
+            }
+          },
+          {
+            "name": "orderAsc",
+            "description": "Sorts restore points in the ascending order by the `orderColumn` parameter.",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            },
+            "x-veeam-spec": {
+              "$ref": "#/components/schemas/VmwareFcdInstantRecoveryMountsFilters"
+            }
+          },
+          {
+            "name": "stateFilter",
+            "description": "Filters vm mounts by mount state.",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/EInstantRecoveryMountState"
+            },
+            "x-veeam-spec": {
+              "$ref": "#/components/schemas/VmwareFcdInstantRecoveryMountsFilters"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VmwareFcdInstantRecoveryMountsResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      },
       "post": {
         "tags": [
           "Restore"
@@ -5301,8 +5413,8 @@
           ]
         },
         "summary": "Start Instant FCD Recovery",
-        "description": "The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/` path allows you to start Instant FCD Recovery from the specified restore point to the specified cluster. For details on how to get a cluster model, see [Get VMware vSphere Server Objects](#operation/GetVmwareHostObject).",
-        "operationId": "InstantRecoveryVmwareFcdMount",
+        "description": "The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/` path allows you to start Instant FCD Recovery from the restore point to the destination cluster.</br>\nSpecify the destination cluster in the `destinationCluster` parameter of the request body as a model of the VMware vSphere object. For details on how to get the cluster model, see [Get VMware vSphere Server Objects](#operation/GetVmwareHostObject).\n",
+        "operationId": "InstantRecoveryVmwareFcdMountWithSession",
         "parameters": [
           {
             "$ref": "#/components/parameters/apiVersionParam"
@@ -5324,7 +5436,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VmwareFcdInstantRecoveryMount"
+                  "$ref": "#/components/schemas/SessionModel"
                 }
               }
             }
@@ -5413,7 +5525,7 @@
         },
         "summary": "Stop FCD Publishing",
         "description": "The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/{mountId}/dismount` path allows you to stop publishing the recovered FCDs and remove the disks from the datastore.",
-        "operationId": "InstantRecoveryVmwareFcdDismount",
+        "operationId": "InstantRecoveryVmwareFcdDismountWithSession",
         "parameters": [
           {
             "$ref": "#/components/parameters/apiVersionParam"
@@ -5435,7 +5547,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VmwareFcdInstantRecoveryMount"
+                  "$ref": "#/components/schemas/SessionModel"
                 }
               }
             }
@@ -5470,7 +5582,7 @@
         },
         "summary": "Start FCD Migration",
         "description": "The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/{mountId}/migrate` path allows you to start migration of FCDs from the specified mount.",
-        "operationId": "InstantRecoveryVmwareFcdMigrate",
+        "operationId": "InstantRecoveryVmwareFcdMigrateWithSession",
         "parameters": [
           {
             "$ref": "#/components/parameters/apiVersionParam"
@@ -5502,7 +5614,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VmwareFcdInstantRecoveryMount"
+                  "$ref": "#/components/schemas/SessionModel"
                 }
               }
             }
@@ -7137,7 +7249,7 @@
       "EPlatform": {
         "type": "string",
         "enum": [
-          "Vmware",
+          "VMware",
           "HyperV",
           "Test",
           "Vcd",
@@ -7147,7 +7259,7 @@
           "CustomPlatform",
           "Conf",
           "NasBackup",
-          "EmulatedVmWare",
+          "EmulatedVMware",
           "Extension0",
           "Extension1",
           "Extension"
@@ -7240,6 +7352,17 @@
             "format": "uuid"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/WindowsHostModel"
+          },
+          {
+            "$ref": "#/components/schemas/LinuxHostModel"
+          },
+          {
+            "$ref": "#/components/schemas/ViHostModel"
+          }
+        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -7284,6 +7407,17 @@
             "format": "uuid"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/WindowsHostSpec"
+          },
+          {
+            "$ref": "#/components/schemas/LinuxHostSpec"
+          },
+          {
+            "$ref": "#/components/schemas/ViHostSpec"
+          }
+        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -7537,6 +7671,11 @@
           "vmbApiFilter": {
             "description": "VmbApiFilterModel as json serialized in base64 format (see VmbApiFilterModel)",
             "type": "string"
+          },
+          "vmbApiPlatform": {
+            "description": "TODO Sets a platform for vmb API to work with",
+            "type": "string",
+            "format": "uuid"
           }
         }
       },
@@ -7618,6 +7757,20 @@
             "$ref": "#/components/schemas/ERepositoryType"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/WindowsLocalStorageSpec"
+          },
+          {
+            "$ref": "#/components/schemas/LinuxLocalStorageSpec"
+          },
+          {
+            "$ref": "#/components/schemas/NfsStorageSpec"
+          },
+          {
+            "$ref": "#/components/schemas/SmbStorageSpec"
+          }
+        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -7659,6 +7812,20 @@
             "$ref": "#/components/schemas/ERepositoryType"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/WindowsLocalStorageModel"
+          },
+          {
+            "$ref": "#/components/schemas/LinuxLocalStorageModel"
+          },
+          {
+            "$ref": "#/components/schemas/NfsStorageModel"
+          },
+          {
+            "$ref": "#/components/schemas/SmbStorageModel"
+          }
+        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -8147,6 +8314,11 @@
             "$ref": "#/components/schemas/EProxyType"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ViProxySpec"
+          }
+        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -8205,6 +8377,11 @@
             "$ref": "#/components/schemas/EProxyType"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ViProxyModel"
+          }
+        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -8710,6 +8887,11 @@
             "type": "boolean"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BackupJobModel"
+          }
+        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -8773,6 +8955,11 @@
             "$ref": "#/components/schemas/EJobType"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BackupJobSpec"
+          }
+        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -9492,7 +9679,9 @@
           "LocalTargetLarge",
           "LocalTarget",
           "LANTarget",
-          "WANTarget"
+          "WANTarget",
+          "LocalTargetLarge8192",
+          "LocalTargetLarge4096"
         ]
       },
       "ECompressionLevel": {
@@ -10167,6 +10356,9 @@
           },
           "backupWindow": {
             "$ref": "#/components/schemas/BackupWindowSettingModel"
+          },
+          "startTimeWithinAnHour": {
+            "type": "integer"
           }
         }
       },
@@ -10191,7 +10383,7 @@
             "type": "boolean",
             "default": false
           },
-          "WindowSetting": {
+          "backupWindow": {
             "$ref": "#/components/schemas/BackupWindowSettingModel"
           }
         }
@@ -10503,6 +10695,14 @@
             "$ref": "#/components/schemas/ECredentialsType"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/StandardCredentialsSpec"
+          },
+          {
+            "$ref": "#/components/schemas/LinuxCredentialsSpec"
+          }
+        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -10603,6 +10803,14 @@
             "format": "date-time"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/StandardCredentialsModel"
+          },
+          {
+            "$ref": "#/components/schemas/LinuxCredentialsModel"
+          }
+        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -12199,7 +12407,7 @@
       "EPlatformType": {
         "type": "string",
         "enum": [
-          "VmWare",
+          "VMware",
           "HyperV",
           "Vcd",
           "WindowsPhysical",
@@ -12305,6 +12513,11 @@
             "type": "integer"
           }
         },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ViBackupObjectModel"
+          }
+        ],
         "discriminator": {
           "propertyName": "platformName",
           "mapping": {
@@ -12320,7 +12533,8 @@
           {
             "type": "object",
             "required": [
-              "server"
+              "objectId",
+              "viType"
             ],
             "properties": {
               "objectId": {
@@ -12548,12 +12762,7 @@
             "format": "uuid"
           },
           "destinationCluster": {
-            "description": "Destination cluster.",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmwareObjectModel"
-              }
-            ]
+            "$ref": "#/components/schemas/VmwareObjectModel"
           },
           "disksMapping": {
             "description": "Array of disks that will be restored.",
@@ -12564,6 +12773,57 @@
           },
           "writeCache": {
             "$ref": "#/components/schemas/VmwareFcdWriteCacheSpec"
+          }
+        }
+      },
+      "VmwareFcdInstantRecoveryMountsFilters": {
+        "type": "object",
+        "properties": {
+          "skip": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "orderColumn": {
+            "$ref": "#/components/schemas/EVmwareFcdInstantRecoveryMountsFiltersOrderColumn"
+          },
+          "orderAsc": {
+            "type": "boolean"
+          },
+          "nameFilter": {
+            "type": "string"
+          },
+          "stateFilter": {
+            "$ref": "#/components/schemas/EInstantRecoveryMountState"
+          }
+        }
+      },
+      "EVmwareFcdInstantRecoveryMountsFiltersOrderColumn": {
+        "type": "string",
+        "enum": [
+          "state",
+          "name"
+        ]
+      },
+      "VmwareFcdInstantRecoveryMountsResult": {
+        "required": [
+          "data",
+          "pagination"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "description": "Array of FCD mounts.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VmwareFcdInstantRecoveryMount"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationResult"
           }
         }
       },
@@ -12996,20 +13256,10 @@
             }
           },
           "targetDatastore": {
-            "description": "Target datastore. For details on how to get a datastore model, see [Get VMware vSphere Server Objects](#operation/GetVmwareHostObject).",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmwareObjectModel"
-              }
-            ]
+            "$ref": "#/components/schemas/VmwareObjectModel"
           },
           "storagePolicy": {
-            "description": "Storage policy that will be applied to the migrated disks. For details on how to get a storage policy model, see [Get VMware vSphere Server Objects](#operation/GetVmwareHostObject).",
-            "allOf": [
-              {
-                "$ref": "#/components/schemas/VmwareObjectModel"
-              }
-            ]
+            "$ref": "#/components/schemas/VmwareObjectModel"
           }
         }
       },
@@ -13583,7 +13833,7 @@
         "required": true,
         "schema": {
           "type": "string",
-          "default": "1.0-rev1"
+          "default": "1.0-rev2"
         }
       }
     },
