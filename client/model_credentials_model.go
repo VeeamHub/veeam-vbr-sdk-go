@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -33,7 +33,7 @@ type CredentialsModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCredentialsModel(id string, username string, description string, type_ ECredentialsType, creationTime time.Time) *CredentialsModel {
+func NewCredentialsModel(id string, username string, description string, type_ ECredentialsType, creationTime time.Time, ) *CredentialsModel {
 	this := CredentialsModel{}
 	this.Id = id
 	this.Username = username
@@ -53,7 +53,7 @@ func NewCredentialsModelWithDefaults() *CredentialsModel {
 
 // GetId returns the Id field value
 func (o *CredentialsModel) GetId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *CredentialsModel) SetId(v string) {
 
 // GetUsername returns the Username field value
 func (o *CredentialsModel) GetUsername() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -101,7 +101,7 @@ func (o *CredentialsModel) SetUsername(v string) {
 
 // GetDescription returns the Description field value
 func (o *CredentialsModel) GetDescription() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *CredentialsModel) SetDescription(v string) {
 
 // GetType returns the Type field value
 func (o *CredentialsModel) GetType() ECredentialsType {
-	if o == nil {
+	if o == nil  {
 		var ret ECredentialsType
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *CredentialsModel) SetType(v ECredentialsType) {
 
 // GetCreationTime returns the CreationTime field value
 func (o *CredentialsModel) GetCreationTime() time.Time {
-	if o == nil {
+	if o == nil  {
 		var ret time.Time
 		return ret
 	}

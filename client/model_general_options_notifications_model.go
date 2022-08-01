@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -39,7 +39,7 @@ type GeneralOptionsNotificationsModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGeneralOptionsNotificationsModel(storageSpaceThresholdEnabled bool, storageSpaceThreshold int32, datastoreSpaceThresholdEnabled bool, datastoreSpaceThreshold int32, skipVMSpaceThresholdEnabled bool, skipVMSpaceThreshold int32, notifyOnSupportExpiration bool, notifyOnUpdates bool) *GeneralOptionsNotificationsModel {
+func NewGeneralOptionsNotificationsModel(storageSpaceThresholdEnabled bool, storageSpaceThreshold int32, datastoreSpaceThresholdEnabled bool, datastoreSpaceThreshold int32, skipVMSpaceThresholdEnabled bool, skipVMSpaceThreshold int32, notifyOnSupportExpiration bool, notifyOnUpdates bool, ) *GeneralOptionsNotificationsModel {
 	this := GeneralOptionsNotificationsModel{}
 	this.StorageSpaceThresholdEnabled = storageSpaceThresholdEnabled
 	this.StorageSpaceThreshold = storageSpaceThreshold
@@ -62,7 +62,7 @@ func NewGeneralOptionsNotificationsModelWithDefaults() *GeneralOptionsNotificati
 
 // GetStorageSpaceThresholdEnabled returns the StorageSpaceThresholdEnabled field value
 func (o *GeneralOptionsNotificationsModel) GetStorageSpaceThresholdEnabled() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *GeneralOptionsNotificationsModel) SetStorageSpaceThresholdEnabled(v boo
 
 // GetStorageSpaceThreshold returns the StorageSpaceThreshold field value
 func (o *GeneralOptionsNotificationsModel) GetStorageSpaceThreshold() int32 {
-	if o == nil {
+	if o == nil  {
 		var ret int32
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *GeneralOptionsNotificationsModel) SetStorageSpaceThreshold(v int32) {
 
 // GetDatastoreSpaceThresholdEnabled returns the DatastoreSpaceThresholdEnabled field value
 func (o *GeneralOptionsNotificationsModel) GetDatastoreSpaceThresholdEnabled() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *GeneralOptionsNotificationsModel) SetDatastoreSpaceThresholdEnabled(v b
 
 // GetDatastoreSpaceThreshold returns the DatastoreSpaceThreshold field value
 func (o *GeneralOptionsNotificationsModel) GetDatastoreSpaceThreshold() int32 {
-	if o == nil {
+	if o == nil  {
 		var ret int32
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *GeneralOptionsNotificationsModel) SetDatastoreSpaceThreshold(v int32) {
 
 // GetSkipVMSpaceThresholdEnabled returns the SkipVMSpaceThresholdEnabled field value
 func (o *GeneralOptionsNotificationsModel) GetSkipVMSpaceThresholdEnabled() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *GeneralOptionsNotificationsModel) SetSkipVMSpaceThresholdEnabled(v bool
 
 // GetSkipVMSpaceThreshold returns the SkipVMSpaceThreshold field value
 func (o *GeneralOptionsNotificationsModel) GetSkipVMSpaceThreshold() int32 {
-	if o == nil {
+	if o == nil  {
 		var ret int32
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *GeneralOptionsNotificationsModel) SetSkipVMSpaceThreshold(v int32) {
 
 // GetNotifyOnSupportExpiration returns the NotifyOnSupportExpiration field value
 func (o *GeneralOptionsNotificationsModel) GetNotifyOnSupportExpiration() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *GeneralOptionsNotificationsModel) SetNotifyOnSupportExpiration(v bool) 
 
 // GetNotifyOnUpdates returns the NotifyOnUpdates field value
 func (o *GeneralOptionsNotificationsModel) GetNotifyOnUpdates() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}

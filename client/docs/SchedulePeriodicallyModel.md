@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **PeriodicallyKind** | Pointer to [**EPeriodicallyKinds**](EPeriodicallyKinds.md) |  | [optional] 
 **Frequency** | Pointer to **int32** | Number of time units that defines the time interval. | [optional] 
 **BackupWindow** | Pointer to [**BackupWindowSettingModel**](BackupWindowSettingModel.md) |  | [optional] 
+**StartTimeWithinAnHour** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -122,6 +123,31 @@ SetBackupWindow sets BackupWindow field to given value.
 `func (o *SchedulePeriodicallyModel) HasBackupWindow() bool`
 
 HasBackupWindow returns a boolean if a field has been set.
+
+### GetStartTimeWithinAnHour
+
+`func (o *SchedulePeriodicallyModel) GetStartTimeWithinAnHour() int32`
+
+GetStartTimeWithinAnHour returns the StartTimeWithinAnHour field if non-nil, zero value otherwise.
+
+### GetStartTimeWithinAnHourOk
+
+`func (o *SchedulePeriodicallyModel) GetStartTimeWithinAnHourOk() (*int32, bool)`
+
+GetStartTimeWithinAnHourOk returns a tuple with the StartTimeWithinAnHour field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartTimeWithinAnHour
+
+`func (o *SchedulePeriodicallyModel) SetStartTimeWithinAnHour(v int32)`
+
+SetStartTimeWithinAnHour sets StartTimeWithinAnHour field to given value.
+
+### HasStartTimeWithinAnHour
+
+`func (o *SchedulePeriodicallyModel) HasStartTimeWithinAnHour() bool`
+
+HasStartTimeWithinAnHour returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

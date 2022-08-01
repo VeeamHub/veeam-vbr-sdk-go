@@ -7352,17 +7352,6 @@
             "format": "uuid"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/WindowsHostModel"
-          },
-          {
-            "$ref": "#/components/schemas/LinuxHostModel"
-          },
-          {
-            "$ref": "#/components/schemas/ViHostModel"
-          }
-        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -7407,17 +7396,6 @@
             "format": "uuid"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/WindowsHostSpec"
-          },
-          {
-            "$ref": "#/components/schemas/LinuxHostSpec"
-          },
-          {
-            "$ref": "#/components/schemas/ViHostSpec"
-          }
-        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -7757,20 +7735,6 @@
             "$ref": "#/components/schemas/ERepositoryType"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/WindowsLocalStorageSpec"
-          },
-          {
-            "$ref": "#/components/schemas/LinuxLocalStorageSpec"
-          },
-          {
-            "$ref": "#/components/schemas/NfsStorageSpec"
-          },
-          {
-            "$ref": "#/components/schemas/SmbStorageSpec"
-          }
-        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -7812,20 +7776,6 @@
             "$ref": "#/components/schemas/ERepositoryType"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/WindowsLocalStorageModel"
-          },
-          {
-            "$ref": "#/components/schemas/LinuxLocalStorageModel"
-          },
-          {
-            "$ref": "#/components/schemas/NfsStorageModel"
-          },
-          {
-            "$ref": "#/components/schemas/SmbStorageModel"
-          }
-        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -8314,11 +8264,6 @@
             "$ref": "#/components/schemas/EProxyType"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/ViProxySpec"
-          }
-        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -8377,11 +8322,6 @@
             "$ref": "#/components/schemas/EProxyType"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/ViProxyModel"
-          }
-        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -8887,11 +8827,6 @@
             "type": "boolean"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/BackupJobModel"
-          }
-        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -8955,11 +8890,6 @@
             "$ref": "#/components/schemas/EJobType"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/BackupJobSpec"
-          }
-        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -10695,14 +10625,6 @@
             "$ref": "#/components/schemas/ECredentialsType"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/StandardCredentialsSpec"
-          },
-          {
-            "$ref": "#/components/schemas/LinuxCredentialsSpec"
-          }
-        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -10803,14 +10725,6 @@
             "format": "date-time"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/StandardCredentialsModel"
-          },
-          {
-            "$ref": "#/components/schemas/LinuxCredentialsModel"
-          }
-        ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -12513,11 +12427,6 @@
             "type": "integer"
           }
         },
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/ViBackupObjectModel"
-          }
-        ],
         "discriminator": {
           "propertyName": "platformName",
           "mapping": {

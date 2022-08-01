@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -30,11 +30,8 @@ type BackupJobSpec struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBackupJobSpec(isHighPriority bool, virtualMachines BackupJobVirtualMachinesSpec, storage BackupJobStorageModel, guestProcessing BackupJobGuestProcessingModel, schedule BackupScheduleModel, name string, description string, type_ EJobType) *BackupJobSpec {
+func NewBackupJobSpec(isHighPriority bool, virtualMachines BackupJobVirtualMachinesSpec, storage BackupJobStorageModel, guestProcessing BackupJobGuestProcessingModel, schedule BackupScheduleModel, ) *BackupJobSpec {
 	this := BackupJobSpec{}
-	this.Name = name
-	this.Description = description
-	this.Type = type_
 	this.IsHighPriority = isHighPriority
 	this.VirtualMachines = virtualMachines
 	this.Storage = storage
@@ -55,7 +52,7 @@ func NewBackupJobSpecWithDefaults() *BackupJobSpec {
 
 // GetIsHighPriority returns the IsHighPriority field value
 func (o *BackupJobSpec) GetIsHighPriority() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}
@@ -79,7 +76,7 @@ func (o *BackupJobSpec) SetIsHighPriority(v bool) {
 
 // GetVirtualMachines returns the VirtualMachines field value
 func (o *BackupJobSpec) GetVirtualMachines() BackupJobVirtualMachinesSpec {
-	if o == nil {
+	if o == nil  {
 		var ret BackupJobVirtualMachinesSpec
 		return ret
 	}
@@ -103,7 +100,7 @@ func (o *BackupJobSpec) SetVirtualMachines(v BackupJobVirtualMachinesSpec) {
 
 // GetStorage returns the Storage field value
 func (o *BackupJobSpec) GetStorage() BackupJobStorageModel {
-	if o == nil {
+	if o == nil  {
 		var ret BackupJobStorageModel
 		return ret
 	}
@@ -127,7 +124,7 @@ func (o *BackupJobSpec) SetStorage(v BackupJobStorageModel) {
 
 // GetGuestProcessing returns the GuestProcessing field value
 func (o *BackupJobSpec) GetGuestProcessing() BackupJobGuestProcessingModel {
-	if o == nil {
+	if o == nil  {
 		var ret BackupJobGuestProcessingModel
 		return ret
 	}
@@ -151,7 +148,7 @@ func (o *BackupJobSpec) SetGuestProcessing(v BackupJobGuestProcessingModel) {
 
 // GetSchedule returns the Schedule field value
 func (o *BackupJobSpec) GetSchedule() BackupScheduleModel {
-	if o == nil {
+	if o == nil  {
 		var ret BackupScheduleModel
 		return ret
 	}

@@ -29,7 +29,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     hostConnectionSpec := *openapiclient.NewHostConnectionSpec("ServerName_example", "CredentialsId_example", openapiclient.EManagedServerType("WindowsHost")) // HostConnectionSpec | 
 
     configuration := openapiclient.NewConfiguration()
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGetConnectionCertificateRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **hostConnectionSpec** | [**HostConnectionSpec**](HostConnectionSpec.md) |  | 
 
 ### Return type

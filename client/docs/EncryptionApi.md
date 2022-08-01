@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     encryptionPasswordSpec := *openapiclient.NewEncryptionPasswordSpec("Password_example", "Hint_example") // EncryptionPasswordSpec | 
 
     configuration := openapiclient.NewConfiguration()
@@ -59,7 +59,7 @@ Other parameters are passed through a pointer to a apiCreateEncryptionPasswordRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **encryptionPasswordSpec** | [**EncryptionPasswordSpec**](EncryptionPasswordSpec.md) |  | 
 
 ### Return type
@@ -101,7 +101,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     id := TODO // string | ID of the encryption password.
 
     configuration := openapiclient.NewConfiguration()
@@ -131,7 +131,7 @@ Other parameters are passed through a pointer to a apiDeleteEncryptionPasswordRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 
 ### Return type
@@ -173,7 +173,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     skip := int32(56) // int32 | Number of passwords to skip. (optional)
     limit := int32(56) // int32 | Maximum number of passwords to return. (optional)
     orderColumn := openapiclient.EEncryptionPasswordsFiltersOrderColumn("Hint") // EEncryptionPasswordsFiltersOrderColumn | Sorts passwords by one of the password parameters. (optional)
@@ -202,7 +202,7 @@ Other parameters are passed through a pointer to a apiGetAllEncryptionPasswordsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **skip** | **int32** | Number of passwords to skip. | 
  **limit** | **int32** | Maximum number of passwords to return. | 
  **orderColumn** | [**EEncryptionPasswordsFiltersOrderColumn**](EEncryptionPasswordsFiltersOrderColumn.md) | Sorts passwords by one of the password parameters. | 
@@ -247,7 +247,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     id := TODO // string | ID of the encryption password.
 
     configuration := openapiclient.NewConfiguration()
@@ -277,7 +277,7 @@ Other parameters are passed through a pointer to a apiGetEncryptionPasswordReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 
 ### Return type
@@ -319,7 +319,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     id := TODO // string | ID of the encryption password.
     encryptionPasswordModel := *openapiclient.NewEncryptionPasswordModel("Id_example", "Hint_example") // EncryptionPasswordModel | 
 
@@ -350,7 +350,7 @@ Other parameters are passed through a pointer to a apiUpdateEncryptionPasswordRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
  **encryptionPasswordModel** | [**EncryptionPasswordModel**](EncryptionPasswordModel.md) |  | 
 

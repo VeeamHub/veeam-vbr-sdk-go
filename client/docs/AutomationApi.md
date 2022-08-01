@@ -44,7 +44,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     credentialsExportSpec := *openapiclient.NewCredentialsExportSpec() // CredentialsExportSpec |  (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -70,7 +70,7 @@ Other parameters are passed through a pointer to a apiExportCredentialsRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **credentialsExportSpec** | [**CredentialsExportSpec**](CredentialsExportSpec.md) |  | 
 
 ### Return type
@@ -112,7 +112,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     encryptionPasswordExportSpec := *openapiclient.NewEncryptionPasswordExportSpec() // EncryptionPasswordExportSpec |  (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -138,7 +138,7 @@ Other parameters are passed through a pointer to a apiExportEncryptionPasswordsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **encryptionPasswordExportSpec** | [**EncryptionPasswordExportSpec**](EncryptionPasswordExportSpec.md) |  | 
 
 ### Return type
@@ -180,7 +180,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     jobExportSpec := *openapiclient.NewJobExportSpec() // JobExportSpec |  (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -206,7 +206,7 @@ Other parameters are passed through a pointer to a apiExportJobsRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **jobExportSpec** | [**JobExportSpec**](JobExportSpec.md) |  | 
 
 ### Return type
@@ -248,7 +248,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     manageServerExportSpec := *openapiclient.NewManageServerExportSpec() // ManageServerExportSpec |  (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -274,7 +274,7 @@ Other parameters are passed through a pointer to a apiExportManagedServersReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **manageServerExportSpec** | [**ManageServerExportSpec**](ManageServerExportSpec.md) |  | 
 
 ### Return type
@@ -316,7 +316,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     proxyExportSpec := *openapiclient.NewProxyExportSpec() // ProxyExportSpec |  (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -342,7 +342,7 @@ Other parameters are passed through a pointer to a apiExportProxiesRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **proxyExportSpec** | [**ProxyExportSpec**](ProxyExportSpec.md) |  | 
 
 ### Return type
@@ -384,7 +384,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     repositoryExportSpec := *openapiclient.NewRepositoryExportSpec() // RepositoryExportSpec |  (optional)
 
     configuration := openapiclient.NewConfiguration()
@@ -410,7 +410,7 @@ Other parameters are passed through a pointer to a apiExportRepositoriesRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **repositoryExportSpec** | [**RepositoryExportSpec**](RepositoryExportSpec.md) |  | 
 
 ### Return type
@@ -453,7 +453,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     skip := int32(56) // int32 | Number of sessions to skip. (optional)
     limit := int32(56) // int32 | Maximum number of sessions to return. (optional)
     orderColumn := openapiclient.ESessionsFiltersOrderColumn("Name") // ESessionsFiltersOrderColumn | Sorts sessions by one of the session parameters. (optional)
@@ -491,7 +491,7 @@ Other parameters are passed through a pointer to a apiGetAllAutomationSessionsRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **skip** | **int32** | Number of sessions to skip. | 
  **limit** | **int32** | Maximum number of sessions to return. | 
  **orderColumn** | [**ESessionsFiltersOrderColumn**](ESessionsFiltersOrderColumn.md) | Sorts sessions by one of the session parameters. | 
@@ -546,7 +546,7 @@ import (
 
 func main() {
     id := TODO // string | ID of the session.
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -576,7 +576,7 @@ Other parameters are passed through a pointer to a apiGetAutomationSessionReques
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 ### Return type
 
@@ -618,7 +618,7 @@ import (
 
 func main() {
     id := TODO // string | ID of the session.
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
 
     configuration := openapiclient.NewConfiguration()
     api_client := openapiclient.NewAPIClient(configuration)
@@ -648,7 +648,7 @@ Other parameters are passed through a pointer to a apiGetAutomationSessionLogsRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 ### Return type
 
@@ -689,7 +689,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     credentialsImportSpecCollection := *openapiclient.NewCredentialsImportSpecCollection([]openapiclient.CredentialsImportSpec{*openapiclient.NewCredentialsImportSpec("Username_example", "Tag_example", openapiclient.ECredentialsType("Standard"))}) // CredentialsImportSpecCollection | 
 
     configuration := openapiclient.NewConfiguration()
@@ -715,7 +715,7 @@ Other parameters are passed through a pointer to a apiImportCredentialsRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **credentialsImportSpecCollection** | [**CredentialsImportSpecCollection**](CredentialsImportSpecCollection.md) |  | 
 
 ### Return type
@@ -757,7 +757,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     encryptionPasswordImportSpecCollection := *openapiclient.NewEncryptionPasswordImportSpecCollection() // EncryptionPasswordImportSpecCollection | 
 
     configuration := openapiclient.NewConfiguration()
@@ -783,7 +783,7 @@ Other parameters are passed through a pointer to a apiImportEncryptionPasswordsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **encryptionPasswordImportSpecCollection** | [**EncryptionPasswordImportSpecCollection**](EncryptionPasswordImportSpecCollection.md) |  | 
 
 ### Return type
@@ -825,7 +825,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     jobImportSpecCollection := *openapiclient.NewJobImportSpecCollection([]openapiclient.JobImportSpec{*openapiclient.NewJobImportSpec("Name_example", "Description_example", false, openapiclient.EJobType("Backup"), *openapiclient.NewBackupJobVirtualMachinesSpec([]openapiclient.VmwareObjectModel{*openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown"))}), *openapiclient.NewBackupJobStorageImportModel(*openapiclient.NewBackupRepositoryImportModel("Name_example"), *openapiclient.NewBackupJobImportProxiesModel(false), *openapiclient.NewBackupJobRetentionPolicySettingsModel(openapiclient.ERetentionPolicyType("RestorePoints"), int32(123))), *openapiclient.NewBackupJobGuestProcessingImportModel(*openapiclient.NewBackupApplicationAwareProcessingImportModel(false), *openapiclient.NewGuestFileSystemIndexingModel(false)), *openapiclient.NewBackupScheduleModel(false))}) // JobImportSpecCollection | 
 
     configuration := openapiclient.NewConfiguration()
@@ -851,7 +851,7 @@ Other parameters are passed through a pointer to a apiImportJobsRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **jobImportSpecCollection** | [**JobImportSpecCollection**](JobImportSpecCollection.md) |  | 
 
 ### Return type
@@ -893,7 +893,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     manageServerImportSpecCollection := *openapiclient.NewManageServerImportSpecCollection() // ManageServerImportSpecCollection | 
 
     configuration := openapiclient.NewConfiguration()
@@ -919,7 +919,7 @@ Other parameters are passed through a pointer to a apiImportManagedServersReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **manageServerImportSpecCollection** | [**ManageServerImportSpecCollection**](ManageServerImportSpecCollection.md) |  | 
 
 ### Return type
@@ -961,7 +961,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     proxyImportSpecCollection := *openapiclient.NewProxyImportSpecCollection([]openapiclient.ProxyImportSpec{*openapiclient.NewProxyImportSpec("Description_example", openapiclient.EProxyType("ViProxy"), *openapiclient.NewProxyServerSettingsImportSpec("HostName_example"))}) // ProxyImportSpecCollection | 
 
     configuration := openapiclient.NewConfiguration()
@@ -987,7 +987,7 @@ Other parameters are passed through a pointer to a apiImportProxiesRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **proxyImportSpecCollection** | [**ProxyImportSpecCollection**](ProxyImportSpecCollection.md) |  | 
 
 ### Return type
@@ -1029,7 +1029,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     repositoryImportSpecCollection := *openapiclient.NewRepositoryImportSpecCollection() // RepositoryImportSpecCollection | 
 
     configuration := openapiclient.NewConfiguration()
@@ -1055,7 +1055,7 @@ Other parameters are passed through a pointer to a apiImportRepositoriesRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
  **repositoryImportSpecCollection** | [**RepositoryImportSpecCollection**](RepositoryImportSpecCollection.md) |  | 
 
 ### Return type
@@ -1097,7 +1097,7 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev1")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
     id := TODO // string | ID of the session.
 
     configuration := openapiclient.NewConfiguration()
@@ -1127,7 +1127,7 @@ Other parameters are passed through a pointer to a apiStopAutomationSessionReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev1&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
 
 
 ### Return type

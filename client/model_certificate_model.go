@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -42,7 +42,7 @@ type CertificateModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCertificateModel(thumbprint string, serialNumber string, keyAlgorithm string, keySize string, subject string, issuedTo string, issuedBy string, validFrom time.Time, validBy time.Time) *CertificateModel {
+func NewCertificateModel(thumbprint string, serialNumber string, keyAlgorithm string, keySize string, subject string, issuedTo string, issuedBy string, validFrom time.Time, validBy time.Time, ) *CertificateModel {
 	this := CertificateModel{}
 	this.Thumbprint = thumbprint
 	this.SerialNumber = serialNumber
@@ -66,7 +66,7 @@ func NewCertificateModelWithDefaults() *CertificateModel {
 
 // GetThumbprint returns the Thumbprint field value
 func (o *CertificateModel) GetThumbprint() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *CertificateModel) SetThumbprint(v string) {
 
 // GetSerialNumber returns the SerialNumber field value
 func (o *CertificateModel) GetSerialNumber() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *CertificateModel) SetSerialNumber(v string) {
 
 // GetKeyAlgorithm returns the KeyAlgorithm field value
 func (o *CertificateModel) GetKeyAlgorithm() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *CertificateModel) SetKeyAlgorithm(v string) {
 
 // GetKeySize returns the KeySize field value
 func (o *CertificateModel) GetKeySize() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *CertificateModel) SetKeySize(v string) {
 
 // GetSubject returns the Subject field value
 func (o *CertificateModel) GetSubject() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *CertificateModel) SetSubject(v string) {
 
 // GetIssuedTo returns the IssuedTo field value
 func (o *CertificateModel) GetIssuedTo() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *CertificateModel) SetIssuedTo(v string) {
 
 // GetIssuedBy returns the IssuedBy field value
 func (o *CertificateModel) GetIssuedBy() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -234,7 +234,7 @@ func (o *CertificateModel) SetIssuedBy(v string) {
 
 // GetValidFrom returns the ValidFrom field value
 func (o *CertificateModel) GetValidFrom() time.Time {
-	if o == nil {
+	if o == nil  {
 		var ret time.Time
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *CertificateModel) SetValidFrom(v time.Time) {
 
 // GetValidBy returns the ValidBy field value
 func (o *CertificateModel) GetValidBy() time.Time {
-	if o == nil {
+	if o == nil  {
 		var ret time.Time
 		return ret
 	}

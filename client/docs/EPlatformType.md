@@ -3,7 +3,7 @@
 ## Enum
 
 
-* `VM_WARE` (value: `"VmWare"`)
+* `V_MWARE` (value: `"VMware"`)
 
 * `HYPER_V` (value: `"HyperV"`)
 

@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -27,6 +27,210 @@ var (
 
 // RestoreApiService RestoreApi service
 type RestoreApiService service
+
+type ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest struct {
+	ctx _context.Context
+	ApiService *RestoreApiService
+	xApiVersion *string
+	skip *int32
+	limit *int32
+	orderColumn *EVmwareFcdInstantRecoveryMountsFiltersOrderColumn
+	orderAsc *bool
+	stateFilter *EInstantRecoveryMountState
+}
+
+func (r ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest) XApiVersion(xApiVersion string) ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest {
+	r.xApiVersion = &xApiVersion
+	return r
+}
+func (r ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest) Skip(skip int32) ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest {
+	r.skip = &skip
+	return r
+}
+func (r ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest) Limit(limit int32) ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest {
+	r.limit = &limit
+	return r
+}
+func (r ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest) OrderColumn(orderColumn EVmwareFcdInstantRecoveryMountsFiltersOrderColumn) ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest {
+	r.orderColumn = &orderColumn
+	return r
+}
+func (r ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest) OrderAsc(orderAsc bool) ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest {
+	r.orderAsc = &orderAsc
+	return r
+}
+func (r ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest) StateFilter(stateFilter EInstantRecoveryMountState) ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest {
+	r.stateFilter = &stateFilter
+	return r
+}
+
+func (r ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest) Execute() (VmwareFcdInstantRecoveryMountsResult, *_nethttp.Response, error) {
+	return r.ApiService.GetAllVmwareFcdInstantRecoveryMountModelsExecute(r)
+}
+
+/*
+ * GetAllVmwareFcdInstantRecoveryMountModels Get All FCD Mounts Information
+ * The HTTP GET request to the `/api/v1/restore/instantRecovery/vmware/vm/` [TODO]
+ * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @return ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest
+ */
+func (a *RestoreApiService) GetAllVmwareFcdInstantRecoveryMountModels(ctx _context.Context) ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest {
+	return ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+/*
+ * Execute executes the request
+ * @return VmwareFcdInstantRecoveryMountsResult
+ */
+func (a *RestoreApiService) GetAllVmwareFcdInstantRecoveryMountModelsExecute(r ApiGetAllVmwareFcdInstantRecoveryMountModelsRequest) (VmwareFcdInstantRecoveryMountsResult, *_nethttp.Response, error) {
+	var (
+		localVarHTTPMethod   = _nethttp.MethodGet
+		localVarPostBody     interface{}
+		localVarFormFileName string
+		localVarFileName     string
+		localVarFileBytes    []byte
+		localVarReturnValue  VmwareFcdInstantRecoveryMountsResult
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestoreApiService.GetAllVmwareFcdInstantRecoveryMountModels")
+	if err != nil {
+		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/v1/restore/instantRecovery/vmware/fcd/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := _neturl.Values{}
+	localVarFormParams := _neturl.Values{}
+	if r.xApiVersion == nil {
+		return localVarReturnValue, nil, reportError("xApiVersion is required and must be specified")
+	}
+
+	if r.skip != nil {
+		localVarQueryParams.Add("skip", parameterToString(*r.skip, ""))
+	}
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	if r.orderColumn != nil {
+		localVarQueryParams.Add("orderColumn", parameterToString(*r.orderColumn, ""))
+	}
+	if r.orderAsc != nil {
+		localVarQueryParams.Add("orderAsc", parameterToString(*r.orderAsc, ""))
+	}
+	if r.stateFilter != nil {
+		localVarQueryParams.Add("stateFilter", parameterToString(*r.stateFilter, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	localVarHeaderParams["x-api-version"] = parameterToString(*r.xApiVersion, "")
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["Bearer"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := _ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = _ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type ApiGetVmwareFcdInstantRecoveryMountModelRequest struct {
 	ctx _context.Context
@@ -196,31 +400,31 @@ func (a *RestoreApiService) GetVmwareFcdInstantRecoveryMountModelExecute(r ApiGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiInstantRecoveryVmwareFcdDismountRequest struct {
+type ApiInstantRecoveryVmwareFcdDismountWithSessionRequest struct {
 	ctx _context.Context
 	ApiService *RestoreApiService
 	xApiVersion *string
 	mountId string
 }
 
-func (r ApiInstantRecoveryVmwareFcdDismountRequest) XApiVersion(xApiVersion string) ApiInstantRecoveryVmwareFcdDismountRequest {
+func (r ApiInstantRecoveryVmwareFcdDismountWithSessionRequest) XApiVersion(xApiVersion string) ApiInstantRecoveryVmwareFcdDismountWithSessionRequest {
 	r.xApiVersion = &xApiVersion
 	return r
 }
 
-func (r ApiInstantRecoveryVmwareFcdDismountRequest) Execute() (VmwareFcdInstantRecoveryMount, *_nethttp.Response, error) {
-	return r.ApiService.InstantRecoveryVmwareFcdDismountExecute(r)
+func (r ApiInstantRecoveryVmwareFcdDismountWithSessionRequest) Execute() (SessionModel, *_nethttp.Response, error) {
+	return r.ApiService.InstantRecoveryVmwareFcdDismountWithSessionExecute(r)
 }
 
 /*
- * InstantRecoveryVmwareFcdDismount Stop FCD Publishing
+ * InstantRecoveryVmwareFcdDismountWithSession Stop FCD Publishing
  * The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/{mountId}/dismount` path allows you to stop publishing the recovered FCDs and remove the disks from the datastore.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param mountId Mount ID.
- * @return ApiInstantRecoveryVmwareFcdDismountRequest
+ * @return ApiInstantRecoveryVmwareFcdDismountWithSessionRequest
  */
-func (a *RestoreApiService) InstantRecoveryVmwareFcdDismount(ctx _context.Context, mountId string) ApiInstantRecoveryVmwareFcdDismountRequest {
-	return ApiInstantRecoveryVmwareFcdDismountRequest{
+func (a *RestoreApiService) InstantRecoveryVmwareFcdDismountWithSession(ctx _context.Context, mountId string) ApiInstantRecoveryVmwareFcdDismountWithSessionRequest {
+	return ApiInstantRecoveryVmwareFcdDismountWithSessionRequest{
 		ApiService: a,
 		ctx: ctx,
 		mountId: mountId,
@@ -229,19 +433,19 @@ func (a *RestoreApiService) InstantRecoveryVmwareFcdDismount(ctx _context.Contex
 
 /*
  * Execute executes the request
- * @return VmwareFcdInstantRecoveryMount
+ * @return SessionModel
  */
-func (a *RestoreApiService) InstantRecoveryVmwareFcdDismountExecute(r ApiInstantRecoveryVmwareFcdDismountRequest) (VmwareFcdInstantRecoveryMount, *_nethttp.Response, error) {
+func (a *RestoreApiService) InstantRecoveryVmwareFcdDismountWithSessionExecute(r ApiInstantRecoveryVmwareFcdDismountWithSessionRequest) (SessionModel, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  VmwareFcdInstantRecoveryMount
+		localVarReturnValue  SessionModel
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestoreApiService.InstantRecoveryVmwareFcdDismount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestoreApiService.InstantRecoveryVmwareFcdDismountWithSession")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
@@ -374,7 +578,7 @@ func (a *RestoreApiService) InstantRecoveryVmwareFcdDismountExecute(r ApiInstant
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiInstantRecoveryVmwareFcdMigrateRequest struct {
+type ApiInstantRecoveryVmwareFcdMigrateWithSessionRequest struct {
 	ctx _context.Context
 	ApiService *RestoreApiService
 	xApiVersion *string
@@ -382,28 +586,28 @@ type ApiInstantRecoveryVmwareFcdMigrateRequest struct {
 	vmwareFcdQuickMigrationSpec *VmwareFcdQuickMigrationSpec
 }
 
-func (r ApiInstantRecoveryVmwareFcdMigrateRequest) XApiVersion(xApiVersion string) ApiInstantRecoveryVmwareFcdMigrateRequest {
+func (r ApiInstantRecoveryVmwareFcdMigrateWithSessionRequest) XApiVersion(xApiVersion string) ApiInstantRecoveryVmwareFcdMigrateWithSessionRequest {
 	r.xApiVersion = &xApiVersion
 	return r
 }
-func (r ApiInstantRecoveryVmwareFcdMigrateRequest) VmwareFcdQuickMigrationSpec(vmwareFcdQuickMigrationSpec VmwareFcdQuickMigrationSpec) ApiInstantRecoveryVmwareFcdMigrateRequest {
+func (r ApiInstantRecoveryVmwareFcdMigrateWithSessionRequest) VmwareFcdQuickMigrationSpec(vmwareFcdQuickMigrationSpec VmwareFcdQuickMigrationSpec) ApiInstantRecoveryVmwareFcdMigrateWithSessionRequest {
 	r.vmwareFcdQuickMigrationSpec = &vmwareFcdQuickMigrationSpec
 	return r
 }
 
-func (r ApiInstantRecoveryVmwareFcdMigrateRequest) Execute() (VmwareFcdInstantRecoveryMount, *_nethttp.Response, error) {
-	return r.ApiService.InstantRecoveryVmwareFcdMigrateExecute(r)
+func (r ApiInstantRecoveryVmwareFcdMigrateWithSessionRequest) Execute() (SessionModel, *_nethttp.Response, error) {
+	return r.ApiService.InstantRecoveryVmwareFcdMigrateWithSessionExecute(r)
 }
 
 /*
- * InstantRecoveryVmwareFcdMigrate Start FCD Migration
+ * InstantRecoveryVmwareFcdMigrateWithSession Start FCD Migration
  * The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/{mountId}/migrate` path allows you to start migration of FCDs from the specified mount.
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param mountId Mount ID.
- * @return ApiInstantRecoveryVmwareFcdMigrateRequest
+ * @return ApiInstantRecoveryVmwareFcdMigrateWithSessionRequest
  */
-func (a *RestoreApiService) InstantRecoveryVmwareFcdMigrate(ctx _context.Context, mountId string) ApiInstantRecoveryVmwareFcdMigrateRequest {
-	return ApiInstantRecoveryVmwareFcdMigrateRequest{
+func (a *RestoreApiService) InstantRecoveryVmwareFcdMigrateWithSession(ctx _context.Context, mountId string) ApiInstantRecoveryVmwareFcdMigrateWithSessionRequest {
+	return ApiInstantRecoveryVmwareFcdMigrateWithSessionRequest{
 		ApiService: a,
 		ctx: ctx,
 		mountId: mountId,
@@ -412,19 +616,19 @@ func (a *RestoreApiService) InstantRecoveryVmwareFcdMigrate(ctx _context.Context
 
 /*
  * Execute executes the request
- * @return VmwareFcdInstantRecoveryMount
+ * @return SessionModel
  */
-func (a *RestoreApiService) InstantRecoveryVmwareFcdMigrateExecute(r ApiInstantRecoveryVmwareFcdMigrateRequest) (VmwareFcdInstantRecoveryMount, *_nethttp.Response, error) {
+func (a *RestoreApiService) InstantRecoveryVmwareFcdMigrateWithSessionExecute(r ApiInstantRecoveryVmwareFcdMigrateWithSessionRequest) (SessionModel, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  VmwareFcdInstantRecoveryMount
+		localVarReturnValue  SessionModel
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestoreApiService.InstantRecoveryVmwareFcdMigrate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestoreApiService.InstantRecoveryVmwareFcdMigrateWithSession")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}
@@ -562,34 +766,36 @@ func (a *RestoreApiService) InstantRecoveryVmwareFcdMigrateExecute(r ApiInstantR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiInstantRecoveryVmwareFcdMountRequest struct {
+type ApiInstantRecoveryVmwareFcdMountWithSessionRequest struct {
 	ctx _context.Context
 	ApiService *RestoreApiService
 	xApiVersion *string
 	vmwareFcdInstantRecoverySpec *VmwareFcdInstantRecoverySpec
 }
 
-func (r ApiInstantRecoveryVmwareFcdMountRequest) XApiVersion(xApiVersion string) ApiInstantRecoveryVmwareFcdMountRequest {
+func (r ApiInstantRecoveryVmwareFcdMountWithSessionRequest) XApiVersion(xApiVersion string) ApiInstantRecoveryVmwareFcdMountWithSessionRequest {
 	r.xApiVersion = &xApiVersion
 	return r
 }
-func (r ApiInstantRecoveryVmwareFcdMountRequest) VmwareFcdInstantRecoverySpec(vmwareFcdInstantRecoverySpec VmwareFcdInstantRecoverySpec) ApiInstantRecoveryVmwareFcdMountRequest {
+func (r ApiInstantRecoveryVmwareFcdMountWithSessionRequest) VmwareFcdInstantRecoverySpec(vmwareFcdInstantRecoverySpec VmwareFcdInstantRecoverySpec) ApiInstantRecoveryVmwareFcdMountWithSessionRequest {
 	r.vmwareFcdInstantRecoverySpec = &vmwareFcdInstantRecoverySpec
 	return r
 }
 
-func (r ApiInstantRecoveryVmwareFcdMountRequest) Execute() (VmwareFcdInstantRecoveryMount, *_nethttp.Response, error) {
-	return r.ApiService.InstantRecoveryVmwareFcdMountExecute(r)
+func (r ApiInstantRecoveryVmwareFcdMountWithSessionRequest) Execute() (SessionModel, *_nethttp.Response, error) {
+	return r.ApiService.InstantRecoveryVmwareFcdMountWithSessionExecute(r)
 }
 
 /*
- * InstantRecoveryVmwareFcdMount Start Instant FCD Recovery
- * The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/` path allows you to start Instant FCD Recovery from the specified restore point to the specified cluster. For details on how to get a cluster model, see [Get VMware vSphere Server Objects](#operation/GetVmwareHostObject).
+ * InstantRecoveryVmwareFcdMountWithSession Start Instant FCD Recovery
+ * The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/` path allows you to start Instant FCD Recovery from the restore point to the destination cluster.</br>
+Specify the destination cluster in the `destinationCluster` parameter of the request body as a model of the VMware vSphere object. For details on how to get the cluster model, see [Get VMware vSphere Server Objects](#operation/GetVmwareHostObject).
+
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @return ApiInstantRecoveryVmwareFcdMountRequest
+ * @return ApiInstantRecoveryVmwareFcdMountWithSessionRequest
  */
-func (a *RestoreApiService) InstantRecoveryVmwareFcdMount(ctx _context.Context) ApiInstantRecoveryVmwareFcdMountRequest {
-	return ApiInstantRecoveryVmwareFcdMountRequest{
+func (a *RestoreApiService) InstantRecoveryVmwareFcdMountWithSession(ctx _context.Context) ApiInstantRecoveryVmwareFcdMountWithSessionRequest {
+	return ApiInstantRecoveryVmwareFcdMountWithSessionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -597,19 +803,19 @@ func (a *RestoreApiService) InstantRecoveryVmwareFcdMount(ctx _context.Context) 
 
 /*
  * Execute executes the request
- * @return VmwareFcdInstantRecoveryMount
+ * @return SessionModel
  */
-func (a *RestoreApiService) InstantRecoveryVmwareFcdMountExecute(r ApiInstantRecoveryVmwareFcdMountRequest) (VmwareFcdInstantRecoveryMount, *_nethttp.Response, error) {
+func (a *RestoreApiService) InstantRecoveryVmwareFcdMountWithSessionExecute(r ApiInstantRecoveryVmwareFcdMountWithSessionRequest) (SessionModel, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  VmwareFcdInstantRecoveryMount
+		localVarReturnValue  SessionModel
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestoreApiService.InstantRecoveryVmwareFcdMount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestoreApiService.InstantRecoveryVmwareFcdMountWithSession")
 	if err != nil {
 		return localVarReturnValue, nil, GenericOpenAPIError{error: err.Error()}
 	}

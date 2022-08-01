@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -34,7 +34,7 @@ type LinuxLocalStorageImportSpec struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinuxLocalStorageImportSpec(name string, description string, tag string, hostName string, type_ ERepositoryType, repository LinuxLocalRepositorySettingsModel, mountServer MountServerSettingsImportSpec) *LinuxLocalStorageImportSpec {
+func NewLinuxLocalStorageImportSpec(name string, description string, tag string, hostName string, type_ ERepositoryType, repository LinuxLocalRepositorySettingsModel, mountServer MountServerSettingsImportSpec, ) *LinuxLocalStorageImportSpec {
 	this := LinuxLocalStorageImportSpec{}
 	this.Name = name
 	this.Description = description
@@ -56,7 +56,7 @@ func NewLinuxLocalStorageImportSpecWithDefaults() *LinuxLocalStorageImportSpec {
 
 // GetName returns the Name field value
 func (o *LinuxLocalStorageImportSpec) GetName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *LinuxLocalStorageImportSpec) SetName(v string) {
 
 // GetDescription returns the Description field value
 func (o *LinuxLocalStorageImportSpec) GetDescription() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *LinuxLocalStorageImportSpec) SetDescription(v string) {
 
 // GetTag returns the Tag field value
 func (o *LinuxLocalStorageImportSpec) GetTag() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *LinuxLocalStorageImportSpec) SetTag(v string) {
 
 // GetHostName returns the HostName field value
 func (o *LinuxLocalStorageImportSpec) GetHostName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *LinuxLocalStorageImportSpec) SetHostName(v string) {
 
 // GetType returns the Type field value
 func (o *LinuxLocalStorageImportSpec) GetType() ERepositoryType {
-	if o == nil {
+	if o == nil  {
 		var ret ERepositoryType
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *LinuxLocalStorageImportSpec) SetType(v ERepositoryType) {
 
 // GetRepository returns the Repository field value
 func (o *LinuxLocalStorageImportSpec) GetRepository() LinuxLocalRepositorySettingsModel {
-	if o == nil {
+	if o == nil  {
 		var ret LinuxLocalRepositorySettingsModel
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *LinuxLocalStorageImportSpec) SetRepository(v LinuxLocalRepositorySettin
 
 // GetMountServer returns the MountServer field value
 func (o *LinuxLocalStorageImportSpec) GetMountServer() MountServerSettingsImportSpec {
-	if o == nil {
+	if o == nil  {
 		var ret MountServerSettingsImportSpec
 		return ret
 	}

@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -34,7 +34,7 @@ type JobImportSpec struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJobImportSpec(name string, description string, isHighPriority bool, type_ EJobType, virtualMachines BackupJobVirtualMachinesSpec, storage BackupJobStorageImportModel, guestProcessing BackupJobGuestProcessingImportModel, schedule BackupScheduleModel) *JobImportSpec {
+func NewJobImportSpec(name string, description string, isHighPriority bool, type_ EJobType, virtualMachines BackupJobVirtualMachinesSpec, storage BackupJobStorageImportModel, guestProcessing BackupJobGuestProcessingImportModel, schedule BackupScheduleModel, ) *JobImportSpec {
 	this := JobImportSpec{}
 	this.Name = name
 	this.Description = description
@@ -57,7 +57,7 @@ func NewJobImportSpecWithDefaults() *JobImportSpec {
 
 // GetName returns the Name field value
 func (o *JobImportSpec) GetName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *JobImportSpec) SetName(v string) {
 
 // GetDescription returns the Description field value
 func (o *JobImportSpec) GetDescription() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *JobImportSpec) SetDescription(v string) {
 
 // GetIsHighPriority returns the IsHighPriority field value
 func (o *JobImportSpec) GetIsHighPriority() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *JobImportSpec) SetIsHighPriority(v bool) {
 
 // GetType returns the Type field value
 func (o *JobImportSpec) GetType() EJobType {
-	if o == nil {
+	if o == nil  {
 		var ret EJobType
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *JobImportSpec) SetType(v EJobType) {
 
 // GetVirtualMachines returns the VirtualMachines field value
 func (o *JobImportSpec) GetVirtualMachines() BackupJobVirtualMachinesSpec {
-	if o == nil {
+	if o == nil  {
 		var ret BackupJobVirtualMachinesSpec
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *JobImportSpec) SetVirtualMachines(v BackupJobVirtualMachinesSpec) {
 
 // GetStorage returns the Storage field value
 func (o *JobImportSpec) GetStorage() BackupJobStorageImportModel {
-	if o == nil {
+	if o == nil  {
 		var ret BackupJobStorageImportModel
 		return ret
 	}
@@ -201,7 +201,7 @@ func (o *JobImportSpec) SetStorage(v BackupJobStorageImportModel) {
 
 // GetGuestProcessing returns the GuestProcessing field value
 func (o *JobImportSpec) GetGuestProcessing() BackupJobGuestProcessingImportModel {
-	if o == nil {
+	if o == nil  {
 		var ret BackupJobGuestProcessingImportModel
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *JobImportSpec) SetGuestProcessing(v BackupJobGuestProcessingImportModel
 
 // GetSchedule returns the Schedule field value
 func (o *JobImportSpec) GetSchedule() BackupScheduleModel {
-	if o == nil {
+	if o == nil  {
 		var ret BackupScheduleModel
 		return ret
 	}

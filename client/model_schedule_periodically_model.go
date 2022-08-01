@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -23,13 +23,14 @@ type SchedulePeriodicallyModel struct {
 	// Number of time units that defines the time interval.
 	Frequency *int32 `json:"frequency,omitempty"`
 	BackupWindow *BackupWindowSettingModel `json:"backupWindow,omitempty"`
+	StartTimeWithinAnHour *int32 `json:"startTimeWithinAnHour,omitempty"`
 }
 
 // NewSchedulePeriodicallyModel instantiates a new SchedulePeriodicallyModel object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSchedulePeriodicallyModel(isEnabled bool) *SchedulePeriodicallyModel {
+func NewSchedulePeriodicallyModel(isEnabled bool, ) *SchedulePeriodicallyModel {
 	this := SchedulePeriodicallyModel{}
 	this.IsEnabled = isEnabled
 	return &this
@@ -47,7 +48,7 @@ func NewSchedulePeriodicallyModelWithDefaults() *SchedulePeriodicallyModel {
 
 // GetIsEnabled returns the IsEnabled field value
 func (o *SchedulePeriodicallyModel) GetIsEnabled() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}
@@ -165,6 +166,38 @@ func (o *SchedulePeriodicallyModel) SetBackupWindow(v BackupWindowSettingModel) 
 	o.BackupWindow = &v
 }
 
+// GetStartTimeWithinAnHour returns the StartTimeWithinAnHour field value if set, zero value otherwise.
+func (o *SchedulePeriodicallyModel) GetStartTimeWithinAnHour() int32 {
+	if o == nil || o.StartTimeWithinAnHour == nil {
+		var ret int32
+		return ret
+	}
+	return *o.StartTimeWithinAnHour
+}
+
+// GetStartTimeWithinAnHourOk returns a tuple with the StartTimeWithinAnHour field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SchedulePeriodicallyModel) GetStartTimeWithinAnHourOk() (*int32, bool) {
+	if o == nil || o.StartTimeWithinAnHour == nil {
+		return nil, false
+	}
+	return o.StartTimeWithinAnHour, true
+}
+
+// HasStartTimeWithinAnHour returns a boolean if a field has been set.
+func (o *SchedulePeriodicallyModel) HasStartTimeWithinAnHour() bool {
+	if o != nil && o.StartTimeWithinAnHour != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStartTimeWithinAnHour gets a reference to the given int32 and assigns it to the StartTimeWithinAnHour field.
+func (o *SchedulePeriodicallyModel) SetStartTimeWithinAnHour(v int32) {
+	o.StartTimeWithinAnHour = &v
+}
+
 func (o SchedulePeriodicallyModel) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -178,6 +211,9 @@ func (o SchedulePeriodicallyModel) MarshalJSON() ([]byte, error) {
 	}
 	if o.BackupWindow != nil {
 		toSerialize["backupWindow"] = o.BackupWindow
+	}
+	if o.StartTimeWithinAnHour != nil {
+		toSerialize["startTimeWithinAnHour"] = o.StartTimeWithinAnHour
 	}
 	return json.Marshal(toSerialize)
 }

@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -35,7 +35,7 @@ type ScaleOutRepositoryModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewScaleOutRepositoryModel(id string, name string, description string, tag string, performanceTier PerformanceTierModel) *ScaleOutRepositoryModel {
+func NewScaleOutRepositoryModel(id string, name string, description string, tag string, performanceTier PerformanceTierModel, ) *ScaleOutRepositoryModel {
 	this := ScaleOutRepositoryModel{}
 	this.Id = id
 	this.Name = name
@@ -55,7 +55,7 @@ func NewScaleOutRepositoryModelWithDefaults() *ScaleOutRepositoryModel {
 
 // GetId returns the Id field value
 func (o *ScaleOutRepositoryModel) GetId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ScaleOutRepositoryModel) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *ScaleOutRepositoryModel) GetName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *ScaleOutRepositoryModel) SetName(v string) {
 
 // GetDescription returns the Description field value
 func (o *ScaleOutRepositoryModel) GetDescription() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *ScaleOutRepositoryModel) SetDescription(v string) {
 
 // GetTag returns the Tag field value
 func (o *ScaleOutRepositoryModel) GetTag() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ScaleOutRepositoryModel) SetTag(v string) {
 
 // GetPerformanceTier returns the PerformanceTier field value
 func (o *ScaleOutRepositoryModel) GetPerformanceTier() PerformanceTierModel {
-	if o == nil {
+	if o == nil  {
 		var ret PerformanceTierModel
 		return ret
 	}

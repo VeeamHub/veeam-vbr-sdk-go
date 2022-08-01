@@ -7,14 +7,16 @@ info:
     Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br>
     Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic.
   title: Veeam Backup & Replication REST API
-  version: 1.0-rev1
+  version: 1.0-rev2
+  x-veeam-prev-version: 1.0-rev1
 servers:
 - url: /
 security:
 - Bearer: []
 tags:
 - description: |
-    The authorization process involves obtaining an access token and a refresh token.<br> For details on the authorization process and security settings, see the [Authorization and Security](https://helpcenter.veeam.com/docs/backup/vbr_rest/authorization_security.html) section of the Veeam Backup & Replication REST API Reference.
+    The authorization process involves obtaining an access token and a refresh token.<br> For details on the authorization process and security settings, see the [Authorization and Security](https://helpcenter.veeam.com/docs/backup/vbr_rest/authorization_security.html?ver=110) section of the Veeam Backup & Replication REST API Reference.
+    <SecurityDefinitions />
   name: Login
 - description: |
     The Service section defines paths and operations for retrieving current date and time and a certificate of the backup server where the REST API service is running.
@@ -72,7 +74,7 @@ tags:
     The Restore section defines paths and operations for performing restore.<br> <div class="note"><strong>NOTE</strong><br>In the current version, you can restore only disks that will be registered as First Class Disks (FCD) — a type of virtual disks that can be managed independent of any VM.</div>
   name: Restore
 - description: |
-    The Automation section defines paths and operations for granular import and export of objects available in the REST API. It can be useful, for example, if you set up the backup infrastructure using JSON specification or migrate the infrastructure to another backup server. For details, see [Mass Deployment](https://helpcenter.veeam.com/docs/backup/vbr_rest/automation.html).
+    The Automation section defines paths and operations for granular import and export of objects available in the REST API. It can be useful, for example, if you set up the backup infrastructure using JSON specification or migrate the infrastructure to another backup server. For details, see [Mass Deployment](https://helpcenter.veeam.com/docs/backup/vbr_rest/automation.html?ver=110).
   name: Automation
 paths:
   /api/v1/serverTime:
@@ -89,7 +91,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -138,7 +140,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -187,7 +189,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of services to skip.
@@ -292,7 +294,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -344,7 +346,7 @@ paths:
     post:
       description: The HTTP POST request to the `/api/oauth2/authorization_code` path
         allows you to get an authorization code that is used to obtain an access token.
-        For more information on authorization process, see [Requesting Authorization](https://helpcenter.veeam.com/docs/backup/vbr_rest/requesting_authorization.html).
+        For more information on authorization process, see [Requesting Authorization](https://helpcenter.veeam.com/docs/backup/vbr_rest/requesting_authorization.html?ver=110).
       operationId: CreateAuthorizationCode
       parameters:
       - description: |
@@ -355,7 +357,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -403,7 +405,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -452,7 +454,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -502,7 +504,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -567,7 +569,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -624,7 +626,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -695,7 +697,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -752,7 +754,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -823,7 +825,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -881,7 +883,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of sessions to skip.
@@ -1084,7 +1086,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -1151,7 +1153,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -1218,7 +1220,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -1276,7 +1278,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -1341,7 +1343,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of VMware vSphere servers to skip.
@@ -1450,7 +1452,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Name of the VMware vSphere server.
@@ -1611,7 +1613,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of servers to skip.
@@ -1735,7 +1737,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -1801,7 +1803,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the managed server.
@@ -1867,7 +1869,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the managed server.
@@ -1933,7 +1935,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the managed server.
@@ -2015,7 +2017,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of repositories to skip.
@@ -2107,23 +2109,22 @@ paths:
           $ref: '#/components/schemas/RepositoriesFilters'
       - description: |
           Filters repositories by VM Backup API parameters converted to the base64 string.<br>
-          To compose the base64 string:<br>
-          <ol>
-            <li>Prepare VM Backup API parameters in the JSON format.</li>
-            <code>{<br>
-            "protocolVersion":"string",<br>
-            "assemblyVersion":"string",<br>
-            "productId":"string",<br>
-            "versionFlags":"string"<br>
-            }<br></code>
-            <li>Convert the JSON object into a string.</li>
-            <li>Encode the string with base64 encoding.</li>
-          </ol>
         explode: true
         in: query
         name: vmbApiFilter
         required: false
         schema:
+          type: string
+        style: form
+        x-veeam-spec:
+          $ref: '#/components/schemas/RepositoriesFilters'
+      - description: TODO Sets a platform for vmb API to work with
+        explode: true
+        in: query
+        name: vmbApiPlatform
+        required: false
+        schema:
+          format: uuid
           type: string
         style: form
         x-veeam-spec:
@@ -2175,7 +2176,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -2242,7 +2243,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of repository states to skip.
@@ -2403,7 +2404,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the backup repository.
@@ -2479,7 +2480,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the backup repository.
@@ -2545,7 +2546,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the backup repository.
@@ -2627,7 +2628,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of proxies to skip.
@@ -2752,7 +2753,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -2818,7 +2819,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the backup proxy.
@@ -2884,7 +2885,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the backup proxy.
@@ -2950,7 +2951,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the backup proxy.
@@ -3032,7 +3033,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of repositories to skip.
@@ -3138,7 +3139,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the scale-out backup repository.
@@ -3206,7 +3207,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the scale-out backup repository extent.
@@ -3280,7 +3281,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the scale-out backup repository extent.
@@ -3353,7 +3354,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of jobs to skip.
@@ -3467,7 +3468,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -3533,7 +3534,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of job states to skip.
@@ -3745,7 +3746,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - explode: false
@@ -3810,7 +3811,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - explode: false
@@ -3875,7 +3876,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - explode: false
@@ -3954,7 +3955,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - explode: false
@@ -4033,7 +4034,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - explode: false
@@ -4112,7 +4113,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - explode: false
@@ -4185,7 +4186,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - explode: false
@@ -4258,7 +4259,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of credentials records to skip.
@@ -4363,7 +4364,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -4427,7 +4428,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the credentials record.
@@ -4493,7 +4494,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the credentials record.
@@ -4559,7 +4560,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the credentials record.
@@ -4640,7 +4641,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the credentials record.
@@ -4721,7 +4722,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the credentials record.
@@ -4802,7 +4803,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the credentials record.
@@ -4882,7 +4883,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of passwords to skip.
@@ -4974,7 +4975,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -5038,7 +5039,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the encryption password.
@@ -5104,7 +5105,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the encryption password.
@@ -5170,7 +5171,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the encryption password.
@@ -5251,7 +5252,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of backups to skip.
@@ -5412,7 +5413,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the backup.
@@ -5480,7 +5481,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the backup.
@@ -5548,7 +5549,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of backup objects to skip.
@@ -5702,7 +5703,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the backup object.
@@ -5770,7 +5771,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the backup object.
@@ -5837,7 +5838,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of restore points to skip.
@@ -6010,7 +6011,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the restore point.
@@ -6078,7 +6079,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the restore point.
@@ -6132,12 +6133,10 @@ paths:
         claims:
         - ViewRestorePointDisks
   /api/v1/restore/instantRecovery/vmware/fcd/:
-    post:
-      description: The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/`
-        path allows you to start Instant FCD Recovery from the specified restore point
-        to the specified cluster. For details on how to get a cluster model, see [Get
-        VMware vSphere Server Objects](#operation/GetVmwareHostObject).
-      operationId: InstantRecoveryVmwareFcdMount
+    get:
+      description: The HTTP GET request to the `/api/v1/restore/instantRecovery/vmware/vm/`
+        [TODO]
+      operationId: GetAllVmwareFcdInstantRecoveryMountModels
       parameters:
       - description: |
           Version and revision of the client REST API. Must be in the following
@@ -6147,7 +6146,118 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
+          type: string
+        style: simple
+      - description: Number of restore points to skip.
+        explode: true
+        in: query
+        name: skip
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+        x-veeam-spec:
+          $ref: '#/components/schemas/VmwareFcdInstantRecoveryMountsFilters'
+      - description: Maximum number of restore points to return.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+        x-veeam-spec:
+          $ref: '#/components/schemas/VmwareFcdInstantRecoveryMountsFilters'
+      - description: Sorts restore points by one of the restore point parameters.
+        explode: true
+        in: query
+        name: orderColumn
+        required: false
+        schema:
+          $ref: '#/components/schemas/EVmwareFcdInstantRecoveryMountsFiltersOrderColumn'
+        style: form
+        x-veeam-spec:
+          $ref: '#/components/schemas/VmwareFcdInstantRecoveryMountsFilters'
+      - description: Sorts restore points in the ascending order by the `orderColumn`
+          parameter.
+        explode: true
+        in: query
+        name: orderAsc
+        required: false
+        schema:
+          type: boolean
+        style: form
+        x-veeam-spec:
+          $ref: '#/components/schemas/VmwareFcdInstantRecoveryMountsFilters'
+      - description: Filters vm mounts by mount state.
+        explode: true
+        in: query
+        name: stateFilter
+        required: false
+        schema:
+          $ref: '#/components/schemas/EInstantRecoveryMountState'
+        style: form
+        x-veeam-spec:
+          $ref: '#/components/schemas/VmwareFcdInstantRecoveryMountsFilters'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VmwareFcdInstantRecoveryMountsResult'
+          description: OK
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Unauthorized. The authorization header has been expected but
+            not found (or found but is expired).
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Forbidden. The user sending the request does not have adequate
+            privileges to access one or more objects specified in the request.
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Not found. No object was found with the path parameter specified
+            in the request.
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Internal server error. The request has been received but could
+            not be completed because of an internal error at the server side.
+      summary: Get All FCD Mounts Information
+      tags:
+      - Restore
+      x-veeam-authorize:
+        claims:
+        - ViewIRMountedDisks
+    post:
+      description: |
+        The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/` path allows you to start Instant FCD Recovery from the restore point to the destination cluster.</br>
+        Specify the destination cluster in the `destinationCluster` parameter of the request body as a model of the VMware vSphere object. For details on how to get the cluster model, see [Get VMware vSphere Server Objects](#operation/GetVmwareHostObject).
+      operationId: InstantRecoveryVmwareFcdMountWithSession
+      parameters:
+      - description: |
+          Version and revision of the client REST API. Must be in the following
+          format: *\<version\>-\<revision\>*.
+        explode: false
+        in: header
+        name: x-api-version
+        required: true
+        schema:
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -6161,7 +6271,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VmwareFcdInstantRecoveryMount'
+                $ref: '#/components/schemas/SessionModel'
           description: Instant FCD Recovery has been started.
         "400":
           content:
@@ -6220,7 +6330,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Mount ID.
@@ -6278,7 +6388,7 @@ paths:
       description: The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/{mountId}/dismount`
         path allows you to stop publishing the recovered FCDs and remove the disks
         from the datastore.
-      operationId: InstantRecoveryVmwareFcdDismount
+      operationId: InstantRecoveryVmwareFcdDismountWithSession
       parameters:
       - description: |
           Version and revision of the client REST API. Must be in the following
@@ -6288,7 +6398,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Mount ID.
@@ -6305,7 +6415,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VmwareFcdInstantRecoveryMount'
+                $ref: '#/components/schemas/SessionModel'
           description: Disks has been unmounted.
         "400":
           content:
@@ -6352,7 +6462,7 @@ paths:
     post:
       description: The HTTP POST request to the `/api/v1/restore/instantRecovery/vmware/fcd/{mountId}/migrate`
         path allows you to start migration of FCDs from the specified mount.
-      operationId: InstantRecoveryVmwareFcdMigrate
+      operationId: InstantRecoveryVmwareFcdMigrateWithSession
       parameters:
       - description: |
           Version and revision of the client REST API. Must be in the following
@@ -6362,7 +6472,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Mount ID.
@@ -6385,7 +6495,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VmwareFcdInstantRecoveryMount'
+                $ref: '#/components/schemas/SessionModel'
           description: FCD Migration has been started.
         "400":
           content:
@@ -6442,7 +6552,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -6507,7 +6617,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -6571,7 +6681,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -6636,7 +6746,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -6700,7 +6810,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -6765,7 +6875,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -6829,7 +6939,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -6894,7 +7004,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -6958,7 +7068,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -7023,7 +7133,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -7087,7 +7197,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -7152,7 +7262,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       requestBody:
@@ -7217,7 +7327,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: Number of sessions to skip.
@@ -7420,7 +7530,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -7488,7 +7598,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       responses:
@@ -7546,7 +7656,7 @@ paths:
         name: x-api-version
         required: true
         schema:
-          default: 1.0-rev1
+          default: 1.0-rev2
           type: string
         style: simple
       - description: ID of the session.
@@ -7610,7 +7720,7 @@ components:
       name: x-api-version
       required: true
       schema:
-        default: 1.0-rev1
+        default: 1.0-rev2
         type: string
       style: simple
   responses:
@@ -8183,7 +8293,7 @@ components:
       type: string
     EPlatform:
       enum:
-      - Vmware
+      - VMware
       - HyperV
       - Test
       - Vcd
@@ -8193,7 +8303,7 @@ components:
       - CustomPlatform
       - Conf
       - NasBackup
-      - EmulatedVmWare
+      - EmulatedVMware
       - Extension0
       - Extension1
       - Extension
@@ -8479,6 +8589,10 @@ components:
         vmbApiFilter:
           description: VmbApiFilterModel as json serialized in base64 format (see
             VmbApiFilterModel)
+          type: string
+        vmbApiPlatform:
+          description: TODO Sets a platform for vmb API to work with
+          format: uuid
           type: string
       type: object
     ERepositoryFiltersOrderColumn:
@@ -10334,6 +10448,8 @@ components:
       - LocalTarget
       - LANTarget
       - WANTarget
+      - LocalTargetLarge8192
+      - LocalTargetLarge4096
       type: string
     ECompressionLevel:
       description: Compression level.
@@ -10784,6 +10900,7 @@ components:
           dayOfMonth: 6
           isEnabled: false
         periodically:
+          startTimeWithinAnHour: 6
           isEnabled: false
           backupWindow:
             days:
@@ -10792,20 +10909,20 @@ components:
           frequency: 1
         continuously:
           isEnabled: false
-          WindowSetting:
+          backupWindow:
             days:
             - hours: hours
             - hours: hours
         backupWindow:
           isEnabled: false
-          WindowSetting:
+          backupWindow:
             days:
             - hours: hours
             - hours: hours
         retry:
-          retryCount: 6
+          retryCount: 7
           isEnabled: false
-          awaitMinutes: 7
+          awaitMinutes: 1
         afterThisJob:
           jobName: jobName
           isEnabled: true
@@ -10952,6 +11069,7 @@ components:
     SchedulePeriodicallyModel:
       description: Periodic scheduling options.
       example:
+        startTimeWithinAnHour: 6
         isEnabled: false
         backupWindow:
           days:
@@ -10970,6 +11088,8 @@ components:
           type: integer
         backupWindow:
           $ref: '#/components/schemas/BackupWindowSettingModel'
+        startTimeWithinAnHour:
+          type: integer
       required:
       - isEnabled
       type: object
@@ -10984,7 +11104,7 @@ components:
     ScheduleBackupWindowModel:
       example:
         isEnabled: false
-        WindowSetting:
+        backupWindow:
           days:
           - hours: hours
           - hours: hours
@@ -10993,7 +11113,7 @@ components:
           default: false
           description: If *true*, periodic schedule is enabled.
           type: boolean
-        WindowSetting:
+        backupWindow:
           $ref: '#/components/schemas/BackupWindowSettingModel'
       required:
       - isEnabled
@@ -11033,9 +11153,9 @@ components:
     ScheduleRetryModel:
       description: Retry options.
       example:
-        retryCount: 6
+        retryCount: 7
         isEnabled: false
-        awaitMinutes: 7
+        awaitMinutes: 1
       properties:
         isEnabled:
           default: false
@@ -11352,6 +11472,7 @@ components:
               dayOfMonth: 6
               isEnabled: false
             periodically:
+              startTimeWithinAnHour: 6
               isEnabled: false
               backupWindow:
                 days:
@@ -11360,20 +11481,20 @@ components:
               frequency: 1
             continuously:
               isEnabled: false
-              WindowSetting:
+              backupWindow:
                 days:
                 - hours: hours
                 - hours: hours
             backupWindow:
               isEnabled: false
-              WindowSetting:
+              backupWindow:
                 days:
                 - hours: hours
                 - hours: hours
             retry:
-              retryCount: 6
+              retryCount: 7
               isEnabled: false
-              awaitMinutes: 7
+              awaitMinutes: 1
             afterThisJob:
               jobName: jobName
               isEnabled: true
@@ -11691,6 +11812,7 @@ components:
               dayOfMonth: 6
               isEnabled: false
             periodically:
+              startTimeWithinAnHour: 6
               isEnabled: false
               backupWindow:
                 days:
@@ -11699,20 +11821,20 @@ components:
               frequency: 1
             continuously:
               isEnabled: false
-              WindowSetting:
+              backupWindow:
                 days:
                 - hours: hours
                 - hours: hours
             backupWindow:
               isEnabled: false
-              WindowSetting:
+              backupWindow:
                 days:
                 - hours: hours
                 - hours: hours
             retry:
-              retryCount: 6
+              retryCount: 7
               isEnabled: false
-              awaitMinutes: 7
+              awaitMinutes: 1
             afterThisJob:
               jobName: jobName
               isEnabled: true
@@ -12042,6 +12164,7 @@ components:
             dayOfMonth: 6
             isEnabled: false
           periodically:
+            startTimeWithinAnHour: 6
             isEnabled: false
             backupWindow:
               days:
@@ -12050,20 +12173,20 @@ components:
             frequency: 1
           continuously:
             isEnabled: false
-            WindowSetting:
+            backupWindow:
               days:
               - hours: hours
               - hours: hours
           backupWindow:
             isEnabled: false
-            WindowSetting:
+            backupWindow:
               days:
               - hours: hours
               - hours: hours
           retry:
-            retryCount: 6
+            retryCount: 7
             isEnabled: false
-            awaitMinutes: 7
+            awaitMinutes: 1
           afterThisJob:
             jobName: jobName
             isEnabled: true
@@ -14621,7 +14744,7 @@ components:
       type: object
     EPlatformType:
       enum:
-      - VmWare
+      - VMware
       - HyperV
       - Vcd
       - WindowsPhysical
@@ -14935,7 +15058,10 @@ components:
             hostName: hostName
             name: name
             objectId: objectId
-        destinationCluster: ""
+        destinationCluster:
+          hostName: hostName
+          name: name
+          objectId: objectId
         objectRestorePointId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         disksMapping:
         - mountedDiskName: mountedDiskName
@@ -14950,9 +15076,7 @@ components:
           format: uuid
           type: string
         destinationCluster:
-          allOf:
-          - $ref: '#/components/schemas/VmwareObjectModel'
-          description: Destination cluster.
+          $ref: '#/components/schemas/VmwareObjectModel'
         disksMapping:
           description: Array of disks that will be restored.
           items:
@@ -14964,6 +15088,118 @@ components:
       - destinationCluster
       - disksMapping
       - objectRestorePointId
+      type: object
+    VmwareFcdInstantRecoveryMountsFilters:
+      properties:
+        skip:
+          format: int32
+          type: integer
+        limit:
+          format: int32
+          type: integer
+        orderColumn:
+          $ref: '#/components/schemas/EVmwareFcdInstantRecoveryMountsFiltersOrderColumn'
+        orderAsc:
+          type: boolean
+        nameFilter:
+          type: string
+        stateFilter:
+          $ref: '#/components/schemas/EInstantRecoveryMountState'
+      type: object
+    EVmwareFcdInstantRecoveryMountsFiltersOrderColumn:
+      enum:
+      - state
+      - name
+      type: string
+    VmwareFcdInstantRecoveryMountsResult:
+      example:
+        pagination:
+          total: 6
+          count: 1
+          limit: 5
+          skip: 5
+        data:
+        - errorMessage: errorMessage
+          mountedDisks:
+          - mountedDiskName: mountedDiskName
+            nameInBackup: nameInBackup
+            registeredFcdName: registeredFcdName
+            objectId: objectId
+          - mountedDiskName: mountedDiskName
+            nameInBackup: nameInBackup
+            registeredFcdName: registeredFcdName
+            objectId: objectId
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          sessionId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          spec:
+            writeCache:
+              redirectIsEnabled: true
+              cacheDatastore:
+                hostName: hostName
+                name: name
+                objectId: objectId
+              storagePolicy:
+                hostName: hostName
+                name: name
+                objectId: objectId
+            destinationCluster:
+              hostName: hostName
+              name: name
+              objectId: objectId
+            objectRestorePointId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            disksMapping:
+            - mountedDiskName: mountedDiskName
+              nameInBackup: nameInBackup
+              registeredFcdName: registeredFcdName
+            - mountedDiskName: mountedDiskName
+              nameInBackup: nameInBackup
+              registeredFcdName: registeredFcdName
+        - errorMessage: errorMessage
+          mountedDisks:
+          - mountedDiskName: mountedDiskName
+            nameInBackup: nameInBackup
+            registeredFcdName: registeredFcdName
+            objectId: objectId
+          - mountedDiskName: mountedDiskName
+            nameInBackup: nameInBackup
+            registeredFcdName: registeredFcdName
+            objectId: objectId
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          sessionId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          spec:
+            writeCache:
+              redirectIsEnabled: true
+              cacheDatastore:
+                hostName: hostName
+                name: name
+                objectId: objectId
+              storagePolicy:
+                hostName: hostName
+                name: name
+                objectId: objectId
+            destinationCluster:
+              hostName: hostName
+              name: name
+              objectId: objectId
+            objectRestorePointId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            disksMapping:
+            - mountedDiskName: mountedDiskName
+              nameInBackup: nameInBackup
+              registeredFcdName: registeredFcdName
+            - mountedDiskName: mountedDiskName
+              nameInBackup: nameInBackup
+              registeredFcdName: registeredFcdName
+      properties:
+        data:
+          description: Array of FCD mounts.
+          items:
+            $ref: '#/components/schemas/VmwareFcdInstantRecoveryMount'
+          type: array
+        pagination:
+          $ref: '#/components/schemas/PaginationResult'
+      required:
+      - data
+      - pagination
       type: object
     VmwareFcdInstantRecoveryMount:
       example:
@@ -14990,7 +15226,10 @@ components:
               hostName: hostName
               name: name
               objectId: objectId
-          destinationCluster: ""
+          destinationCluster:
+            hostName: hostName
+            name: name
+            objectId: objectId
           objectRestorePointId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           disksMapping:
           - mountedDiskName: mountedDiskName
@@ -15527,8 +15766,14 @@ components:
         mountedDiskNames:
         - mountedDiskNames
         - mountedDiskNames
-        storagePolicy: ""
-        targetDatastore: ""
+        storagePolicy:
+          hostName: hostName
+          name: name
+          objectId: objectId
+        targetDatastore:
+          hostName: hostName
+          name: name
+          objectId: objectId
       properties:
         mountedDiskNames:
           description: Array of disks that will be migrated to the `targetDatastore`
@@ -15537,16 +15782,9 @@ components:
             type: string
           type: array
         targetDatastore:
-          allOf:
-          - $ref: '#/components/schemas/VmwareObjectModel'
-          description: Target datastore. For details on how to get a datastore model,
-            see [Get VMware vSphere Server Objects](#operation/GetVmwareHostObject).
+          $ref: '#/components/schemas/VmwareObjectModel'
         storagePolicy:
-          allOf:
-          - $ref: '#/components/schemas/VmwareObjectModel'
-          description: Storage policy that will be applied to the migrated disks.
-            For details on how to get a storage policy model, see [Get VMware vSphere
-            Server Objects](#operation/GetVmwareHostObject).
+          $ref: '#/components/schemas/VmwareObjectModel'
       required:
       - targetDatastore
       type: object
@@ -16402,7 +16640,8 @@ components:
           description: Path to the object.
           type: string
       required:
-      - server
+      - objectId
+      - viType
       type: object
   securitySchemes:
     Bearer:

@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -30,13 +30,8 @@ type BackupJobModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBackupJobModel(isHighPriority bool, virtualMachines BackupJobVirtualMachinesModel, storage BackupJobStorageModel, guestProcessing BackupJobGuestProcessingModel, schedule BackupScheduleModel, id string, name string, description string, type_ EJobType, isDisabled bool) *BackupJobModel {
+func NewBackupJobModel(isHighPriority bool, virtualMachines BackupJobVirtualMachinesModel, storage BackupJobStorageModel, guestProcessing BackupJobGuestProcessingModel, schedule BackupScheduleModel, ) *BackupJobModel {
 	this := BackupJobModel{}
-	this.Id = id
-	this.Name = name
-	this.Description = description
-	this.Type = type_
-	this.IsDisabled = isDisabled
 	this.IsHighPriority = isHighPriority
 	this.VirtualMachines = virtualMachines
 	this.Storage = storage
@@ -55,7 +50,7 @@ func NewBackupJobModelWithDefaults() *BackupJobModel {
 
 // GetIsHighPriority returns the IsHighPriority field value
 func (o *BackupJobModel) GetIsHighPriority() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}
@@ -79,7 +74,7 @@ func (o *BackupJobModel) SetIsHighPriority(v bool) {
 
 // GetVirtualMachines returns the VirtualMachines field value
 func (o *BackupJobModel) GetVirtualMachines() BackupJobVirtualMachinesModel {
-	if o == nil {
+	if o == nil  {
 		var ret BackupJobVirtualMachinesModel
 		return ret
 	}
@@ -103,7 +98,7 @@ func (o *BackupJobModel) SetVirtualMachines(v BackupJobVirtualMachinesModel) {
 
 // GetStorage returns the Storage field value
 func (o *BackupJobModel) GetStorage() BackupJobStorageModel {
-	if o == nil {
+	if o == nil  {
 		var ret BackupJobStorageModel
 		return ret
 	}
@@ -127,7 +122,7 @@ func (o *BackupJobModel) SetStorage(v BackupJobStorageModel) {
 
 // GetGuestProcessing returns the GuestProcessing field value
 func (o *BackupJobModel) GetGuestProcessing() BackupJobGuestProcessingModel {
-	if o == nil {
+	if o == nil  {
 		var ret BackupJobGuestProcessingModel
 		return ret
 	}
@@ -151,7 +146,7 @@ func (o *BackupJobModel) SetGuestProcessing(v BackupJobGuestProcessingModel) {
 
 // GetSchedule returns the Schedule field value
 func (o *BackupJobModel) GetSchedule() BackupScheduleModel {
-	if o == nil {
+	if o == nil  {
 		var ret BackupScheduleModel
 		return ret
 	}
