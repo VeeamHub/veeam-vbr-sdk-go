@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -34,7 +34,7 @@ type WindowsLocalStorageImportSpec struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWindowsLocalStorageImportSpec(name string, description string, tag string, hostName string, type_ ERepositoryType, repository WindowsLocalRepositorySettingsModel, mountServer MountServerSettingsImportSpec) *WindowsLocalStorageImportSpec {
+func NewWindowsLocalStorageImportSpec(name string, description string, tag string, hostName string, type_ ERepositoryType, repository WindowsLocalRepositorySettingsModel, mountServer MountServerSettingsImportSpec, ) *WindowsLocalStorageImportSpec {
 	this := WindowsLocalStorageImportSpec{}
 	this.Name = name
 	this.Description = description
@@ -56,7 +56,7 @@ func NewWindowsLocalStorageImportSpecWithDefaults() *WindowsLocalStorageImportSp
 
 // GetName returns the Name field value
 func (o *WindowsLocalStorageImportSpec) GetName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *WindowsLocalStorageImportSpec) SetName(v string) {
 
 // GetDescription returns the Description field value
 func (o *WindowsLocalStorageImportSpec) GetDescription() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *WindowsLocalStorageImportSpec) SetDescription(v string) {
 
 // GetTag returns the Tag field value
 func (o *WindowsLocalStorageImportSpec) GetTag() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *WindowsLocalStorageImportSpec) SetTag(v string) {
 
 // GetHostName returns the HostName field value
 func (o *WindowsLocalStorageImportSpec) GetHostName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *WindowsLocalStorageImportSpec) SetHostName(v string) {
 
 // GetType returns the Type field value
 func (o *WindowsLocalStorageImportSpec) GetType() ERepositoryType {
-	if o == nil {
+	if o == nil  {
 		var ret ERepositoryType
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *WindowsLocalStorageImportSpec) SetType(v ERepositoryType) {
 
 // GetRepository returns the Repository field value
 func (o *WindowsLocalStorageImportSpec) GetRepository() WindowsLocalRepositorySettingsModel {
-	if o == nil {
+	if o == nil  {
 		var ret WindowsLocalRepositorySettingsModel
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *WindowsLocalStorageImportSpec) SetRepository(v WindowsLocalRepositorySe
 
 // GetMountServer returns the MountServer field value
 func (o *WindowsLocalStorageImportSpec) GetMountServer() MountServerSettingsImportSpec {
-	if o == nil {
+	if o == nil  {
 		var ret MountServerSettingsImportSpec
 		return ret
 	}

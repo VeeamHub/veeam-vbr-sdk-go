@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -19,8 +19,8 @@ import (
 type ViBackupObjectModel struct {
 	BackupObjectModel
 	// ID of the virtual infrastructure object: mo-ref or ID, depending on the virtualization platform. 
-	ObjectId *string `json:"objectId,omitempty"`
-	ViType *EVmwareInventoryType `json:"viType,omitempty"`
+	ObjectId string `json:"objectId"`
+	ViType EVmwareInventoryType `json:"viType"`
 	// Path to the object.
 	Path *string `json:"path,omitempty"`
 }
@@ -29,10 +29,10 @@ type ViBackupObjectModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViBackupObjectModel(id string, platformName EPlatformType) *ViBackupObjectModel {
+func NewViBackupObjectModel(objectId string, viType EVmwareInventoryType, ) *ViBackupObjectModel {
 	this := ViBackupObjectModel{}
-	this.Id = id
-	this.PlatformName = platformName
+	this.ObjectId = objectId
+	this.ViType = viType
 	return &this
 }
 
@@ -44,68 +44,52 @@ func NewViBackupObjectModelWithDefaults() *ViBackupObjectModel {
 	return &this
 }
 
-// GetObjectId returns the ObjectId field value if set, zero value otherwise.
+// GetObjectId returns the ObjectId field value
 func (o *ViBackupObjectModel) GetObjectId() string {
-	if o == nil || o.ObjectId == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
-	return *o.ObjectId
+
+	return o.ObjectId
 }
 
-// GetObjectIdOk returns a tuple with the ObjectId field value if set, nil otherwise
+// GetObjectIdOk returns a tuple with the ObjectId field value
 // and a boolean to check if the value has been set.
 func (o *ViBackupObjectModel) GetObjectIdOk() (*string, bool) {
-	if o == nil || o.ObjectId == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.ObjectId, true
+	return &o.ObjectId, true
 }
 
-// HasObjectId returns a boolean if a field has been set.
-func (o *ViBackupObjectModel) HasObjectId() bool {
-	if o != nil && o.ObjectId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectId gets a reference to the given string and assigns it to the ObjectId field.
+// SetObjectId sets field value
 func (o *ViBackupObjectModel) SetObjectId(v string) {
-	o.ObjectId = &v
+	o.ObjectId = v
 }
 
-// GetViType returns the ViType field value if set, zero value otherwise.
+// GetViType returns the ViType field value
 func (o *ViBackupObjectModel) GetViType() EVmwareInventoryType {
-	if o == nil || o.ViType == nil {
+	if o == nil  {
 		var ret EVmwareInventoryType
 		return ret
 	}
-	return *o.ViType
+
+	return o.ViType
 }
 
-// GetViTypeOk returns a tuple with the ViType field value if set, nil otherwise
+// GetViTypeOk returns a tuple with the ViType field value
 // and a boolean to check if the value has been set.
 func (o *ViBackupObjectModel) GetViTypeOk() (*EVmwareInventoryType, bool) {
-	if o == nil || o.ViType == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.ViType, true
+	return &o.ViType, true
 }
 
-// HasViType returns a boolean if a field has been set.
-func (o *ViBackupObjectModel) HasViType() bool {
-	if o != nil && o.ViType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetViType gets a reference to the given EVmwareInventoryType and assigns it to the ViType field.
+// SetViType sets field value
 func (o *ViBackupObjectModel) SetViType(v EVmwareInventoryType) {
-	o.ViType = &v
+	o.ViType = v
 }
 
 // GetPath returns the Path field value if set, zero value otherwise.
@@ -150,10 +134,10 @@ func (o ViBackupObjectModel) MarshalJSON() ([]byte, error) {
 	if errBackupObjectModel != nil {
 		return []byte{}, errBackupObjectModel
 	}
-	if o.ObjectId != nil {
+	if true {
 		toSerialize["objectId"] = o.ObjectId
 	}
-	if o.ViType != nil {
+	if true {
 		toSerialize["viType"] = o.ViType
 	}
 	if o.Path != nil {

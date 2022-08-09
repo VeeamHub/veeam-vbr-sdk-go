@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -28,7 +28,7 @@ type SmbRepositoryShareSettingsModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSmbRepositoryShareSettingsModel(sharePath string, credentialsId string) *SmbRepositoryShareSettingsModel {
+func NewSmbRepositoryShareSettingsModel(sharePath string, credentialsId string, ) *SmbRepositoryShareSettingsModel {
 	this := SmbRepositoryShareSettingsModel{}
 	this.SharePath = sharePath
 	this.CredentialsId = credentialsId
@@ -45,7 +45,7 @@ func NewSmbRepositoryShareSettingsModelWithDefaults() *SmbRepositoryShareSetting
 
 // GetSharePath returns the SharePath field value
 func (o *SmbRepositoryShareSettingsModel) GetSharePath() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *SmbRepositoryShareSettingsModel) SetSharePath(v string) {
 
 // GetCredentialsId returns the CredentialsId field value
 func (o *SmbRepositoryShareSettingsModel) GetCredentialsId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}

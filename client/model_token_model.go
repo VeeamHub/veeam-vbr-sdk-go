@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -36,7 +36,7 @@ type TokenModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTokenModel(accessToken string, tokenType string, refreshToken string, expiresIn int32, issued time.Time, expires time.Time) *TokenModel {
+func NewTokenModel(accessToken string, tokenType string, refreshToken string, expiresIn int32, issued time.Time, expires time.Time, ) *TokenModel {
 	this := TokenModel{}
 	this.AccessToken = accessToken
 	this.TokenType = tokenType
@@ -57,7 +57,7 @@ func NewTokenModelWithDefaults() *TokenModel {
 
 // GetAccessToken returns the AccessToken field value
 func (o *TokenModel) GetAccessToken() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *TokenModel) SetAccessToken(v string) {
 
 // GetTokenType returns the TokenType field value
 func (o *TokenModel) GetTokenType() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *TokenModel) SetTokenType(v string) {
 
 // GetRefreshToken returns the RefreshToken field value
 func (o *TokenModel) GetRefreshToken() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *TokenModel) SetRefreshToken(v string) {
 
 // GetExpiresIn returns the ExpiresIn field value
 func (o *TokenModel) GetExpiresIn() int32 {
-	if o == nil {
+	if o == nil  {
 		var ret int32
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *TokenModel) SetExpiresIn(v int32) {
 
 // GetIssued returns the Issued field value
 func (o *TokenModel) GetIssued() time.Time {
-	if o == nil {
+	if o == nil  {
 		var ret time.Time
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *TokenModel) SetIssued(v time.Time) {
 
 // GetExpires returns the Expires field value
 func (o *TokenModel) GetExpires() time.Time {
-	if o == nil {
+	if o == nil  {
 		var ret time.Time
 		return ret
 	}

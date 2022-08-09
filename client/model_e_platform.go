@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -21,7 +21,7 @@ type EPlatform string
 
 // List of EPlatform
 const (
-	EPLATFORM_VMWARE EPlatform = "Vmware"
+	EPLATFORM_V_MWARE EPlatform = "VMware"
 	EPLATFORM_HYPER_V EPlatform = "HyperV"
 	EPLATFORM_TEST EPlatform = "Test"
 	EPLATFORM_VCD EPlatform = "Vcd"
@@ -31,7 +31,7 @@ const (
 	EPLATFORM_CUSTOM_PLATFORM EPlatform = "CustomPlatform"
 	EPLATFORM_CONF EPlatform = "Conf"
 	EPLATFORM_NAS_BACKUP EPlatform = "NasBackup"
-	EPLATFORM_EMULATED_VM_WARE EPlatform = "EmulatedVmWare"
+	EPLATFORM_EMULATED_V_MWARE EPlatform = "EmulatedVMware"
 	EPLATFORM_EXTENSION0 EPlatform = "Extension0"
 	EPLATFORM_EXTENSION1 EPlatform = "Extension1"
 	EPLATFORM_EXTENSION EPlatform = "Extension"
@@ -44,7 +44,7 @@ func (v *EPlatform) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := EPlatform(value)
-	for _, existing := range []EPlatform{ "Vmware", "HyperV", "Test", "Vcd", "Tape", "EndPoint", "LinuxPhysical", "CustomPlatform", "Conf", "NasBackup", "EmulatedVmWare", "Extension0", "Extension1", "Extension",   } {
+	for _, existing := range []EPlatform{ "VMware", "HyperV", "Test", "Vcd", "Tape", "EndPoint", "LinuxPhysical", "CustomPlatform", "Conf", "NasBackup", "EmulatedVMware", "Extension0", "Extension1", "Extension",   } {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil

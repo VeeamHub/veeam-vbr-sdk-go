@@ -3,7 +3,7 @@
 ## Enum
 
 
-* `VMWARE` (value: `"Vmware"`)
+* `V_MWARE` (value: `"VMware"`)
 
 * `HYPER_V` (value: `"HyperV"`)
 
@@ -23,7 +23,7 @@
 
 * `NAS_BACKUP` (value: `"NasBackup"`)
 
-* `EMULATED_VM_WARE` (value: `"EmulatedVmWare"`)
+* `EMULATED_V_MWARE` (value: `"EmulatedVMware"`)
 
 * `EXTENSION0` (value: `"Extension0"`)
 

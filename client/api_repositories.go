@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -747,6 +747,7 @@ type ApiGetAllRepositoriesRequest struct {
 	hostIdFilter *string
 	pathFilter *string
 	vmbApiFilter *string
+	vmbApiPlatform *string
 }
 
 func (r ApiGetAllRepositoriesRequest) XApiVersion(xApiVersion string) ApiGetAllRepositoriesRequest {
@@ -787,6 +788,10 @@ func (r ApiGetAllRepositoriesRequest) PathFilter(pathFilter string) ApiGetAllRep
 }
 func (r ApiGetAllRepositoriesRequest) VmbApiFilter(vmbApiFilter string) ApiGetAllRepositoriesRequest {
 	r.vmbApiFilter = &vmbApiFilter
+	return r
+}
+func (r ApiGetAllRepositoriesRequest) VmbApiPlatform(vmbApiPlatform string) ApiGetAllRepositoriesRequest {
+	r.vmbApiPlatform = &vmbApiPlatform
 	return r
 }
 
@@ -861,6 +866,9 @@ func (a *RepositoriesApiService) GetAllRepositoriesExecute(r ApiGetAllRepositori
 	}
 	if r.vmbApiFilter != nil {
 		localVarQueryParams.Add("vmbApiFilter", parameterToString(*r.vmbApiFilter, ""))
+	}
+	if r.vmbApiPlatform != nil {
+		localVarQueryParams.Add("vmbApiPlatform", parameterToString(*r.vmbApiPlatform, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

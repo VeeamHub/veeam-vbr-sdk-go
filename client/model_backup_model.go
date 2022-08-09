@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -39,7 +39,7 @@ type BackupModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBackupModel(id string, name string, platformName EPlatformType, platformId string, creationTime time.Time, repositoryId string) *BackupModel {
+func NewBackupModel(id string, name string, platformName EPlatformType, platformId string, creationTime time.Time, repositoryId string, ) *BackupModel {
 	this := BackupModel{}
 	this.Id = id
 	this.Name = name
@@ -60,7 +60,7 @@ func NewBackupModelWithDefaults() *BackupModel {
 
 // GetId returns the Id field value
 func (o *BackupModel) GetId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *BackupModel) SetPolicyTag(v string) {
 
 // GetName returns the Name field value
 func (o *BackupModel) GetName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *BackupModel) SetName(v string) {
 
 // GetPlatformName returns the PlatformName field value
 func (o *BackupModel) GetPlatformName() EPlatformType {
-	if o == nil {
+	if o == nil  {
 		var ret EPlatformType
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *BackupModel) SetPlatformName(v EPlatformType) {
 
 // GetPlatformId returns the PlatformId field value
 func (o *BackupModel) GetPlatformId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *BackupModel) SetPlatformId(v string) {
 
 // GetCreationTime returns the CreationTime field value
 func (o *BackupModel) GetCreationTime() time.Time {
-	if o == nil {
+	if o == nil  {
 		var ret time.Time
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *BackupModel) SetCreationTime(v time.Time) {
 
 // GetRepositoryId returns the RepositoryId field value
 func (o *BackupModel) GetRepositoryId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}

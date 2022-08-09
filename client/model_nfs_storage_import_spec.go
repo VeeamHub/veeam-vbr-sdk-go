@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -33,7 +33,7 @@ type NfsStorageImportSpec struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNfsStorageImportSpec(name string, description string, tag string, type_ ERepositoryType, share NfsRepositoryShareSettingsSpec, repository NetworkRepositorySettingsModel, mountServer MountServerSettingsImportSpec) *NfsStorageImportSpec {
+func NewNfsStorageImportSpec(name string, description string, tag string, type_ ERepositoryType, share NfsRepositoryShareSettingsSpec, repository NetworkRepositorySettingsModel, mountServer MountServerSettingsImportSpec, ) *NfsStorageImportSpec {
 	this := NfsStorageImportSpec{}
 	this.Name = name
 	this.Description = description
@@ -55,7 +55,7 @@ func NewNfsStorageImportSpecWithDefaults() *NfsStorageImportSpec {
 
 // GetName returns the Name field value
 func (o *NfsStorageImportSpec) GetName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *NfsStorageImportSpec) SetName(v string) {
 
 // GetDescription returns the Description field value
 func (o *NfsStorageImportSpec) GetDescription() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *NfsStorageImportSpec) SetDescription(v string) {
 
 // GetTag returns the Tag field value
 func (o *NfsStorageImportSpec) GetTag() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *NfsStorageImportSpec) SetTag(v string) {
 
 // GetType returns the Type field value
 func (o *NfsStorageImportSpec) GetType() ERepositoryType {
-	if o == nil {
+	if o == nil  {
 		var ret ERepositoryType
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *NfsStorageImportSpec) SetType(v ERepositoryType) {
 
 // GetShare returns the Share field value
 func (o *NfsStorageImportSpec) GetShare() NfsRepositoryShareSettingsSpec {
-	if o == nil {
+	if o == nil  {
 		var ret NfsRepositoryShareSettingsSpec
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *NfsStorageImportSpec) SetShare(v NfsRepositoryShareSettingsSpec) {
 
 // GetRepository returns the Repository field value
 func (o *NfsStorageImportSpec) GetRepository() NetworkRepositorySettingsModel {
-	if o == nil {
+	if o == nil  {
 		var ret NetworkRepositorySettingsModel
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *NfsStorageImportSpec) SetRepository(v NetworkRepositorySettingsModel) {
 
 // GetMountServer returns the MountServer field value
 func (o *NfsStorageImportSpec) GetMountServer() MountServerSettingsImportSpec {
-	if o == nil {
+	if o == nil  {
 		var ret MountServerSettingsImportSpec
 		return ret
 	}

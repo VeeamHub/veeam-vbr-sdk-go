@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -172,6 +171,7 @@ docs/ETransactionLogsSettings.md
 docs/EViHostType.md
 docs/EViRootFiltersOrderColumn.md
 docs/EVmwareDisksTypeToProcess.md
+docs/EVmwareFcdInstantRecoveryMountsFiltersOrderColumn.md
 docs/EVmwareInventoryType.md
 docs/EWindowsHostComponentType.md
 docs/EmailCustomNotificationType.md
@@ -353,6 +353,8 @@ docs/VmbApiFilterModel.md
 docs/VmwareFcdInstantRecoveryDiskInfo.md
 docs/VmwareFcdInstantRecoveryDiskSpec.md
 docs/VmwareFcdInstantRecoveryMount.md
+docs/VmwareFcdInstantRecoveryMountsFilters.md
+docs/VmwareFcdInstantRecoveryMountsResult.md
 docs/VmwareFcdInstantRecoverySpec.md
 docs/VmwareFcdQuickMigrationSpec.md
 docs/VmwareFcdWriteCacheSpec.md
@@ -511,6 +513,7 @@ model_e_storage_optimization.go
 model_e_task_log_record_status.go
 model_e_transaction_logs_settings.go
 model_e_vmware_disks_type_to_process.go
+model_e_vmware_fcd_instant_recovery_mounts_filters_order_column.go
 model_e_vmware_inventory_type.go
 model_e_windows_host_component_type.go
 model_email_custom_notification_type.go
@@ -681,6 +684,8 @@ model_vmb_api_filter_model.go
 model_vmware_fcd_instant_recovery_disk_info.go
 model_vmware_fcd_instant_recovery_disk_spec.go
 model_vmware_fcd_instant_recovery_mount.go
+model_vmware_fcd_instant_recovery_mounts_filters.go
+model_vmware_fcd_instant_recovery_mounts_result.go
 model_vmware_fcd_instant_recovery_spec.go
 model_vmware_fcd_quick_migration_spec.go
 model_vmware_fcd_write_cache_spec.go

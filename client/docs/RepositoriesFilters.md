@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **HostIdFilter** | Pointer to **string** |  | [optional] 
 **PathFilter** | Pointer to **string** |  | [optional] 
 **VmbApiFilter** | Pointer to **string** | VmbApiFilterModel as json serialized in base64 format (see VmbApiFilterModel) | [optional] 
+**VmbApiPlatform** | Pointer to **string** | TODO Sets a platform for vmb API to work with | [optional] 
 
 ## Methods
 
@@ -257,6 +258,31 @@ SetVmbApiFilter sets VmbApiFilter field to given value.
 `func (o *RepositoriesFilters) HasVmbApiFilter() bool`
 
 HasVmbApiFilter returns a boolean if a field has been set.
+
+### GetVmbApiPlatform
+
+`func (o *RepositoriesFilters) GetVmbApiPlatform() string`
+
+GetVmbApiPlatform returns the VmbApiPlatform field if non-nil, zero value otherwise.
+
+### GetVmbApiPlatformOk
+
+`func (o *RepositoriesFilters) GetVmbApiPlatformOk() (*string, bool)`
+
+GetVmbApiPlatformOk returns a tuple with the VmbApiPlatform field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVmbApiPlatform
+
+`func (o *RepositoriesFilters) SetVmbApiPlatform(v string)`
+
+SetVmbApiPlatform sets VmbApiPlatform field to given value.
+
+### HasVmbApiPlatform
+
+`func (o *RepositoriesFilters) HasVmbApiPlatform() bool`
+
+HasVmbApiPlatform returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

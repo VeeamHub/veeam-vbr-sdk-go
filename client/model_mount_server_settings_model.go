@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -30,7 +30,7 @@ type MountServerSettingsModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMountServerSettingsModel(mountServerId string, writeCacheFolder string, vPowerNFSEnabled bool) *MountServerSettingsModel {
+func NewMountServerSettingsModel(mountServerId string, writeCacheFolder string, vPowerNFSEnabled bool, ) *MountServerSettingsModel {
 	this := MountServerSettingsModel{}
 	this.MountServerId = mountServerId
 	this.WriteCacheFolder = writeCacheFolder
@@ -48,7 +48,7 @@ func NewMountServerSettingsModelWithDefaults() *MountServerSettingsModel {
 
 // GetMountServerId returns the MountServerId field value
 func (o *MountServerSettingsModel) GetMountServerId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *MountServerSettingsModel) SetMountServerId(v string) {
 
 // GetWriteCacheFolder returns the WriteCacheFolder field value
 func (o *MountServerSettingsModel) GetWriteCacheFolder() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *MountServerSettingsModel) SetWriteCacheFolder(v string) {
 
 // GetVPowerNFSEnabled returns the VPowerNFSEnabled field value
 func (o *MountServerSettingsModel) GetVPowerNFSEnabled() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}

@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -46,7 +46,7 @@ type JobStateModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJobStateModel(id string, name string, type_ EJobType, description string, status EJobStatus, lastResult ESessionResult, workload EJobWorkload, objectsCount int32) *JobStateModel {
+func NewJobStateModel(id string, name string, type_ EJobType, description string, status EJobStatus, lastResult ESessionResult, workload EJobWorkload, objectsCount int32, ) *JobStateModel {
 	this := JobStateModel{}
 	this.Id = id
 	this.Name = name
@@ -69,7 +69,7 @@ func NewJobStateModelWithDefaults() *JobStateModel {
 
 // GetId returns the Id field value
 func (o *JobStateModel) GetId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *JobStateModel) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *JobStateModel) GetName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *JobStateModel) SetName(v string) {
 
 // GetType returns the Type field value
 func (o *JobStateModel) GetType() EJobType {
-	if o == nil {
+	if o == nil  {
 		var ret EJobType
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *JobStateModel) SetType(v EJobType) {
 
 // GetDescription returns the Description field value
 func (o *JobStateModel) GetDescription() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *JobStateModel) SetDescription(v string) {
 
 // GetStatus returns the Status field value
 func (o *JobStateModel) GetStatus() EJobStatus {
-	if o == nil {
+	if o == nil  {
 		var ret EJobStatus
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *JobStateModel) SetLastRun(v time.Time) {
 
 // GetLastResult returns the LastResult field value
 func (o *JobStateModel) GetLastResult() ESessionResult {
-	if o == nil {
+	if o == nil  {
 		var ret ESessionResult
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *JobStateModel) SetNextRun(v time.Time) {
 
 // GetWorkload returns the Workload field value
 func (o *JobStateModel) GetWorkload() EJobWorkload {
-	if o == nil {
+	if o == nil  {
 		var ret EJobWorkload
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *JobStateModel) SetRepositoryName(v string) {
 
 // GetObjectsCount returns the ObjectsCount field value
 func (o *JobStateModel) GetObjectsCount() int32 {
-	if o == nil {
+	if o == nil  {
 		var ret int32
 		return ret
 	}

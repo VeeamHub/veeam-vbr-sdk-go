@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -33,7 +33,7 @@ type ConfigBackupModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConfigBackupModel(isEnabled bool, backupRepositoryId string, restorePointsToKeep int32, notifications ConfigBackupNotificationsModel, schedule ConfigBackupScheduleModel, lastSuccessfulBackup ConfigBackupLastSuccessfulModel, encryption ConfigBackupEncryptionModel) *ConfigBackupModel {
+func NewConfigBackupModel(isEnabled bool, backupRepositoryId string, restorePointsToKeep int32, notifications ConfigBackupNotificationsModel, schedule ConfigBackupScheduleModel, lastSuccessfulBackup ConfigBackupLastSuccessfulModel, encryption ConfigBackupEncryptionModel, ) *ConfigBackupModel {
 	this := ConfigBackupModel{}
 	this.IsEnabled = isEnabled
 	this.BackupRepositoryId = backupRepositoryId
@@ -55,7 +55,7 @@ func NewConfigBackupModelWithDefaults() *ConfigBackupModel {
 
 // GetIsEnabled returns the IsEnabled field value
 func (o *ConfigBackupModel) GetIsEnabled() bool {
-	if o == nil {
+	if o == nil  {
 		var ret bool
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ConfigBackupModel) SetIsEnabled(v bool) {
 
 // GetBackupRepositoryId returns the BackupRepositoryId field value
 func (o *ConfigBackupModel) GetBackupRepositoryId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *ConfigBackupModel) SetBackupRepositoryId(v string) {
 
 // GetRestorePointsToKeep returns the RestorePointsToKeep field value
 func (o *ConfigBackupModel) GetRestorePointsToKeep() int32 {
-	if o == nil {
+	if o == nil  {
 		var ret int32
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *ConfigBackupModel) SetRestorePointsToKeep(v int32) {
 
 // GetNotifications returns the Notifications field value
 func (o *ConfigBackupModel) GetNotifications() ConfigBackupNotificationsModel {
-	if o == nil {
+	if o == nil  {
 		var ret ConfigBackupNotificationsModel
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ConfigBackupModel) SetNotifications(v ConfigBackupNotificationsModel) {
 
 // GetSchedule returns the Schedule field value
 func (o *ConfigBackupModel) GetSchedule() ConfigBackupScheduleModel {
-	if o == nil {
+	if o == nil  {
 		var ret ConfigBackupScheduleModel
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *ConfigBackupModel) SetSchedule(v ConfigBackupScheduleModel) {
 
 // GetLastSuccessfulBackup returns the LastSuccessfulBackup field value
 func (o *ConfigBackupModel) GetLastSuccessfulBackup() ConfigBackupLastSuccessfulModel {
-	if o == nil {
+	if o == nil  {
 		var ret ConfigBackupLastSuccessfulModel
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *ConfigBackupModel) SetLastSuccessfulBackup(v ConfigBackupLastSuccessful
 
 // GetEncryption returns the Encryption field value
 func (o *ConfigBackupModel) GetEncryption() ConfigBackupEncryptionModel {
-	if o == nil {
+	if o == nil  {
 		var ret ConfigBackupEncryptionModel
 		return ret
 	}

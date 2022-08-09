@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -34,7 +34,7 @@ type ViHostImportSpec struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewViHostImportSpec(name string, description string, type_ EManagedServerType, viHostType EViHostType, credentials CredentialsImportModel) *ViHostImportSpec {
+func NewViHostImportSpec(name string, description string, type_ EManagedServerType, viHostType EViHostType, credentials CredentialsImportModel, ) *ViHostImportSpec {
 	this := ViHostImportSpec{}
 	this.Name = name
 	this.Description = description
@@ -54,7 +54,7 @@ func NewViHostImportSpecWithDefaults() *ViHostImportSpec {
 
 // GetName returns the Name field value
 func (o *ViHostImportSpec) GetName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ViHostImportSpec) SetName(v string) {
 
 // GetDescription returns the Description field value
 func (o *ViHostImportSpec) GetDescription() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *ViHostImportSpec) SetDescription(v string) {
 
 // GetType returns the Type field value
 func (o *ViHostImportSpec) GetType() EManagedServerType {
-	if o == nil {
+	if o == nil  {
 		var ret EManagedServerType
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *ViHostImportSpec) SetType(v EManagedServerType) {
 
 // GetViHostType returns the ViHostType field value
 func (o *ViHostImportSpec) GetViHostType() EViHostType {
-	if o == nil {
+	if o == nil  {
 		var ret EViHostType
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *ViHostImportSpec) SetViHostType(v EViHostType) {
 
 // GetCredentials returns the Credentials field value
 func (o *ViHostImportSpec) GetCredentials() CredentialsImportModel {
-	if o == nil {
+	if o == nil  {
 		var ret CredentialsImportModel
 		return ret
 	}

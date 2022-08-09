@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -27,6 +27,8 @@ type RepositoriesFilters struct {
 	PathFilter *string `json:"pathFilter,omitempty"`
 	// VmbApiFilterModel as json serialized in base64 format (see VmbApiFilterModel)
 	VmbApiFilter *string `json:"vmbApiFilter,omitempty"`
+	// TODO Sets a platform for vmb API to work with
+	VmbApiPlatform *string `json:"vmbApiPlatform,omitempty"`
 }
 
 // NewRepositoriesFilters instantiates a new RepositoriesFilters object
@@ -334,6 +336,38 @@ func (o *RepositoriesFilters) SetVmbApiFilter(v string) {
 	o.VmbApiFilter = &v
 }
 
+// GetVmbApiPlatform returns the VmbApiPlatform field value if set, zero value otherwise.
+func (o *RepositoriesFilters) GetVmbApiPlatform() string {
+	if o == nil || o.VmbApiPlatform == nil {
+		var ret string
+		return ret
+	}
+	return *o.VmbApiPlatform
+}
+
+// GetVmbApiPlatformOk returns a tuple with the VmbApiPlatform field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RepositoriesFilters) GetVmbApiPlatformOk() (*string, bool) {
+	if o == nil || o.VmbApiPlatform == nil {
+		return nil, false
+	}
+	return o.VmbApiPlatform, true
+}
+
+// HasVmbApiPlatform returns a boolean if a field has been set.
+func (o *RepositoriesFilters) HasVmbApiPlatform() bool {
+	if o != nil && o.VmbApiPlatform != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVmbApiPlatform gets a reference to the given string and assigns it to the VmbApiPlatform field.
+func (o *RepositoriesFilters) SetVmbApiPlatform(v string) {
+	o.VmbApiPlatform = &v
+}
+
 func (o RepositoriesFilters) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Skip != nil {
@@ -362,6 +396,9 @@ func (o RepositoriesFilters) MarshalJSON() ([]byte, error) {
 	}
 	if o.VmbApiFilter != nil {
 		toSerialize["vmbApiFilter"] = o.VmbApiFilter
+	}
+	if o.VmbApiPlatform != nil {
+		toSerialize["vmbApiPlatform"] = o.VmbApiPlatform
 	}
 	return json.Marshal(toSerialize)
 }

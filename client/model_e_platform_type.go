@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -21,7 +21,7 @@ type EPlatformType string
 
 // List of EPlatformType
 const (
-	EPLATFORMTYPE_VM_WARE EPlatformType = "VmWare"
+	EPLATFORMTYPE_V_MWARE EPlatformType = "VMware"
 	EPLATFORMTYPE_HYPER_V EPlatformType = "HyperV"
 	EPLATFORMTYPE_VCD EPlatformType = "Vcd"
 	EPLATFORMTYPE_WINDOWS_PHYSICAL EPlatformType = "WindowsPhysical"
@@ -38,7 +38,7 @@ func (v *EPlatformType) UnmarshalJSON(src []byte) error {
 		return err
 	}
 	enumTypeValue := EPlatformType(value)
-	for _, existing := range []EPlatformType{ "VmWare", "HyperV", "Vcd", "WindowsPhysical", "LinuxPhysical", "Tape", "NasBackup", "CustomPlatform",   } {
+	for _, existing := range []EPlatformType{ "VMware", "HyperV", "Vcd", "WindowsPhysical", "LinuxPhysical", "Tape", "NasBackup", "CustomPlatform",   } {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil

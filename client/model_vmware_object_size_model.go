@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -26,7 +26,7 @@ type VmwareObjectSizeModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVmwareObjectSizeModel(inventoryObject VmwareObjectModel) *VmwareObjectSizeModel {
+func NewVmwareObjectSizeModel(inventoryObject VmwareObjectModel, ) *VmwareObjectSizeModel {
 	this := VmwareObjectSizeModel{}
 	this.InventoryObject = inventoryObject
 	return &this
@@ -42,7 +42,7 @@ func NewVmwareObjectSizeModelWithDefaults() *VmwareObjectSizeModel {
 
 // GetInventoryObject returns the InventoryObject field value
 func (o *VmwareObjectSizeModel) GetInventoryObject() VmwareObjectModel {
-	if o == nil {
+	if o == nil  {
 		var ret VmwareObjectModel
 		return ret
 	}

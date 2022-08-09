@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -31,7 +31,7 @@ type ObjectRestorePointDiskModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewObjectRestorePointDiskModel(uid string, type_ EDiskInfoType, name string, capacity int64, state EDiskInfoProcessState) *ObjectRestorePointDiskModel {
+func NewObjectRestorePointDiskModel(uid string, type_ EDiskInfoType, name string, capacity int64, state EDiskInfoProcessState, ) *ObjectRestorePointDiskModel {
 	this := ObjectRestorePointDiskModel{}
 	this.Uid = uid
 	this.Type = type_
@@ -51,7 +51,7 @@ func NewObjectRestorePointDiskModelWithDefaults() *ObjectRestorePointDiskModel {
 
 // GetUid returns the Uid field value
 func (o *ObjectRestorePointDiskModel) GetUid() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -75,7 +75,7 @@ func (o *ObjectRestorePointDiskModel) SetUid(v string) {
 
 // GetType returns the Type field value
 func (o *ObjectRestorePointDiskModel) GetType() EDiskInfoType {
-	if o == nil {
+	if o == nil  {
 		var ret EDiskInfoType
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *ObjectRestorePointDiskModel) SetType(v EDiskInfoType) {
 
 // GetName returns the Name field value
 func (o *ObjectRestorePointDiskModel) GetName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *ObjectRestorePointDiskModel) SetName(v string) {
 
 // GetCapacity returns the Capacity field value
 func (o *ObjectRestorePointDiskModel) GetCapacity() int64 {
-	if o == nil {
+	if o == nil  {
 		var ret int64
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *ObjectRestorePointDiskModel) SetCapacity(v int64) {
 
 // GetState returns the State field value
 func (o *ObjectRestorePointDiskModel) GetState() EDiskInfoProcessState {
-	if o == nil {
+	if o == nil  {
 		var ret EDiskInfoProcessState
 		return ret
 	}

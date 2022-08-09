@@ -3,7 +3,7 @@
  *
  * This document lists paths (endpoints) of the Veeam Backup & Replication REST API and operations that you can perform by sending HTTP requests to the paths.<br> Requests can contain parameters in their path, query and header. POST and PUT requests can include a request body with resource payload. In response, you receive a conventional HTTP response code, HTTP response header and an optional response body schema that contains a result model.<br> Parameters, request bodies, and response bodies are defined inline or refer to schemas defined globally. Some schemas are polymorphic. 
  *
- * API version: 1.0-rev1
+ * API version: 1.0-rev2
  * Contact: support@veeam.com
  */
 
@@ -35,7 +35,7 @@ type ObjectRestorePointModel struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewObjectRestorePointModel(id string, name string, platformId string, creationTime time.Time, backupId string, allowedOperations []EObjectRestorePointOperation) *ObjectRestorePointModel {
+func NewObjectRestorePointModel(id string, name string, platformId string, creationTime time.Time, backupId string, allowedOperations []EObjectRestorePointOperation, ) *ObjectRestorePointModel {
 	this := ObjectRestorePointModel{}
 	this.Id = id
 	this.Name = name
@@ -56,7 +56,7 @@ func NewObjectRestorePointModelWithDefaults() *ObjectRestorePointModel {
 
 // GetId returns the Id field value
 func (o *ObjectRestorePointModel) GetId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *ObjectRestorePointModel) SetId(v string) {
 
 // GetName returns the Name field value
 func (o *ObjectRestorePointModel) GetName() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *ObjectRestorePointModel) SetPlatformName(v EPlatformType) {
 
 // GetPlatformId returns the PlatformId field value
 func (o *ObjectRestorePointModel) GetPlatformId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *ObjectRestorePointModel) SetPlatformId(v string) {
 
 // GetCreationTime returns the CreationTime field value
 func (o *ObjectRestorePointModel) GetCreationTime() time.Time {
-	if o == nil {
+	if o == nil  {
 		var ret time.Time
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *ObjectRestorePointModel) SetCreationTime(v time.Time) {
 
 // GetBackupId returns the BackupId field value
 func (o *ObjectRestorePointModel) GetBackupId() string {
-	if o == nil {
+	if o == nil  {
 		var ret string
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *ObjectRestorePointModel) SetBackupId(v string) {
 
 // GetAllowedOperations returns the AllowedOperations field value
 func (o *ObjectRestorePointModel) GetAllowedOperations() []EObjectRestorePointOperation {
-	if o == nil {
+	if o == nil  {
 		var ret []EObjectRestorePointOperation
 		return ret
 	}

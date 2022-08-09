@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MountedDiskNames** | Pointer to **[]string** | Array of disks that will be migrated to the &#x60;targetDatastore&#x60; associated with the &#x60;storagePolicy&#x60;. | [optional] 
-**TargetDatastore** | [**VmwareObjectModel**](VmwareObjectModel.md) | Target datastore. For details on how to get a datastore model, see [Get VMware vSphere Server Objects](#operation/GetVmwareHostObject). | 
-**StoragePolicy** | Pointer to [**VmwareObjectModel**](VmwareObjectModel.md) | Storage policy that will be applied to the migrated disks. For details on how to get a storage policy model, see [Get VMware vSphere Server Objects](#operation/GetVmwareHostObject). | [optional] 
+**TargetDatastore** | [**VmwareObjectModel**](VmwareObjectModel.md) |  | 
+**StoragePolicy** | Pointer to [**VmwareObjectModel**](VmwareObjectModel.md) |  | [optional] 
 
 ## Methods
 
