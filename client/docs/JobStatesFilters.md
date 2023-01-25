@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **OrderColumn** | Pointer to [**EJobStatesFiltersOrderColumn**](EJobStatesFiltersOrderColumn.md) |  | [optional] 
 **OrderAsc** | Pointer to **bool** | Sorts jobs in the ascending order by the &#x60;orderColumn&#x60; parameter. | [optional] 
 **IdFilter** | Pointer to **string** |  | [optional] 
-**NameFilter** | Pointer to **string** | Filters jobs by the &#x60;nameFilter&#x60; pattern. The pattern can match any job state parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. | [optional] 
+**NameFilter** | Pointer to **string** | Filters jobs by the &#x60;nameFilter&#x60; pattern. The pattern can match any job state parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. | [optional] 
 **TypeFilter** | Pointer to [**EJobType**](EJobType.md) |  | [optional] 
 **LastResultFilter** | Pointer to [**ESessionResult**](ESessionResult.md) |  | [optional] 
 **StatusFilter** | Pointer to [**EJobStatus**](EJobStatus.md) |  | [optional] 

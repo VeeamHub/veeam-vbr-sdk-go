@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Name** | **string** | Name of the session. | 
 **ActivityId** | **string** | ID of the activity. | 
 **SessionType** | [**ESessionType**](ESessionType.md) |  | 
-**CreationTime** | **time.Time** | Date and time the session was created. | 
-**EndTime** | Pointer to **time.Time** | Date and time the session was ended. | [optional] 
+**CreationTime** | **time.Time** | Date and time when the session was created. | 
+**EndTime** | Pointer to **time.Time** | Date and time when the session was ended. | [optional] 
 **State** | [**ESessionState**](ESessionState.md) |  | 
 **ProgressPercent** | Pointer to **int32** | Progress percentage of the session. | [optional] 
 **Result** | Pointer to [**SessionResultModel**](SessionResultModel.md) |  | [optional] 

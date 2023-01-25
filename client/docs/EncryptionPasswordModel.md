@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | ID of the encryption password. | 
 **Hint** | **string** | Hint for the encryption password. | 
-**ModificationTime** | Pointer to **time.Time** | Date and time the password was last modified. | [optional] 
+**ModificationTime** | Pointer to **time.Time** | Date and time when the password was last modified. | [optional] 
 **Tag** | Pointer to **string** | Tag for the encryption password. | [optional] 
 
 ## Methods

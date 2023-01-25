@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Vms** | Pointer to [**[]VmwareObjectModel**](VmwareObjectModel.md) |  | [optional] 
-**Disks** | Pointer to [**[]VmwareObjectDiskModel**](VmwareObjectDiskModel.md) |  | [optional] 
+**Vms** | Pointer to [**[]VmwareObjectModel**](VmwareObjectModel.md) | Array of VMs. | [optional] 
+**Disks** | Pointer to [**[]VmwareObjectDiskModel**](VmwareObjectDiskModel.md) | Array of disks. | [optional] 
 **Templates** | Pointer to [**BackupJobExclusionsTemplates**](BackupJobExclusionsTemplates.md) |  | [optional] 
 
 ## Methods

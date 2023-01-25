@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PerformActiveFull** | **bool** |  | [default to false]
-**StartChainedJobs** | Pointer to **bool** |  | [optional] [default to false]
+**PerformActiveFull** | **bool** | If *true*, Veeam Backup &amp; Replication will perform an active full backup. | [default to false]
+**StartChainedJobs** | Pointer to **bool** | If *true*, Veeam Backup &amp; Replication will start chained jobs as well. | [optional] [default to false]
 
 ## Methods
 

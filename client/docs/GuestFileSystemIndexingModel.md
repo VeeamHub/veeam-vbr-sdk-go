@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsEnabled** | **bool** |  | 
+**IsEnabled** | **bool** | If *true*, file indexing is enabled. | 
 **IndexingSettings** | Pointer to [**[]BackupIndexingSettingsModel**](BackupIndexingSettingsModel.md) | Array of VMs with guest OS file indexing options. | [optional] 
 
 ## Methods

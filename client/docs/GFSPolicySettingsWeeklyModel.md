@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IsEnabled** | **bool** | If *true*, the weekly GFS retention policy is enabled. | 
-**KeepForNumberOfWeeks** | Pointer to **int32** | Number of weeks to keep full backups for archival purposes. | [optional] 
+**KeepForNumberOfWeeks** | Pointer to **int32** | Number of weeks to keep full backups for archival purposes. Possible values are from 1 through 9999. | [optional] 
 **DesiredTime** | Pointer to [**EDayOfWeek**](EDayOfWeek.md) |  | [optional] 
 
 ## Methods

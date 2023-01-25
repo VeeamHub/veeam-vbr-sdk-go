@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Limit** | Pointer to **int32** | Maximum number of repositories to return. | [optional] 
 **OrderColumn** | Pointer to [**EScaleOutRepositoryFiltersOrderColumn**](EScaleOutRepositoryFiltersOrderColumn.md) |  | [optional] 
 **OrderAsc** | Pointer to **bool** | Sorts repositories in the ascending order by the &#x60;orderColumn&#x60; parameter. | [optional] 
-**NameFilter** | Pointer to **string** | Filters repositories by the &#x60;nameFilter&#x60; substring. The substring can be part of any repository parameter. | [optional] 
+**NameFilter** | Pointer to **string** | Filters repositories by the &#x60;nameFilter&#x60; pattern. The pattern can match any repository parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. | [optional] 
 
 ## Methods
 

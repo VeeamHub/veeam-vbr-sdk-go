@@ -31,11 +31,11 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LoginApi.CreateAuthorizationCode(context.Background()).XApiVersion(xApiVersion).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LoginApi.CreateAuthorizationCode(context.Background()).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoginApi.CreateAuthorizationCode``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -56,7 +56,7 @@ Other parameters are passed through a pointer to a apiCreateAuthorizationCodeReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
 ### Return type
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ## CreateToken
 
-> TokenModel CreateToken(ctx).XApiVersion(xApiVersion).GrantType(grantType).Username(username).Password(password).RefreshToken(refreshToken).Code(code).UseShortTermRefresh(useShortTermRefresh).Execute()
+> TokenModel CreateToken(ctx).XApiVersion(xApiVersion).GrantType(grantType).Username(username).Password(password).RefreshToken(refreshToken).Code(code).UseShortTermRefresh(useShortTermRefresh).VbrToken(vbrToken).Execute()
 
 Get Access Token
 
@@ -97,17 +97,18 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     grantType := openapiclient.ELoginGrantType("password") // ELoginGrantType |  (default to "password")
     username := "username_example" // string | User name. Required if the `grant_type` value is `password`. (optional)
     password := "password_example" // string | Password. Required if the `grant_type` value is `password`. (optional)
     refreshToken := "refreshToken_example" // string | Refresh token. Required if the `grant_type` value is `refresh_token`. (optional)
     code := "code_example" // string | Authorization code. Required if the `grant_type` value is `authorization_code`. (optional)
     useShortTermRefresh := true // bool | If *true*, a short-term refresh token is used. Lifetime of the short-term refresh token is the access token lifetime plus 15 minutes. (optional)
+    vbrToken := "vbrToken_example" // string | Veeam Backup & Replication platform service token. (optional)
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LoginApi.CreateToken(context.Background()).XApiVersion(xApiVersion).GrantType(grantType).Username(username).Password(password).RefreshToken(refreshToken).Code(code).UseShortTermRefresh(useShortTermRefresh).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LoginApi.CreateToken(context.Background()).XApiVersion(xApiVersion).GrantType(grantType).Username(username).Password(password).RefreshToken(refreshToken).Code(code).UseShortTermRefresh(useShortTermRefresh).VbrToken(vbrToken).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoginApi.CreateToken``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,13 +129,14 @@ Other parameters are passed through a pointer to a apiCreateTokenRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
  **grantType** | [**ELoginGrantType**](ELoginGrantType.md) |  | [default to &quot;password&quot;]
  **username** | **string** | User name. Required if the &#x60;grant_type&#x60; value is &#x60;password&#x60;. | 
  **password** | **string** | Password. Required if the &#x60;grant_type&#x60; value is &#x60;password&#x60;. | 
  **refreshToken** | **string** | Refresh token. Required if the &#x60;grant_type&#x60; value is &#x60;refresh_token&#x60;. | 
  **code** | **string** | Authorization code. Required if the &#x60;grant_type&#x60; value is &#x60;authorization_code&#x60;. | 
  **useShortTermRefresh** | **bool** | If *true*, a short-term refresh token is used. Lifetime of the short-term refresh token is the access token lifetime plus 15 minutes. | 
+ **vbrToken** | **string** | Veeam Backup &amp; Replication platform service token. | 
 
 ### Return type
 
@@ -175,11 +177,11 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.LoginApi.Logout(context.Background()).XApiVersion(xApiVersion).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.LoginApi.Logout(context.Background()).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoginApi.Logout``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -200,7 +202,7 @@ Other parameters are passed through a pointer to a apiLogoutRequest struct via t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
 ### Return type
 

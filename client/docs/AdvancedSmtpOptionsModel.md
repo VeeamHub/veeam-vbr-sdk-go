@@ -7,14 +7,14 @@ Name | Type | Description | Notes
 **Port** | **int32** | Port number for the SMTP server. | 
 **TimeoutMs** | **int32** | Connection timeout for the SMTP server. | 
 **SSLEnabled** | **bool** | If *true*, secure connection for email operations is used. | 
-**AuthRequred** | **bool** | If *true*, the &#x60;credentialsId&#x60; credentials are used to connect to the SMTP server. | 
+**AuthRequired** | **bool** | If *true*, the &#x60;credentialsId&#x60; credentials are used to connect to the SMTP server. | 
 **CredentialsId** | Pointer to **string** | ID of the credentials used to connect to the server. | [optional] 
 
 ## Methods
 
 ### NewAdvancedSmtpOptionsModel
 
-`func NewAdvancedSmtpOptionsModel(port int32, timeoutMs int32, sSLEnabled bool, authRequred bool, ) *AdvancedSmtpOptionsModel`
+`func NewAdvancedSmtpOptionsModel(port int32, timeoutMs int32, sSLEnabled bool, authRequired bool, ) *AdvancedSmtpOptionsModel`
 
 NewAdvancedSmtpOptionsModel instantiates a new AdvancedSmtpOptionsModel object
 This constructor will assign default values to properties that have it defined,
@@ -89,24 +89,24 @@ and a boolean to check if the value has been set.
 SetSSLEnabled sets SSLEnabled field to given value.
 
 
-### GetAuthRequred
+### GetAuthRequired
 
-`func (o *AdvancedSmtpOptionsModel) GetAuthRequred() bool`
+`func (o *AdvancedSmtpOptionsModel) GetAuthRequired() bool`
 
-GetAuthRequred returns the AuthRequred field if non-nil, zero value otherwise.
+GetAuthRequired returns the AuthRequired field if non-nil, zero value otherwise.
 
-### GetAuthRequredOk
+### GetAuthRequiredOk
 
-`func (o *AdvancedSmtpOptionsModel) GetAuthRequredOk() (*bool, bool)`
+`func (o *AdvancedSmtpOptionsModel) GetAuthRequiredOk() (*bool, bool)`
 
-GetAuthRequredOk returns a tuple with the AuthRequred field if it's non-nil, zero value otherwise
+GetAuthRequiredOk returns a tuple with the AuthRequired field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAuthRequred
+### SetAuthRequired
 
-`func (o *AdvancedSmtpOptionsModel) SetAuthRequred(v bool)`
+`func (o *AdvancedSmtpOptionsModel) SetAuthRequired(v bool)`
 
-SetAuthRequred sets AuthRequred field to given value.
+SetAuthRequired sets AuthRequired field to given value.
 
 
 ### GetCredentialsId

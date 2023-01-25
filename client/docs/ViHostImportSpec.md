@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ViHostType** | [**EViHostType**](EViHostType.md) |  | 
 **Credentials** | [**CredentialsImportModel**](CredentialsImportModel.md) |  | 
 **Port** | Pointer to **int32** | Port used to communicate with the server. | [optional] 
-**CertificateThumbprint** | Pointer to **string** | [Optional] Certificate thumbprint used to verify the server identity.  | [optional] 
+**CertificateThumbprint** | Pointer to **string** | Certificate thumbprint used to verify the server identity. | [optional] 
 
 ## Methods
 

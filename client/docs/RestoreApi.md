@@ -4,19 +4,25 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAllVmwareFcdInstantRecoveryMountModels**](RestoreApi.md#GetAllVmwareFcdInstantRecoveryMountModels) | **Get** /api/v1/restore/instantRecovery/vmware/fcd/ | Get All FCD Mounts Information
-[**GetVmwareFcdInstantRecoveryMountModel**](RestoreApi.md#GetVmwareFcdInstantRecoveryMountModel) | **Get** /api/v1/restore/instantRecovery/vmware/fcd/{mountId} | Get Mount Information
+[**EntireVmRestoreVmware**](RestoreApi.md#EntireVmRestoreVmware) | **Post** /api/v1/restore/vmRestore/vmware/ | Start Entire VM Restore
+[**GetAllInstantViVMRecoveryMounts**](RestoreApi.md#GetAllInstantViVMRecoveryMounts) | **Get** /api/v1/restore/instantRecovery/vmware/vm | Get All VM Mounts
+[**GetAllVmwareFcdInstantRecoveryMountModels**](RestoreApi.md#GetAllVmwareFcdInstantRecoveryMountModels) | **Get** /api/v1/restore/instantRecovery/vmware/fcd | Get All FCD Mounts
+[**GetInstantViVMRecoveryMount**](RestoreApi.md#GetInstantViVMRecoveryMount) | **Get** /api/v1/restore/instantRecovery/vmware/vm/{mountId} | Get VM Mount
+[**GetVmwareFcdInstantRecoveryMountModel**](RestoreApi.md#GetVmwareFcdInstantRecoveryMountModel) | **Get** /api/v1/restore/instantRecovery/vmware/fcd/{mountId} | Get FCD Mount
 [**InstantRecoveryVmwareFcdDismountWithSession**](RestoreApi.md#InstantRecoveryVmwareFcdDismountWithSession) | **Post** /api/v1/restore/instantRecovery/vmware/fcd/{mountId}/dismount | Stop FCD Publishing
 [**InstantRecoveryVmwareFcdMigrateWithSession**](RestoreApi.md#InstantRecoveryVmwareFcdMigrateWithSession) | **Post** /api/v1/restore/instantRecovery/vmware/fcd/{mountId}/migrate | Start FCD Migration
-[**InstantRecoveryVmwareFcdMountWithSession**](RestoreApi.md#InstantRecoveryVmwareFcdMountWithSession) | **Post** /api/v1/restore/instantRecovery/vmware/fcd/ | Start Instant FCD Recovery
+[**InstantRecoveryVmwareFcdMountWithSession**](RestoreApi.md#InstantRecoveryVmwareFcdMountWithSession) | **Post** /api/v1/restore/instantRecovery/vmware/fcd | Start Instant FCD Recovery
+[**InstantViVMRecoveryMigrate**](RestoreApi.md#InstantViVMRecoveryMigrate) | **Post** /api/v1/restore/instantRecovery/vmware/vm/{mountId}/migrate | Start VM Migration
+[**InstantViVMRecoveryMount**](RestoreApi.md#InstantViVMRecoveryMount) | **Post** /api/v1/restore/instantRecovery/vmware/vm | Start Instant Recovery
+[**InstantViVMRecoveryUnmount**](RestoreApi.md#InstantViVMRecoveryUnmount) | **Post** /api/v1/restore/instantRecovery/vmware/vm/{mountId}/unmount | Stop VM Publishing
 
 
 
-## GetAllVmwareFcdInstantRecoveryMountModels
+## EntireVmRestoreVmware
 
-> VmwareFcdInstantRecoveryMountsResult GetAllVmwareFcdInstantRecoveryMountModels(ctx).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).StateFilter(stateFilter).Execute()
+> SessionModel EntireVmRestoreVmware(ctx).XApiVersion(xApiVersion).EntireViVMRestoreSpec(entireViVMRestoreSpec).Execute()
 
-Get All FCD Mounts Information
+Start Entire VM Restore
 
 
 
@@ -33,16 +39,160 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    skip := int32(56) // int32 | Number of restore points to skip. (optional)
-    limit := int32(56) // int32 | Maximum number of restore points to return. (optional)
-    orderColumn := openapiclient.EVmwareFcdInstantRecoveryMountsFiltersOrderColumn("state") // EVmwareFcdInstantRecoveryMountsFiltersOrderColumn | Sorts restore points by one of the restore point parameters. (optional)
-    orderAsc := true // bool | Sorts restore points in the ascending order by the `orderColumn` parameter. (optional)
-    stateFilter := openapiclient.EInstantRecoveryMountState("Failed") // EInstantRecoveryMountState | Filters vm mounts by mount state. (optional)
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    entireViVMRestoreSpec := openapiclient.EntireViVMRestoreSpec{EntireViVMCustomizedRestoreSpec: openapiclient.NewEntireViVMCustomizedRestoreSpec()} // EntireViVMRestoreSpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RestoreApi.GetAllVmwareFcdInstantRecoveryMountModels(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).StateFilter(stateFilter).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.EntireVmRestoreVmware(context.Background()).XApiVersion(xApiVersion).EntireViVMRestoreSpec(entireViVMRestoreSpec).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.EntireVmRestoreVmware``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `EntireVmRestoreVmware`: SessionModel
+    fmt.Fprintf(os.Stdout, "Response from `RestoreApi.EntireVmRestoreVmware`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiEntireVmRestoreVmwareRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
+ **entireViVMRestoreSpec** | [**EntireViVMRestoreSpec**](EntireViVMRestoreSpec.md) |  | 
+
+### Return type
+
+[**SessionModel**](SessionModel.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAllInstantViVMRecoveryMounts
+
+> InstantViVMRecoveryMountsResult GetAllInstantViVMRecoveryMounts(ctx).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).StateFilter(stateFilter).Execute()
+
+Get All VM Mounts
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    skip := int32(56) // int32 | Number of mounts to skip. (optional)
+    limit := int32(56) // int32 | Maximum number of mounts to return. (optional)
+    orderColumn := openapiclient.EInstantViVMRecoveryMountsFiltersOrderColumn("state") // EInstantViVMRecoveryMountsFiltersOrderColumn | Sorts mounts by one of the mount parameters. (optional)
+    orderAsc := true // bool | Sorts mounts in the ascending order by the `orderColumn` parameter. (optional)
+    stateFilter := openapiclient.EInstantRecoveryMountState("Failed") // EInstantRecoveryMountState | Filters mounts by mount state. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.GetAllInstantViVMRecoveryMounts(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).StateFilter(stateFilter).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.GetAllInstantViVMRecoveryMounts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAllInstantViVMRecoveryMounts`: InstantViVMRecoveryMountsResult
+    fmt.Fprintf(os.Stdout, "Response from `RestoreApi.GetAllInstantViVMRecoveryMounts`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAllInstantViVMRecoveryMountsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
+ **skip** | **int32** | Number of mounts to skip. | 
+ **limit** | **int32** | Maximum number of mounts to return. | 
+ **orderColumn** | [**EInstantViVMRecoveryMountsFiltersOrderColumn**](EInstantViVMRecoveryMountsFiltersOrderColumn.md) | Sorts mounts by one of the mount parameters. | 
+ **orderAsc** | **bool** | Sorts mounts in the ascending order by the &#x60;orderColumn&#x60; parameter. | 
+ **stateFilter** | [**EInstantRecoveryMountState**](EInstantRecoveryMountState.md) | Filters mounts by mount state. | 
+
+### Return type
+
+[**InstantViVMRecoveryMountsResult**](InstantViVMRecoveryMountsResult.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAllVmwareFcdInstantRecoveryMountModels
+
+> VmwareFcdInstantRecoveryMountsResult GetAllVmwareFcdInstantRecoveryMountModels(ctx).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).StateFilter(stateFilter).Execute()
+
+Get All FCD Mounts
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    skip := int32(56) // int32 | Number of mounts to skip. (optional)
+    limit := int32(56) // int32 | Maximum number of mounts to return. (optional)
+    orderColumn := openapiclient.EVmwareFcdInstantRecoveryMountsFiltersOrderColumn("state") // EVmwareFcdInstantRecoveryMountsFiltersOrderColumn | Sorts mounts by one of the mount parameters. (optional)
+    orderAsc := true // bool | Sorts mounts in the ascending order by the `orderColumn` parameter. (optional)
+    stateFilter := openapiclient.EInstantRecoveryMountState("Failed") // EInstantRecoveryMountState | Filters mounts by mount state. (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.GetAllVmwareFcdInstantRecoveryMountModels(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).StateFilter(stateFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.GetAllVmwareFcdInstantRecoveryMountModels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -63,12 +213,12 @@ Other parameters are passed through a pointer to a apiGetAllVmwareFcdInstantReco
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
- **skip** | **int32** | Number of restore points to skip. | 
- **limit** | **int32** | Maximum number of restore points to return. | 
- **orderColumn** | [**EVmwareFcdInstantRecoveryMountsFiltersOrderColumn**](EVmwareFcdInstantRecoveryMountsFiltersOrderColumn.md) | Sorts restore points by one of the restore point parameters. | 
- **orderAsc** | **bool** | Sorts restore points in the ascending order by the &#x60;orderColumn&#x60; parameter. | 
- **stateFilter** | [**EInstantRecoveryMountState**](EInstantRecoveryMountState.md) | Filters vm mounts by mount state. | 
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
+ **skip** | **int32** | Number of mounts to skip. | 
+ **limit** | **int32** | Maximum number of mounts to return. | 
+ **orderColumn** | [**EVmwareFcdInstantRecoveryMountsFiltersOrderColumn**](EVmwareFcdInstantRecoveryMountsFiltersOrderColumn.md) | Sorts mounts by one of the mount parameters. | 
+ **orderAsc** | **bool** | Sorts mounts in the ascending order by the &#x60;orderColumn&#x60; parameter. | 
+ **stateFilter** | [**EInstantRecoveryMountState**](EInstantRecoveryMountState.md) | Filters mounts by mount state. | 
 
 ### Return type
 
@@ -88,11 +238,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetVmwareFcdInstantRecoveryMountModel
+## GetInstantViVMRecoveryMount
 
-> VmwareFcdInstantRecoveryMount GetVmwareFcdInstantRecoveryMountModel(ctx, mountId).XApiVersion(xApiVersion).Execute()
+> InstantViVMRecoveryMount GetInstantViVMRecoveryMount(ctx, mountId).XApiVersion(xApiVersion).Execute()
 
-Get Mount Information
+Get VM Mount
 
 
 
@@ -109,12 +259,84 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    mountId := TODO // string | Mount ID.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RestoreApi.GetVmwareFcdInstantRecoveryMountModel(context.Background(), mountId).XApiVersion(xApiVersion).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.GetInstantViVMRecoveryMount(context.Background(), mountId).XApiVersion(xApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.GetInstantViVMRecoveryMount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetInstantViVMRecoveryMount`: InstantViVMRecoveryMount
+    fmt.Fprintf(os.Stdout, "Response from `RestoreApi.GetInstantViVMRecoveryMount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**mountId** | **string** | Mount ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetInstantViVMRecoveryMountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
+
+
+### Return type
+
+[**InstantViVMRecoveryMount**](InstantViVMRecoveryMount.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetVmwareFcdInstantRecoveryMountModel
+
+> VmwareFcdInstantRecoveryMount GetVmwareFcdInstantRecoveryMountModel(ctx, mountId).XApiVersion(xApiVersion).Execute()
+
+Get FCD Mount
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.GetVmwareFcdInstantRecoveryMountModel(context.Background(), mountId).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.GetVmwareFcdInstantRecoveryMountModel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -130,7 +352,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**mountId** | [**string**](.md) | Mount ID. | 
+**mountId** | **string** | Mount ID. | 
 
 ### Other Parameters
 
@@ -139,7 +361,7 @@ Other parameters are passed through a pointer to a apiGetVmwareFcdInstantRecover
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
 
 ### Return type
@@ -181,12 +403,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    mountId := TODO // string | Mount ID.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RestoreApi.InstantRecoveryVmwareFcdDismountWithSession(context.Background(), mountId).XApiVersion(xApiVersion).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.InstantRecoveryVmwareFcdDismountWithSession(context.Background(), mountId).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantRecoveryVmwareFcdDismountWithSession``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -202,7 +424,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**mountId** | [**string**](.md) | Mount ID. | 
+**mountId** | **string** | Mount ID. | 
 
 ### Other Parameters
 
@@ -211,7 +433,7 @@ Other parameters are passed through a pointer to a apiInstantRecoveryVmwareFcdDi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
 
 ### Return type
@@ -253,13 +475,13 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    mountId := TODO // string | Mount ID.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
     vmwareFcdQuickMigrationSpec := *openapiclient.NewVmwareFcdQuickMigrationSpec(*openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown"))) // VmwareFcdQuickMigrationSpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RestoreApi.InstantRecoveryVmwareFcdMigrateWithSession(context.Background(), mountId).XApiVersion(xApiVersion).VmwareFcdQuickMigrationSpec(vmwareFcdQuickMigrationSpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.InstantRecoveryVmwareFcdMigrateWithSession(context.Background(), mountId).XApiVersion(xApiVersion).VmwareFcdQuickMigrationSpec(vmwareFcdQuickMigrationSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantRecoveryVmwareFcdMigrateWithSession``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -275,7 +497,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**mountId** | [**string**](.md) | Mount ID. | 
+**mountId** | **string** | Mount ID. | 
 
 ### Other Parameters
 
@@ -284,7 +506,7 @@ Other parameters are passed through a pointer to a apiInstantRecoveryVmwareFcdMi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
  **vmwareFcdQuickMigrationSpec** | [**VmwareFcdQuickMigrationSpec**](VmwareFcdQuickMigrationSpec.md) |  | 
 
@@ -327,12 +549,12 @@ import (
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     vmwareFcdInstantRecoverySpec := *openapiclient.NewVmwareFcdInstantRecoverySpec("ObjectRestorePointId_example", *openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown")), []openapiclient.VmwareFcdInstantRecoveryDiskSpec{*openapiclient.NewVmwareFcdInstantRecoveryDiskSpec("NameInBackup_example", "MountedDiskName_example", "RegisteredFcdName_example")}) // VmwareFcdInstantRecoverySpec | 
 
     configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.RestoreApi.InstantRecoveryVmwareFcdMountWithSession(context.Background()).XApiVersion(xApiVersion).VmwareFcdInstantRecoverySpec(vmwareFcdInstantRecoverySpec).Execute()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.InstantRecoveryVmwareFcdMountWithSession(context.Background()).XApiVersion(xApiVersion).VmwareFcdInstantRecoverySpec(vmwareFcdInstantRecoverySpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantRecoveryVmwareFcdMountWithSession``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -353,7 +575,7 @@ Other parameters are passed through a pointer to a apiInstantRecoveryVmwareFcdMo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
  **vmwareFcdInstantRecoverySpec** | [**VmwareFcdInstantRecoverySpec**](VmwareFcdInstantRecoverySpec.md) |  | 
 
 ### Return type
@@ -367,6 +589,220 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InstantViVMRecoveryMigrate
+
+> SessionModel InstantViVMRecoveryMigrate(ctx, mountId).XApiVersion(xApiVersion).ViVMQuickMigrationSpec(viVMQuickMigrationSpec).Execute()
+
+Start VM Migration
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
+    viVMQuickMigrationSpec := *openapiclient.NewViVMQuickMigrationSpec(*openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown"))) // ViVMQuickMigrationSpec | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.InstantViVMRecoveryMigrate(context.Background(), mountId).XApiVersion(xApiVersion).ViVMQuickMigrationSpec(viVMQuickMigrationSpec).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantViVMRecoveryMigrate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `InstantViVMRecoveryMigrate`: SessionModel
+    fmt.Fprintf(os.Stdout, "Response from `RestoreApi.InstantViVMRecoveryMigrate`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**mountId** | **string** | Mount ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInstantViVMRecoveryMigrateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
+
+ **viVMQuickMigrationSpec** | [**ViVMQuickMigrationSpec**](ViVMQuickMigrationSpec.md) |  | 
+
+### Return type
+
+[**SessionModel**](SessionModel.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InstantViVMRecoveryMount
+
+> SessionModel InstantViVMRecoveryMount(ctx).XApiVersion(xApiVersion).InstantViVMRecoverySpec(instantViVMRecoverySpec).Execute()
+
+Start Instant Recovery
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    instantViVMRecoverySpec := openapiclient.InstantViVMRecoverySpec{InstantViVMCustomizedRecoverySpec: openapiclient.NewInstantViVMCustomizedRecoverySpec(*openapiclient.NewInstantViVMCustomizedRecoveryDestinationSpec("RestoredVmName_example", *openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown")), *openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown")), *openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown")), openapiclient.EInstantViVmRecoveryBiosUuidPolicyType("preserve")), *openapiclient.NewInstantViVMCustomizedRecoveryDatastoreSpec(false))} // InstantViVMRecoverySpec | 
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.InstantViVMRecoveryMount(context.Background()).XApiVersion(xApiVersion).InstantViVMRecoverySpec(instantViVMRecoverySpec).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantViVMRecoveryMount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `InstantViVMRecoveryMount`: SessionModel
+    fmt.Fprintf(os.Stdout, "Response from `RestoreApi.InstantViVMRecoveryMount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInstantViVMRecoveryMountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
+ **instantViVMRecoverySpec** | [**InstantViVMRecoverySpec**](InstantViVMRecoverySpec.md) |  | 
+
+### Return type
+
+[**SessionModel**](SessionModel.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## InstantViVMRecoveryUnmount
+
+> SessionModel InstantViVMRecoveryUnmount(ctx, mountId).XApiVersion(xApiVersion).Execute()
+
+Stop VM Publishing
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.RestoreApi.InstantViVMRecoveryUnmount(context.Background(), mountId).XApiVersion(xApiVersion).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantViVMRecoveryUnmount``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `InstantViVMRecoveryUnmount`: SessionModel
+    fmt.Fprintf(os.Stdout, "Response from `RestoreApi.InstantViVMRecoveryUnmount`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**mountId** | **string** | Mount ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiInstantViVMRecoveryUnmountRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
+
+
+### Return type
+
+[**SessionModel**](SessionModel.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

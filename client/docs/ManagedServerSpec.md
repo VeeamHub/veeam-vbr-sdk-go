@@ -8,6 +8,9 @@ Name | Type | Description | Notes
 **Description** | **string** | Description of the server. | 
 **Type** | [**EManagedServerType**](EManagedServerType.md) |  | 
 **CredentialsId** | **string** | ID of the credentials used to connect to the server. | 
+**NetworkSettings** | Pointer to [**WindowsHostPortsModel**](WindowsHostPortsModel.md) |  | [optional] 
+**Port** | Pointer to **int32** | Port used to communicate with the server. | [optional] 
+**CertificateThumbprint** | Pointer to **string** | Certificate thumbprint used to verify the server identity. For details on how to get the thumbprint, see [Request TLS Certificate or SSH Fingerprint](#tag/Connection/operation/GetConnectionCertificate). | [optional] 
 
 ## Methods
 
@@ -107,6 +110,81 @@ and a boolean to check if the value has been set.
 
 SetCredentialsId sets CredentialsId field to given value.
 
+
+### GetNetworkSettings
+
+`func (o *ManagedServerSpec) GetNetworkSettings() WindowsHostPortsModel`
+
+GetNetworkSettings returns the NetworkSettings field if non-nil, zero value otherwise.
+
+### GetNetworkSettingsOk
+
+`func (o *ManagedServerSpec) GetNetworkSettingsOk() (*WindowsHostPortsModel, bool)`
+
+GetNetworkSettingsOk returns a tuple with the NetworkSettings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetworkSettings
+
+`func (o *ManagedServerSpec) SetNetworkSettings(v WindowsHostPortsModel)`
+
+SetNetworkSettings sets NetworkSettings field to given value.
+
+### HasNetworkSettings
+
+`func (o *ManagedServerSpec) HasNetworkSettings() bool`
+
+HasNetworkSettings returns a boolean if a field has been set.
+
+### GetPort
+
+`func (o *ManagedServerSpec) GetPort() int32`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *ManagedServerSpec) GetPortOk() (*int32, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPort
+
+`func (o *ManagedServerSpec) SetPort(v int32)`
+
+SetPort sets Port field to given value.
+
+### HasPort
+
+`func (o *ManagedServerSpec) HasPort() bool`
+
+HasPort returns a boolean if a field has been set.
+
+### GetCertificateThumbprint
+
+`func (o *ManagedServerSpec) GetCertificateThumbprint() string`
+
+GetCertificateThumbprint returns the CertificateThumbprint field if non-nil, zero value otherwise.
+
+### GetCertificateThumbprintOk
+
+`func (o *ManagedServerSpec) GetCertificateThumbprintOk() (*string, bool)`
+
+GetCertificateThumbprintOk returns a tuple with the CertificateThumbprint field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCertificateThumbprint
+
+`func (o *ManagedServerSpec) SetCertificateThumbprint(v string)`
+
+SetCertificateThumbprint sets CertificateThumbprint field to given value.
+
+### HasCertificateThumbprint
+
+`func (o *ManagedServerSpec) HasCertificateThumbprint() bool`
+
+HasCertificateThumbprint returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

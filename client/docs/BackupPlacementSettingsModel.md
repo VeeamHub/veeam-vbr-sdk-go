@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExtentName** | **string** | Name of a performance extent. | 
+**ExtentId** | **string** | ID of a performance extent. | 
 **AllowedBackups** | [**EAllowedBackupsType**](EAllowedBackupsType.md) |  | 
 
 ## Methods
 
 ### NewBackupPlacementSettingsModel
 
-`func NewBackupPlacementSettingsModel(extentName string, allowedBackups EAllowedBackupsType, ) *BackupPlacementSettingsModel`
+`func NewBackupPlacementSettingsModel(extentId string, allowedBackups EAllowedBackupsType, ) *BackupPlacementSettingsModel`
 
 NewBackupPlacementSettingsModel instantiates a new BackupPlacementSettingsModel object
 This constructor will assign default values to properties that have it defined,
@@ -26,24 +26,24 @@ NewBackupPlacementSettingsModelWithDefaults instantiates a new BackupPlacementSe
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetExtentName
+### GetExtentId
 
-`func (o *BackupPlacementSettingsModel) GetExtentName() string`
+`func (o *BackupPlacementSettingsModel) GetExtentId() string`
 
-GetExtentName returns the ExtentName field if non-nil, zero value otherwise.
+GetExtentId returns the ExtentId field if non-nil, zero value otherwise.
 
-### GetExtentNameOk
+### GetExtentIdOk
 
-`func (o *BackupPlacementSettingsModel) GetExtentNameOk() (*string, bool)`
+`func (o *BackupPlacementSettingsModel) GetExtentIdOk() (*string, bool)`
 
-GetExtentNameOk returns a tuple with the ExtentName field if it's non-nil, zero value otherwise
+GetExtentIdOk returns a tuple with the ExtentId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExtentName
+### SetExtentId
 
-`func (o *BackupPlacementSettingsModel) SetExtentName(v string)`
+`func (o *BackupPlacementSettingsModel) SetExtentId(v string)`
 
-SetExtentName sets ExtentName field to given value.
+SetExtentId sets ExtentId field to given value.
 
 
 ### GetAllowedBackups

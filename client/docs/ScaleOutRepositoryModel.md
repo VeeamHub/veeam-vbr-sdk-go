@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | ID of the scale-out backup repository. | 
 **Name** | **string** | Name of the scale-out backup repository. | 
 **Description** | **string** | Description of the scale-out backup repository. | 
-**Tag** | **string** | Tag assigned to of the scale-out backup repository. | 
+**Tag** | Pointer to **string** | Tag assigned to the scale-out backup repository. | [optional] 
 **PerformanceTier** | [**PerformanceTierModel**](PerformanceTierModel.md) |  | 
 **PlacementPolicy** | Pointer to [**PlacementPolicyModel**](PlacementPolicyModel.md) |  | [optional] 
 **CapacityTier** | Pointer to [**CapacityTierModel**](CapacityTierModel.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewScaleOutRepositoryModel
 
-`func NewScaleOutRepositoryModel(id string, name string, description string, tag string, performanceTier PerformanceTierModel, ) *ScaleOutRepositoryModel`
+`func NewScaleOutRepositoryModel(id string, name string, description string, performanceTier PerformanceTierModel, ) *ScaleOutRepositoryModel`
 
 NewScaleOutRepositoryModel instantiates a new ScaleOutRepositoryModel object
 This constructor will assign default values to properties that have it defined,
@@ -111,6 +111,11 @@ and a boolean to check if the value has been set.
 
 SetTag sets Tag field to given value.
 
+### HasTag
+
+`func (o *ScaleOutRepositoryModel) HasTag() bool`
+
+HasTag returns a boolean if a field has been set.
 
 ### GetPerformanceTier
 

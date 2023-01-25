@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsEnabled** | Pointer to **bool** | If *true*, Veeam Backup &amp; Replication moves oldest backup files sooner if scale-out backup repository is reaching the threshold. | [optional] 
+**IsEnabled** | **bool** | If *true*, Veeam Backup &amp; Replication moves oldest backup files sooner if the scale-out backup repository is reaching the threshold. | 
 **OverrideSpaceThresholdPercents** | Pointer to **int32** | Space threshold of the scale-out backup repository, in percent. | [optional] 
 
 ## Methods
 
 ### NewCapacityTierOverridePolicyModel
 
-`func NewCapacityTierOverridePolicyModel() *CapacityTierOverridePolicyModel`
+`func NewCapacityTierOverridePolicyModel(isEnabled bool, ) *CapacityTierOverridePolicyModel`
 
 NewCapacityTierOverridePolicyModel instantiates a new CapacityTierOverridePolicyModel object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetIsEnabled sets IsEnabled field to given value.
 
-### HasIsEnabled
-
-`func (o *CapacityTierOverridePolicyModel) HasIsEnabled() bool`
-
-HasIsEnabled returns a boolean if a field has been set.
 
 ### GetOverrideSpaceThresholdPercents
 

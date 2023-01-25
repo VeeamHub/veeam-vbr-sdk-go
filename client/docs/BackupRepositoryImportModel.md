@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Name of the backup repository. | 
-**Tag** | Pointer to **string** | Tag assigned to the backup repository. | [optional] 
+**Tag** | Pointer to **string** | Tag that identifies the backup repository. | [optional] 
 
 ## Methods
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServerTime** | **time.Time** | Current date and time on the server. | 
-**TimeZone** | Pointer to **string** |  | [optional] 
+**ServerTime** | **time.Time** | Current date and time on the backup server. | 
+**TimeZone** | Pointer to **string** | Time zone where the backup server is located. | [optional] 
 
 ## Methods
 

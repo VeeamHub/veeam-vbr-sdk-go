@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | ID of the backup repository. | 
 **Name** | **string** | Name of the backup repository. | 
 **Type** | [**ERepositoryType**](ERepositoryType.md) |  | 
-**Description** | **string** |  | 
+**Description** | **string** | Description of the backup repository. | 
 **HostId** | Pointer to **string** | ID of the server that is used as a backup repository. | [optional] 
 **HostName** | Pointer to **string** | Name of the server that is used as a backup repository. | [optional] 
 **Path** | Pointer to **string** | Path to the folder where backup files are stored. | [optional] 

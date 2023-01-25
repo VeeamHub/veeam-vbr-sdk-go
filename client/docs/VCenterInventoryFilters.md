@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **OrderAsc** | Pointer to **bool** | Sorts objects in the ascending order by the &#x60;orderColumn&#x60; parameter. | [optional] 
 **ObjectIdFilter** | Pointer to **string** | Filters objects by object ID. | [optional] 
 **HierarchyTypeFilter** | Pointer to [**EHierarchyType**](EHierarchyType.md) |  | [optional] 
-**NameFilter** | Pointer to **string** | Filters objects by the &#x60;nameFilter&#x60; pattern. The pattern can match any object parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. | [optional] 
+**NameFilter** | Pointer to **string** | Filters objects by the &#x60;nameFilter&#x60; pattern. The pattern can match any object parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. | [optional] 
 **TypeFilter** | Pointer to [**EVmwareInventoryType**](EVmwareInventoryType.md) |  | [optional] 
 **ParentContainerNameFilter** | Pointer to **string** | Filters objects by name of the parent container. | [optional] 
 

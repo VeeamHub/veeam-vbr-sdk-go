@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** | ID of the log record. | [optional] 
 **Status** | Pointer to [**ETaskLogRecordStatus**](ETaskLogRecordStatus.md) |  | [optional] 
-**StartTime** | Pointer to **time.Time** | Date and time the operation was started. | [optional] 
-**UpdateTime** | Pointer to **time.Time** | Date and time the log record was updated. | [optional] 
+**StartTime** | Pointer to **time.Time** | Date and time when the operation was started. | [optional] 
+**UpdateTime** | Pointer to **time.Time** | Date and time when the log record was updated. | [optional] 
 **Title** | Pointer to **string** | Title of the log record. | [optional] 
 **Description** | Pointer to **string** | Description of the log record. | [optional] 
 

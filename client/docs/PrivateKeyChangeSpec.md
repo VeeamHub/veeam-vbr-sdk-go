@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PrivateKey** | **string** | Private key. | 
+**PrivateKey** | **string** | New private key. | 
 **Passphrase** | Pointer to **string** | Passphrase that protects the private key. | [optional] 
 
 ## Methods
