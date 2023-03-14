@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Day** | [**EDayOfWeek**](EDayOfWeek.md) |  | 
-**Hours** | **string** | String of hours in the following format: *1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1* where *1* means enabled, *0* means disabled.  | 
+**Hours** | **string** | String of 24 hours in the following format:&lt;br&gt;*1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1*&lt;br&gt;where *1* means permitted, *0* means denied. | 
 
 ## Methods
 

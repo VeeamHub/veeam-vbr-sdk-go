@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**EnableTaskLimit** | Pointer to **bool** | If *true*, the maximum number of concurrent tasks is limited. | [optional] 
 **MaxTaskCount** | Pointer to **int32** | Maximum number of concurrent tasks. | [optional] 
+**EnableReadWriteLimit** | Pointer to **bool** | If *true*, reading and writing speed is limited. | [optional] 
 **ReadWriteRate** | Pointer to **int32** | Maximum rate that restricts the total speed of reading and writing data to the backup repository disk. | [optional] 
 **AdvancedSettings** | Pointer to [**RepositoryAdvancedSettingsModel**](RepositoryAdvancedSettingsModel.md) |  | [optional] 
 
@@ -26,6 +28,31 @@ will change when the set of required properties is changed
 NewNetworkRepositorySettingsModelWithDefaults instantiates a new NetworkRepositorySettingsModel object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEnableTaskLimit
+
+`func (o *NetworkRepositorySettingsModel) GetEnableTaskLimit() bool`
+
+GetEnableTaskLimit returns the EnableTaskLimit field if non-nil, zero value otherwise.
+
+### GetEnableTaskLimitOk
+
+`func (o *NetworkRepositorySettingsModel) GetEnableTaskLimitOk() (*bool, bool)`
+
+GetEnableTaskLimitOk returns a tuple with the EnableTaskLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableTaskLimit
+
+`func (o *NetworkRepositorySettingsModel) SetEnableTaskLimit(v bool)`
+
+SetEnableTaskLimit sets EnableTaskLimit field to given value.
+
+### HasEnableTaskLimit
+
+`func (o *NetworkRepositorySettingsModel) HasEnableTaskLimit() bool`
+
+HasEnableTaskLimit returns a boolean if a field has been set.
 
 ### GetMaxTaskCount
 
@@ -51,6 +78,31 @@ SetMaxTaskCount sets MaxTaskCount field to given value.
 `func (o *NetworkRepositorySettingsModel) HasMaxTaskCount() bool`
 
 HasMaxTaskCount returns a boolean if a field has been set.
+
+### GetEnableReadWriteLimit
+
+`func (o *NetworkRepositorySettingsModel) GetEnableReadWriteLimit() bool`
+
+GetEnableReadWriteLimit returns the EnableReadWriteLimit field if non-nil, zero value otherwise.
+
+### GetEnableReadWriteLimitOk
+
+`func (o *NetworkRepositorySettingsModel) GetEnableReadWriteLimitOk() (*bool, bool)`
+
+GetEnableReadWriteLimitOk returns a tuple with the EnableReadWriteLimit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableReadWriteLimit
+
+`func (o *NetworkRepositorySettingsModel) SetEnableReadWriteLimit(v bool)`
+
+SetEnableReadWriteLimit sets EnableReadWriteLimit field to given value.
+
+### HasEnableReadWriteLimit
+
+`func (o *NetworkRepositorySettingsModel) HasEnableReadWriteLimit() bool`
+
+HasEnableReadWriteLimit returns a boolean if a field has been set.
 
 ### GetReadWriteRate
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **PeriodicallyKind** | Pointer to [**EPeriodicallyKinds**](EPeriodicallyKinds.md) |  | [optional] 
 **Frequency** | Pointer to **int32** | Number of time units that defines the time interval. | [optional] 
 **BackupWindow** | Pointer to [**BackupWindowSettingModel**](BackupWindowSettingModel.md) |  | [optional] 
-**StartTimeWithinAnHour** | Pointer to **int32** |  | [optional] 
+**StartTimeWithinAnHour** | Pointer to **int32** | Start time within an hour, in minutes. | [optional] 
 
 ## Methods
 

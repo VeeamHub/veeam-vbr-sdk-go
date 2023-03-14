@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | 
-**Name** | **string** |  | 
+**Id** | **string** | ID of the restore point. | 
+**Name** | **string** | Object name. | 
 **PlatformName** | Pointer to [**EPlatformType**](EPlatformType.md) |  | [optional] 
 **PlatformId** | **string** | ID of a platform on which the object was created. | 
 **CreationTime** | **time.Time** | Date and time when the restore point was created. | 

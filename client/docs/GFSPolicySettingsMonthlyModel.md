@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IsEnabled** | **bool** | If *true*, the monthly GFS retention policy is enabled. | 
-**KeepForNumberOfMonths** | Pointer to **int32** | Number of months to keep full backups for archival purposes. | [optional] 
+**KeepForNumberOfMonths** | Pointer to **int32** | Number of months to keep full backups for archival purposes. Possible values are from 1 through 999. | [optional] 
 **DesiredTime** | Pointer to [**ESennightOfMonth**](ESennightOfMonth.md) |  | [optional] 
 
 ## Methods

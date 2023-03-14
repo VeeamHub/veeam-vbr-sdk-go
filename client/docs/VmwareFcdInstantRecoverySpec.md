@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectRestorePointId** | **string** | ID of the restore point. | 
 **DestinationCluster** | [**VmwareObjectModel**](VmwareObjectModel.md) |  | 
-**DisksMapping** | [**[]VmwareFcdInstantRecoveryDiskSpec**](VmwareFcdInstantRecoveryDiskSpec.md) | Array of disks that will be restored. | 
+**DisksMapping** | [**[]VmwareFcdInstantRecoveryDiskSpec**](VmwareFcdInstantRecoveryDiskSpec.md) | Array of disks for restore. | 
 **WriteCache** | Pointer to [**VmwareFcdWriteCacheSpec**](VmwareFcdWriteCacheSpec.md) |  | [optional] 
 
 ## Methods

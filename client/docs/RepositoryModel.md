@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** | ID of the backup repository. | 
 **Name** | **string** | Name of the backup repository. | 
 **Description** | **string** | Description of the backup repository. | 
-**Tag** | Pointer to **string** | VMware vSphere tag assigned to the backup repository. | [optional] 
+**Tag** | Pointer to **string** | Tag that identifies the backup repository. | [optional] 
 **Type** | [**ERepositoryType**](ERepositoryType.md) |  | 
 
 ## Methods

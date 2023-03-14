@@ -3,8 +3,6 @@
 ## Enum
 
 
-* `AUTO` (value: `"Auto"`)
-
 * `NONE` (value: `"None"`)
 
 * `DEDUP_FRIENDLY` (value: `"DedupFriendly"`)

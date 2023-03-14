@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Enabled** | Pointer to **bool** | If *true*, the capacity tier is enabled. | [optional] 
-**ExtentId** | Pointer to **string** | ID of an object storage repository added as a capacity extent. | [optional] 
+**Enabled** | **bool** | If *true*, the capacity tier is enabled. | 
+**Extents** | Pointer to [**[]CapacityExtentModel**](CapacityExtentModel.md) | Array of capacity extents. | [optional] 
 **OffloadWindow** | Pointer to [**BackupWindowSettingModel**](BackupWindowSettingModel.md) |  | [optional] 
 **CopyPolicyEnabled** | Pointer to **bool** | If *true*, Veeam Backup &amp; Replication copies backups from the performance extents to the capacity extent as soon as the backups are created. | [optional] 
 **MovePolicyEnabled** | Pointer to **bool** | If *true*, Veeam Backup &amp; Replication moves backup files that belong to inactive backup chains from the performance extents to the capacity extent. | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewCapacityTierModel
 
-`func NewCapacityTierModel() *CapacityTierModel`
+`func NewCapacityTierModel(enabled bool, ) *CapacityTierModel`
 
 NewCapacityTierModel instantiates a new CapacityTierModel object
 This constructor will assign default values to properties that have it defined,
@@ -51,36 +51,31 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
-### HasEnabled
 
-`func (o *CapacityTierModel) HasEnabled() bool`
+### GetExtents
 
-HasEnabled returns a boolean if a field has been set.
+`func (o *CapacityTierModel) GetExtents() []CapacityExtentModel`
 
-### GetExtentId
+GetExtents returns the Extents field if non-nil, zero value otherwise.
 
-`func (o *CapacityTierModel) GetExtentId() string`
+### GetExtentsOk
 
-GetExtentId returns the ExtentId field if non-nil, zero value otherwise.
+`func (o *CapacityTierModel) GetExtentsOk() (*[]CapacityExtentModel, bool)`
 
-### GetExtentIdOk
-
-`func (o *CapacityTierModel) GetExtentIdOk() (*string, bool)`
-
-GetExtentIdOk returns a tuple with the ExtentId field if it's non-nil, zero value otherwise
+GetExtentsOk returns a tuple with the Extents field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExtentId
+### SetExtents
 
-`func (o *CapacityTierModel) SetExtentId(v string)`
+`func (o *CapacityTierModel) SetExtents(v []CapacityExtentModel)`
 
-SetExtentId sets ExtentId field to given value.
+SetExtents sets Extents field to given value.
 
-### HasExtentId
+### HasExtents
 
-`func (o *CapacityTierModel) HasExtentId() bool`
+`func (o *CapacityTierModel) HasExtents() bool`
 
-HasExtentId returns a boolean if a field has been set.
+HasExtents returns a boolean if a field has been set.
 
 ### GetOffloadWindow
 

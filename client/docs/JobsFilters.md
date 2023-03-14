@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Limit** | Pointer to **int32** | Returns the specified number of jobs. | [optional] 
 **OrderColumn** | Pointer to [**EJobFiltersOrderColumn**](EJobFiltersOrderColumn.md) |  | [optional] 
 **OrderAsc** | Pointer to **bool** | Sorts jobs in the ascending order by the &#x60;orderColumn&#x60; parameter. | [optional] 
-**NameFilter** | Pointer to **string** | Filters jobs by the &#x60;nameFilter&#x60; pattern. The pattern can match any job parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. | [optional] 
+**NameFilter** | Pointer to **string** | Filters jobs by the &#x60;nameFilter&#x60; pattern. The pattern can match any job parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. | [optional] 
 **TypeFilter** | Pointer to [**EJobType**](EJobType.md) |  | [optional] 
 
 ## Methods

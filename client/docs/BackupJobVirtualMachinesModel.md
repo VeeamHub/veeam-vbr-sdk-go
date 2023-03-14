@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Includes** | [**[]VmwareObjectSizeModel**](VmwareObjectSizeModel.md) | Array of VM and VM containers processed by the job. | 
+**Includes** | [**[]VmwareObjectSizeModel**](VmwareObjectSizeModel.md) | Array of VMs and VM containers processed by the job. | 
 **Excludes** | Pointer to [**BackupJobExclusions**](BackupJobExclusions.md) |  | [optional] 
 
 ## Methods

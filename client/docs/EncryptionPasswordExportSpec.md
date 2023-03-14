@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ModificationTimeFrom** | Pointer to **time.Time** | Date and time the password was last modified. | [optional] 
+**ModificationTimeFrom** | Pointer to **time.Time** | Date and time when the password was last modified. | [optional] 
 **Ids** | Pointer to **[]string** | Array of password IDs. | [optional] 
 **Hints** | Pointer to **[]string** | Array of password hints. | [optional] 
 **Tags** | Pointer to **[]string** | Array of password tags. | [optional] 

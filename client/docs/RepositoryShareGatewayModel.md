@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AutoSelect** | Pointer to **bool** | If *true*, Veeam Backup &amp; Replication automatically selects a gateway server. | [optional] 
-**GatewayServerId** | Pointer to **string** | ID of the gateway server. | [optional] 
+**AutoSelect** | **bool** | If *true*, Veeam Backup &amp; Replication automatically selects a gateway server. | 
+**GatewayServerIds** | Pointer to **[]string** | Array of gateway server IDs. | [optional] 
 
 ## Methods
 
 ### NewRepositoryShareGatewayModel
 
-`func NewRepositoryShareGatewayModel() *RepositoryShareGatewayModel`
+`func NewRepositoryShareGatewayModel(autoSelect bool, ) *RepositoryShareGatewayModel`
 
 NewRepositoryShareGatewayModel instantiates a new RepositoryShareGatewayModel object
 This constructor will assign default values to properties that have it defined,
@@ -45,36 +45,31 @@ and a boolean to check if the value has been set.
 
 SetAutoSelect sets AutoSelect field to given value.
 
-### HasAutoSelect
 
-`func (o *RepositoryShareGatewayModel) HasAutoSelect() bool`
+### GetGatewayServerIds
 
-HasAutoSelect returns a boolean if a field has been set.
+`func (o *RepositoryShareGatewayModel) GetGatewayServerIds() []string`
 
-### GetGatewayServerId
+GetGatewayServerIds returns the GatewayServerIds field if non-nil, zero value otherwise.
 
-`func (o *RepositoryShareGatewayModel) GetGatewayServerId() string`
+### GetGatewayServerIdsOk
 
-GetGatewayServerId returns the GatewayServerId field if non-nil, zero value otherwise.
+`func (o *RepositoryShareGatewayModel) GetGatewayServerIdsOk() (*[]string, bool)`
 
-### GetGatewayServerIdOk
-
-`func (o *RepositoryShareGatewayModel) GetGatewayServerIdOk() (*string, bool)`
-
-GetGatewayServerIdOk returns a tuple with the GatewayServerId field if it's non-nil, zero value otherwise
+GetGatewayServerIdsOk returns a tuple with the GatewayServerIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGatewayServerId
+### SetGatewayServerIds
 
-`func (o *RepositoryShareGatewayModel) SetGatewayServerId(v string)`
+`func (o *RepositoryShareGatewayModel) SetGatewayServerIds(v []string)`
 
-SetGatewayServerId sets GatewayServerId field to given value.
+SetGatewayServerIds sets GatewayServerIds field to given value.
 
-### HasGatewayServerId
+### HasGatewayServerIds
 
-`func (o *RepositoryShareGatewayModel) HasGatewayServerId() bool`
+`func (o *RepositoryShareGatewayModel) HasGatewayServerIds() bool`
 
-HasGatewayServerId returns a boolean if a field has been set.
+HasGatewayServerIds returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

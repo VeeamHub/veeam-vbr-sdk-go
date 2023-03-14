@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **IsEnabled** | **bool** | If *true*, email notifications are enabled for this job. | 
 **Recipients** | **[]string** | Array of recipients&#39; email addresses. | 
 **SettingsType** | [**EConfigBackupSMTPSettingsType**](EConfigBackupSMTPSettingsType.md) |  | 
-**Subject** | **string** | Notification subject. Use the following variables in the subject: *%JobResult%*, *%JobName%*, *%Time%* (completion time).  | 
+**Subject** | **string** | Notification subject. Use the following variables in the subject:&lt;ul&gt; &lt;li&gt;*%Time%* — completion time&lt;/li&gt; &lt;li&gt;*%JobName%* — job name&lt;/li&gt; &lt;li&gt;*%JobResult%* — job result&lt;/li&gt;&lt;/ul&gt; | 
 **NotifyOnSuccess** | **bool** | If *true*, email notifications are sent when the job completes successfully. | 
 **NotifyOnWarning** | **bool** | If *true*, email notifications are sent when the job completes with a warning. | 
 **NotifyOnError** | **bool** | If *true*, email notifications are sent when the job fails. | 

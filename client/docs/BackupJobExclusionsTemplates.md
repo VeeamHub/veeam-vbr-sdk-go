@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsEnabled** | Pointer to **bool** | If *true*, the template is included into the backup. | [optional] 
-**ExcludeFromIncremental** | Pointer to **bool** | If *true*, the template is excluded from the incremental backup. | [optional] 
+**IsEnabled** | Pointer to **bool** | If *true*, VM templates are excluded from the backup. | [optional] 
+**ExcludeFromIncremental** | Pointer to **bool** | If *true*, VM templates are excluded from the incremental backup. | [optional] 
 
 ## Methods
 

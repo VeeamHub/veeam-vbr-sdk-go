@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PerformanceExtents** | Pointer to [**[]PerformanceExtentModel**](PerformanceExtentModel.md) | Array of performance extents. | [optional] 
+**PerformanceExtents** | [**[]PerformanceExtentModel**](PerformanceExtentModel.md) | Array of performance extents. | 
 **AdvancedSettings** | Pointer to [**PerformanceTierAdvancedSettingsModel**](PerformanceTierAdvancedSettingsModel.md) |  | [optional] 
 
 ## Methods
 
 ### NewPerformanceTierModel
 
-`func NewPerformanceTierModel() *PerformanceTierModel`
+`func NewPerformanceTierModel(performanceExtents []PerformanceExtentModel, ) *PerformanceTierModel`
 
 NewPerformanceTierModel instantiates a new PerformanceTierModel object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetPerformanceExtents sets PerformanceExtents field to given value.
 
-### HasPerformanceExtents
-
-`func (o *PerformanceTierModel) HasPerformanceExtents() bool`
-
-HasPerformanceExtents returns a boolean if a field has been set.
 
 ### GetAdvancedSettings
 

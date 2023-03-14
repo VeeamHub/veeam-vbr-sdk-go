@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **RefreshToken** | Pointer to **string** | Refresh token. Required if the &#x60;grant_type&#x60; value is &#x60;refresh_token&#x60;. | [optional] 
 **Code** | Pointer to **string** | Authorization code. Required if the &#x60;grant_type&#x60; value is &#x60;authorization_code&#x60;. | [optional] 
 **UseShortTermRefresh** | Pointer to **bool** | If *true*, a short-term refresh token is used. Lifetime of the short-term refresh token is the access token lifetime plus 15 minutes. | [optional] 
+**VbrToken** | Pointer to **string** | Veeam Backup &amp; Replication platform service token. | [optional] 
 
 ## Methods
 
@@ -174,6 +175,31 @@ SetUseShortTermRefresh sets UseShortTermRefresh field to given value.
 `func (o *TokenLoginSpec) HasUseShortTermRefresh() bool`
 
 HasUseShortTermRefresh returns a boolean if a field has been set.
+
+### GetVbrToken
+
+`func (o *TokenLoginSpec) GetVbrToken() string`
+
+GetVbrToken returns the VbrToken field if non-nil, zero value otherwise.
+
+### GetVbrTokenOk
+
+`func (o *TokenLoginSpec) GetVbrTokenOk() (*string, bool)`
+
+GetVbrTokenOk returns a tuple with the VbrToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVbrToken
+
+`func (o *TokenLoginSpec) SetVbrToken(v string)`
+
+SetVbrToken sets VbrToken field to given value.
+
+### HasVbrToken
+
+`func (o *TokenLoginSpec) HasVbrToken() bool`
+
+HasVbrToken returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

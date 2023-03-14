@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Port** | Pointer to **int32** | Port used to communicate with the server. | [optional] 
-**CertificateThumbprint** | Pointer to **string** | [Optional] Certificate thumbprint used to verify the server identity. For details on how to get the thumbprint, see [Get TLS Certificate or SSH Fingerprint](#operation/GetConnectionCertificate).  | [optional] 
+**CertificateThumbprint** | Pointer to **string** | Certificate thumbprint used to verify the server identity. For details on how to get the thumbprint, see [Request TLS Certificate or SSH Fingerprint](#tag/Connection/operation/GetConnectionCertificate). | [optional] 
 
 ## Methods
 

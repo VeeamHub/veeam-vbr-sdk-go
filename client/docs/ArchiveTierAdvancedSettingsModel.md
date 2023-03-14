@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CostOptimizedArchiveEnabled** | Pointer to **bool** | If *true*, backups are archived if the remaining retention time is above minimum storage period for the repository. | [optional] 
+**CostOptimizedArchiveEnabled** | Pointer to **bool** | If *true*, backups are archived as soon as the remaining retention time is above minimum storage period for the repository. | [optional] 
 **ArchiveDeduplicationEnabled** | Pointer to **bool** | If *true*, each backup is stored as a delta to the previous one. | [optional] 
 
 ## Methods

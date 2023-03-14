@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Skip** | Pointer to **int32** |  | [optional] 
-**Limit** | Pointer to **int32** |  | [optional] 
+**Skip** | Pointer to **int32** | Number of repositories to skip. | [optional] 
+**Limit** | Pointer to **int32** | Maximum number of repositories to return. | [optional] 
 **OrderColumn** | Pointer to [**ERepositoryFiltersOrderColumn**](ERepositoryFiltersOrderColumn.md) |  | [optional] 
-**OrderAsc** | Pointer to **bool** |  | [optional] 
-**NameFilter** | Pointer to **string** |  | [optional] 
+**OrderAsc** | Pointer to **bool** | Sorts repositories in the ascending order by the &#x60;orderColumn&#x60; parameter. | [optional] 
+**NameFilter** | Pointer to **string** | Filters repositories by the &#x60;nameFilter&#x60; pattern. The pattern can match any repository parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. | [optional] 
 **TypeFilter** | Pointer to [**ERepositoryType**](ERepositoryType.md) |  | [optional] 
-**HostIdFilter** | Pointer to **string** |  | [optional] 
-**PathFilter** | Pointer to **string** |  | [optional] 
-**VmbApiFilter** | Pointer to **string** | VmbApiFilterModel as json serialized in base64 format (see VmbApiFilterModel) | [optional] 
-**VmbApiPlatform** | Pointer to **string** | TODO Sets a platform for vmb API to work with | [optional] 
+**HostIdFilter** | Pointer to **string** | Filters repositories by ID of the backup server. | [optional] 
+**PathFilter** | Pointer to **string** | Filters repositories by path to the folder where backup files are stored. | [optional] 
+**VmbApiFilter** | Pointer to **string** | Filters repositories by VM Backup API parameters converted to the base64 string. To obtain the string, call the &#x60;GetApiProductInfoString&#x60; method of VM Backup API. | [optional] 
+**VmbApiPlatform** | Pointer to **string** | Filters repositories by ID of a platform that you use to communicate with VM Backup API. | [optional] 
 
 ## Methods
 
