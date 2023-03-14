@@ -38,7 +38,6 @@ type AzureLinuxHelperApplianceSpec struct {
 // will change when the set of required properties is changed
 func NewAzureLinuxHelperApplianceSpec(subscriptionId string, type_ ECloudCredentialsType) *AzureLinuxHelperApplianceSpec {
 	this := AzureLinuxHelperApplianceSpec{}
-	this.Type = type_
 	return &this
 }
 

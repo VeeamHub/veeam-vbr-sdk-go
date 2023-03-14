@@ -12,6 +12,7 @@ package client
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // LinuxCredentialsModel struct for LinuxCredentialsModel

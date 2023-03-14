@@ -25,12 +25,9 @@ type LinuxHostSpec struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLinuxHostSpec(sshFingerprint string, name string, description string, type_ EManagedServerType, credentialsId string) *LinuxHostSpec {
+func NewLinuxHostSpec(sshFingerprint string) *LinuxHostSpec {
 	this := LinuxHostSpec{}
-	this.Name = name
-	this.Description = description
-	this.Type = type_
-	this.CredentialsId = credentialsId
+	this.SshFingerprint = sshFingerprint
 	return &this
 }
 
