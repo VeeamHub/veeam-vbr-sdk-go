@@ -28,14 +28,14 @@ import (
     "fmt"
     "os"
     "time"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of backups to skip. (optional)
     limit := int32(56) // int32 | Maximum number of backups to return. (optional)
-    orderColumn := openapiclient.EBackupsFiltersOrderColumn("Name") // EBackupsFiltersOrderColumn | Sorts backups by one of the backup parameters. (optional)
+    orderColumn := client.EBackupsFiltersOrderColumn("Name") // EBackupsFiltersOrderColumn | Sorts backups by one of the backup parameters. (optional)
     orderAsc := true // bool | Sorts backups in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters backups by the `nameFilter` pattern. The pattern can match any backup parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
     createdAfterFilter := time.Now() // time.Time | Returns backups that are created after the specified date and time. (optional)
@@ -44,8 +44,8 @@ func main() {
     jobIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters backups by ID of the parent job. (optional)
     policyTagFilter := "policyTagFilter_example" // string | Filters backups by retention policy tag. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.BackupsApi.GetAllBackups(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).CreatedAfterFilter(createdAfterFilter).CreatedBeforeFilter(createdBeforeFilter).PlatformIdFilter(platformIdFilter).JobIdFilter(jobIdFilter).PolicyTagFilter(policyTagFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BackupsApi.GetAllBackups``: %v\n", err)
@@ -114,15 +114,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.BackupsApi.GetBackup(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BackupsApi.GetBackup``: %v\n", err)
@@ -186,15 +186,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.BackupsApi.GetBackupObjects(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BackupsApi.GetBackupObjects``: %v\n", err)

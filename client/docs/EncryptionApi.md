@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    encryptionPasswordSpec := *openapiclient.NewEncryptionPasswordSpec("Password_example", "Hint_example") // EncryptionPasswordSpec | 
+    encryptionPasswordSpec := *client.NewEncryptionPasswordSpec("Password_example", "Hint_example") // EncryptionPasswordSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.EncryptionApi.CreateEncryptionPassword(context.Background()).XApiVersion(xApiVersion).EncryptionPasswordSpec(encryptionPasswordSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EncryptionApi.CreateEncryptionPassword``: %v\n", err)
@@ -97,15 +97,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the encryption password.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.EncryptionApi.DeleteEncryptionPassword(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EncryptionApi.DeleteEncryptionPassword``: %v\n", err)
@@ -169,18 +169,18 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of passwords to skip. (optional)
     limit := int32(56) // int32 | Maximum number of passwords to return. (optional)
-    orderColumn := openapiclient.EEncryptionPasswordsFiltersOrderColumn("Hint") // EEncryptionPasswordsFiltersOrderColumn | Sorts passwords by one of the password parameters. (optional)
+    orderColumn := client.EEncryptionPasswordsFiltersOrderColumn("Hint") // EEncryptionPasswordsFiltersOrderColumn | Sorts passwords by one of the password parameters. (optional)
     orderAsc := true // bool | Sorts passwords in the ascending order by the `orderColumn` parameter. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.EncryptionApi.GetAllEncryptionPasswords(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EncryptionApi.GetAllEncryptionPasswords``: %v\n", err)
@@ -243,15 +243,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the encryption password.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.EncryptionApi.GetEncryptionPassword(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EncryptionApi.GetEncryptionPassword``: %v\n", err)
@@ -315,16 +315,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the encryption password.
-    encryptionPasswordModel := *openapiclient.NewEncryptionPasswordModel("Id_example", "Hint_example") // EncryptionPasswordModel | 
+    encryptionPasswordModel := *client.NewEncryptionPasswordModel("Id_example", "Hint_example") // EncryptionPasswordModel |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.EncryptionApi.UpdateEncryptionPassword(context.Background(), id).XApiVersion(xApiVersion).EncryptionPasswordModel(encryptionPasswordModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EncryptionApi.UpdateEncryptionPassword``: %v\n", err)

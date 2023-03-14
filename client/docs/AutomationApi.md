@@ -42,15 +42,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    cloudCredentialsExportSpec := *openapiclient.NewCloudCredentialsExportSpec() // CloudCredentialsExportSpec |  (optional)
+    cloudCredentialsExportSpec := *client.NewCloudCredentialsExportSpec() // CloudCredentialsExportSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ExportCloudCredentials(context.Background()).XApiVersion(xApiVersion).CloudCredentialsExportSpec(cloudCredentialsExportSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ExportCloudCredentials``: %v\n", err)
@@ -110,15 +110,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    credentialsExportSpec := *openapiclient.NewCredentialsExportSpec() // CredentialsExportSpec |  (optional)
+    credentialsExportSpec := *client.NewCredentialsExportSpec() // CredentialsExportSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ExportCredentials(context.Background()).XApiVersion(xApiVersion).CredentialsExportSpec(credentialsExportSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ExportCredentials``: %v\n", err)
@@ -178,15 +178,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    encryptionPasswordExportSpec := *openapiclient.NewEncryptionPasswordExportSpec() // EncryptionPasswordExportSpec |  (optional)
+    encryptionPasswordExportSpec := *client.NewEncryptionPasswordExportSpec() // EncryptionPasswordExportSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ExportEncryptionPasswords(context.Background()).XApiVersion(xApiVersion).EncryptionPasswordExportSpec(encryptionPasswordExportSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ExportEncryptionPasswords``: %v\n", err)
@@ -246,15 +246,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    jobExportSpec := *openapiclient.NewJobExportSpec() // JobExportSpec |  (optional)
+    jobExportSpec := *client.NewJobExportSpec() // JobExportSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ExportJobs(context.Background()).XApiVersion(xApiVersion).JobExportSpec(jobExportSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ExportJobs``: %v\n", err)
@@ -314,15 +314,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    manageServerExportSpec := *openapiclient.NewManageServerExportSpec() // ManageServerExportSpec |  (optional)
+    manageServerExportSpec := *client.NewManageServerExportSpec() // ManageServerExportSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ExportManagedServers(context.Background()).XApiVersion(xApiVersion).ManageServerExportSpec(manageServerExportSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ExportManagedServers``: %v\n", err)
@@ -382,15 +382,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    proxyExportSpec := *openapiclient.NewProxyExportSpec() // ProxyExportSpec |  (optional)
+    proxyExportSpec := *client.NewProxyExportSpec() // ProxyExportSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ExportProxies(context.Background()).XApiVersion(xApiVersion).ProxyExportSpec(proxyExportSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ExportProxies``: %v\n", err)
@@ -450,15 +450,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    repositoryExportSpec := *openapiclient.NewRepositoryExportSpec() // RepositoryExportSpec |  (optional)
+    repositoryExportSpec := *client.NewRepositoryExportSpec() // RepositoryExportSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ExportRepositories(context.Background()).XApiVersion(xApiVersion).RepositoryExportSpec(repositoryExportSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ExportRepositories``: %v\n", err)
@@ -519,27 +519,27 @@ import (
     "fmt"
     "os"
     "time"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of sessions to skip. (optional)
     limit := int32(56) // int32 | Maximum number of sessions to return. (optional)
-    orderColumn := openapiclient.ESessionsFiltersOrderColumn("Name") // ESessionsFiltersOrderColumn | Sorts sessions by one of the session parameters. (optional)
+    orderColumn := client.ESessionsFiltersOrderColumn("Name") // ESessionsFiltersOrderColumn | Sorts sessions by one of the session parameters. (optional)
     orderAsc := true // bool | Sorts sessions in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters sessions by the `nameFilter` pattern. The pattern can match any session parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
     createdAfterFilter := time.Now() // time.Time | Returns sessions that are created after the specified date and time. (optional)
     createdBeforeFilter := time.Now() // time.Time | Returns sessions that are created before the specified date and time. (optional)
     endedAfterFilter := time.Now() // time.Time | Returns sessions that are finished after the specified date and time. (optional)
     endedBeforeFilter := time.Now() // time.Time | Returns sessions that are finished before the specified date and time. (optional)
-    typeFilter := openapiclient.ESessionType("Infrastructure") // ESessionType | Filters sessions by session type. (optional)
-    stateFilter := openapiclient.ESessionState("Stopped") // ESessionState | Filters sessions by session state. (optional)
-    resultFilter := openapiclient.ESessionResult("None") // ESessionResult | Filters sessions by session result. (optional)
+    typeFilter := client.ESessionType("Infrastructure") // ESessionType | Filters sessions by session type. (optional)
+    stateFilter := client.ESessionState("Stopped") // ESessionState | Filters sessions by session state. (optional)
+    resultFilter := client.ESessionResult("None") // ESessionResult | Filters sessions by session result. (optional)
     jobIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters sessions by job ID. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.GetAllAutomationSessions(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).CreatedAfterFilter(createdAfterFilter).CreatedBeforeFilter(createdBeforeFilter).EndedAfterFilter(endedAfterFilter).EndedBeforeFilter(endedBeforeFilter).TypeFilter(typeFilter).StateFilter(stateFilter).ResultFilter(resultFilter).JobIdFilter(jobIdFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.GetAllAutomationSessions``: %v\n", err)
@@ -611,15 +611,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the session.
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.GetAutomationSession(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.GetAutomationSession``: %v\n", err)
@@ -683,15 +683,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the session.
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.GetAutomationSessionLogs(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.GetAutomationSessionLogs``: %v\n", err)
@@ -755,15 +755,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    cloudCredentialsImportSpecCollection := *openapiclient.NewCloudCredentialsImportSpecCollection() // CloudCredentialsImportSpecCollection | 
+    cloudCredentialsImportSpecCollection := *client.NewCloudCredentialsImportSpecCollection() // CloudCredentialsImportSpecCollection |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ImportCloudCredentials(context.Background()).XApiVersion(xApiVersion).CloudCredentialsImportSpecCollection(cloudCredentialsImportSpecCollection).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ImportCloudCredentials``: %v\n", err)
@@ -823,15 +823,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    credentialsImportSpecCollection := *openapiclient.NewCredentialsImportSpecCollection([]openapiclient.CredentialsImportSpec{*openapiclient.NewCredentialsImportSpec("Username_example", "Tag_example", openapiclient.ECredentialsType("Standard"))}) // CredentialsImportSpecCollection | 
+    credentialsImportSpecCollection := *client.NewCredentialsImportSpecCollection([]client.CredentialsImportSpec{*client.NewCredentialsImportSpec("Username_example", "Tag_example", client.ECredentialsType("Standard"))}) // CredentialsImportSpecCollection |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ImportCredentials(context.Background()).XApiVersion(xApiVersion).CredentialsImportSpecCollection(credentialsImportSpecCollection).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ImportCredentials``: %v\n", err)
@@ -891,15 +891,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    encryptionPasswordImportSpecCollection := *openapiclient.NewEncryptionPasswordImportSpecCollection() // EncryptionPasswordImportSpecCollection | 
+    encryptionPasswordImportSpecCollection := *client.NewEncryptionPasswordImportSpecCollection() // EncryptionPasswordImportSpecCollection |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ImportEncryptionPasswords(context.Background()).XApiVersion(xApiVersion).EncryptionPasswordImportSpecCollection(encryptionPasswordImportSpecCollection).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ImportEncryptionPasswords``: %v\n", err)
@@ -959,15 +959,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    jobImportSpecCollection := *openapiclient.NewJobImportSpecCollection([]openapiclient.JobImportSpec{*openapiclient.NewJobImportSpec("Name_example", "Description_example", false, openapiclient.EJobType("Backup"), *openapiclient.NewBackupJobVirtualMachinesSpec([]openapiclient.VmwareObjectModel{*openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown"))}), *openapiclient.NewBackupJobStorageImportModel(*openapiclient.NewBackupRepositoryImportModel("Name_example"), *openapiclient.NewBackupJobImportProxiesModel(false), *openapiclient.NewBackupJobRetentionPolicySettingsModel(openapiclient.ERetentionPolicyType("RestorePoints"), int32(123))), *openapiclient.NewBackupJobGuestProcessingImportModel(*openapiclient.NewBackupApplicationAwareProcessingImportModel(false), *openapiclient.NewGuestFileSystemIndexingModel(false)), *openapiclient.NewBackupScheduleModel(false))}) // JobImportSpecCollection | 
+    jobImportSpecCollection := *client.NewJobImportSpecCollection([]client.JobImportSpec{*client.NewJobImportSpec("Name_example", "Description_example", false, client.EJobType("Backup"), *client.NewBackupJobVirtualMachinesSpec([]client.VmwareObjectModel{*client.NewVmwareObjectModel("HostName_example", "Name_example", client.EVmwareInventoryType("Unknown"))}), *client.NewBackupJobStorageImportModel(*client.NewBackupRepositoryImportModel("Name_example"), *client.NewBackupJobImportProxiesModel(false), *client.NewBackupJobRetentionPolicySettingsModel(client.ERetentionPolicyType("RestorePoints"), int32(123))), *client.NewBackupJobGuestProcessingImportModel(*client.NewBackupApplicationAwareProcessingImportModel(false), *client.NewGuestFileSystemIndexingModel(false)), *client.NewBackupScheduleModel(false))}) // JobImportSpecCollection |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ImportJobs(context.Background()).XApiVersion(xApiVersion).JobImportSpecCollection(jobImportSpecCollection).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ImportJobs``: %v\n", err)
@@ -1027,15 +1027,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    manageServerImportSpecCollection := *openapiclient.NewManageServerImportSpecCollection() // ManageServerImportSpecCollection | 
+    manageServerImportSpecCollection := *client.NewManageServerImportSpecCollection() // ManageServerImportSpecCollection |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ImportManagedServers(context.Background()).XApiVersion(xApiVersion).ManageServerImportSpecCollection(manageServerImportSpecCollection).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ImportManagedServers``: %v\n", err)
@@ -1095,15 +1095,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    proxyImportSpecCollection := *openapiclient.NewProxyImportSpecCollection([]openapiclient.ProxyImportSpec{*openapiclient.NewProxyImportSpec("Description_example", openapiclient.EProxyType("ViProxy"), *openapiclient.NewProxyServerSettingsImportSpec("HostName_example"))}) // ProxyImportSpecCollection | 
+    proxyImportSpecCollection := *client.NewProxyImportSpecCollection([]client.ProxyImportSpec{*client.NewProxyImportSpec("Description_example", client.EProxyType("ViProxy"), *client.NewProxyServerSettingsImportSpec("HostName_example"))}) // ProxyImportSpecCollection |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ImportProxies(context.Background()).XApiVersion(xApiVersion).ProxyImportSpecCollection(proxyImportSpecCollection).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ImportProxies``: %v\n", err)
@@ -1163,15 +1163,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    repositoryImportSpecCollection := *openapiclient.NewRepositoryImportSpecCollection() // RepositoryImportSpecCollection | 
+    repositoryImportSpecCollection := *client.NewRepositoryImportSpecCollection() // RepositoryImportSpecCollection |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.ImportRepositories(context.Background()).XApiVersion(xApiVersion).RepositoryImportSpecCollection(repositoryImportSpecCollection).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.ImportRepositories``: %v\n", err)
@@ -1231,15 +1231,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the session.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.AutomationApi.StopAutomationSession(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationApi.StopAutomationSession``: %v\n", err)

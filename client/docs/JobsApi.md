@@ -34,15 +34,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    jobSpec := *openapiclient.NewJobSpec("Name_example", "Description_example", openapiclient.EJobType("Backup")) // JobSpec | 
+    jobSpec := *client.NewJobSpec("Name_example", "Description_example", client.EJobType("Backup")) // JobSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.JobsApi.CreateJob(context.Background()).XApiVersion(xApiVersion).JobSpec(jobSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `JobsApi.CreateJob``: %v\n", err)
@@ -102,15 +102,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the job.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.JobsApi.DeleteJob(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `JobsApi.DeleteJob``: %v\n", err)
@@ -174,15 +174,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the job.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.JobsApi.DisableJob(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `JobsApi.DisableJob``: %v\n", err)
@@ -246,15 +246,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the job.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.JobsApi.EnableJob(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `JobsApi.EnableJob``: %v\n", err)
@@ -318,20 +318,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of jobs to skip. (optional)
     limit := int32(56) // int32 | Maximum number of jobs to return. (optional)
-    orderColumn := openapiclient.EJobFiltersOrderColumn("Name") // EJobFiltersOrderColumn | Sorts jobs by one of the job parameters. (optional)
+    orderColumn := client.EJobFiltersOrderColumn("Name") // EJobFiltersOrderColumn | Sorts jobs by one of the job parameters. (optional)
     orderAsc := true // bool | Sorts jobs in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters jobs by the `nameFilter` pattern. The pattern can match any job parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
-    typeFilter := openapiclient.EJobType("Backup") // EJobType | Filters jobs by job type. (optional)
+    typeFilter := client.EJobType("Backup") // EJobType | Filters jobs by job type. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.JobsApi.GetAllJobs(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `JobsApi.GetAllJobs``: %v\n", err)
@@ -397,29 +397,29 @@ import (
     "fmt"
     "os"
     "time"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of job states to skip. (optional)
     limit := int32(56) // int32 | Maximum number of job states to return. (optional)
-    orderColumn := openapiclient.EJobStatesFiltersOrderColumn("Name") // EJobStatesFiltersOrderColumn | Sorts job states by one of the state parameters. (optional)
+    orderColumn := client.EJobStatesFiltersOrderColumn("Name") // EJobStatesFiltersOrderColumn | Sorts job states by one of the state parameters. (optional)
     orderAsc := true // bool | Sorts job states in the ascending order by the `orderColumn` parameter. (optional)
     idFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters job states by job ID. (optional)
     nameFilter := "nameFilter_example" // string | Filters job states by the `nameFilter` pattern. The pattern can match any state parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
-    typeFilter := openapiclient.EJobType("Backup") // EJobType | Filters job states by job type. (optional)
-    lastResultFilter := openapiclient.ESessionResult("None") // ESessionResult | Filters job states by status with which jobs must finish. (optional)
-    statusFilter := openapiclient.EJobStatus("running") // EJobStatus | Filters job states by current status of the job. (optional)
-    workloadFilter := openapiclient.EJobWorkload("application") // EJobWorkload | Filters job states by workloads that jobs must process. (optional)
+    typeFilter := client.EJobType("Backup") // EJobType | Filters job states by job type. (optional)
+    lastResultFilter := client.ESessionResult("None") // ESessionResult | Filters job states by status with which jobs must finish. (optional)
+    statusFilter := client.EJobStatus("running") // EJobStatus | Filters job states by current status of the job. (optional)
+    workloadFilter := client.EJobWorkload("application") // EJobWorkload | Filters job states by workloads that jobs must process. (optional)
     lastRunAfterFilter := time.Now() // time.Time | Returns job states for jobs that have run after the specified date and time. (optional)
     lastRunBeforeFilter := time.Now() // time.Time | Returns job states for jobs that have not run after the specified date and time. (optional)
     isHighPriorityJobFilter := true // bool | If *true*, Returns job states for jobs with high priority. (optional)
     repositoryIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters job states by repository ID. (optional)
     objectsCountFilter := int32(56) // int32 | Filters job states by number of objects processed by the job. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.JobsApi.GetAllJobsStates(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).IdFilter(idFilter).NameFilter(nameFilter).TypeFilter(typeFilter).LastResultFilter(lastResultFilter).StatusFilter(statusFilter).WorkloadFilter(workloadFilter).LastRunAfterFilter(lastRunAfterFilter).LastRunBeforeFilter(lastRunBeforeFilter).IsHighPriorityJobFilter(isHighPriorityJobFilter).RepositoryIdFilter(repositoryIdFilter).ObjectsCountFilter(objectsCountFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `JobsApi.GetAllJobsStates``: %v\n", err)
@@ -493,15 +493,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the job.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.JobsApi.GetJob(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `JobsApi.GetJob``: %v\n", err)
@@ -565,16 +565,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the job.
-    jobStartSpec := *openapiclient.NewJobStartSpec(false) // JobStartSpec |  (optional)
+    jobStartSpec := *client.NewJobStartSpec(false) // JobStartSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.JobsApi.StartJob(context.Background(), id).XApiVersion(xApiVersion).JobStartSpec(jobStartSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `JobsApi.StartJob``: %v\n", err)
@@ -639,16 +639,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the job.
-    jobStopSpec := *openapiclient.NewJobStopSpec(false) // JobStopSpec |  (optional)
+    jobStopSpec := *client.NewJobStopSpec(false) // JobStopSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.JobsApi.StopJob(context.Background(), id).XApiVersion(xApiVersion).JobStopSpec(jobStopSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `JobsApi.StopJob``: %v\n", err)
@@ -713,16 +713,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the job.
-    jobModel := *openapiclient.NewJobModel("Id_example", "Name_example", "Description_example", openapiclient.EJobType("Backup"), false) // JobModel | 
+    jobModel := *client.NewJobModel("Id_example", "Name_example", "Description_example", client.EJobType("Backup"), false) // JobModel |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.JobsApi.UpdateJob(context.Background(), id).XApiVersion(xApiVersion).JobModel(jobModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `JobsApi.UpdateJob``: %v\n", err)

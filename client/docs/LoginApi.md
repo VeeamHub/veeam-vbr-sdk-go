@@ -27,14 +27,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.LoginApi.CreateAuthorizationCode(context.Background()).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoginApi.CreateAuthorizationCode``: %v\n", err)
@@ -93,12 +93,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    grantType := openapiclient.ELoginGrantType("password") // ELoginGrantType |  (default to "password")
+    grantType := client.ELoginGrantType("password") // ELoginGrantType |  (default to "password")
     username := "username_example" // string | User name. Required if the `grant_type` value is `password`. (optional)
     password := "password_example" // string | Password. Required if the `grant_type` value is `password`. (optional)
     refreshToken := "refreshToken_example" // string | Refresh token. Required if the `grant_type` value is `refresh_token`. (optional)
@@ -106,8 +106,8 @@ func main() {
     useShortTermRefresh := true // bool | If *true*, a short-term refresh token is used. Lifetime of the short-term refresh token is the access token lifetime plus 15 minutes. (optional)
     vbrToken := "vbrToken_example" // string | Veeam Backup & Replication platform service token. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.LoginApi.CreateToken(context.Background()).XApiVersion(xApiVersion).GrantType(grantType).Username(username).Password(password).RefreshToken(refreshToken).Code(code).UseShortTermRefresh(useShortTermRefresh).VbrToken(vbrToken).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoginApi.CreateToken``: %v\n", err)
@@ -173,14 +173,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.LoginApi.Logout(context.Background()).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoginApi.Logout``: %v\n", err)

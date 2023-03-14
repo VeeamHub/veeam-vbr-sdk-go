@@ -27,14 +27,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ConfigurationBackupApi.GetConfigBackupOptions(context.Background()).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationBackupApi.GetConfigBackupOptions``: %v\n", err)
@@ -93,14 +93,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ConfigurationBackupApi.StartConfigBackup(context.Background()).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationBackupApi.StartConfigBackup``: %v\n", err)
@@ -159,15 +159,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    configBackupModel := *openapiclient.NewConfigBackupModel(false, "BackupRepositoryId_example", int32(123), *openapiclient.NewConfigBackupNotificationsModel(false), *openapiclient.NewConfigBackupScheduleModel(false), *openapiclient.NewConfigBackupLastSuccessfulModel(), *openapiclient.NewConfigBackupEncryptionModel(false, "PasswordId_example")) // ConfigBackupModel | 
+    configBackupModel := *client.NewConfigBackupModel(false, "BackupRepositoryId_example", int32(123), *client.NewConfigBackupNotificationsModel(false), *client.NewConfigBackupScheduleModel(false), *client.NewConfigBackupLastSuccessfulModel(), *client.NewConfigBackupEncryptionModel(false, "PasswordId_example")) // ConfigBackupModel |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ConfigurationBackupApi.UpdateConfigBackupOptions(context.Background()).XApiVersion(xApiVersion).ConfigBackupModel(configBackupModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationBackupApi.UpdateConfigBackupOptions``: %v\n", err)

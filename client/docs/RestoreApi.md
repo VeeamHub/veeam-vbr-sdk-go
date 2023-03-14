@@ -35,15 +35,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    entireViVMRestoreSpec := *openapiclient.NewEntireViVMRestoreSpec("ObjectRestorePointId_example", openapiclient.EEntireVMRestoreModeType("OriginalLocation")) // EntireViVMRestoreSpec | 
+    entireViVMRestoreSpec := *client.NewEntireViVMRestoreSpec("ObjectRestorePointId_example", client.EEntireVMRestoreModeType("OriginalLocation")) // EntireViVMRestoreSpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.EntireVmRestoreVmware(context.Background()).XApiVersion(xApiVersion).EntireViVMRestoreSpec(entireViVMRestoreSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.EntireVmRestoreVmware``: %v\n", err)
@@ -103,19 +103,19 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of mounts to skip. (optional)
     limit := int32(56) // int32 | Maximum number of mounts to return. (optional)
-    orderColumn := openapiclient.EInstantViVMRecoveryMountsFiltersOrderColumn("state") // EInstantViVMRecoveryMountsFiltersOrderColumn | Sorts mounts by one of the mount parameters. (optional)
+    orderColumn := client.EInstantViVMRecoveryMountsFiltersOrderColumn("state") // EInstantViVMRecoveryMountsFiltersOrderColumn | Sorts mounts by one of the mount parameters. (optional)
     orderAsc := true // bool | Sorts mounts in the ascending order by the `orderColumn` parameter. (optional)
-    stateFilter := openapiclient.EInstantRecoveryMountState("Failed") // EInstantRecoveryMountState | Filters mounts by mount state. (optional)
+    stateFilter := client.EInstantRecoveryMountState("Failed") // EInstantRecoveryMountState | Filters mounts by mount state. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.GetAllInstantViVMRecoveryMounts(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).StateFilter(stateFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.GetAllInstantViVMRecoveryMounts``: %v\n", err)
@@ -179,19 +179,19 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of mounts to skip. (optional)
     limit := int32(56) // int32 | Maximum number of mounts to return. (optional)
-    orderColumn := openapiclient.EVmwareFcdInstantRecoveryMountsFiltersOrderColumn("state") // EVmwareFcdInstantRecoveryMountsFiltersOrderColumn | Sorts mounts by one of the mount parameters. (optional)
+    orderColumn := client.EVmwareFcdInstantRecoveryMountsFiltersOrderColumn("state") // EVmwareFcdInstantRecoveryMountsFiltersOrderColumn | Sorts mounts by one of the mount parameters. (optional)
     orderAsc := true // bool | Sorts mounts in the ascending order by the `orderColumn` parameter. (optional)
-    stateFilter := openapiclient.EInstantRecoveryMountState("Failed") // EInstantRecoveryMountState | Filters mounts by mount state. (optional)
+    stateFilter := client.EInstantRecoveryMountState("Failed") // EInstantRecoveryMountState | Filters mounts by mount state. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.GetAllVmwareFcdInstantRecoveryMountModels(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).StateFilter(stateFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.GetAllVmwareFcdInstantRecoveryMountModels``: %v\n", err)
@@ -255,15 +255,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.GetInstantViVMRecoveryMount(context.Background(), mountId).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.GetInstantViVMRecoveryMount``: %v\n", err)
@@ -327,15 +327,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.GetVmwareFcdInstantRecoveryMountModel(context.Background(), mountId).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.GetVmwareFcdInstantRecoveryMountModel``: %v\n", err)
@@ -399,15 +399,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.InstantRecoveryVmwareFcdDismountWithSession(context.Background(), mountId).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantRecoveryVmwareFcdDismountWithSession``: %v\n", err)
@@ -471,16 +471,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
-    vmwareFcdQuickMigrationSpec := *openapiclient.NewVmwareFcdQuickMigrationSpec(*openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown"))) // VmwareFcdQuickMigrationSpec | 
+    vmwareFcdQuickMigrationSpec := *client.NewVmwareFcdQuickMigrationSpec(*client.NewVmwareObjectModel("HostName_example", "Name_example", client.EVmwareInventoryType("Unknown"))) // VmwareFcdQuickMigrationSpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.InstantRecoveryVmwareFcdMigrateWithSession(context.Background(), mountId).XApiVersion(xApiVersion).VmwareFcdQuickMigrationSpec(vmwareFcdQuickMigrationSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantRecoveryVmwareFcdMigrateWithSession``: %v\n", err)
@@ -545,15 +545,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    vmwareFcdInstantRecoverySpec := *openapiclient.NewVmwareFcdInstantRecoverySpec("ObjectRestorePointId_example", *openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown")), []openapiclient.VmwareFcdInstantRecoveryDiskSpec{*openapiclient.NewVmwareFcdInstantRecoveryDiskSpec("NameInBackup_example", "MountedDiskName_example", "RegisteredFcdName_example")}) // VmwareFcdInstantRecoverySpec | 
+    vmwareFcdInstantRecoverySpec := *client.NewVmwareFcdInstantRecoverySpec("ObjectRestorePointId_example", *client.NewVmwareObjectModel("HostName_example", "Name_example", client.EVmwareInventoryType("Unknown")), []client.VmwareFcdInstantRecoveryDiskSpec{*client.NewVmwareFcdInstantRecoveryDiskSpec("NameInBackup_example", "MountedDiskName_example", "RegisteredFcdName_example")}) // VmwareFcdInstantRecoverySpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.InstantRecoveryVmwareFcdMountWithSession(context.Background()).XApiVersion(xApiVersion).VmwareFcdInstantRecoverySpec(vmwareFcdInstantRecoverySpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantRecoveryVmwareFcdMountWithSession``: %v\n", err)
@@ -613,16 +613,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
-    viVMQuickMigrationSpec := *openapiclient.NewViVMQuickMigrationSpec(*openapiclient.NewVmwareObjectModel("HostName_example", "Name_example", openapiclient.EVmwareInventoryType("Unknown"))) // ViVMQuickMigrationSpec | 
+    viVMQuickMigrationSpec := *client.NewViVMQuickMigrationSpec(*client.NewVmwareObjectModel("HostName_example", "Name_example", client.EVmwareInventoryType("Unknown"))) // ViVMQuickMigrationSpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.InstantViVMRecoveryMigrate(context.Background(), mountId).XApiVersion(xApiVersion).ViVMQuickMigrationSpec(viVMQuickMigrationSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantViVMRecoveryMigrate``: %v\n", err)
@@ -687,15 +687,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    instantViVMRecoverySpec := *openapiclient.NewInstantViVMRecoverySpec("ObjectRestorePointId_example", openapiclient.EInstantVMRecoveryModeType("OriginalLocation"), *openapiclient.NewSecureRestoreSpec(false)) // InstantViVMRecoverySpec | 
+    instantViVMRecoverySpec := *client.NewInstantViVMRecoverySpec("ObjectRestorePointId_example", client.EInstantVMRecoveryModeType("OriginalLocation"), *client.NewSecureRestoreSpec(false)) // InstantViVMRecoverySpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.InstantViVMRecoveryMount(context.Background()).XApiVersion(xApiVersion).InstantViVMRecoverySpec(instantViVMRecoverySpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantViVMRecoveryMount``: %v\n", err)
@@ -755,15 +755,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     mountId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Mount ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RestoreApi.InstantViVMRecoveryUnmount(context.Background(), mountId).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RestoreApi.InstantViVMRecoveryUnmount``: %v\n", err)

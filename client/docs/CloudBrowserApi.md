@@ -26,15 +26,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    cloudBrowserSpec := *openapiclient.NewCloudBrowserSpec("CredentialsId_example", openapiclient.ECloudServiceType("AzureBlob")) // CloudBrowserSpec |  (optional)
+    cloudBrowserSpec := *client.NewCloudBrowserSpec("CredentialsId_example", client.ECloudServiceType("AzureBlob")) // CloudBrowserSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CloudBrowserApi.BrowseCloudEntity(context.Background()).XApiVersion(xApiVersion).CloudBrowserSpec(cloudBrowserSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CloudBrowserApi.BrowseCloudEntity``: %v\n", err)
@@ -94,15 +94,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    cloudBrowserNewFolderSpec := *openapiclient.NewCloudBrowserNewFolderSpec("CredentialsId_example", openapiclient.ECloudServiceType("AzureBlob"), "NewFolderName_example") // CloudBrowserNewFolderSpec |  (optional)
+    cloudBrowserNewFolderSpec := *client.NewCloudBrowserNewFolderSpec("CredentialsId_example", client.ECloudServiceType("AzureBlob"), "NewFolderName_example") // CloudBrowserNewFolderSpec |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CloudBrowserApi.CreateNewCloudFolder(context.Background()).XApiVersion(xApiVersion).CloudBrowserNewFolderSpec(cloudBrowserNewFolderSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CloudBrowserApi.CreateNewCloudFolder``: %v\n", err)

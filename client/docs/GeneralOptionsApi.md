@@ -26,14 +26,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.GeneralOptionsApi.GetGeneralOptions(context.Background()).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GeneralOptionsApi.GetGeneralOptions``: %v\n", err)
@@ -92,15 +92,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    generalOptionsModel := *openapiclient.NewGeneralOptionsModel() // GeneralOptionsModel | 
+    generalOptionsModel := *client.NewGeneralOptionsModel() // GeneralOptionsModel |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.GeneralOptionsApi.UpdateGeneralOptions(context.Background()).XApiVersion(xApiVersion).GeneralOptionsModel(generalOptionsModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GeneralOptionsApi.UpdateGeneralOptions``: %v\n", err)

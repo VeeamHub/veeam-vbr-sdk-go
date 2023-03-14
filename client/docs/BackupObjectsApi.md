@@ -27,23 +27,23 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of backup objects to skip. (optional)
     limit := int32(56) // int32 | Maximum number of backup objects to return. (optional)
-    orderColumn := openapiclient.EBackupObjectsFiltersOrderColumn("Name") // EBackupObjectsFiltersOrderColumn | Sorts backup objects by one of the backup object parameters. (optional)
+    orderColumn := client.EBackupObjectsFiltersOrderColumn("Name") // EBackupObjectsFiltersOrderColumn | Sorts backup objects by one of the backup object parameters. (optional)
     orderAsc := true // bool | Sorts backup objects in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters backup objects by the `nameFilter` pattern. The pattern can match any backup object parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
-    platformNameFilter := openapiclient.EPlatformType("VMware") // EPlatformType | Filters backup objects by platform ID. (optional)
+    platformNameFilter := client.EPlatformType("VMware") // EPlatformType | Filters backup objects by platform ID. (optional)
     platformIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters backup objects by platform ID. (optional)
     typeFilter := "typeFilter_example" // string | Filters backup objects by object type. (optional)
     viTypeFilter := "viTypeFilter_example" // string | Filters backup objects by the type of VMware vSphere server. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.BackupObjectsApi.GetAllBackupObjects(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).PlatformNameFilter(platformNameFilter).PlatformIdFilter(platformIdFilter).TypeFilter(typeFilter).ViTypeFilter(viTypeFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BackupObjectsApi.GetAllBackupObjects``: %v\n", err)
@@ -111,15 +111,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup object.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.BackupObjectsApi.GetBackupObject(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BackupObjectsApi.GetBackupObject``: %v\n", err)
@@ -183,15 +183,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup object.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.BackupObjectsApi.GetBackupObjectRestorePoints(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BackupObjectsApi.GetBackupObjectRestorePoints``: %v\n", err)

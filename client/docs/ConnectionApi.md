@@ -25,15 +25,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    hostConnectionSpec := *openapiclient.NewHostConnectionSpec("ServerName_example", "CredentialsId_example", openapiclient.EManagedServerType("WindowsHost")) // HostConnectionSpec | 
+    hostConnectionSpec := *client.NewHostConnectionSpec("ServerName_example", "CredentialsId_example", client.EManagedServerType("WindowsHost")) // HostConnectionSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ConnectionApi.GetConnectionCertificate(context.Background()).XApiVersion(xApiVersion).HostConnectionSpec(hostConnectionSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConnectionApi.GetConnectionCertificate``: %v\n", err)

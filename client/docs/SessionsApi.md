@@ -29,27 +29,27 @@ import (
     "fmt"
     "os"
     "time"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of sessions to skip. (optional)
     limit := int32(56) // int32 | Maximum number of sessions to return. (optional)
-    orderColumn := openapiclient.ESessionsFiltersOrderColumn("Name") // ESessionsFiltersOrderColumn | Sorts sessions by one of the session parameters. (optional)
+    orderColumn := client.ESessionsFiltersOrderColumn("Name") // ESessionsFiltersOrderColumn | Sorts sessions by one of the session parameters. (optional)
     orderAsc := true // bool | Sorts sessions in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters sessions by the `nameFilter` pattern. The pattern can match any session parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
     createdAfterFilter := time.Now() // time.Time | Returns sessions that are created after the specified date and time. (optional)
     createdBeforeFilter := time.Now() // time.Time | Returns sessions that are created before the specified date and time. (optional)
     endedAfterFilter := time.Now() // time.Time | Returns sessions that are finished after the specified date and time. (optional)
     endedBeforeFilter := time.Now() // time.Time | Returns sessions that are finished before the specified date and time. (optional)
-    typeFilter := openapiclient.ESessionType("Infrastructure") // ESessionType | Filters sessions by session type. (optional)
-    stateFilter := openapiclient.ESessionState("Stopped") // ESessionState | Filters sessions by session state. (optional)
-    resultFilter := openapiclient.ESessionResult("None") // ESessionResult | Filters sessions by session result. (optional)
+    typeFilter := client.ESessionType("Infrastructure") // ESessionType | Filters sessions by session type. (optional)
+    stateFilter := client.ESessionState("Stopped") // ESessionState | Filters sessions by session state. (optional)
+    resultFilter := client.ESessionResult("None") // ESessionResult | Filters sessions by session result. (optional)
     jobIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters sessions by job ID. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.SessionsApi.GetAllSessions(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).CreatedAfterFilter(createdAfterFilter).CreatedBeforeFilter(createdBeforeFilter).EndedAfterFilter(endedAfterFilter).EndedBeforeFilter(endedBeforeFilter).TypeFilter(typeFilter).StateFilter(stateFilter).ResultFilter(resultFilter).JobIdFilter(jobIdFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SessionsApi.GetAllSessions``: %v\n", err)
@@ -121,15 +121,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the session.
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.SessionsApi.GetSession(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SessionsApi.GetSession``: %v\n", err)
@@ -193,15 +193,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the session.
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.SessionsApi.GetSessionLogs(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SessionsApi.GetSessionLogs``: %v\n", err)
@@ -265,15 +265,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the session.
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.SessionsApi.StopSession(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SessionsApi.StopSession``: %v\n", err)

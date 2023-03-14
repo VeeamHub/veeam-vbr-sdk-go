@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    proxySpec := *openapiclient.NewProxySpec("Description_example", openapiclient.EProxyType("ViProxy")) // ProxySpec | 
+    proxySpec := *client.NewProxySpec("Description_example", client.EProxyType("ViProxy")) // ProxySpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ProxiesApi.CreateProxy(context.Background()).XApiVersion(xApiVersion).ProxySpec(proxySpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProxiesApi.CreateProxy``: %v\n", err)
@@ -97,15 +97,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup proxy.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ProxiesApi.DeleteProxy(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProxiesApi.DeleteProxy``: %v\n", err)
@@ -169,21 +169,21 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of proxies to skip. (optional)
     limit := int32(56) // int32 | Maximum number of proxies to return. (optional)
-    orderColumn := openapiclient.EProxiesFiltersOrderColumn("Name") // EProxiesFiltersOrderColumn | Sorts proxies by one of the proxy parameters. (optional)
+    orderColumn := client.EProxiesFiltersOrderColumn("Name") // EProxiesFiltersOrderColumn | Sorts proxies by one of the proxy parameters. (optional)
     orderAsc := true // bool | Sorts proxies in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters proxies by the `nameFilter` pattern. The pattern can match any proxy parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
-    typeFilter := openapiclient.EProxyType("ViProxy") // EProxyType | Filters proxies by proxy type. (optional)
+    typeFilter := client.EProxyType("ViProxy") // EProxyType | Filters proxies by proxy type. (optional)
     hostIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters proxies by ID of the backup server. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ProxiesApi.GetAllProxies(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).HostIdFilter(hostIdFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProxiesApi.GetAllProxies``: %v\n", err)
@@ -249,15 +249,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup proxy.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ProxiesApi.GetProxy(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProxiesApi.GetProxy``: %v\n", err)
@@ -321,16 +321,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup proxy.
-    proxyModel := *openapiclient.NewProxyModel("Id_example", "Name_example", "Description_example", openapiclient.EProxyType("ViProxy")) // ProxyModel | 
+    proxyModel := *client.NewProxyModel("Id_example", "Name_example", "Description_example", client.EProxyType("ViProxy")) // ProxyModel | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ProxiesApi.UpdateProxy(context.Background(), id).XApiVersion(xApiVersion).ProxyModel(proxyModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProxiesApi.UpdateProxy``: %v\n", err)

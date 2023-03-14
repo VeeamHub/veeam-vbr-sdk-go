@@ -45,16 +45,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the Azure compute account.
-    certificateUploadSpec := *openapiclient.NewCertificateUploadSpec("Certificate_example", openapiclient.ECertificateFileFormatType("pfx")) // CertificateUploadSpec | 
+    certificateUploadSpec := *client.NewCertificateUploadSpec("Certificate_example", client.ECertificateFileFormatType("pfx")) // CertificateUploadSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.ChangeCloudCertificate(context.Background(), id).XApiVersion(xApiVersion).CertificateUploadSpec(certificateUploadSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.ChangeCloudCertificate``: %v\n", err)
@@ -119,16 +119,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the cloud credentials record.
-    cloudCredentialsPasswordSpec := *openapiclient.NewCloudCredentialsPasswordSpec("NewSecretKey_example") // CloudCredentialsPasswordSpec | 
+    cloudCredentialsPasswordSpec := *client.NewCloudCredentialsPasswordSpec("NewSecretKey_example") // CloudCredentialsPasswordSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.ChangeCloudCredsSecretKey(context.Background(), id).XApiVersion(xApiVersion).CloudCredentialsPasswordSpec(cloudCredentialsPasswordSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.ChangeCloudCredsSecretKey``: %v\n", err)
@@ -193,16 +193,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
-    credentialsPasswordChangeSpec := *openapiclient.NewCredentialsPasswordChangeSpec("Password_example") // CredentialsPasswordChangeSpec | 
+    credentialsPasswordChangeSpec := *client.NewCredentialsPasswordChangeSpec("Password_example") // CredentialsPasswordChangeSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.ChangePasswordForCreds(context.Background(), id).XApiVersion(xApiVersion).CredentialsPasswordChangeSpec(credentialsPasswordChangeSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.ChangePasswordForCreds``: %v\n", err)
@@ -267,16 +267,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
-    privateKeyChangeSpec := *openapiclient.NewPrivateKeyChangeSpec("PrivateKey_example") // PrivateKeyChangeSpec | 
+    privateKeyChangeSpec := *client.NewPrivateKeyChangeSpec("PrivateKey_example") // PrivateKeyChangeSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.ChangePrivateKeyForCreds(context.Background(), id).XApiVersion(xApiVersion).PrivateKeyChangeSpec(privateKeyChangeSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.ChangePrivateKeyForCreds``: %v\n", err)
@@ -341,16 +341,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
-    credentialsPasswordChangeSpec := *openapiclient.NewCredentialsPasswordChangeSpec("Password_example") // CredentialsPasswordChangeSpec | 
+    credentialsPasswordChangeSpec := *client.NewCredentialsPasswordChangeSpec("Password_example") // CredentialsPasswordChangeSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.ChangeRootPasswordForCreds(context.Background(), id).XApiVersion(xApiVersion).CredentialsPasswordChangeSpec(credentialsPasswordChangeSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.ChangeRootPasswordForCreds``: %v\n", err)
@@ -415,15 +415,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    cloudCredentialsSpec := *openapiclient.NewCloudCredentialsSpec(openapiclient.ECloudCredentialsType("AzureStorage")) // CloudCredentialsSpec | 
+    cloudCredentialsSpec := *client.NewCloudCredentialsSpec(client.ECloudCredentialsType("AzureStorage")) // CloudCredentialsSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.CreateCloudCreds(context.Background()).XApiVersion(xApiVersion).CloudCredentialsSpec(cloudCredentialsSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.CreateCloudCreds``: %v\n", err)
@@ -483,16 +483,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the Microsoft Azure compute account.
-    cloudHelperApplianceSpec := *openapiclient.NewCloudHelperApplianceSpec(openapiclient.ECloudCredentialsType("AzureStorage")) // CloudHelperApplianceSpec | 
+    cloudHelperApplianceSpec := *client.NewCloudHelperApplianceSpec(client.ECloudCredentialsType("AzureStorage")) // CloudHelperApplianceSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.CreateCloudCredsHelperAppliance(context.Background(), id).XApiVersion(xApiVersion).CloudHelperApplianceSpec(cloudHelperApplianceSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.CreateCloudCredsHelperAppliance``: %v\n", err)
@@ -557,15 +557,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    credentialsSpec := *openapiclient.NewCredentialsSpec("Username_example", openapiclient.ECredentialsType("Standard")) // CredentialsSpec | 
+    credentialsSpec := *client.NewCredentialsSpec("Username_example", client.ECredentialsType("Standard")) // CredentialsSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.CreateCreds(context.Background()).XApiVersion(xApiVersion).CredentialsSpec(credentialsSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.CreateCreds``: %v\n", err)
@@ -625,15 +625,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the cloud credentials record.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.DeleteCloudCreds(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.DeleteCloudCreds``: %v\n", err)
@@ -697,7 +697,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
@@ -705,8 +705,8 @@ func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the Microsoft Azure compute account.
     applianceId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the helper appliance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.DeleteCloudCredsHelperAppliance(context.Background(), id, applianceId).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.DeleteCloudCredsHelperAppliance``: %v\n", err)
@@ -772,15 +772,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.DeleteCreds(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.DeleteCreds``: %v\n", err)
@@ -844,15 +844,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     verificationCode := "verificationCode_example" // string | Verification code. To obtain the code, use the [Get Verification Code](#tag/Credentials/operation/RequestAppRegistrationByDeviceCode) request.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.FinishAppRegistrationByDeviceCode(context.Background(), verificationCode).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.FinishAppRegistrationByDeviceCode``: %v\n", err)
@@ -916,20 +916,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of cloud credentials records to skip. (optional)
     limit := int32(56) // int32 | Maximum number of cloud credentials records to return. (optional)
-    orderColumn := openapiclient.ECloudCredentialsFiltersOrderColumn("Name") // ECloudCredentialsFiltersOrderColumn | Sorts cloud credentials by one of the cloud credentials parameters. (optional)
+    orderColumn := client.ECloudCredentialsFiltersOrderColumn("Name") // ECloudCredentialsFiltersOrderColumn | Sorts cloud credentials by one of the cloud credentials parameters. (optional)
     orderAsc := true // bool | Sorts cloud credentials in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters cloud credentials by the `nameFilter` pattern. The pattern can match any cloud credentials parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
-    typeFilter := openapiclient.ECloudCredentialsType("AzureStorage") // ECloudCredentialsType |  (optional)
+    typeFilter := client.ECloudCredentialsType("AzureStorage") // ECloudCredentialsType |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.GetAllCloudCreds(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.GetAllCloudCreds``: %v\n", err)
@@ -994,19 +994,19 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of credentials records to skip. (optional)
     limit := int32(56) // int32 | Maximum number of credentials records to return. (optional)
-    orderColumn := openapiclient.ECredentialsFiltersOrderColumn("Username") // ECredentialsFiltersOrderColumn | Sorts credentials by one of the credentials parameters. (optional)
+    orderColumn := client.ECredentialsFiltersOrderColumn("Username") // ECredentialsFiltersOrderColumn | Sorts credentials by one of the credentials parameters. (optional)
     orderAsc := true // bool | Sorts credentials in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters credentials by the `nameFilter` pattern. The pattern can match any credentials parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.GetAllCreds(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.GetAllCreds``: %v\n", err)
@@ -1070,15 +1070,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the Microsoft Azure compute account.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.GetAllCredsHelperAppliances(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.GetAllCredsHelperAppliances``: %v\n", err)
@@ -1142,15 +1142,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the cloud credentials record.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.GetCloudCreds(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.GetCloudCreds``: %v\n", err)
@@ -1214,7 +1214,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
@@ -1222,8 +1222,8 @@ func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the Microsoft Azure compute account.
     applianceId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the helper appliance.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.GetCloudCredsHelperAppliance(context.Background(), id, applianceId).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.GetCloudCredsHelperAppliance``: %v\n", err)
@@ -1289,15 +1289,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.GetCreds(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.GetCreds``: %v\n", err)
@@ -1361,15 +1361,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    cloudDeviceCodeSpec := *openapiclient.NewCloudDeviceCodeSpec(openapiclient.ECloudCredentialsType("AzureStorage")) // CloudDeviceCodeSpec | 
+    cloudDeviceCodeSpec := *client.NewCloudDeviceCodeSpec(client.ECloudCredentialsType("AzureStorage")) // CloudDeviceCodeSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.RequestAppRegistrationByDeviceCode(context.Background()).XApiVersion(xApiVersion).CloudDeviceCodeSpec(cloudDeviceCodeSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.RequestAppRegistrationByDeviceCode``: %v\n", err)
@@ -1429,16 +1429,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the cloud credentials record.
-    cloudCredentialsModel := *openapiclient.NewCloudCredentialsModel("Id_example", openapiclient.ECloudCredentialsType("AzureStorage")) // CloudCredentialsModel | 
+    cloudCredentialsModel := *client.NewCloudCredentialsModel("Id_example", client.ECloudCredentialsType("AzureStorage")) // CloudCredentialsModel |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.UpdateCloudCreds(context.Background(), id).XApiVersion(xApiVersion).CloudCredentialsModel(cloudCredentialsModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.UpdateCloudCreds``: %v\n", err)
@@ -1504,16 +1504,16 @@ import (
     "fmt"
     "os"
     "time"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the credentials record.
-    credentialsModel := *openapiclient.NewCredentialsModel("Id_example", "Username_example", "Description_example", openapiclient.ECredentialsType("Standard"), time.Now()) // CredentialsModel | 
+    credentialsModel := *client.NewCredentialsModel("Id_example", "Username_example", "Description_example", client.ECredentialsType("Standard"), time.Now()) // CredentialsModel |
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.CredentialsApi.UpdateCreds(context.Background(), id).XApiVersion(xApiVersion).CredentialsModel(credentialsModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CredentialsApi.UpdateCreds``: %v\n", err)

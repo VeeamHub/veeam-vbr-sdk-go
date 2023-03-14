@@ -26,19 +26,19 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of VMware vSphere servers to skip. (optional)
     limit := int32(56) // int32 | Maximum number of VMware vSphere servers to return. (optional)
-    orderColumn := openapiclient.EViRootFiltersOrderColumn("Name") // EViRootFiltersOrderColumn | Sorts VMware vSphere servers by one of the VMware vSphere server parameters. (optional)
+    orderColumn := client.EViRootFiltersOrderColumn("Name") // EViRootFiltersOrderColumn | Sorts VMware vSphere servers by one of the VMware vSphere server parameters. (optional)
     orderAsc := true // bool | Sorts VMware vSphere servers in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters VMware vSphere servers by the `nameFilter` pattern. The pattern can match any VMware vSphere server parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.InventoryBrowserApi.GetAllInventoryVmwareHosts(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryBrowserApi.GetAllInventoryVmwareHosts``: %v\n", err)
@@ -102,7 +102,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
@@ -110,16 +110,16 @@ func main() {
     name := "name_example" // string | Name of the VMware vSphere server.
     skip := int32(56) // int32 | Number of objects to skip. (optional)
     limit := int32(56) // int32 | Maximum number of objects to return. (optional)
-    orderColumn := openapiclient.EvCentersInventoryFiltersOrderColumn("Name") // EvCentersInventoryFiltersOrderColumn | Sorts objects by one of the object parameters. (optional)
+    orderColumn := client.EvCentersInventoryFiltersOrderColumn("Name") // EvCentersInventoryFiltersOrderColumn | Sorts objects by one of the object parameters. (optional)
     orderAsc := true // bool | Sorts objects in the ascending order by the `orderColumn` parameter. (optional)
     objectIdFilter := "objectIdFilter_example" // string | Filters objects by object ID. (optional)
-    hierarchyTypeFilter := openapiclient.EHierarchyType("HostsAndClusters") // EHierarchyType | Filters objects by hierarchy type. (optional)
+    hierarchyTypeFilter := client.EHierarchyType("HostsAndClusters") // EHierarchyType | Filters objects by hierarchy type. (optional)
     nameFilter := "nameFilter_example" // string | Filters objects by the `nameFilter` pattern. The pattern can match any object parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
-    typeFilter := openapiclient.EVmwareInventoryType("Unknown") // EVmwareInventoryType | Filters objects by virtual infrastructure type. (optional)
+    typeFilter := client.EVmwareInventoryType("Unknown") // EVmwareInventoryType | Filters objects by virtual infrastructure type. (optional)
     parentContainerNameFilter := "parentContainerNameFilter_example" // string | Filters objects by name of the parent container. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.InventoryBrowserApi.GetVmwareHostObject(context.Background(), name).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).ObjectIdFilter(objectIdFilter).HierarchyTypeFilter(hierarchyTypeFilter).NameFilter(nameFilter).TypeFilter(typeFilter).ParentContainerNameFilter(parentContainerNameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryBrowserApi.GetVmwareHostObject``: %v\n", err)

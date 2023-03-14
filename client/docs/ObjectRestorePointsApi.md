@@ -28,25 +28,25 @@ import (
     "fmt"
     "os"
     "time"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of restore points to skip. (optional)
     limit := int32(56) // int32 | Maximum number of restore points to return. (optional)
-    orderColumn := openapiclient.EObjectRestorePointsFiltersOrderColumn("CreationTime") // EObjectRestorePointsFiltersOrderColumn | Sorts restore points by one of the restore point parameters. (optional)
+    orderColumn := client.EObjectRestorePointsFiltersOrderColumn("CreationTime") // EObjectRestorePointsFiltersOrderColumn | Sorts restore points by one of the restore point parameters. (optional)
     orderAsc := true // bool | Sorts restore points in the ascending order by the `orderColumn` parameter. (optional)
     createdAfterFilter := time.Now() // time.Time | Returns restore points that are created after the specified date and time. (optional)
     createdBeforeFilter := time.Now() // time.Time | Returns restore points that are created before the specified date and time. (optional)
     nameFilter := "nameFilter_example" // string | Filters restore points by the `nameFilter` pattern. The pattern can match any restore point parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
-    platformNameFilter := openapiclient.EPlatformType("VMware") // EPlatformType | Filters restore points by name of the backup object platform. (optional)
+    platformNameFilter := client.EPlatformType("VMware") // EPlatformType | Filters restore points by name of the backup object platform. (optional)
     platformIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters restore points by ID of the backup object platform. (optional)
     backupIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters restore points by backup ID. (optional)
     backupObjectIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters restore points by backup object ID. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ObjectRestorePointsApi.GetAllObjectRestorePoints(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).CreatedAfterFilter(createdAfterFilter).CreatedBeforeFilter(createdBeforeFilter).NameFilter(nameFilter).PlatformNameFilter(platformNameFilter).PlatformIdFilter(platformIdFilter).BackupIdFilter(backupIdFilter).BackupObjectIdFilter(backupObjectIdFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectRestorePointsApi.GetAllObjectRestorePoints``: %v\n", err)
@@ -116,15 +116,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the restore point.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ObjectRestorePointsApi.GetObjectRestorePoint(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectRestorePointsApi.GetObjectRestorePoint``: %v\n", err)
@@ -188,15 +188,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the restore point.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ObjectRestorePointsApi.GetObjectRestorePointDisks(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectRestorePointsApi.GetObjectRestorePointDisks``: %v\n", err)

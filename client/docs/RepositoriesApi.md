@@ -44,16 +44,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    repositorySpec := *openapiclient.NewRepositorySpec("Name_example", "Description_example", openapiclient.ERepositoryType("WinLocal")) // RepositorySpec | 
+    repositorySpec := *client.NewRepositorySpec("Name_example", "Description_example", client.ERepositoryType("WinLocal")) // RepositorySpec | 
     overwriteOwner := true // bool |  (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.CreateRepository(context.Background()).XApiVersion(xApiVersion).RepositorySpec(repositorySpec).OverwriteOwner(overwriteOwner).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.CreateRepository``: %v\n", err)
@@ -114,15 +114,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
-    scaleOutRepositorySpec := *openapiclient.NewScaleOutRepositorySpec("Name_example", "Description_example", *openapiclient.NewPerformanceTierSpec([]openapiclient.PerformanceExtentSpec{*openapiclient.NewPerformanceExtentSpec("Id_example")})) // ScaleOutRepositorySpec | 
+    scaleOutRepositorySpec := *client.NewScaleOutRepositorySpec("Name_example", "Description_example", *client.NewPerformanceTierSpec([]client.PerformanceExtentSpec{*client.NewPerformanceExtentSpec("Id_example")})) // ScaleOutRepositorySpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.CreateScaleOutRepository(context.Background()).XApiVersion(xApiVersion).ScaleOutRepositorySpec(scaleOutRepositorySpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.CreateScaleOutRepository``: %v\n", err)
@@ -182,7 +182,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
@@ -190,8 +190,8 @@ func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup repository.
     deleteBackups := true // bool | If *true*, Veeam Backup & Replication will remove backup files. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.DeleteRepository(context.Background(), id).XApiVersion(xApiVersion).DeleteBackups(deleteBackups).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.DeleteRepository``: %v\n", err)
@@ -256,7 +256,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
@@ -264,8 +264,8 @@ func main() {
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
     deleteBackups := true // bool | If *true*, Veeam Backup & Replication will remove backup files. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.DeleteScaleOutRepository(context.Background(), id).XApiVersion(xApiVersion).DeleteBackups(deleteBackups).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.DeleteScaleOutRepository``: %v\n", err)
@@ -330,16 +330,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
-    scaleOutExtentMaintenanceSpec := *openapiclient.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
+    scaleOutExtentMaintenanceSpec := *client.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.DisableScaleOutExtentMaintenanceMode(context.Background(), id).XApiVersion(xApiVersion).ScaleOutExtentMaintenanceSpec(scaleOutExtentMaintenanceSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.DisableScaleOutExtentMaintenanceMode``: %v\n", err)
@@ -404,16 +404,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
-    scaleOutExtentMaintenanceSpec := *openapiclient.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
+    scaleOutExtentMaintenanceSpec := *client.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.DisableScaleOutExtentSealedMode(context.Background(), id).XApiVersion(xApiVersion).ScaleOutExtentMaintenanceSpec(scaleOutExtentMaintenanceSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.DisableScaleOutExtentSealedMode``: %v\n", err)
@@ -478,16 +478,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
-    scaleOutExtentMaintenanceSpec := *openapiclient.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
+    scaleOutExtentMaintenanceSpec := *client.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.EnableScaleOutExtentMaintenanceMode(context.Background(), id).XApiVersion(xApiVersion).ScaleOutExtentMaintenanceSpec(scaleOutExtentMaintenanceSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.EnableScaleOutExtentMaintenanceMode``: %v\n", err)
@@ -552,16 +552,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
-    scaleOutExtentMaintenanceSpec := *openapiclient.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
+    scaleOutExtentMaintenanceSpec := *client.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.EnableScaleOutExtentSealedMode(context.Background(), id).XApiVersion(xApiVersion).ScaleOutExtentMaintenanceSpec(scaleOutExtentMaintenanceSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.EnableScaleOutExtentSealedMode``: %v\n", err)
@@ -626,16 +626,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
-    scaleOutExtentMaintenanceSpec := *openapiclient.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
+    scaleOutExtentMaintenanceSpec := *client.NewScaleOutExtentMaintenanceSpec([]string{"RepositoryIds_example"}) // ScaleOutExtentMaintenanceSpec | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.EvacuateBackupsFromScaleOutExtent(context.Background(), id).XApiVersion(xApiVersion).ScaleOutExtentMaintenanceSpec(scaleOutExtentMaintenanceSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.EvacuateBackupsFromScaleOutExtent``: %v\n", err)
@@ -700,24 +700,24 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of repositories to skip. (optional)
     limit := int32(56) // int32 | Maximum number of repositories to return. (optional)
-    orderColumn := openapiclient.ERepositoryFiltersOrderColumn("Name") // ERepositoryFiltersOrderColumn | Sorts repositories by one of the repository parameters. (optional)
+    orderColumn := client.ERepositoryFiltersOrderColumn("Name") // ERepositoryFiltersOrderColumn | Sorts repositories by one of the repository parameters. (optional)
     orderAsc := true // bool | Sorts repositories in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters repositories by the `nameFilter` pattern. The pattern can match any repository parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
-    typeFilter := openapiclient.ERepositoryType("WinLocal") // ERepositoryType | Filters repositories by repository type. (optional)
+    typeFilter := client.ERepositoryType("WinLocal") // ERepositoryType | Filters repositories by repository type. (optional)
     hostIdFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters repositories by ID of the backup server. (optional)
     pathFilter := "pathFilter_example" // string | Filters repositories by path to the folder where backup files are stored. (optional)
     vmbApiFilter := "vmbApiFilter_example" // string | Filters repositories by VM Backup API parameters converted to the base64 string. To obtain the string, call the `GetApiProductInfoString` method of VM Backup API. (optional)
     vmbApiPlatform := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters repositories by ID of a platform that you use to communicate with VM Backup API. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.GetAllRepositories(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).HostIdFilter(hostIdFilter).PathFilter(pathFilter).VmbApiFilter(vmbApiFilter).VmbApiPlatform(vmbApiPlatform).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetAllRepositories``: %v\n", err)
@@ -786,24 +786,24 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of repository states to skip. (optional)
     limit := int32(56) // int32 | Maximum number of repository states to return. (optional)
-    orderColumn := openapiclient.ERepositoryStatesFiltersOrderColumn("Name") // ERepositoryStatesFiltersOrderColumn | Sorts repository states by one of the state parameters. (optional)
+    orderColumn := client.ERepositoryStatesFiltersOrderColumn("Name") // ERepositoryStatesFiltersOrderColumn | Sorts repository states by one of the state parameters. (optional)
     orderAsc := true // bool | Sorts repository states in the ascending order by the `orderColumn` parameter. (optional)
     idFilter := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Filters repository states by repository ID. (optional)
     nameFilter := "nameFilter_example" // string | Filters repository states by the `nameFilter` pattern. The pattern can match any repository state parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
-    typeFilter := openapiclient.ERepositoryType("WinLocal") // ERepositoryType | Filters repository states by repository type. (optional)
+    typeFilter := client.ERepositoryType("WinLocal") // ERepositoryType | Filters repository states by repository type. (optional)
     capacityFilter := float64(1.2) // float64 | Filters repository states by repository capacity. (optional)
     freeSpaceFilter := float64(1.2) // float64 | Filters repository states by repository free space. (optional)
     usedSpaceFilter := float64(1.2) // float64 | Filters repository states by repository used space. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.GetAllRepositoriesStates(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).IdFilter(idFilter).NameFilter(nameFilter).TypeFilter(typeFilter).CapacityFilter(capacityFilter).FreeSpaceFilter(freeSpaceFilter).UsedSpaceFilter(usedSpaceFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetAllRepositoriesStates``: %v\n", err)
@@ -872,19 +872,19 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of repositories to skip. (optional)
     limit := int32(56) // int32 | Maximum number of repositories to return. (optional)
-    orderColumn := openapiclient.EScaleOutRepositoryFiltersOrderColumn("Name") // EScaleOutRepositoryFiltersOrderColumn | Sorts repositories by one of the repository parameters. (optional)
+    orderColumn := client.EScaleOutRepositoryFiltersOrderColumn("Name") // EScaleOutRepositoryFiltersOrderColumn | Sorts repositories by one of the repository parameters. (optional)
     orderAsc := true // bool | Sorts repositories in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters repositories by the `nameFilter` pattern. The pattern can match any repository parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.GetAllScaleOutRepositories(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetAllScaleOutRepositories``: %v\n", err)
@@ -948,15 +948,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup repository.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.GetRepository(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetRepository``: %v\n", err)
@@ -1020,15 +1020,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup repository.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.GetRepositoryAccessPermissions(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetRepositoryAccessPermissions``: %v\n", err)
@@ -1092,15 +1092,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.GetScaleOutRepository(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetScaleOutRepository``: %v\n", err)
@@ -1164,15 +1164,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.GetScaleOutRepositoryAccessPermissions(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.GetScaleOutRepositoryAccessPermissions``: %v\n", err)
@@ -1236,16 +1236,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup repository.
-    repositoryModel := *openapiclient.NewRepositoryModel("Id_example", "Name_example", "Description_example", openapiclient.ERepositoryType("WinLocal")) // RepositoryModel | 
+    repositoryModel := *client.NewRepositoryModel("Id_example", "Name_example", "Description_example", client.ERepositoryType("WinLocal")) // RepositoryModel | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.UpdateRepository(context.Background(), id).XApiVersion(xApiVersion).RepositoryModel(repositoryModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.UpdateRepository``: %v\n", err)
@@ -1310,16 +1310,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the backup repository.
-    repositoryAccessPermissionsModel := *openapiclient.NewRepositoryAccessPermissionsModel(openapiclient.ERepositoryAccessType("DenyAll"), false) // RepositoryAccessPermissionsModel | 
+    repositoryAccessPermissionsModel := *client.NewRepositoryAccessPermissionsModel(client.ERepositoryAccessType("DenyAll"), false) // RepositoryAccessPermissionsModel | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.UpdateRepositoryAccessPermissions(context.Background(), id).XApiVersion(xApiVersion).RepositoryAccessPermissionsModel(repositoryAccessPermissionsModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.UpdateRepositoryAccessPermissions``: %v\n", err)
@@ -1384,16 +1384,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
-    scaleOutRepositoryModel := *openapiclient.NewScaleOutRepositoryModel("Id_example", "Name_example", "Description_example", *openapiclient.NewPerformanceTierModel([]openapiclient.PerformanceExtentModel{*openapiclient.NewPerformanceExtentModel("Id_example", "Name_example")})) // ScaleOutRepositoryModel | 
+    scaleOutRepositoryModel := *client.NewScaleOutRepositoryModel("Id_example", "Name_example", "Description_example", *client.NewPerformanceTierModel([]client.PerformanceExtentModel{*client.NewPerformanceExtentModel("Id_example", "Name_example")})) // ScaleOutRepositoryModel | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.UpdateScaleOutRepository(context.Background(), id).XApiVersion(xApiVersion).ScaleOutRepositoryModel(scaleOutRepositoryModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.UpdateScaleOutRepository``: %v\n", err)
@@ -1458,16 +1458,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the scale-out backup repository.
-    repositoryAccessPermissionsModel := *openapiclient.NewRepositoryAccessPermissionsModel(openapiclient.ERepositoryAccessType("DenyAll"), false) // RepositoryAccessPermissionsModel | 
+    repositoryAccessPermissionsModel := *client.NewRepositoryAccessPermissionsModel(client.ERepositoryAccessType("DenyAll"), false) // RepositoryAccessPermissionsModel | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.RepositoriesApi.UpdateScaleOutRepositoryAccessPermissions(context.Background(), id).XApiVersion(xApiVersion).RepositoryAccessPermissionsModel(repositoryAccessPermissionsModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.UpdateScaleOutRepositoryAccessPermissions``: %v\n", err)

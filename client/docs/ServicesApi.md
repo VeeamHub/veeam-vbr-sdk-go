@@ -25,19 +25,19 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
     xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of services to skip. (optional)
     limit := int32(56) // int32 | Maximum number of services to return. (optional)
-    orderColumn := openapiclient.EServicesFiltersOrderColumn("Name") // EServicesFiltersOrderColumn | Sorts services by one of the service parameters. (optional)
+    orderColumn := client.EServicesFiltersOrderColumn("Name") // EServicesFiltersOrderColumn | Sorts services by one of the service parameters. (optional)
     orderAsc := true // bool | Sorts services in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters services by the `nameFilter` pattern. The pattern can match any service parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
     resp, r, err := apiClient.ServicesApi.GetAllServices(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServicesApi.GetAllServices``: %v\n", err)
