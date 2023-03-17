@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GracefullStop** | **bool** |  | [default to true]
+**GracefullStop** | **bool** | If *true*, Veeam Backup &amp; Replication will produce a new restore point for those VMs that have already been processed and for VMs that are being processed at the moment. | [default to true]
 
 ## Methods
 

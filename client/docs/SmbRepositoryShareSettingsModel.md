@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SharePath** | **string** | Path to the shared folder that that is used as a backup repository. | 
+**SharePath** | **string** | Path to the shared folder that is used as a backup repository. | 
 **CredentialsId** | **string** | ID of the credentials record used to access the shared folder. | 
 **GatewayServer** | Pointer to [**RepositoryShareGatewayModel**](RepositoryShareGatewayModel.md) |  | [optional] 
 

@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **TokenType** | **string** | Type of the access token. | 
 **RefreshToken** | **string** | String that is used to obtain a new access token if the current access token expires or becomes lost. A refresh token can be used only once, and its default lifetime is 14 days. | 
 **ExpiresIn** | **int32** | Lifetime of the access token, in seconds. | 
-**Issued** | **time.Time** | Date and time the access token is issued. | 
-**Expires** | **time.Time** | Date and time the access token expires. | 
+**Issued** | **time.Time** | Date and time when the access token is issued. | 
+**Expires** | **time.Time** | Date and time when the access token expires. | 
 
 ## Methods
 

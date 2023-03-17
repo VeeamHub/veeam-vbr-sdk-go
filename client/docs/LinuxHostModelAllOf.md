@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SshSettings** | Pointer to [**LinuxHostSSHSettingsModel**](LinuxHostSSHSettingsModel.md) |  | [optional] 
+**CredentialsStorageType** | Pointer to [**ECredentialsStorageType**](ECredentialsStorageType.md) |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetSshSettings sets SshSettings field to given value.
 `func (o *LinuxHostModelAllOf) HasSshSettings() bool`
 
 HasSshSettings returns a boolean if a field has been set.
+
+### GetCredentialsStorageType
+
+`func (o *LinuxHostModelAllOf) GetCredentialsStorageType() ECredentialsStorageType`
+
+GetCredentialsStorageType returns the CredentialsStorageType field if non-nil, zero value otherwise.
+
+### GetCredentialsStorageTypeOk
+
+`func (o *LinuxHostModelAllOf) GetCredentialsStorageTypeOk() (*ECredentialsStorageType, bool)`
+
+GetCredentialsStorageTypeOk returns a tuple with the CredentialsStorageType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCredentialsStorageType
+
+`func (o *LinuxHostModelAllOf) SetCredentialsStorageType(v ECredentialsStorageType)`
+
+SetCredentialsStorageType sets CredentialsStorageType field to given value.
+
+### HasCredentialsStorageType
+
+`func (o *LinuxHostModelAllOf) HasCredentialsStorageType() bool`
+
+HasCredentialsStorageType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

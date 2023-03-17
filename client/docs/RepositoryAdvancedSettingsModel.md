@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **DecompressBeforeStoring** | Pointer to **bool** | If *true*, Veeam Backup &amp; Replication decompresses backup data blocks before storing to improve deduplication ratios. | [optional] 
 **RotatedDrives** | Pointer to **bool** | If *true*, the repository drive is rotated. | [optional] 
 **PerVmBackup** | Pointer to **bool** | If *true*, Veeam Backup &amp; Replication creates a separate backup file for every VM in the job. | [optional] 
+**RotatedDriveCleanupMode** | Pointer to [**ERotatedDriveCleanupMode**](ERotatedDriveCleanupMode.md) |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetPerVmBackup sets PerVmBackup field to given value.
 `func (o *RepositoryAdvancedSettingsModel) HasPerVmBackup() bool`
 
 HasPerVmBackup returns a boolean if a field has been set.
+
+### GetRotatedDriveCleanupMode
+
+`func (o *RepositoryAdvancedSettingsModel) GetRotatedDriveCleanupMode() ERotatedDriveCleanupMode`
+
+GetRotatedDriveCleanupMode returns the RotatedDriveCleanupMode field if non-nil, zero value otherwise.
+
+### GetRotatedDriveCleanupModeOk
+
+`func (o *RepositoryAdvancedSettingsModel) GetRotatedDriveCleanupModeOk() (*ERotatedDriveCleanupMode, bool)`
+
+GetRotatedDriveCleanupModeOk returns a tuple with the RotatedDriveCleanupMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRotatedDriveCleanupMode
+
+`func (o *RepositoryAdvancedSettingsModel) SetRotatedDriveCleanupMode(v ERotatedDriveCleanupMode)`
+
+SetRotatedDriveCleanupMode sets RotatedDriveCleanupMode field to given value.
+
+### HasRotatedDriveCleanupMode
+
+`func (o *RepositoryAdvancedSettingsModel) HasRotatedDriveCleanupMode() bool`
+
+HasRotatedDriveCleanupMode returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

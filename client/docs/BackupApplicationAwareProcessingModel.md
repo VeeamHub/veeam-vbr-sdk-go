@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IsEnabled** | **bool** | If *true*, application-aware processing is enabled. | 
-**AppSettings** | Pointer to [**[]BackupApplicationSettingsModel**](BackupApplicationSettingsModel.md) | Array of VMware objects and their application settings. | [optional] 
+**AppSettings** | Pointer to [**[]BackupApplicationSettingsModel**](BackupApplicationSettingsModel.md) | Array of VMware vSphere objects and their application settings. | [optional] 
 
 ## Methods
 

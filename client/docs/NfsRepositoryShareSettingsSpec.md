@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SharePath** | **string** | Path to the shared folder that that is used as a backup repository. | 
+**SharePath** | **string** | Path to the shared folder that is used as a backup repository. | 
 **GatewayServer** | Pointer to [**RepositoryShareGatewayImportSpec**](RepositoryShareGatewayImportSpec.md) |  | [optional] 
 
 ## Methods

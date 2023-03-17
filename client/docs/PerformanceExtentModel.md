@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | ID of the backup repository added as a performance extent. | 
 **Name** | **string** | Name of the backup repository added as a performance extent. | 
-**Status** | [**ERepositoryExtentStatusType**](ERepositoryExtentStatusType.md) |  | 
+**Status** | Pointer to [**ERepositoryExtentStatusType**](ERepositoryExtentStatusType.md) |  | [optional] 
 
 ## Methods
 
 ### NewPerformanceExtentModel
 
-`func NewPerformanceExtentModel(id string, name string, status ERepositoryExtentStatusType, ) *PerformanceExtentModel`
+`func NewPerformanceExtentModel(id string, name string, ) *PerformanceExtentModel`
 
 NewPerformanceExtentModel instantiates a new PerformanceExtentModel object
 This constructor will assign default values to properties that have it defined,
@@ -86,6 +86,11 @@ and a boolean to check if the value has been set.
 
 SetStatus sets Status field to given value.
 
+### HasStatus
+
+`func (o *PerformanceExtentModel) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

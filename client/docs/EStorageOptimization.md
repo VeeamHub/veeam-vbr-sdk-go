@@ -3,8 +3,6 @@
 ## Enum
 
 
-* `AUTO` (value: `"Auto"`)
-
 * `LOCAL_TARGET_LARGE` (value: `"LocalTargetLarge"`)
 
 * `LOCAL_TARGET` (value: `"LocalTarget"`)

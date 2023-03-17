@@ -26,20 +26,20 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of VMware vSphere servers to skip. (optional)
     limit := int32(56) // int32 | Maximum number of VMware vSphere servers to return. (optional)
-    orderColumn := openapiclient.EViRootFiltersOrderColumn("Name") // EViRootFiltersOrderColumn | Sorts VMware vSphere servers by one of the VMware vSphere server parameters. (optional)
+    orderColumn := client.EViRootFiltersOrderColumn("Name") // EViRootFiltersOrderColumn | Sorts VMware vSphere servers by one of the VMware vSphere server parameters. (optional)
     orderAsc := true // bool | Sorts VMware vSphere servers in the ascending order by the `orderColumn` parameter. (optional)
     nameFilter := "nameFilter_example" // string | Filters VMware vSphere servers by the `nameFilter` pattern. The pattern can match any VMware vSphere server parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InventoryBrowserApi.GetAllInventoryVmwareHosts(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.InventoryBrowserApi.GetAllInventoryVmwareHosts(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryBrowserApi.GetAllInventoryVmwareHosts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiGetAllInventoryVmwareHosts
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
  **skip** | **int32** | Number of VMware vSphere servers to skip. | 
  **limit** | **int32** | Maximum number of VMware vSphere servers to return. | 
  **orderColumn** | [**EViRootFiltersOrderColumn**](EViRootFiltersOrderColumn.md) | Sorts VMware vSphere servers by one of the VMware vSphere server parameters. | 
@@ -102,25 +102,25 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     name := "name_example" // string | Name of the VMware vSphere server.
     skip := int32(56) // int32 | Number of objects to skip. (optional)
     limit := int32(56) // int32 | Maximum number of objects to return. (optional)
-    orderColumn := openapiclient.EvCentersInventoryFiltersOrderColumn("Name") // EvCentersInventoryFiltersOrderColumn | Sorts objects by one of the object parameters. (optional)
+    orderColumn := client.EvCentersInventoryFiltersOrderColumn("Name") // EvCentersInventoryFiltersOrderColumn | Sorts objects by one of the object parameters. (optional)
     orderAsc := true // bool | Sorts objects in the ascending order by the `orderColumn` parameter. (optional)
     objectIdFilter := "objectIdFilter_example" // string | Filters objects by object ID. (optional)
-    hierarchyTypeFilter := openapiclient.EHierarchyType("HostsAndClusters") // EHierarchyType | Filters objects by hierarchy type. (optional)
-    nameFilter := "nameFilter_example" // string | Filters objects by the `nameFilter` pattern. The pattern can match any object parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
-    typeFilter := openapiclient.EVmwareInventoryType("Unknown") // EVmwareInventoryType | Filters objects by virtual infrastructure type. (optional)
+    hierarchyTypeFilter := client.EHierarchyType("HostsAndClusters") // EHierarchyType | Filters objects by hierarchy type. (optional)
+    nameFilter := "nameFilter_example" // string | Filters objects by the `nameFilter` pattern. The pattern can match any object parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
+    typeFilter := client.EVmwareInventoryType("Unknown") // EVmwareInventoryType | Filters objects by virtual infrastructure type. (optional)
     parentContainerNameFilter := "parentContainerNameFilter_example" // string | Filters objects by name of the parent container. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.InventoryBrowserApi.GetVmwareHostObject(context.Background(), name).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).ObjectIdFilter(objectIdFilter).HierarchyTypeFilter(hierarchyTypeFilter).NameFilter(nameFilter).TypeFilter(typeFilter).ParentContainerNameFilter(parentContainerNameFilter).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.InventoryBrowserApi.GetVmwareHostObject(context.Background(), name).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).ObjectIdFilter(objectIdFilter).HierarchyTypeFilter(hierarchyTypeFilter).NameFilter(nameFilter).TypeFilter(typeFilter).ParentContainerNameFilter(parentContainerNameFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryBrowserApi.GetVmwareHostObject``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -145,7 +145,7 @@ Other parameters are passed through a pointer to a apiGetVmwareHostObjectRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
  **skip** | **int32** | Number of objects to skip. | 
  **limit** | **int32** | Maximum number of objects to return. | 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
  **orderAsc** | **bool** | Sorts objects in the ascending order by the &#x60;orderColumn&#x60; parameter. | 
  **objectIdFilter** | **string** | Filters objects by object ID. | 
  **hierarchyTypeFilter** | [**EHierarchyType**](EHierarchyType.md) | Filters objects by hierarchy type. | 
- **nameFilter** | **string** | Filters objects by the &#x60;nameFilter&#x60; pattern. The pattern can match any object parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. | 
+ **nameFilter** | **string** | Filters objects by the &#x60;nameFilter&#x60; pattern. The pattern can match any object parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. | 
  **typeFilter** | [**EVmwareInventoryType**](EVmwareInventoryType.md) | Filters objects by virtual infrastructure type. | 
  **parentContainerNameFilter** | **string** | Filters objects by name of the parent container. | 
 

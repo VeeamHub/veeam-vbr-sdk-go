@@ -4,8 +4,8 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetGeneralOptions**](GeneralOptionsApi.md#GetGeneralOptions) | **Get** /api/v1/generalOptions | Get General Options
-[**UpdateGeneralOptions**](GeneralOptionsApi.md#UpdateGeneralOptions) | **Put** /api/v1/generalOptions | Edit General Options
+[**GetGeneralOptions**](GeneralOptionsApi.md#GetGeneralOptions) | **Get** /api/v1/generalOptions | Get Notification Settings
+[**UpdateGeneralOptions**](GeneralOptionsApi.md#UpdateGeneralOptions) | **Put** /api/v1/generalOptions | Edit Notification Settings
 
 
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 > GeneralOptionsModel GetGeneralOptions(ctx).XApiVersion(xApiVersion).Execute()
 
-Get General Options
+Get Notification Settings
 
 
 
@@ -26,15 +26,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GeneralOptionsApi.GetGeneralOptions(context.Background()).XApiVersion(xApiVersion).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.GeneralOptionsApi.GetGeneralOptions(context.Background()).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GeneralOptionsApi.GetGeneralOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGetGeneralOptionsRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
 ### Return type
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 > GeneralOptionsModel UpdateGeneralOptions(ctx).XApiVersion(xApiVersion).GeneralOptionsModel(generalOptionsModel).Execute()
 
-Edit General Options
+Edit Notification Settings
 
 
 
@@ -92,16 +92,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    generalOptionsModel := *openapiclient.NewGeneralOptionsModel() // GeneralOptionsModel | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    generalOptionsModel := *client.NewGeneralOptionsModel() // GeneralOptionsModel |
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.GeneralOptionsApi.UpdateGeneralOptions(context.Background()).XApiVersion(xApiVersion).GeneralOptionsModel(generalOptionsModel).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.GeneralOptionsApi.UpdateGeneralOptions(context.Background()).XApiVersion(xApiVersion).GeneralOptionsModel(generalOptionsModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GeneralOptionsApi.UpdateGeneralOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +122,7 @@ Other parameters are passed through a pointer to a apiUpdateGeneralOptionsReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
  **generalOptionsModel** | [**GeneralOptionsModel**](GeneralOptionsModel.md) |  | 
 
 ### Return type

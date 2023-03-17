@@ -29,16 +29,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    encryptionPasswordSpec := *openapiclient.NewEncryptionPasswordSpec("Password_example", "Hint_example") // EncryptionPasswordSpec | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    encryptionPasswordSpec := *client.NewEncryptionPasswordSpec("Password_example", "Hint_example") // EncryptionPasswordSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EncryptionApi.CreateEncryptionPassword(context.Background()).XApiVersion(xApiVersion).EncryptionPasswordSpec(encryptionPasswordSpec).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.EncryptionApi.CreateEncryptionPassword(context.Background()).XApiVersion(xApiVersion).EncryptionPasswordSpec(encryptionPasswordSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EncryptionApi.CreateEncryptionPassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +59,7 @@ Other parameters are passed through a pointer to a apiCreateEncryptionPasswordRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
  **encryptionPasswordSpec** | [**EncryptionPasswordSpec**](EncryptionPasswordSpec.md) |  | 
 
 ### Return type
@@ -97,16 +97,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    id := TODO // string | ID of the encryption password.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the encryption password.
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EncryptionApi.DeleteEncryptionPassword(context.Background(), id).XApiVersion(xApiVersion).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.EncryptionApi.DeleteEncryptionPassword(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EncryptionApi.DeleteEncryptionPassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +122,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the encryption password. | 
+**id** | **string** | ID of the encryption password. | 
 
 ### Other Parameters
 
@@ -131,7 +131,7 @@ Other parameters are passed through a pointer to a apiDeleteEncryptionPasswordRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
 
 ### Return type
@@ -169,19 +169,19 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of passwords to skip. (optional)
     limit := int32(56) // int32 | Maximum number of passwords to return. (optional)
-    orderColumn := openapiclient.EEncryptionPasswordsFiltersOrderColumn("Hint") // EEncryptionPasswordsFiltersOrderColumn | Sorts passwords by one of the password parameters. (optional)
+    orderColumn := client.EEncryptionPasswordsFiltersOrderColumn("Hint") // EEncryptionPasswordsFiltersOrderColumn | Sorts passwords by one of the password parameters. (optional)
     orderAsc := true // bool | Sorts passwords in the ascending order by the `orderColumn` parameter. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EncryptionApi.GetAllEncryptionPasswords(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.EncryptionApi.GetAllEncryptionPasswords(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EncryptionApi.GetAllEncryptionPasswords``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -202,7 +202,7 @@ Other parameters are passed through a pointer to a apiGetAllEncryptionPasswordsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
  **skip** | **int32** | Number of passwords to skip. | 
  **limit** | **int32** | Maximum number of passwords to return. | 
  **orderColumn** | [**EEncryptionPasswordsFiltersOrderColumn**](EEncryptionPasswordsFiltersOrderColumn.md) | Sorts passwords by one of the password parameters. | 
@@ -243,16 +243,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    id := TODO // string | ID of the encryption password.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the encryption password.
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EncryptionApi.GetEncryptionPassword(context.Background(), id).XApiVersion(xApiVersion).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.EncryptionApi.GetEncryptionPassword(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EncryptionApi.GetEncryptionPassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -268,7 +268,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the encryption password. | 
+**id** | **string** | ID of the encryption password. | 
 
 ### Other Parameters
 
@@ -277,7 +277,7 @@ Other parameters are passed through a pointer to a apiGetEncryptionPasswordReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
 
 ### Return type
@@ -315,17 +315,17 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    id := TODO // string | ID of the encryption password.
-    encryptionPasswordModel := *openapiclient.NewEncryptionPasswordModel("Id_example", "Hint_example") // EncryptionPasswordModel | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the encryption password.
+    encryptionPasswordModel := *client.NewEncryptionPasswordModel("Id_example", "Hint_example") // EncryptionPasswordModel |
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.EncryptionApi.UpdateEncryptionPassword(context.Background(), id).XApiVersion(xApiVersion).EncryptionPasswordModel(encryptionPasswordModel).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.EncryptionApi.UpdateEncryptionPassword(context.Background(), id).XApiVersion(xApiVersion).EncryptionPasswordModel(encryptionPasswordModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EncryptionApi.UpdateEncryptionPassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -341,7 +341,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the encryption password. | 
+**id** | **string** | ID of the encryption password. | 
 
 ### Other Parameters
 
@@ -350,7 +350,7 @@ Other parameters are passed through a pointer to a apiUpdateEncryptionPasswordRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
  **encryptionPasswordModel** | [**EncryptionPasswordModel**](EncryptionPasswordModel.md) |  | 
 

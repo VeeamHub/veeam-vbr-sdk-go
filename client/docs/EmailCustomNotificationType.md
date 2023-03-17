@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Subject** | Pointer to **string** | Notification subject. Use the following variables in the subject: *%Time%* (completion time), *%JobName%*, *%JobResult%*, *%ObjectCount%* (number of VMs in the job) and *%Issues%* (number of VMs in the job that have finished with the Warning or Failed status).  | [optional] 
+**Subject** | Pointer to **string** | Notification subject. Use the following variables in the subject:&lt;ul&gt; &lt;li&gt;*%Time%* — completion time&lt;/li&gt; &lt;li&gt;*%JobName%* — job name&lt;/li&gt; &lt;li&gt;*%JobResult%* — job result&lt;/li&gt; &lt;li&gt;*%ObjectCount%* — number of VMs in the job&lt;/li&gt; &lt;li&gt;*%Issues%* — number of VMs in the job that have finished with the Warning or Failed status&lt;/li&gt;&lt;/ul&gt; | [optional] 
 **NotifyOnSuccess** | Pointer to **bool** | If *true*, email notifications are sent when the job completes successfully. | [optional] 
 **NotifyOnWarning** | Pointer to **bool** | If *true*, email notifications are sent when the job completes with a warning. | [optional] 
 **NotifyOnError** | Pointer to **bool** | If *true*, email notifications are sent when the job fails. | [optional] 

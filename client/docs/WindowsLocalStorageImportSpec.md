@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Name of the backup repository. | 
 **Description** | **string** | Description of the backup repository. | 
-**Tag** | **string** | VMware vSphere tag assigned to the backup repository. | 
+**Tag** | **string** | Tag that identifies the backup repository. | 
 **HostName** | **string** | ID of the server that is used as a backup repository. | 
 **Type** | [**ERepositoryType**](ERepositoryType.md) |  | 
 **Repository** | [**WindowsLocalRepositorySettingsModel**](WindowsLocalRepositorySettingsModel.md) |  | 

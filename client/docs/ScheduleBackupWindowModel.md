@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsEnabled** | **bool** | If *true*, periodic schedule is enabled. | [default to false]
+**IsEnabled** | **bool** | If *true*, backup window is enabled. | [default to false]
 **BackupWindow** | Pointer to [**BackupWindowSettingModel**](BackupWindowSettingModel.md) |  | [optional] 
 
 ## Methods
