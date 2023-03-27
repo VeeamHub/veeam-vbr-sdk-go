@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsEnabled** | **bool** | If *true*, synthetic full backups are enabled. | 
-**Days** | Pointer to [**[]EDayOfWeek**](EDayOfWeek.md) | Days of the week when Veeam Backup &amp; Replication creates a synthetic full backup. | [optional] 
+**IsEnabled** | **bool** | If *true*, active full backups are enabled. | 
+**Weekly** | Pointer to [**AdvancedStorageScheduleWeeklyModel**](AdvancedStorageScheduleWeeklyModel.md) |  | [optional] 
+**Monthly** | Pointer to [**AdvancedStorageScheduleMonthlyModel**](AdvancedStorageScheduleMonthlyModel.md) |  | [optional] 
 
 ## Methods
 
@@ -46,30 +47,55 @@ and a boolean to check if the value has been set.
 SetIsEnabled sets IsEnabled field to given value.
 
 
-### GetDays
+### GetWeekly
 
-`func (o *SyntheticFullSettingsModel) GetDays() []EDayOfWeek`
+`func (o *SyntheticFullSettingsModel) GetWeekly() AdvancedStorageScheduleWeeklyModel`
 
-GetDays returns the Days field if non-nil, zero value otherwise.
+GetWeekly returns the Weekly field if non-nil, zero value otherwise.
 
-### GetDaysOk
+### GetWeeklyOk
 
-`func (o *SyntheticFullSettingsModel) GetDaysOk() (*[]EDayOfWeek, bool)`
+`func (o *SyntheticFullSettingsModel) GetWeeklyOk() (*AdvancedStorageScheduleWeeklyModel, bool)`
 
-GetDaysOk returns a tuple with the Days field if it's non-nil, zero value otherwise
+GetWeeklyOk returns a tuple with the Weekly field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDays
+### SetWeekly
 
-`func (o *SyntheticFullSettingsModel) SetDays(v []EDayOfWeek)`
+`func (o *SyntheticFullSettingsModel) SetWeekly(v AdvancedStorageScheduleWeeklyModel)`
 
-SetDays sets Days field to given value.
+SetWeekly sets Weekly field to given value.
 
-### HasDays
+### HasWeekly
 
-`func (o *SyntheticFullSettingsModel) HasDays() bool`
+`func (o *SyntheticFullSettingsModel) HasWeekly() bool`
 
-HasDays returns a boolean if a field has been set.
+HasWeekly returns a boolean if a field has been set.
+
+### GetMonthly
+
+`func (o *SyntheticFullSettingsModel) GetMonthly() AdvancedStorageScheduleMonthlyModel`
+
+GetMonthly returns the Monthly field if non-nil, zero value otherwise.
+
+### GetMonthlyOk
+
+`func (o *SyntheticFullSettingsModel) GetMonthlyOk() (*AdvancedStorageScheduleMonthlyModel, bool)`
+
+GetMonthlyOk returns a tuple with the Monthly field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonthly
+
+`func (o *SyntheticFullSettingsModel) SetMonthly(v AdvancedStorageScheduleMonthlyModel)`
+
+SetMonthly sets Monthly field to given value.
+
+### HasMonthly
+
+`func (o *SyntheticFullSettingsModel) HasMonthly() bool`
+
+HasMonthly returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

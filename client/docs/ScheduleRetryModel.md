@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IsEnabled** | Pointer to **bool** | If *true*, retry options are enabled. | [optional] [default to false]
-**RetryCount** | Pointer to **int32** | Number of retries set for the job. | [optional] 
-**AwaitMinutes** | Pointer to **int32** | Time interval between job retries in minutes. | [optional] 
+**RetryCount** | Pointer to **int32** | Number of retries set for the job. Must be greater than zero. | [optional] [default to 3]
+**AwaitMinutes** | Pointer to **int32** | Time interval between job retries in minutes. Must be greater than zero. | [optional] [default to 10]
 
 ## Methods
 

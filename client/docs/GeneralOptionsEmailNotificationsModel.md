@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **AdvancedSmtpOptions** | [**AdvancedSmtpOptionsModel**](AdvancedSmtpOptionsModel.md) |  | 
 **From** | **string** | Email address from which email notifications must be sent. | 
 **To** | **string** | Recipient email addresses. Use a semicolon to separate multiple addresses. | 
-**Subject** | **string** | Notification subject. Use the following variables in the subject:&lt;br&gt; &lt;ol&gt;   &lt;li&gt;%Time% — completion time&lt;/li&gt;   &lt;li&gt;%JobName%&lt;/li&gt;   &lt;li&gt;%JobResult%&lt;/li&gt;   &lt;li&gt;%ObjectCount% — number of VMs in the job&lt;/li&gt;   &lt;li&gt;%Issues% — number of VMs in the job that have been processed with the Warning or Failed status&lt;/li&gt; &lt;/ol&gt;  | 
+**Subject** | **string** | Notification subject. Use the following variables in the subject:&lt;ul&gt; &lt;li&gt;%Time% — completion time&lt;/li&gt; &lt;li&gt;%JobName% — job name&lt;/li&gt; &lt;li&gt;%JobResult% — job result&lt;/li&gt; &lt;li&gt;%ObjectCount% — number of VMs in the job&lt;/li&gt; &lt;li&gt;%Issues% — number of VMs in the job that have been processed with the Warning or Failed status&lt;/li&gt;&lt;/ul&gt; | 
 **SendDailyReportsAt** | **time.Time** | Time when Veeam Backup &amp; Replication sends daily email reports. | 
 **NotifyOnSuccess** | **bool** | If *true*, email notifications are sent when the job completes successfully. | 
 **NotifyOnWarning** | **bool** | If *true*, email notifications are sent when the job completes with a warning. | 

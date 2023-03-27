@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RepositoryIds** | **[]string** |  | 
+**RepositoryIds** | **[]string** | Array of repository IDs added as scale-out backup repository extents. | 
 
 ## Methods
 

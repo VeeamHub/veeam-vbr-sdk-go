@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetAllManagedServers**](ManagedServersApi.md#GetAllManagedServers) | **Get** /api/v1/backupInfrastructure/managedServers | Get All Servers
 [**GetManagedServer**](ManagedServersApi.md#GetManagedServer) | **Get** /api/v1/backupInfrastructure/managedServers/{id} | Get Server
 [**UpdateManagedServer**](ManagedServersApi.md#UpdateManagedServer) | **Put** /api/v1/backupInfrastructure/managedServers/{id} | Edit Server
+[**UpdateSingleUseCredentials**](ManagedServersApi.md#UpdateSingleUseCredentials) | **Post** /api/v1/backupInfrastructure/managedServers/{id}/updateSingleUseCredentials | Change to Single-Use Credentials
 
 
 
@@ -29,16 +30,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    managedServerSpec := *openapiclient.NewManagedServerSpec("Name_example", "Description_example", openapiclient.EManagedServerType("WindowsHost"), "CredentialsId_example") // ManagedServerSpec | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    managedServerSpec := *client.NewManagedServerSpec("Name_example", "Description_example", client.EManagedServerType("WindowsHost"), "CredentialsId_example") // ManagedServerSpec |
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ManagedServersApi.CreateManagedServer(context.Background()).XApiVersion(xApiVersion).ManagedServerSpec(managedServerSpec).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.CreateManagedServer(context.Background()).XApiVersion(xApiVersion).ManagedServerSpec(managedServerSpec).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.CreateManagedServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +60,7 @@ Other parameters are passed through a pointer to a apiCreateManagedServerRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
  **managedServerSpec** | [**ManagedServerSpec**](ManagedServerSpec.md) |  | 
 
 ### Return type
@@ -97,16 +98,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    id := TODO // string | ID of the managed server.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the managed server.
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ManagedServersApi.DeleteManagedServer(context.Background(), id).XApiVersion(xApiVersion).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.DeleteManagedServer(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.DeleteManagedServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +123,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the managed server. | 
+**id** | **string** | ID of the managed server. | 
 
 ### Other Parameters
 
@@ -131,7 +132,7 @@ Other parameters are passed through a pointer to a apiDeleteManagedServerRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
 
 ### Return type
@@ -169,22 +170,22 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
     skip := int32(56) // int32 | Number of servers to skip. (optional)
     limit := int32(56) // int32 | Maximum number of servers to return. (optional)
-    orderColumn := openapiclient.EManagedServersFiltersOrderColumn("Name") // EManagedServersFiltersOrderColumn | Sorts servers by one of the server parameters. (optional)
+    orderColumn := client.EManagedServersFiltersOrderColumn("Name") // EManagedServersFiltersOrderColumn | Sorts servers by one of the server parameters. (optional)
     orderAsc := true // bool | Sorts servers in the ascending order by the `orderColumn` parameter. (optional)
-    nameFilter := "nameFilter_example" // string | Filters servers by the `nameFilter` pattern. The pattern can match any server parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. (optional)
-    typeFilter := openapiclient.EManagedServerType("WindowsHost") // EManagedServerType | Filters servers by server type. (optional)
-    viTypeFilter := openapiclient.EViHostType("ESX") // EViHostType | Filters servers by the type of VMware vSphere server. (optional)
+    nameFilter := "nameFilter_example" // string | Filters servers by the `nameFilter` pattern. The pattern can match any server parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. (optional)
+    typeFilter := client.EManagedServerType("WindowsHost") // EManagedServerType | Filters servers by server type. (optional)
+    viTypeFilter := client.EViHostType("ESX") // EViHostType | Filters servers by the type of VMware vSphere server. (optional)
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ManagedServersApi.GetAllManagedServers(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).ViTypeFilter(viTypeFilter).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.GetAllManagedServers(context.Background()).XApiVersion(xApiVersion).Skip(skip).Limit(limit).OrderColumn(orderColumn).OrderAsc(orderAsc).NameFilter(nameFilter).TypeFilter(typeFilter).ViTypeFilter(viTypeFilter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.GetAllManagedServers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -205,12 +206,12 @@ Other parameters are passed through a pointer to a apiGetAllManagedServersReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
  **skip** | **int32** | Number of servers to skip. | 
  **limit** | **int32** | Maximum number of servers to return. | 
  **orderColumn** | [**EManagedServersFiltersOrderColumn**](EManagedServersFiltersOrderColumn.md) | Sorts servers by one of the server parameters. | 
  **orderAsc** | **bool** | Sorts servers in the ascending order by the &#x60;orderColumn&#x60; parameter. | 
- **nameFilter** | **string** | Filters servers by the &#x60;nameFilter&#x60; pattern. The pattern can match any server parameter. To substitute one or more characters, use the asterisk (*) character at the beginning and/or at the end. | 
+ **nameFilter** | **string** | Filters servers by the &#x60;nameFilter&#x60; pattern. The pattern can match any server parameter. To substitute one or more characters, use the asterisk (*) character at the beginning, at the end or both. | 
  **typeFilter** | [**EManagedServerType**](EManagedServerType.md) | Filters servers by server type. | 
  **viTypeFilter** | [**EViHostType**](EViHostType.md) | Filters servers by the type of VMware vSphere server. | 
 
@@ -249,16 +250,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    id := TODO // string | ID of the managed server.
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the managed server.
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ManagedServersApi.GetManagedServer(context.Background(), id).XApiVersion(xApiVersion).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.GetManagedServer(context.Background(), id).XApiVersion(xApiVersion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.GetManagedServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -274,7 +275,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the managed server. | 
+**id** | **string** | ID of the managed server. | 
 
 ### Other Parameters
 
@@ -283,7 +284,7 @@ Other parameters are passed through a pointer to a apiGetManagedServerRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
 
 ### Return type
@@ -321,17 +322,17 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
 )
 
 func main() {
-    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format: *\\<version\\>-\\<revision\\>*.  (default to "1.0-rev2")
-    id := TODO // string | ID of the managed server.
-    managedServerModel := *openapiclient.NewManagedServerModel("Id_example", "Name_example", "Description_example", openapiclient.EManagedServerType("WindowsHost"), "CredentialsId_example") // ManagedServerModel | 
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the managed server.
+    managedServerModel := *client.NewManagedServerModel("Id_example", "Name_example", "Description_example", client.EManagedServerType("WindowsHost"), "CredentialsId_example") // ManagedServerModel |
 
-    configuration := openapiclient.NewConfiguration()
-    api_client := openapiclient.NewAPIClient(configuration)
-    resp, r, err := api_client.ManagedServersApi.UpdateManagedServer(context.Background(), id).XApiVersion(xApiVersion).ManagedServerModel(managedServerModel).Execute()
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.UpdateManagedServer(context.Background(), id).XApiVersion(xApiVersion).ManagedServerModel(managedServerModel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.UpdateManagedServer``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -347,7 +348,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | [**string**](.md) | ID of the managed server. | 
+**id** | **string** | ID of the managed server. | 
 
 ### Other Parameters
 
@@ -356,9 +357,83 @@ Other parameters are passed through a pointer to a apiUpdateManagedServerRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format: *\\&lt;version\\&gt;-\\&lt;revision\\&gt;*.  | [default to &quot;1.0-rev2&quot;]
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
 
  **managedServerModel** | [**ManagedServerModel**](ManagedServerModel.md) |  | 
+
+### Return type
+
+[**SessionModel**](SessionModel.md)
+
+### Authorization
+
+[Bearer](../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSingleUseCredentials
+
+> SessionModel UpdateSingleUseCredentials(ctx, id).XApiVersion(xApiVersion).LinuxCredentialsSpec(linuxCredentialsSpec).Execute()
+
+Change to Single-Use Credentials
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
+)
+
+func main() {
+    xApiVersion := "xApiVersion_example" // string | Version and revision of the client REST API. Must be in the following format&#58; `<version>-<revision>`. (default to "1.1-rev0")
+    id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | ID of the managed server.
+    linuxCredentialsSpec := *client.NewLinuxCredentialsSpec("Username_example", client.ECredentialsType("Standard")) // LinuxCredentialsSpec |
+
+    configuration := client.NewConfiguration()
+    apiClient := client.NewAPIClient(configuration)
+    resp, r, err := apiClient.ManagedServersApi.UpdateSingleUseCredentials(context.Background(), id).XApiVersion(xApiVersion).LinuxCredentialsSpec(linuxCredentialsSpec).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ManagedServersApi.UpdateSingleUseCredentials``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateSingleUseCredentials`: SessionModel
+    fmt.Fprintf(os.Stdout, "Response from `ManagedServersApi.UpdateSingleUseCredentials`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID of the managed server. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSingleUseCredentialsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiVersion** | **string** | Version and revision of the client REST API. Must be in the following format&amp;#58; &#x60;&lt;version&gt;-&lt;revision&gt;&#x60;. | [default to &quot;1.1-rev0&quot;]
+
+ **linuxCredentialsSpec** | [**LinuxCredentialsSpec**](LinuxCredentialsSpec.md) |  | 
 
 ### Return type
 

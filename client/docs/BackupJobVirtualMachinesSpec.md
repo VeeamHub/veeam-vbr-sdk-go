@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Includes** | [**[]VmwareObjectModel**](VmwareObjectModel.md) |  | 
+**Includes** | [**[]VmwareObjectModel**](VmwareObjectModel.md) | Array of objects that you want to back up. | 
 **Excludes** | Pointer to [**BackupJobExclusionsSpec**](BackupJobExclusionsSpec.md) |  | [optional] 
 
 ## Methods

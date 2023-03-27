@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IsEnabled** | **bool** | If *true*, the yearly GFS retention policy is enabled. | 
-**KeepForNumberOfYears** | Pointer to **int32** | Number of years to keep full backups for archival purposes. | [optional] 
+**KeepForNumberOfYears** | Pointer to **int32** | Number of years to keep full backups for archival purposes. Possible values are from 1 through 999. | [optional] 
 **DesiredTime** | Pointer to [**EMonth**](EMonth.md) |  | [optional] 
 
 ## Methods

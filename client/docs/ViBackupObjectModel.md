@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ObjectId** | **string** | ID of the virtual infrastructure object: mo-ref or ID, depending on the virtualization platform.  | 
-**ViType** | [**EVmwareInventoryType**](EVmwareInventoryType.md) |  | 
+**ObjectId** | **string** | ID of the virtual infrastructure object (mo-ref or ID, depending on the virtualization platform). | 
+**ViType** | Pointer to [**EVmwareInventoryType**](EVmwareInventoryType.md) |  | [optional] 
 **Path** | Pointer to **string** | Path to the object. | [optional] 
 
 ## Methods
 
 ### NewViBackupObjectModel
 
-`func NewViBackupObjectModel(objectId string, viType EVmwareInventoryType, ) *ViBackupObjectModel`
+`func NewViBackupObjectModel(objectId string, ) *ViBackupObjectModel`
 
 NewViBackupObjectModel instantiates a new ViBackupObjectModel object
 This constructor will assign default values to properties that have it defined,
@@ -66,6 +66,11 @@ and a boolean to check if the value has been set.
 
 SetViType sets ViType field to given value.
 
+### HasViType
+
+`func (o *ViBackupObjectModel) HasViType() bool`
+
+HasViType returns a boolean if a field has been set.
 
 ### GetPath
 

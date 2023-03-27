@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ids** | Pointer to **[]string** | Array of backup repository IDs. | [optional] 
-**Types** | Pointer to [**[]ERepositoryType**](ERepositoryType.md) | Array of backup repository types. | [optional] 
+**Ids** | Pointer to **[]string** | Array of repository IDs. | [optional] 
+**Types** | Pointer to [**[]ERepositoryType**](ERepositoryType.md) | Array of repository types. | [optional] 
 **Names** | Pointer to **[]string** | Array of repository names. Wildcard characters are supported. | [optional] 
 
 ## Methods

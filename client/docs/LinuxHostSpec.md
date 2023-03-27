@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SshSettings** | Pointer to [**LinuxHostSSHSettingsModel**](LinuxHostSSHSettingsModel.md) |  | [optional] 
-**SshFingerprint** | **string** | SSH key fingerprint used to verify the server identity. For details on how to get the fingerprint, see [Get TLS Certificate or SSH Fingerprint](#operation/GetConnectionCertificate).  | 
+**SshFingerprint** | **string** | SSH key fingerprint used to verify the server identity. For details on how to get the fingerprint, see [Request TLS Certificate or SSH Fingerprint](#tag/Connection/operation/GetConnectionCertificate). | 
 
 ## Methods
 

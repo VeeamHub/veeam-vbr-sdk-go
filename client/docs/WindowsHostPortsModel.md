@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Components** | Pointer to [**[]WindowsHostComponentPortModel**](WindowsHostComponentPortModel.md) |  | [optional] 
+**Components** | Pointer to [**[]WindowsHostComponentPortModel**](WindowsHostComponentPortModel.md) | Array of Veeam Backup &amp; Replication components. | [optional] 
 **PortRangeStart** | Pointer to **int32** | Start port used for data transfer. | [optional] 
 **PortRangeEnd** | Pointer to **int32** | End port used for data transfer. | [optional] 
 **ServerThisSide** | Pointer to **bool** | If *true*, the server is run on this side. | [optional] 

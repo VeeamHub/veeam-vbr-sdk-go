@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HostName** | **string** | Name of the host. | 
+**HostName** | **string** | Name of the VMware vSphere server that hosts the object. | 
 **Name** | **string** | Name of the VMware vSphere object. | 
 **Type** | [**EVmwareInventoryType**](EVmwareInventoryType.md) |  | 
-**ObjectId** | Pointer to **string** | ID of the VMware vSphere object. | [optional] 
+**ObjectId** | Pointer to **string** | ID of the VMware vSphere object. The parameter is required for all VMware vSphere objects except vCenter Servers and standalone ESXi hosts. | [optional] 
 
 ## Methods
 
