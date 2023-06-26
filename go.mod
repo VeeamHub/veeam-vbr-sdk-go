@@ -1,4 +1,4 @@
-module github.com/veeamhub/veeam-vbr-sdk-go/v2
+module github.com/kastenhq/veeam-vbr-sdk-go/v2
 
 go 1.20
 

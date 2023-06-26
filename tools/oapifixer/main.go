@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/veeamhub/veeam-vbr-sdk-go/v2/tools/oapifixer/actions"
+	"github.com/kastenhq/veeam-vbr-sdk-go/v2/tools/oapifixer/actions"
 
 	"github.com/pb33f/libopenapi"
 	"github.com/pb33f/libopenapi/datamodel"
