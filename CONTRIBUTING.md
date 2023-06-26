@@ -11,48 +11,6 @@ All contributions to this repository must be signed as described on our [Develop
 
 Please note we have a [Code of Conduct](#code-of-conduct). Please follow it in all your interactions with the project.
 
-## Code generation with new swagger API spec
-
-The process of package generation using new swagger specification requires manual interactions. Step-by-step guide:
-
-1. Adjust `swagger.json` file with new data. Make it as base commit.
-2. Remove all entries of the `oneOf` from  `swagger.json` file.
-   It causes bad code generation. Make it as separate commit.
-3. Execute `make` cmd to force the initial generation process.
-   Make it as separate commit.
-4. Most likely you will face with the relative path pkg import issues -
-   fix them all as showed in the below code snippet. Make it as separate commit.
-
-```bash
-import (
-    "context"
-     "fmt"
-     "os"
-     "time"
--    openapiclient "./openapi"
-+    "github.com/veeamhub/veeam-vbr-sdk-go/client"
- )
-```
-
-5. Execute `make dependency` cmd. Ensure it passed fine.
-   Make it as separate commit.
-6. Execute `make build` cmd.
-   Most likely you will face with some minor issues in generated code like
-   missing imports - fix them all as showed in the below code snippet.
-   Make it as separate commit.
-
-```bash
-import (
-    "context"
-     "fmt"
-     "os"
-+    "time"
- )
-```
-
-7. Execute `make test` cmd. Ensure it passed fine. Make it as separate commit.
-8. Open Pull Request that aggregates all created commits.
-
 ## Report Bugs/Feature Requests using the Github Issue Tracker
 
 We use GitHub's Issue Tracker to track bugs/feature Requests. Report a bug or feature request by [opening a new issue](https://github.com/VeeamHub/veeam-vbr-sdk-go/issues/new/choose). It's that easy!
