@@ -1,7 +1,7 @@
 # Golang client for VBR REST API
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/kastenhq/veeam-vbr-sdk-go)](https://goreportcard.com/report/github.com/kastenhq/veeam-vbr-sdk-go)
-[![GoDoc](https://godoc.org/github.com/kastenhq/veeam-vbr-sdk-go?status.svg)](https://godoc.org/github.com/kastenhq/veeam-vbr-sdk-go)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kastenhq/veeam-vbr-sdk-go/v2)](https://goreportcard.com/report/github.com/kastenhq/veeam-vbr-sdk-go/v2)
+[![GoDoc](https://godoc.org/github.com/kastenhq/veeam-vbr-sdk-go/v2?status.svg)](https://godoc.org/github.com/kastenhq/veeam-vbr-sdk-go/v2)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/license/mit/)
 
 veeam-vbr-sdk-go is the unofficial Veeam Backup & Replication SDK for the Go programming language.
