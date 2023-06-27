@@ -12,7 +12,7 @@ You can find changes description in the [Specification](#specification) section.
 ## Project layout
 * `spec` - contains specification files. Both original `VBR REST API` specification and generated `openapi_spec.yaml` are placed here.
 * `tools` - contains additional tools. Currently, it contains only `oapifixer` tool which is used to apply required changes to the original specification.
-* `vbrclient` - contains generated client. It is not recommended to change anything in this directory. If you want to change something, please, change the specification and regenerate the client.
+* `pkg/client` - contains generated client. It is not recommended to change anything in this directory. If you want to change something, please, change the specification and regenerate the client.
 
 ## Specification
 `openapi_spec.yaml` does not contain the whole original `VBR REST API` specification. We made several changes described below. 
@@ -47,13 +47,17 @@ To generate code just run the following command:
 ```bash
 make generate
 ```
-It will remove the previous version and generate the new one. The result of generation will be placed into the `vbrclient` directory.
+It will remove the previous version and generate the new one. The result of generation will be placed into the `pkg/client` directory.
 The default value for specification is `./spec/openapi_spec.yaml`. To change it use the following command:
 ```bash
 make generate golang_spec=<path_to_specification>
 ```
 
 ## How to use
+
+### Complete examples
+You can find complete examples in the `pkg/client` directory, in the `example_test.go` file.
+Examples made as a [Testable Examples](https://go.dev/blog/examples).
 
 ### Create client and authenticate
 Create a new client via vbrapi.NewClient()
