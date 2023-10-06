@@ -53,7 +53,7 @@ The default value for specification is `./spec/openapi_spec.yaml`. To change it 
 make generate golang_spec=<path_to_specification>
 ```
 
-## How to use
+## 📗 Documentation
 
 ### Complete examples
 You can find complete examples in the `pkg/client` directory, in the `example_test.go` file.
@@ -190,5 +190,14 @@ Please note that you should check status separately, the error will be returned 
 * If you convert specification from `JSON` to `YAML` usiang `oapifixer` tool the order of sections in the specification will be changed(to alphabetical). It is not a problem for the generator but it makes it difficult to review changes in the specification.
 
 
-## Contributing
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+## ✍ Contributions
+
+We welcome contributions from the community! We encourage you to create [issues](https://github.com/VeeamHub/veeam-vbr-sdk-go/issues/new/choose) for Bugs & Feature Requests and submit Pull Requests. For more detailed information, refer to our [Contributing Guide](CONTRIBUTING.md).
+
+## 🤝🏾 License
+
+* [MIT License](LICENSE)
+
+## 🤔 Questions
+
+If you have any questions or something is unclear, please don't hesitate to [create an issue](https://github.com/VeeamHub/veeam-vbr-sdk-go/issues/new/choose) and let us know!
