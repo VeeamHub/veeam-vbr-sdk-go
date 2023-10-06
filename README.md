@@ -9,12 +9,12 @@ Client generation is based on https://github.com/deepmap/oapi-codegen generator.
 Due to specific of Golang, we had to make some changes in the original specification to make it work with the generator.
 You can find changes description in the [Specification](#specification) section.
 
-## Project layout
+## 📁 Project layout
 * `spec` - contains specification files. Both original `VBR REST API` specification and generated `openapi_spec.yaml` are placed here.
 * `tools` - contains additional tools. Currently, it contains only `oapifixer` tool which is used to apply required changes to the original specification.
 * `pkg/client` - contains generated client. It is not recommended to change anything in this directory. If you want to change something, please, change the specification and regenerate the client.
 
-## Specification
+## 🔍 Specification
 `openapi_spec.yaml` does not contain the whole original `VBR REST API` specification. We made several changes described below. 
 
 ### Changes in spec
@@ -41,7 +41,7 @@ make convert vbr_spec=<path_to_original_vbr_specification> golang_spec=<path_to_
 > It is possible to convert specification from JSON to YAML and vice versa. Just change the extension of the output files.
 
 
-## How to generate code
+## 📝 How to generate code
 
 To generate code just run the following command:
 ```bash
@@ -186,7 +186,7 @@ func (r GetServerInfoResponse) StatusCode() int {
 
 Please note that you should check status separately, the error will be returned only in case of failed request. If server returned an answer, no error will be returned.
 
-## Known Issues
+## 🚦 Known Issues
 * If you convert specification from `JSON` to `YAML` usiang `oapifixer` tool the order of sections in the specification will be changed(to alphabetical). It is not a problem for the generator but it makes it difficult to review changes in the specification.
 
 
