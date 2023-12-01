@@ -1,114 +1,194 @@
-# Veeam Backup & Replication SDK for Go
+# Golang client for VBR REST API
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/kastenhq/veeam-vbr-sdk-go/v2)](https://goreportcard.com/report/github.com/kastenhq/veeam-vbr-sdk-go/v2)
+[![GoDoc](https://godoc.org/github.com/kastenhq/veeam-vbr-sdk-go/v2?status.svg)](https://godoc.org/github.com/kastenhq/veeam-vbr-sdk-go/v2)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/license/mit/)
 
 veeam-vbr-sdk-go is the unofficial Veeam Backup & Replication SDK for the Go programming language.
+Client generation is based on https://github.com/deepmap/oapi-codegen generator.
+Due to specific of Golang, we had to make some changes in the original specification to make it work with the generator.
+You can find changes description in the [Specification](#specification) section.
 
-This SDK was generated using the [OpenAPI Generator](https://openapi-generator.tech/). As such, any API call in the [Veeam Backup & Replication v11 REST API](https://helpcenter.veeam.com/docs/backup/vbr_rest/overview.html?ver=110) is present in this SDK.
+## 📁 Project layout
+* `spec` - contains specification files. Both original `VBR REST API` specification and generated `openapi_spec.yaml` are placed here.
+* `tools` - contains additional tools. Currently, it contains only `oapifixer` tool which is used to apply required changes to the original specification.
+* `pkg/client` - contains generated client. It is not recommended to change anything in this directory. If you want to change something, please, change the specification and regenerate the client.
+
+## 🔍 Specification
+`openapi_spec.yaml` does not contain the whole original `VBR REST API` specification. We made several changes described below. 
+
+### Changes in spec
+For each schema which has both `OneOf` and `Properties` following changes were made:
+* Properties were moved to separate schema with the same name as original schema but with `Base` prefix, e.g. `RepositoryModel` -> `BaseRepositoryModel`.
+* `AllOf` was added to the original schema. It contains reference to the `Base` schema and `OneOf` from the original schema.
+* All references to the original schema were replaced by reference to the `Base` schema.
+
+### How to regenerate spec
+Additional tool named `oapifixer` included in the project. You can find it in the `tools/oapifixer` directory. 
+It applies all the changes described in the [Changes in spec](#changes-in-spec) section.
+Tool integrated into the `Makefile` and can be used by the following command:
+```bash
+make convert
+```
+It will generate specification file which can be used to generate client. 
+By default it expects that the original specification is placed in the `spec` directory and has the name `swagger.json`.
+'Fixed' specification will be placed in the `spec` directory and will have the name `openapi_spec.yaml`.
+To change the default behavior you can use the following command:
+```bash
+make convert vbr_spec=<path_to_original_vbr_specification> golang_spec=<path_to_result>
+```
+
+> It is possible to convert specification from JSON to YAML and vice versa. Just change the extension of the output files.
+
+
+## 📝 How to generate code
+
+To generate code just run the following command:
+```bash
+make generate
+```
+It will remove the previous version and generate the new one. The result of generation will be placed into the `pkg/client` directory.
+The default value for specification is `./spec/openapi_spec.yaml`. To change it use the following command:
+```bash
+make generate golang_spec=<path_to_specification>
+```
 
 ## 📗 Documentation
 
-### Installation
+### Complete examples
+You can find complete examples in the `pkg/client` directory, in the `example_test.go` file.
+Examples made as a [Testable Examples](https://go.dev/blog/examples).
 
-Use `go get` to retrieve the SDK to add it to your `GOPATH` workspace, or
-project's Go module dependencies.
+### Create client and authenticate
+Create a new client via vbrapi.NewClient()
 
-```bash
-go get github.com/veeamhub/veeam-vbr-sdk-go
+```golang
+serverHost := "https://127.0.0.1:9398"
+vbrClient := vbrclient.NewClientWithResponses(serverHost)
 ```
 
-To update the SDK use `go get -u` to retrieve the latest version of the SDK.
-
-```bash
-go get -u github.com/veeamhub/veeam-vbr-sdk-go
-```
-
-#### Dependencies
-
-The SDK includes a `vendor` folder containing the runtime dependencies of the SDK. The metadata of the SDK's dependencies can be found in the Go module file `go.mod`.
-
-### Example
-
-This example shows a complete working Go file which will list the names of all Backup Jobs and demonstrate how to configure the timeout logic that will cancel the request if it takes too long. This example highlights how to login to a VBR server with trusted or self-signed certs, make a request, handle the error, process the response, and then logout.
-
-```go
-package main
-
-import (
-	"context"
-	"crypto/tls"
-	"fmt"
-	"net/http"
-	"os"
-	"time"
-
-	"github.com/veeamhub/veeam-vbr-sdk-go/client"
-)
-
-// Retrieves and prints out all Backup Job names of the specified VBR server.
-//
-// The Variables below need to be set according to your environment.
-func main() {
-	// Setting variables
-	host := "vbr.contoso.local:9419"  // default API port 9419
-	username := "contoso\\jsmith"     // VBR username
-	password = "password"             // VBR password
-
-	// Setting constants
-	const (
-		apiVersion = "1.0-rev1"       // default API version (1.0-rev1)
-		skipTls    = true             // skip TLS certificate verification
-		timeout    = 30 * time.Second // 30 seconds
-	)
-
-	// Generating API client
-	tlsClient := &http.Client{
+You can also provide your own `http.Client` to the constructor:
+```golang
+tlsClient := &http.Client{
 		Transport: &http.Transport{
 			TLSClientConfig: &tls.Config{
-				InsecureSkipVerify: skipTls,
+				InsecureSkipVerify: true,
 			},
 		},
 	}
-	config := client.NewConfiguration()
-	config.HTTPClient = tlsClient
-	config.Host = host
-	config.HTTPClient.Timeout = timeout
-	config.Scheme = "https"
-	veeam := client.NewAPIClient(config)
+serverHost := "https://127.0.0.1:9398"
+cl := vbrclient.NewClientWithResponses(serverHost, vbrclient.WithHTTPClient(tlsClient))
+```
 
-	// Authenticating to VBR API
-	login, r, err := veeam.LoginApi.CreateToken(context.Background()).XApiVersion(apiVersion).GrantType("password").Username(username).Password(password).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-		panic(err)
-	}
+As a result you will get client which can make requests allowed to be made without authentication.
+For example, you can get server info:
+```golang
+rsi, err := cl.GetServerInfoWithResponse(context.Background(), &vbrclient.GetServerInfoParams{
+		XApiVersion: "1.1-rev0",
+	})
+if err != nil {
+	panic(err)
+}
+log.Print(rsi.JSON200)
+```
 
-	// Setting authorization
-	// From this point, all calls will 'auth' as the context
-	auth := context.WithValue(context.Background(), client.ContextAccessToken,
-		login.AccessToken)
+To be able to make authenticated requests you have to authenticate your client. 
+Client uses bearer token authentication. So first of all you have to get the token:
+```golang
+user := "vbruser"
+password := "vbrpassword"
 
-	// Retrieving all backup jobs
-	jobs, r, err := veeam.JobsApi.GetAllJobs(auth).XApiVersion(apiVersion).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-		panic(err)
-	}
+rl, err := cl.CreateTokenWithFormdataBodyWithResponse(context.Background(), &vbrclient.CreateTokenParams{
+		XApiVersion: "1.1-rev0",
+	}, vbrclient.CreateTokenFormdataRequestBody{
+		GrantType: "password",
+		Username:  &user,
+		Password:  &pass,
+	})
+if err != nil {
+	panic(err)
+}
+```
 
-	// Printing out job names
-	// Working with the response payload
-	fmt.Printf("Job Names:\n\n")
-	for _, job := range jobs.Data {
-		fmt.Println(job.Name)
-	}
-
-	// Logging out session
-	_, r, err = veeam.LoginApi.Logout(auth).XApiVersion(apiVersion).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-		panic(err)
-	}
+Next, you need to create a new client with the bearer token provider:
+```golang
+bearerTokenProvider, bearerTokenProviderErr := securityprovider.NewSecurityProviderBearerToken(rl.JSON200.AccessToken)
+if bearerTokenProviderErr != nil {
+	panic(bearerTokenProviderErr)
 }
 
+serverHost := "https://127.0.0.1:9398"
+authcl, err := vbrclient.NewClientWithResponses(serverHost, vbrclient.WithRequestEditorFn(bearerTokenProvider.Intercept))
+if err != nil {
+	panic(err)
+}
 ```
+
+Now you can make authenticated requests:
+```golang
+nameFilter := "test"
+rgr, err := authcl.GetAllRepositoriesWithResponse(context.Background(), &vbrclient.GetAllRepositoriesParams{
+		XApiVersion: "1.1-rev0",
+		NameFilter:  &nameFilter,
+	})
+if err != nil {
+	panic(err)
+}
+for rmi := range rgr.JSON200.Data {
+	rm := rgr.JSON200.Data[rmi]
+	log.Info(rm)
+}
+```
+### Making requests
+
+There are 2 types of Client interfaces provided by the library
+* Client which returns unparsed `*http.Response`
+* Client which returns parsed model
+
+So, if you're using client with parsed models you will have 2 functions for each `path` item. For example:
+```golang
+GetServerInfo(ctx context.Context, params *GetServerInfoParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+GetServerInfoWithResponse(ctx context.Context, params *GetServerInfoParams, reqEditors ...RequestEditorFn) (*GetServerInfoResponse, error)
+```
+
+GetServerInfoResponse contains parsed model:
+```golang
+type GetServerInfoResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *ServerInfoModel
+	JSON401      *Error
+	JSON403      *Error
+	JSON500      *Error
+}
+```
+
+As you can see there are several objects represents results for different HTTP codes.
+
+Additionally, each response contains following functions to get HTTP Status and HTTP Code
+```golang
+// Status returns HTTPResponse.Status
+func (r GetServerInfoResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetServerInfoResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+```
+
+Please note that you should check status separately, the error will be returned only in case of failed request. If server returned an answer, no error will be returned.
+
+## 🚦 Known Issues
+* If you convert specification from `JSON` to `YAML` usiang `oapifixer` tool the order of sections in the specification will be changed(to alphabetical). It is not a problem for the generator but it makes it difficult to review changes in the specification.
+
 
 ## ✍ Contributions
 
