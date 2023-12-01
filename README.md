@@ -1,5 +1,3 @@
-# Deprecation
-
 > [!WARNING]
 > The master branch is deprecated now. Please use the [v2](https://github.com/VeeamHub/veeam-vbr-sdk-go/tree/v2) branch instead.
 
