@@ -1683,9 +1683,9 @@ components:
         - $ref: '#/components/schemas/BaseCloudCredentialsSpec'
         - example:
             account: williamfox
-            sharedKey: 0sF53pZ/c8cVk+sEMby1lGZzA4SJezapyrFysdjlfLlUwMESTW6dEnkC3x62USr4cwHgPxarsBCE+ASt1Zjmwg==
             tag: createdbysheiladcory
             description: Azure storage account
+            sharedKey: 0sF53pZ/c8cVk+sEMby1lGZzA4SJezapyrFysdjlfLlUwMESTW6dEnkC3x62USr4cwHgPxarsBCE+ASt1Zjmwg==
             type: AzureStorage
           properties:
             account:
@@ -3824,10 +3824,10 @@ components:
         - ThickEagerZeroed
       type: "string"
       x-enumDescriptions:
+        Source: Same as source.
         Thick: Thick provision lazy zeroed.
         ThickEagerZeroed: Thick provision eager zeroed.
         Thin: Thin provision.
-        Source: Same as source.
     EDiskInfoProcessState:
       description: "Process state of the disk."
       enum:
@@ -9032,12 +9032,12 @@ paths:
           content:
             application/json:
               example:
-                expires_in: 900
-                .expires: "2022-04-24T14:39:18+01:00"
-                refresh_token: eyJhbGciOiJSUzUxMiIsImtpZCI6IjRFOTE2QjIwMTkzMENEOUFFNDRDMjAwMTlGODdGMkE0RUYyMjczMDMiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InNoZWlsYS5kLmNvcnkiLCJ0b2tlbl9pZCI6IjEwNTA4YWUyLTk0YzctNGRkNi04YzEyLWZjNGY1NDQ1MzM0YSIsInNob3J0X3Rlcm1fZXhwaXJhdGlvbiI6IkZhbHNlIiwibmJmIjoxNjQzMDMwNjU5LCJleHAiOjE2NDQyNDAyNTksImlhdCI6MTY0MzAzMDY1OSwiYXVkIjoicmVmcmVzaCJ9.RXx9xPlpoUuRwO7sTkBTXntpc3vixXc2kgfCPfRcpePdzOGbLqn64c1hCHTGgXPKgZ4ogEY58N2D3xUPd6spAdfbOkF_XwjEEDpxf03rl7LYMo-OXQ0PxVtUCJK3_o6Dfah0YV6IYu5yctvd-_1MKaac7vV5Zl87qhlF8w4e7LT0QPD_Vhp2JUoD3dSTvYw9WvNDqaRotYfaWj05yTB3PArVwSiPDg1oZXSLxROmDDtKf5FFqSgOdp4LxJmD6sYlv_2FQqG-tNwPqRyzKIaqiDDQXBR9MVmFHBl9iUcYOqvX9ZlCa7oPP_txjopks-NcpdyPkSH74hvoeOs3hujW8w
-                .issued: "2022-04-24T14:24:18+01:00"
-                token_type: bearer
                 access_token: eyJhbGciOiJSUzUxMiIsImtpZCI6IjRFOTE2QjIwMTkzMENEOUFFNDRDMjAwMTlGODdGMkE0RUYyMjczMDMiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InNoZWlsYS5kLmNvcnkiLCJuYmYiOjE2NDMwMzA2NTgsImV4cCI6MTY0MzAzMTU1OCwiaWF0IjoxNjQzMDMwNjU4LCJhdWQiOiJhY2Nlc3MifQ.PYyLnd-AGcQDiMN6RibL_3D-IzngzGqM0Du0huiEbswyqB9JATF3PJvPPKQn1H27xYEiznDyhAnbs9qZNNXlK0E7yRZbifUat16C1XDCvKFXAkije_44xakcUf5aUeU5YVRyjHa-hTRTkwISj9lBCNf_WdpttkK2stgyRCafrj057ATgUyru6o5gZhTYIS4cioAXmhvLvB7Qrn4X080DHH0-KqYeSQwnQASi1HDuogfkEmxyu8380fbGJiyK4eKGLJ2hmq5DsMmL0BSSzIvUiifLPS5_Ei4-9EOFOv3RlLmk6eQNefaLrkRSsV7QSgGZDLc98zIBlD2yrUccx2cj9A
+                expires_in: 900
+                refresh_token: eyJhbGciOiJSUzUxMiIsImtpZCI6IjRFOTE2QjIwMTkzMENEOUFFNDRDMjAwMTlGODdGMkE0RUYyMjczMDMiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InNoZWlsYS5kLmNvcnkiLCJ0b2tlbl9pZCI6IjEwNTA4YWUyLTk0YzctNGRkNi04YzEyLWZjNGY1NDQ1MzM0YSIsInNob3J0X3Rlcm1fZXhwaXJhdGlvbiI6IkZhbHNlIiwibmJmIjoxNjQzMDMwNjU5LCJleHAiOjE2NDQyNDAyNTksImlhdCI6MTY0MzAzMDY1OSwiYXVkIjoicmVmcmVzaCJ9.RXx9xPlpoUuRwO7sTkBTXntpc3vixXc2kgfCPfRcpePdzOGbLqn64c1hCHTGgXPKgZ4ogEY58N2D3xUPd6spAdfbOkF_XwjEEDpxf03rl7LYMo-OXQ0PxVtUCJK3_o6Dfah0YV6IYu5yctvd-_1MKaac7vV5Zl87qhlF8w4e7LT0QPD_Vhp2JUoD3dSTvYw9WvNDqaRotYfaWj05yTB3PArVwSiPDg1oZXSLxROmDDtKf5FFqSgOdp4LxJmD6sYlv_2FQqG-tNwPqRyzKIaqiDDQXBR9MVmFHBl9iUcYOqvX9ZlCa7oPP_txjopks-NcpdyPkSH74hvoeOs3hujW8w
+                .expires: "2022-04-24T14:39:18+01:00"
+                token_type: bearer
+                .issued: "2022-04-24T14:24:18+01:00"
               schema:
                 $ref: '#/components/schemas/TokenModel'
           description: "OK"
@@ -10054,10 +10054,10 @@ paths:
                     type: ViHost
                     viHostType: VC
                 pagination:
-                  total: 3
                   count: 3
                   limit: 200
                   skip: 0
+                  total: 3
               schema:
                 $ref: '#/components/schemas/ManagedServersResult'
           description: "OK"
@@ -10084,8 +10084,8 @@ paths:
             example:
               credentialsId: d7af15f3-8808-454e-ba79-2c2267acb05d
               description: Backup Repository
-              name: enterprise01.tech.local
               networkSettings:
+                serverThisSide: true
                 components:
                   - componentName: DeployerSvc
                     port: 6160
@@ -10109,8 +10109,8 @@ paths:
                     port: 6211
                 portRangeEnd: 3313
                 portRangeStart: 2517
-                serverThisSide: true
               type: WindowsHost
+              name: enterprise01.tech.local
             schema:
               $ref: '#/components/schemas/ManagedServerSpec'
         required: true
@@ -10119,14 +10119,14 @@ paths:
           content:
             application/json:
               example:
-                sessionType: Infrastructure
-                id: 59f85a1e-2016-4d08-aea5-2676a03d548c
-                name: Infrastructure Item Saving
                 state: Working
                 usn: 0
                 activityId: 59f85a1e-2016-4d08-aea5-2676a03d548c
+                name: Infrastructure Item Saving
                 creationTime: "2022-01-28T19:48:43.117+01:00"
                 progressPercent: 0
+                sessionType: Infrastructure
+                id: 59f85a1e-2016-4d08-aea5-2676a03d548c
               schema:
                 $ref: '#/components/schemas/SessionModel'
           description: "Infrastructure session has been created to add the server. To check the progress, track the session `state`."
@@ -10163,13 +10163,13 @@ paths:
             application/json:
               example:
                 state: Working
-                sessionType: InfrastructureItemDeletion
-                id: af1a6027-3845-487e-9a16-6849f4775a1e
-                progressPercent: 0
-                creationTime: "2022-01-28T20:21:08.81+01:00"
-                usn: 0
                 activityId: fc5683a4-8c25-4f8e-97cc-0a40745a5729
                 name: Infrastructure Item Deletion
+                usn: 0
+                progressPercent: 0
+                creationTime: "2022-01-28T20:21:08.81+01:00"
+                id: af1a6027-3845-487e-9a16-6849f4775a1e
+                sessionType: InfrastructureItemDeletion
               schema:
                 $ref: '#/components/schemas/SessionModel'
           description: "InfrastructureItemDeletion session has been created to remove the server. To check the progress, track the session `state`."
@@ -10204,7 +10204,6 @@ paths:
           content:
             application/json:
               example:
-                description: Backup repository
                 networkSettings:
                   components:
                     - componentName: DeployerSvc
@@ -10230,10 +10229,11 @@ paths:
                   portRangeEnd: 3300
                   portRangeStart: 2500
                   serverThisSide: false
-                id: fc5683a4-8c25-4f8e-97cc-0a40745a5729
+                description: Backup repository
+                type: WindowsHost
                 credentialsId: 97d00492-92b7-4929-9e11-68eaa63b88e3
                 name: enterprise05.tech.local
-                type: WindowsHost
+                id: fc5683a4-8c25-4f8e-97cc-0a40745a5729
               schema:
                 $ref: '#/components/schemas/ManagedServerModel'
           description: "OK"
@@ -10267,17 +10267,17 @@ paths:
         content:
           application/json:
             example:
-              id: 71988b5d-e338-4c62-81e5-05ea944d233e
-              description: Backup repository
-              name: linuxsrv01.tech.local
-              type: LinuxHost
               credentialsId: 76571109-fe6e-4638-ad37-2f1f30e3e9f1
+              description: Backup repository
+              id: 71988b5d-e338-4c62-81e5-05ea944d233e
+              name: linuxsrv01.tech.local
               sshSettings:
-                managementPort: 6162
                 portRangeEnd: 3300
                 portRangeStart: 2500
                 serverThisSide: false
                 sshTimeOutMs: 20000
+                managementPort: 6162
+              type: LinuxHost
             schema:
               $ref: '#/components/schemas/ManagedServerModel'
         required: true
@@ -10286,14 +10286,14 @@ paths:
           content:
             application/json:
               example:
-                name: Infrastructure Item Saving
+                sessionType: Infrastructure
                 usn: 0
                 activityId: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
-                progressPercent: 0
-                sessionType: Infrastructure
-                creationTime: "2022-01-28T20:18:47.563+01:00"
-                id: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
                 state: Working
+                creationTime: "2022-01-28T20:18:47.563+01:00"
+                name: Infrastructure Item Saving
+                id: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
+                progressPercent: 0
               schema:
                 $ref: '#/components/schemas/SessionModel'
           description: "Infrastructure session has been created to edit the server. To check the progress, track the session `state`."
@@ -10338,13 +10338,13 @@ paths:
             application/json:
               example:
                 creationTime: "2022-01-28T20:18:47.563+01:00"
-                name: Infrastructure Item Saving
-                sessionType: Infrastructure
-                state: Working
-                usn: 0
-                id: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
                 progressPercent: 0
+                state: Working
+                name: Infrastructure Item Saving
                 activityId: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
+                id: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
+                sessionType: Infrastructure
+                usn: 0
               schema:
                 $ref: '#/components/schemas/SessionModel'
           description: "Infrastructure session has been created to edit the server. To check the progress, track the session `state`."
@@ -10455,10 +10455,10 @@ paths:
                       transportMode: auto
                     type: ViProxy
                 pagination:
-                  skip: 0
-                  total: 2
                   count: 2
                   limit: 200
+                  skip: 0
+                  total: 2
               schema:
                 $ref: '#/components/schemas/ProxiesResult'
           description: "OK"
@@ -10483,12 +10483,11 @@ paths:
         content:
           application/json:
             example:
-              description: Created by TECH\sheila.d.cory
+              type: ViProxy
               name: proxy01.tech.local
               server:
-                maxTaskCount: 2
-                transportMode: auto
                 connectedDatastores:
+                  autoSelect: false
                   datastores:
                     - datastore:
                         hostName: vcenter01.tech.local
@@ -10502,11 +10501,12 @@ paths:
                         objectId: datastore-94394
                         type: Datastore
                       vmCount: 93
-                  autoSelect: false
                 failoverToNetwork: true
                 hostId: 080b9a63-56f3-49e2-9b06-56fc252de34c
                 hostToProxyEncryption: false
-              type: ViProxy
+                maxTaskCount: 2
+                transportMode: auto
+              description: Created by TECH\sheila.d.cory
             schema:
               $ref: '#/components/schemas/ProxySpec'
         required: true
@@ -10515,14 +10515,14 @@ paths:
           content:
             application/json:
               example:
-                activityId: 59f85a1e-2016-4d08-aea5-2676a03d548c
-                state: Working
-                sessionType: Infrastructure
-                creationTime: "2022-01-28T19:48:43.117+01:00"
-                usn: 0
                 name: Infrastructure Item Saving
+                creationTime: "2022-01-28T19:48:43.117+01:00"
                 progressPercent: 0
+                activityId: 59f85a1e-2016-4d08-aea5-2676a03d548c
                 id: 59f85a1e-2016-4d08-aea5-2676a03d548c
+                sessionType: Infrastructure
+                state: Working
+                usn: 0
               schema:
                 $ref: '#/components/schemas/SessionModel'
           description: "Infrastructure session has been created to add the proxy. To check the progress, track the session `state`."
@@ -10587,19 +10587,19 @@ paths:
           content:
             application/json:
               example:
+                type: ViProxy
                 id: 18b661c1-d9dc-4233-90a0-7e7b10dc2d09
+                description: Created by Veeam Backup & Replication
                 server:
-                  maxTaskCount: 2
-                  transportMode: auto
                   connectedDatastores:
                     autoSelect: true
                     datastores: []
                   failoverToNetwork: true
                   hostId: 6745a759-2205-4cd2-b172-8ec8f7e60ef8
                   hostToProxyEncryption: false
-                type: ViProxy
+                  maxTaskCount: 2
+                  transportMode: auto
                 name: VMware Backup Proxy
-                description: Created by Veeam Backup & Replication
               schema:
                 $ref: '#/components/schemas/ProxyModel'
           description: "OK"
@@ -10633,18 +10633,6 @@ paths:
         content:
           application/json:
             example:
-              description: Created by Veeam Backup & Replication
-              server:
-                transportMode: network
-                connectedDatastores:
-                  autoSelect: true
-                  datastores: []
-                failoverToNetwork: false
-                hostId: 6745a759-2205-4cd2-b172-8ec8f7e60ef8
-                hostToProxyEncryption: false
-                maxTaskCount: 2
-              name: VMware Backup Proxy
-              id: 18b661c1-d9dc-4233-90a0-7e7b10dc2d09
               trafficRules:
                 rules:
                   - encryption: true
@@ -10652,6 +10640,18 @@ paths:
                     throttling: false
                     timePeriod: Anytime
               type: ViProxy
+              id: 18b661c1-d9dc-4233-90a0-7e7b10dc2d09
+              name: VMware Backup Proxy
+              server:
+                connectedDatastores:
+                  autoSelect: true
+                  datastores: []
+                failoverToNetwork: false
+                hostId: 6745a759-2205-4cd2-b172-8ec8f7e60ef8
+                hostToProxyEncryption: false
+                maxTaskCount: 2
+                transportMode: network
+              description: Created by Veeam Backup & Replication
             schema:
               $ref: '#/components/schemas/ProxyModel'
         required: true
@@ -10660,13 +10660,13 @@ paths:
           content:
             application/json:
               example:
+                usn: 0
                 progressPercent: 0
                 state: Working
-                creationTime: "2022-01-28T20:18:47.563+01:00"
-                activityId: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
-                sessionType: Infrastructure
-                usn: 0
                 id: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
+                creationTime: "2022-01-28T20:18:47.563+01:00"
+                sessionType: Infrastructure
+                activityId: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
                 name: Infrastructure Item Saving
               schema:
                 $ref: '#/components/schemas/SessionModel'
@@ -10818,10 +10818,10 @@ paths:
                     tag: 88788F9ED8F54EB4BC4F9B3F5403BCEC
                     type: WinLocal
                 pagination:
-                  count: 2
                   limit: 200
                   skip: 0
                   total: 2
+                  count: 2
               schema:
                 $ref: '#/components/schemas/RepositoriesResult'
           description: "OK"
@@ -10852,29 +10852,29 @@ paths:
         content:
           application/json:
             example:
+              type: WinLocal
               description: Created by TECH\sheila.d.cory
-              kind: Das
-              mountServer:
-                mountServerId: 6745a759-2205-4cd2-b172-8ec8f7e60ef8
-                vPowerNFSEnabled: true
-                vPowerNFSPortSettings:
-                  mountPort: 1058
-                  vPowerNFSPort: 1058
-                writeCacheFolder: D:\ProgramData\Veeam\Backup\
+              hostId: 6745a759-2205-4cd2-b172-8ec8f7e60ef8
+              name: Main Backup Repository
               repository:
                 advancedSettings:
+                  rotatedDrives: false
                   alignDataBlocks: false
                   decompressBeforeStoring: false
                   perVmBackup: false
-                  rotatedDrives: false
                 maxTaskCount: 8
                 path: D:\Backups
                 readWriteRate: 0
                 useFastCloningOnXFSVolumes: false
               tag: big-repository
-              type: WinLocal
-              name: Main Backup Repository
-              hostId: 6745a759-2205-4cd2-b172-8ec8f7e60ef8
+              kind: Das
+              mountServer:
+                writeCacheFolder: D:\ProgramData\Veeam\Backup\
+                mountServerId: 6745a759-2205-4cd2-b172-8ec8f7e60ef8
+                vPowerNFSEnabled: true
+                vPowerNFSPortSettings:
+                  mountPort: 1058
+                  vPowerNFSPort: 1058
             schema:
               $ref: '#/components/schemas/RepositorySpec'
         required: true
@@ -10883,14 +10883,14 @@ paths:
           content:
             application/json:
               example:
-                activityId: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
-                progressPercent: 0
-                sessionType: Infrastructure
                 creationTime: "2022-01-28T20:18:47.563+01:00"
                 name: Infrastructure Item Saving
                 state: Working
+                activityId: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
                 usn: 0
+                sessionType: Infrastructure
                 id: e81a72de-9b0a-4f4a-a451-0d0ece4c54b2
+                progressPercent: 0
               schema:
                 $ref: '#/components/schemas/SessionModel'
           description: "Infrastructure session has been created to add the repository. To check the progress, track the session `state`."
@@ -11017,10 +11017,10 @@ paths:
                     type: WinLocal
                     usedSpaceGB: 30.4
                 pagination:
-                  count: 2
                   limit: 200
                   skip: 0
                   total: 2
+                  count: 2
               schema:
                 $ref: '#/components/schemas/RepositoryStatesResult'
           description: "OK"
@@ -11094,17 +11094,6 @@ paths:
           content:
             application/json:
               example:
-                mountServer:
-                  mountServerId: e22b8842-c454-4036-abd5-f468c3248aaf
-                  vPowerNFSEnabled: true
-                  vPowerNFSPortSettings:
-                    mountPort: 1063
-                    vPowerNFSPort: 2049
-                  writeCacheFolder: C:\ProgramData\Veeam\Backup\IRCache\
-                tag: D4B5E196F3AD474C99BCDFEF051DAE07
-                id: d4b5e196-f3ad-474c-99bc-dfef051dae07
-                type: WinLocal
-                description: Created by TECH\sheila.d.cory
                 repository:
                   advancedSettings:
                     alignDataBlocks: true
@@ -11114,8 +11103,19 @@ paths:
                   maxTaskCount: 4
                   path: C:\Backup Repository
                   readWriteRate: 0
-                hostId: e22b8842-c454-4036-abd5-f468c3248aaf
                 name: Backup Repository 1
+                type: WinLocal
+                hostId: e22b8842-c454-4036-abd5-f468c3248aaf
+                id: d4b5e196-f3ad-474c-99bc-dfef051dae07
+                tag: D4B5E196F3AD474C99BCDFEF051DAE07
+                mountServer:
+                  writeCacheFolder: C:\ProgramData\Veeam\Backup\IRCache\
+                  mountServerId: e22b8842-c454-4036-abd5-f468c3248aaf
+                  vPowerNFSEnabled: true
+                  vPowerNFSPortSettings:
+                    mountPort: 1063
+                    vPowerNFSPort: 2049
+                description: Created by TECH\sheila.d.cory
               schema:
                 $ref: '#/components/schemas/RepositoryModel'
           description: "OK"
@@ -11823,10 +11823,10 @@ paths:
                     type: VM
                     viType: VirtualMachine
                 pagination:
-                  limit: 200
                   skip: 0
                   total: 2
                   count: 2
+                  limit: 200
               schema:
                 $ref: '#/components/schemas/BackupObjectsResult'
           description: "OK"
@@ -11862,15 +11862,15 @@ paths:
           content:
             application/json:
               example:
-                objectId: vm-69191
-                name: winsrv88
-                type: VM
                 id: fcea73fa-aa48-45e1-89e4-6e33411e8de2
-                platformName: VmWare
+                objectId: vm-69191
                 platformId: 00000000-0000-0000-0000-000000000000
-                restorePointsCount: 13
-                path: vcenter01.tech.local\Atlanta\esx04.tech.local\Enterprise\winsrv88
                 viType: VirtualMachine
+                path: vcenter01.tech.local\Atlanta\esx04.tech.local\Enterprise\winsrv88
+                platformName: VmWare
+                type: VM
+                name: winsrv88
+                restorePointsCount: 13
               schema:
                 $ref: '#/components/schemas/BackupObjectModel'
           description: "OK"
@@ -11922,10 +11922,10 @@ paths:
                     platformId: 00000000-0000-0000-0000-000000000000
                     platformName: VmWare
                 pagination:
-                  total: 2
                   count: 2
                   limit: 2
                   skip: 0
+                  total: 2
               schema:
                 $ref: '#/components/schemas/ObjectRestorePointsResult'
           description: "OK"
@@ -12085,13 +12085,13 @@ paths:
           content:
             application/json:
               example:
-                platformName: VMware
-                repositoryId: 88788f9e-d8f5-4eb4-bc4f-9b3f5403bcec
-                platformId: 00000000-0000-0000-0000-000000000000
-                id: 9d4c348d-284a-480d-9340-6454998fa227
-                name: AD Backup
-                creationTime: "2021-02-12T04:24:32.087+03:00"
                 policyTag: ""
+                platformId: 00000000-0000-0000-0000-000000000000
+                name: AD Backup
+                repositoryId: 88788f9e-d8f5-4eb4-bc4f-9b3f5403bcec
+                id: 9d4c348d-284a-480d-9340-6454998fa227
+                platformName: VMware
+                creationTime: "2021-02-12T04:24:32.087+03:00"
                 jobId: 301450bc-34cd-4d2c-bfc3-8d269bb471be
               schema:
                 $ref: '#/components/schemas/BackupModel'
@@ -12139,10 +12139,10 @@ paths:
                     type: VM
                     viType: VirtualMachine
                 pagination:
+                  total: 1
                   count: 1
                   limit: 1
                   skip: 0
-                  total: 1
               schema:
                 $ref: '#/components/schemas/BackupObjectsResult'
           description: "OK"
@@ -12743,24 +12743,29 @@ paths:
           content:
             application/json:
               example:
+                notifications:
+                  SMTPSettings:
+                    notifyOnError: true
+                    notifyOnSuccess: true
+                    notifyOnWarning: true
+                    recipients: []
+                    settingsType: Custom
+                    subject: '[%JobResult%] %JobName% (%Time%)'
+                    isEnabled: false
+                  SNMPEnabled: true
+                isEnabled: true
+                lastSuccessfulBackup:
+                  lastSuccessfulTime: "2022-01-21T10:00:35.033+01:00"
+                  sessionId: a8f1b5ba-a6dc-416d-9b17-95e92c0d7e76
+                backupRepositoryId: d4b5e196-f3ad-474c-99bc-dfef051dae07
+                restorePointsToKeep: 10
                 encryption:
                   isEnabled: true
                   passwordId: ebf6c20f-7126-4186-a1b8-24e6c541161c
                 schedule:
-                  daily:
-                    isEnabled: true
-                    localTime: 10:00 AM
-                    dailyKind: Everyday
-                    days:
-                      - monday
-                      - tuesday
-                      - wednesday
-                      - thursday
-                      - friday
-                      - saturday
-                      - sunday
-                  isEnabled: true
                   monthly:
+                    dayNumberInMonth: Fourth
+                    dayOfMonth: 1
                     dayOfWeek: saturday
                     isEnabled: false
                     localTime: 10:00 PM
@@ -12777,24 +12782,19 @@ paths:
                       - October
                       - November
                       - December
-                    dayNumberInMonth: Fourth
-                    dayOfMonth: 1
-                isEnabled: true
-                lastSuccessfulBackup:
-                  lastSuccessfulTime: "2022-01-21T10:00:35.033+01:00"
-                  sessionId: a8f1b5ba-a6dc-416d-9b17-95e92c0d7e76
-                backupRepositoryId: d4b5e196-f3ad-474c-99bc-dfef051dae07
-                notifications:
-                  SMTPSettings:
-                    subject: '[%JobResult%] %JobName% (%Time%)'
-                    isEnabled: false
-                    notifyOnError: true
-                    notifyOnSuccess: true
-                    notifyOnWarning: true
-                    recipients: []
-                    settingsType: Custom
-                  SNMPEnabled: true
-                restorePointsToKeep: 10
+                  daily:
+                    dailyKind: Everyday
+                    days:
+                      - monday
+                      - tuesday
+                      - wednesday
+                      - thursday
+                      - friday
+                      - saturday
+                      - sunday
+                    isEnabled: true
+                    localTime: 10:00 AM
+                  isEnabled: true
               schema:
                 $ref: '#/components/schemas/ConfigBackupModel'
           description: "OK"
@@ -12821,18 +12821,26 @@ paths:
         content:
           application/json:
             example:
-              notifications:
-                SMTPSettings:
-                  isEnabled: false
-                  notifyOnError: true
-                  notifyOnSuccess: true
-                  notifyOnWarning: true
-                  recipients: []
-                  settingsType: Custom
-                  subject: '[%JobResult%] %JobName% (%Time%)'
-                SNMPEnabled: true
+              isEnabled: true
+              lastSuccessfulBackup:
+                lastSuccessfulTime: "2022-01-21T10:00:35.033+01:00"
+                sessionId: a8f1b5ba-a6dc-416d-9b17-95e92c0d7e76
               schedule:
+                daily:
+                  days:
+                    - monday
+                    - tuesday
+                    - wednesday
+                    - thursday
+                    - friday
+                    - saturday
+                    - sunday
+                  isEnabled: true
+                  localTime: 10:00 AM
+                  dailyKind: Everyday
+                isEnabled: true
                 monthly:
+                  dayOfMonth: 1
                   dayOfWeek: saturday
                   isEnabled: false
                   localTime: 10:00 PM
@@ -12850,29 +12858,21 @@ paths:
                     - November
                     - December
                   dayNumberInMonth: Fourth
-                  dayOfMonth: 1
-                daily:
-                  dailyKind: Everyday
-                  days:
-                    - monday
-                    - tuesday
-                    - wednesday
-                    - thursday
-                    - friday
-                    - saturday
-                    - sunday
-                  isEnabled: true
-                  localTime: 10:00 AM
-                isEnabled: true
               backupRepositoryId: d4b5e196-f3ad-474c-99bc-dfef051dae07
-              restorePointsToKeep: 10
               encryption:
                 isEnabled: false
                 passwordId: ebf6c20f-7126-4186-a1b8-24e6c541161c
-              isEnabled: true
-              lastSuccessfulBackup:
-                sessionId: a8f1b5ba-a6dc-416d-9b17-95e92c0d7e76
-                lastSuccessfulTime: "2022-01-21T10:00:35.033+01:00"
+              notifications:
+                SMTPSettings:
+                  settingsType: Custom
+                  subject: '[%JobResult%] %JobName% (%Time%)'
+                  isEnabled: false
+                  notifyOnError: true
+                  notifyOnSuccess: true
+                  notifyOnWarning: true
+                  recipients: []
+                SNMPEnabled: true
+              restorePointsToKeep: 10
             schema:
               $ref: '#/components/schemas/ConfigBackupModel'
         required: true
@@ -12881,34 +12881,28 @@ paths:
           content:
             application/json:
               example:
-                lastSuccessfulBackup:
-                  lastSuccessfulTime: "2022-01-21T10:00:35.033+01:00"
-                  sessionId: a8f1b5ba-a6dc-416d-9b17-95e92c0d7e76
+                restorePointsToKeep: 10
                 notifications:
                   SMTPSettings:
+                    isEnabled: false
                     notifyOnError: true
                     notifyOnSuccess: true
                     notifyOnWarning: true
                     recipients: []
                     settingsType: Custom
                     subject: '[%JobResult%] %JobName% (%Time%)'
-                    isEnabled: false
                   SNMPEnabled: true
+                isEnabled: true
+                lastSuccessfulBackup:
+                  lastSuccessfulTime: "2022-01-21T10:00:35.033+01:00"
+                  sessionId: a8f1b5ba-a6dc-416d-9b17-95e92c0d7e76
+                backupRepositoryId: d4b5e196-f3ad-474c-99bc-dfef051dae07
+                encryption:
+                  isEnabled: false
+                  passwordId: ebf6c20f-7126-4186-a1b8-24e6c541161c
                 schedule:
-                  daily:
-                    dailyKind: Everyday
-                    days:
-                      - monday
-                      - tuesday
-                      - wednesday
-                      - thursday
-                      - friday
-                      - saturday
-                      - sunday
-                    isEnabled: true
-                    localTime: 10:00 AM
-                  isEnabled: true
                   monthly:
+                    dayOfWeek: saturday
                     isEnabled: false
                     localTime: 10:00 PM
                     months:
@@ -12926,13 +12920,19 @@ paths:
                       - December
                     dayNumberInMonth: Fourth
                     dayOfMonth: 1
-                    dayOfWeek: saturday
-                isEnabled: true
-                backupRepositoryId: d4b5e196-f3ad-474c-99bc-dfef051dae07
-                encryption:
-                  isEnabled: false
-                  passwordId: ebf6c20f-7126-4186-a1b8-24e6c541161c
-                restorePointsToKeep: 10
+                  daily:
+                    dailyKind: Everyday
+                    days:
+                      - monday
+                      - tuesday
+                      - wednesday
+                      - thursday
+                      - friday
+                      - saturday
+                      - sunday
+                    isEnabled: true
+                    localTime: 10:00 AM
+                  isEnabled: true
               schema:
                 $ref: '#/components/schemas/ConfigBackupModel'
           description: "Configuration backup settings have been updated."
@@ -12963,14 +12963,14 @@ paths:
           content:
             application/json:
               example:
-                activityId: 99d1bf3d-e2e0-4bec-b2b3-820c0b87d212
-                sessionType: ConfigurationBackup
-                id: d20f79d1-962d-4cb1-809b-0364c5b90696
-                name: Backup Configuration Job
                 usn: 0
-                progressPercent: 0
-                state: Starting
                 creationTime: "2022-01-26T17:13:29.097+01:00"
+                sessionType: ConfigurationBackup
+                state: Starting
+                activityId: 99d1bf3d-e2e0-4bec-b2b3-820c0b87d212
+                name: Backup Configuration Job
+                id: d20f79d1-962d-4cb1-809b-0364c5b90696
+                progressPercent: 0
               schema:
                 $ref: '#/components/schemas/SessionModel'
           description: "Configuration backup has been started."
@@ -13000,8 +13000,8 @@ paths:
             example:
               credentialsId: 3fa85f64-5717-4562-b3fc-2c963f66afa6
               port: 443
-              serverName: vcenter01.tech.local
               type: ViHost
+              serverName: vcenter01.tech.local
             schema:
               $ref: '#/components/schemas/HostConnectionSpec'
         required: true
@@ -13011,15 +13011,15 @@ paths:
             application/json:
               example:
                 certificate:
-                  keyAlgorithm: RSA-PKCS1-KeyEx
-                  thumbprint: 1FFB549DC6C6CFF4DA8923F3E640F88925D11704
-                  validBy: "2025-08-15T18:27:45+02:00"
+                  validFrom: "2015-08-21T18:28:05+02:00"
                   issuedBy: CA
                   issuedTo: vcenter01.tech.local
+                  keyAlgorithm: RSA-PKCS1-KeyEx
                   keySize: "2048"
                   serialNumber: 00CE2401CE350B143C
                   subject: C=US, CN=vcenter01.tech.local
-                  validFrom: "2015-08-21T18:28:05+02:00"
+                  thumbprint: 1FFB549DC6C6CFF4DA8923F3E640F88925D11704
+                  validBy: "2025-08-15T18:27:45+02:00"
               schema:
                 $ref: '#/components/schemas/ConnectionCertificateModel'
           description: "OK"
@@ -13406,11 +13406,6 @@ paths:
           content:
             application/json:
               example:
-                pagination:
-                  count: 2
-                  limit: 200
-                  skip: 0
-                  total: 2
                 data:
                   - hint: Standard Password
                     id: 6ebbe3cc-8147-47b6-b77a-01eeb7965522
@@ -13420,6 +13415,11 @@ paths:
                     id: 3261d360-1db7-4291-b1ed-360ef5b77175
                     modificationTime: "2022-02-11T11:34:28.677+03:00"
                     tag: external
+                pagination:
+                  count: 2
+                  limit: 200
+                  skip: 0
+                  total: 2
               schema:
                 $ref: '#/components/schemas/EncryptionPasswordsResult'
           description: "OK"
@@ -13524,8 +13524,8 @@ paths:
               example:
                 hint: Standard Password
                 id: 6ebbe3cc-8147-47b6-b77a-01eeb7965522
-                tag: internal
                 modificationTime: "2022-10-19T12:37:58.27+03:00"
+                tag: internal
               schema:
                 $ref: '#/components/schemas/EncryptionPasswordModel'
           description: "OK"
@@ -13559,10 +13559,10 @@ paths:
         content:
           application/json:
             example:
+              hint: Poem
               id: 6ebbe3cc-8147-47b6-b77a-01eeb7965522
               modificationTime: "2022-10-19T12:37:58.27+03:00"
               tag: internal
-              hint: Poem
             schema:
               $ref: '#/components/schemas/EncryptionPasswordModel'
         required: true
@@ -13601,30 +13601,30 @@ paths:
             application/json:
               example:
                 emailSettings:
-                  sendDailyReportsAt: "2019-01-01T22:00:00+01:00"
+                  notifyOnFailure: true
+                  notifyOnSuccess: true
+                  notifyOnWarning: true
                   smtpServerName: ""
                   subject: '[%JobResult%] %JobName% (%ObjectCount% objects) %Issues%'
+                  isEnabled: false
+                  from: ""
+                  notifyOnLastRetry: true
+                  sendDailyReportsAt: "2019-01-01T22:00:00+01:00"
+                  to: ""
                   advancedSmtpOptions:
                     SSLEnabled: false
                     authRequred: false
                     port: 25
                     timeoutMs: 100000
-                  from: ""
-                  isEnabled: false
-                  notifyOnFailure: true
-                  notifyOnLastRetry: true
-                  to: ""
-                  notifyOnSuccess: true
-                  notifyOnWarning: true
                 notifications:
+                  datastoreSpaceThreshold: 10
+                  datastoreSpaceThresholdEnabled: true
+                  notifyOnSupportExpiration: true
                   notifyOnUpdates: true
                   skipVMSpaceThreshold: 5
                   skipVMSpaceThresholdEnabled: true
                   storageSpaceThreshold: 10
                   storageSpaceThresholdEnabled: true
-                  datastoreSpaceThreshold: 10
-                  datastoreSpaceThresholdEnabled: true
-                  notifyOnSupportExpiration: true
               schema:
                 $ref: '#/components/schemas/GeneralOptionsModel'
           description: "OK"
@@ -13652,31 +13652,31 @@ paths:
           application/json:
             example:
               emailSettings:
-                smtpServerName: ""
+                notifyOnWarning: true
+                to: ""
                 advancedSmtpOptions:
+                  timeoutMs: 100000
                   SSLEnabled: true
                   authRequred: true
                   credentialsId: 3fa85f64-5717-4562-b3fc-2c963f66afa6
                   port: 2425
-                  timeoutMs: 100000
-                from: ""
                 notifyOnFailure: true
-                notifyOnWarning: true
-                sendDailyReportsAt: 2022-01-01T22:00:00
-                isEnabled: true
                 notifyOnLastRetry: true
                 notifyOnSuccess: true
                 subject: '[%JobResult%] %JobName% (%ObjectCount% objects) %Issues%'
-                to: ""
+                from: ""
+                isEnabled: true
+                sendDailyReportsAt: 2022-01-01T22:00:00
+                smtpServerName: ""
               notifications:
+                storageSpaceThresholdEnabled: true
+                datastoreSpaceThreshold: 13
                 datastoreSpaceThresholdEnabled: true
                 notifyOnSupportExpiration: true
                 notifyOnUpdates: true
                 skipVMSpaceTreshold: 5
                 skipVMSpaceTresholdEnabled: true
                 storageSpaceThreshold: 15
-                storageSpaceThresholdEnabled: true
-                datastoreSpaceThreshold: 13
             schema:
               $ref: '#/components/schemas/GeneralOptionsModel'
         required: true
@@ -13765,10 +13765,10 @@ paths:
                       type: vCenterServer
                     size: N/A
                 pagination:
-                  count: 2
                   limit: 200
                   skip: 0
                   total: 2
+                  count: 2
               schema:
                 $ref: '#/components/schemas/ViRootsResult'
           description: "OK"
@@ -13898,10 +13898,10 @@ paths:
                       type: VirtualMachine
                     size: 220 GB
                 pagination:
+                  count: 5
                   limit: 200
                   skip: 0
                   total: 5
-                  count: 5
               schema:
                 $ref: '#/components/schemas/VCenterInventoryResult'
           description: "OK"
@@ -14313,189 +14313,7 @@ paths:
         content:
           application/json:
             example:
-              type: Backup
-              storage:
-                gfsPolicy:
-                  isEnabled: false
-                  monthly:
-                    desiredTime: First
-                    isEnabled: false
-                    keepForNumberOfMonths: 1
-                  weekly:
-                    desiredTime: sunday
-                    isEnabled: false
-                    keepForNumberOfWeeks: 1
-                  yearly:
-                    keepForNumberOfYears: 1
-                    desiredTime: January
-                    isEnabled: false
-                retentionPolicy:
-                  quantity: 7
-                  type: RestorePoints
-                advancedSettings:
-                  backupHealth:
-                    isEnabled: true
-                    monthly:
-                      dayNumberInMonth: First
-                      dayOfMonths: 1
-                      dayOfWeek: monday
-                      isEnabled: true
-                      months:
-                        - January
-                        - February
-                        - March
-                        - April
-                        - May
-                        - June
-                        - July
-                        - August
-                        - September
-                        - October
-                        - November
-                        - December
-                    weekly:
-                      days:
-                        - friday
-                      isEnabled: false
-                  backupModeType: Incremental
-                  scripts:
-                    postCommand:
-                      command: ""
-                      dayOfWeek:
-                        - saturday
-                      isEnabled: false
-                      periodicityType: BackupSessions
-                      runScriptEvery: 1
-                    preCommand:
-                      dayOfWeek:
-                        - saturday
-                      isEnabled: false
-                      periodicityType: BackupSessions
-                      runScriptEvery: 1
-                      command: ""
-                  storageData:
-                    excludeDeletedFileBlocks: true
-                    excludeSwapFileBlocks: true
-                    storageOptimization: LocalTarget
-                    compressionLevel: Optimal
-                    enableInlineDataDedup: true
-                    encryption:
-                      isEnabled: false
-                      passwordId: 00000000-0000-0000-0000-000000000000
-                  storageIntegration:
-                    limitProcessedVmCount: 13
-                    failoverToStandardBackup: true
-                    isEnabled: true
-                    limitProcessedVm: true
-                  synthenticFulls:
-                    days:
-                      - saturday
-                    isEnabled: true
-                  activeFulls:
-                    isEnabled: true
-                    monthly:
-                      dayNumberInMonth: First
-                      dayOfMonths: 1
-                      dayOfWeek: monday
-                      isEnabled: false
-                      months:
-                        - January
-                        - February
-                        - March
-                        - April
-                        - May
-                        - June
-                        - July
-                        - August
-                        - September
-                        - October
-                        - November
-                        - December
-                    weekly:
-                      days:
-                        - saturday
-                      isEnabled: true
-                  fullBackupMaintenance:
-                    RemoveData:
-                      afterDays: 14
-                      isEnabled: false
-                    defragmentAndCompact:
-                      isEnabled: false
-                      monthly:
-                        dayNumberInMonth: Last
-                        dayOfMonths: 1
-                        dayOfWeek: saturday
-                        isEnabled: true
-                        months:
-                          - January
-                          - February
-                          - March
-                          - April
-                          - May
-                          - June
-                          - July
-                          - August
-                          - September
-                          - October
-                          - November
-                          - December
-                      weekly:
-                        isEnabled: false
-                        days:
-                          - saturday
-                  notifications:
-                    emailNotifications:
-                      isEnabled: false
-                      recipients: []
-                    sendSNMPNotifications: true
-                    vmAttribute:
-                      appendToExisitingValue: true
-                      isEnabled: false
-                      notes: Notes
-                  vSphere:
-                    changedBlockTracking:
-                      enableCBTautomatically: true
-                      isEnabled: true
-                      resetCBTonActiveFull: true
-                    enableVMWareToolsQuiescence: false
-                backupProxies:
-                  proxyIds: []
-                  autoSelection: true
-                backupRepositoryId: 88788f9e-d8f5-4eb4-bc4f-9b3f5403bcec
-              name: Backup Job 3
-              virtualMachines:
-                excludes:
-                  disks:
-                    - disks:
-                        - SCSI 0:0 (2000)
-                        - IDE 0:0 (3000)
-                      disksToProcess: SelectedDisks
-                      vmObject:
-                        name: ResourcePool01
-                        objectId: resgroup-32774
-                        type: ResourcePool
-                        vcName: vcenter01.tech.local
-                  templates:
-                    excludeFromIncremental: false
-                    isEnabled: true
-                  vms:
-                    - name: srv01
-                      objectId: vm-34739
-                      type: VirtualMachine
-                      vcName: vcenter01.tech.local
-                    - name: srv02
-                      objectId: vm-32843
-                      type: VirtualMachine
-                      vcName: vcenter01.tech.local
-                includes:
-                  - name: ResourcePool01
-                    objectId: resgroup-32774
-                    type: ResourcePool
-                    vcName: vcenter01.tech.local
               guestProcessing:
-                guestInteractionProxies:
-                  autoSelection: true
-                  proxyIds: []
                 appAwareProcessing:
                   appSettings:
                     - exclusions:
@@ -14571,11 +14389,43 @@ paths:
                         type: ResourcePool
                         vcName: vcenter01.tech.local
                   isEnabled: true
+                guestInteractionProxies:
+                  autoSelection: true
+                  proxyIds: []
+              isHighPriority: false
               schedule:
-                monthly:
-                  dayOfMonth: 1
-                  dayOfWeek: saturday
+                backupWindow:
                   isEnabled: false
+                  WindowSetting:
+                    days:
+                      - day: monday
+                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+                      - day: tuesday
+                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+                      - day: wednesday
+                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+                      - day: thursday
+                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+                      - day: friday
+                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+                      - day: saturday
+                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+                      - day: sunday
+                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+                daily:
+                  dailyKind: Everyday
+                  days:
+                    - sunday
+                    - monday
+                    - tuesday
+                    - wednesday
+                    - thursday
+                    - friday
+                    - saturday
+                  isEnabled: true
+                  localTime: 10:00 PM
+                isEnabled: true
+                monthly:
                   localTime: 10:00 PM
                   months:
                     - January
@@ -14591,9 +14441,10 @@ paths:
                     - November
                     - December
                   dayNumberInMonth: Fourth
-                periodically:
+                  dayOfMonth: 1
+                  dayOfWeek: saturday
                   isEnabled: false
-                  periodicallyKind: Hours
+                periodically:
                   continuously:
                     BackupWindow:
                       days:
@@ -14612,43 +14463,192 @@ paths:
                         - day: sunday
                           hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
                   frequency: 0
+                  isEnabled: false
+                  periodicallyKind: Hours
                 retry:
                   awaitMinutes: 10
                   isEnabled: true
                   retryCount: 3
-                backupWindow:
-                  WindowSetting:
-                    days:
-                      - day: monday
-                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-                      - day: tuesday
-                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-                      - day: wednesday
-                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-                      - day: thursday
-                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-                      - day: friday
-                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-                      - day: saturday
-                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-                      - day: sunday
-                        hours: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-                  isEnabled: false
-                daily:
-                  dailyKind: Everyday
-                  days:
-                    - sunday
-                    - monday
-                    - tuesday
-                    - wednesday
-                    - thursday
-                    - friday
-                    - saturday
-                  isEnabled: true
-                  localTime: 10:00 PM
-                isEnabled: true
               description: Created by ENTERPRISE01\Administrator
-              isHighPriority: false
+              virtualMachines:
+                includes:
+                  - name: ResourcePool01
+                    objectId: resgroup-32774
+                    type: ResourcePool
+                    vcName: vcenter01.tech.local
+                excludes:
+                  disks:
+                    - disks:
+                        - SCSI 0:0 (2000)
+                        - IDE 0:0 (3000)
+                      disksToProcess: SelectedDisks
+                      vmObject:
+                        name: ResourcePool01
+                        objectId: resgroup-32774
+                        type: ResourcePool
+                        vcName: vcenter01.tech.local
+                  templates:
+                    excludeFromIncremental: false
+                    isEnabled: true
+                  vms:
+                    - name: srv01
+                      objectId: vm-34739
+                      type: VirtualMachine
+                      vcName: vcenter01.tech.local
+                    - name: srv02
+                      objectId: vm-32843
+                      type: VirtualMachine
+                      vcName: vcenter01.tech.local
+              type: Backup
+              name: Backup Job 3
+              storage:
+                backupProxies:
+                  autoSelection: true
+                  proxyIds: []
+                backupRepositoryId: 88788f9e-d8f5-4eb4-bc4f-9b3f5403bcec
+                gfsPolicy:
+                  isEnabled: false
+                  monthly:
+                    keepForNumberOfMonths: 1
+                    desiredTime: First
+                    isEnabled: false
+                  weekly:
+                    desiredTime: sunday
+                    isEnabled: false
+                    keepForNumberOfWeeks: 1
+                  yearly:
+                    isEnabled: false
+                    keepForNumberOfYears: 1
+                    desiredTime: January
+                retentionPolicy:
+                  quantity: 7
+                  type: RestorePoints
+                advancedSettings:
+                  backupHealth:
+                    isEnabled: true
+                    monthly:
+                      dayNumberInMonth: First
+                      dayOfMonths: 1
+                      dayOfWeek: monday
+                      isEnabled: true
+                      months:
+                        - January
+                        - February
+                        - March
+                        - April
+                        - May
+                        - June
+                        - July
+                        - August
+                        - September
+                        - October
+                        - November
+                        - December
+                    weekly:
+                      days:
+                        - friday
+                      isEnabled: false
+                  notifications:
+                    emailNotifications:
+                      isEnabled: false
+                      recipients: []
+                    sendSNMPNotifications: true
+                    vmAttribute:
+                      appendToExisitingValue: true
+                      isEnabled: false
+                      notes: Notes
+                  scripts:
+                    postCommand:
+                      runScriptEvery: 1
+                      command: ""
+                      dayOfWeek:
+                        - saturday
+                      isEnabled: false
+                      periodicityType: BackupSessions
+                    preCommand:
+                      command: ""
+                      dayOfWeek:
+                        - saturday
+                      isEnabled: false
+                      periodicityType: BackupSessions
+                      runScriptEvery: 1
+                  storageData:
+                    compressionLevel: Optimal
+                    enableInlineDataDedup: true
+                    encryption:
+                      isEnabled: false
+                      passwordId: 00000000-0000-0000-0000-000000000000
+                    excludeDeletedFileBlocks: true
+                    excludeSwapFileBlocks: true
+                    storageOptimization: LocalTarget
+                  storageIntegration:
+                    failoverToStandardBackup: true
+                    isEnabled: true
+                    limitProcessedVm: true
+                    limitProcessedVmCount: 13
+                  activeFulls:
+                    isEnabled: true
+                    monthly:
+                      dayNumberInMonth: First
+                      dayOfMonths: 1
+                      dayOfWeek: monday
+                      isEnabled: false
+                      months:
+                        - January
+                        - February
+                        - March
+                        - April
+                        - May
+                        - June
+                        - July
+                        - August
+                        - September
+                        - October
+                        - November
+                        - December
+                    weekly:
+                      days:
+                        - saturday
+                      isEnabled: true
+                  backupModeType: Incremental
+                  fullBackupMaintenance:
+                    RemoveData:
+                      afterDays: 14
+                      isEnabled: false
+                    defragmentAndCompact:
+                      isEnabled: false
+                      monthly:
+                        dayNumberInMonth: Last
+                        dayOfMonths: 1
+                        dayOfWeek: saturday
+                        isEnabled: true
+                        months:
+                          - January
+                          - February
+                          - March
+                          - April
+                          - May
+                          - June
+                          - July
+                          - August
+                          - September
+                          - October
+                          - November
+                          - December
+                      weekly:
+                        days:
+                          - saturday
+                        isEnabled: false
+                  synthenticFulls:
+                    isEnabled: true
+                    days:
+                      - saturday
+                  vSphere:
+                    changedBlockTracking:
+                      enableCBTautomatically: true
+                      isEnabled: true
+                      resetCBTonActiveFull: true
+                    enableVMWareToolsQuiescence: false
             schema:
               $ref: '#/components/schemas/JobSpec'
         required: true
@@ -14836,10 +14836,10 @@ paths:
                     type: Backup
                     workload: application
                 pagination:
+                  count: 3
                   limit: 200
                   skip: 0
                   total: 3
-                  count: 3
               schema:
                 $ref: '#/components/schemas/JobStatesResult'
           description: "OK"
@@ -14902,9 +14902,11 @@ paths:
           content:
             application/json:
               example:
-                description: Created by GAMMA\Administrator
+                isDisabled: false
                 schedule:
                   daily:
+                    isEnabled: true
+                    localTime: 4:00 PM
                     dailyKind: Everyday
                     days:
                       - sunday
@@ -14914,8 +14916,6 @@ paths:
                       - thursday
                       - friday
                       - saturday
-                    isEnabled: true
-                    localTime: 4:00 PM
                   monthly:
                     dayOfMonth: 1
                     dayOfWeek: saturday
@@ -14957,14 +14957,13 @@ paths:
                     periodicallyKind: Hours
                     startTimeWithinAnHour: 0
                   retry:
-                    retryCount: 3
                     awaitMinutes: 10
                     isEnabled: true
+                    retryCount: 3
                   runAutomatically: true
                   afterThisJob:
                     isEnabled: false
                   backupWindow:
-                    isEnabled: false
                     backupWindow:
                       days:
                         - day: sunday
@@ -14981,6 +14980,7 @@ paths:
                           hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
                         - day: saturday
                           hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                    isEnabled: false
                   continuously:
                     backupWindow:
                       days:
@@ -14999,6 +14999,9 @@ paths:
                         - day: saturday
                           hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
                     isEnabled: false
+                name: Oracle Backup
+                description: Created by GAMMA\Administrator
+                id: 75fc491a-d158-4380-a433-ebc42a28e4df
                 virtualMachines:
                   excludes:
                     vms: []
@@ -15012,8 +15015,8 @@ paths:
                           objectId: vm-61281
                           type: VirtualMachine
                     templates:
-                      isEnabled: true
                       excludeFromIncremental: true
+                      isEnabled: true
                   includes:
                     - inventoryObject:
                         hostName: 172.17.52.34
@@ -15021,8 +15024,154 @@ paths:
                         objectId: vm-61281
                         type: VirtualMachine
                       size: 152.5 GB
-                isHighPriority: false
+                storage:
+                  backupRepositoryId: 49607f55-4cc4-4ea5-a2c9-e750318d0f34
+                  gfsPolicy:
+                    monthly:
+                      desiredTime: First
+                      isEnabled: false
+                      keepForNumberOfMonths: 1
+                    weekly:
+                      desiredTime: sunday
+                      isEnabled: false
+                      keepForNumberOfWeeks: 1
+                    yearly:
+                      keepForNumberOfYears: 1
+                      desiredTime: January
+                      isEnabled: false
+                    isEnabled: false
+                  retentionPolicy:
+                    quantity: 7
+                    type: RestorePoints
+                  advancedSettings:
+                    notifications:
+                      emailNotifications:
+                        isEnabled: false
+                        recipients: []
+                      sendSNMPNotifications: false
+                      vmAttribute:
+                        notes: Notes
+                        appendToExisitingValue: true
+                        isEnabled: false
+                    scripts:
+                      postCommand:
+                        command: ""
+                        isEnabled: false
+                      preCommand:
+                        command: ""
+                        isEnabled: false
+                      runScriptEvery: 1
+                      dayOfWeek:
+                        - saturday
+                      periodicityType: BackupSessions
+                    storageData:
+                      compressionLevel: Optimal
+                      enableInlineDataDedup: true
+                      encryption:
+                        encryptionPasswordIdOrNull: 00000000-0000-0000-0000-000000000000
+                        isEnabled: false
+                      excludeDeletedFileBlocks: true
+                      excludeSwapFileBlocks: true
+                      storageOptimization: LocalTarget
+                    storageIntegration:
+                      failoverToStandardBackup: false
+                      isEnabled: true
+                      limitProcessedVm: false
+                      limitProcessedVmCount: 10
+                    vSphere:
+                      changedBlockTracking:
+                        enableCBTautomatically: true
+                        isEnabled: true
+                        resetCBTonActiveFull: true
+                      enableVMWareToolsQuiescence: false
+                    backupModeType: Incremental
+                    fullBackupMaintenance:
+                      RemoveData:
+                        afterDays: 14
+                        isEnabled: false
+                      defragmentAndCompact:
+                        isEnabled: false
+                        monthly:
+                          dayNumberInMonth: Last
+                          dayOfMonths: 1
+                          dayOfWeek: saturday
+                          isEnabled: true
+                          months:
+                            - January
+                            - February
+                            - March
+                            - April
+                            - May
+                            - June
+                            - July
+                            - August
+                            - September
+                            - October
+                            - November
+                            - December
+                        weekly:
+                          days:
+                            - saturday
+                          isEnabled: false
+                    synthenticFulls:
+                      days:
+                        - saturday
+                      isEnabled: false
+                    activeFulls:
+                      isEnabled: false
+                      monthly:
+                        isEnabled: false
+                        months:
+                          - January
+                          - February
+                          - March
+                          - April
+                          - May
+                          - June
+                          - July
+                          - August
+                          - September
+                          - October
+                          - November
+                          - December
+                        dayNumberInMonth: First
+                        dayOfMonths: 1
+                        dayOfWeek: monday
+                      weekly:
+                        days:
+                          - saturday
+                        isEnabled: true
+                    backupHealth:
+                      monthly:
+                        dayOfWeek: friday
+                        isEnabled: true
+                        months:
+                          - January
+                          - February
+                          - March
+                          - April
+                          - May
+                          - June
+                          - July
+                          - August
+                          - September
+                          - October
+                          - November
+                          - December
+                        dayNumberInMonth: Last
+                        dayOfMonths: 1
+                      weekly:
+                        days:
+                          - friday
+                        isEnabled: false
+                      isEnabled: false
+                  backupProxies:
+                    autoSelection: true
+                    proxyIds: []
                 guestProcessing:
+                  guestInteractionProxies:
+                    autoSelection: true
+                    proxyIds: []
                   appAwareProcessing:
                     appSettings:
                       - exclusions:
@@ -15061,162 +15210,13 @@ paths:
                         vss: requireSuccess
                     isEnabled: true
                   guestCredentials:
+                    credentialsPerMachine: []
                     credsId: 6454c893-d5c6-4de8-be38-d984ea30dae4
                     credsType: Standard
-                    credentialsPerMachine: []
                   guestFSIndexing:
                     indexingSettings: []
                     isEnabled: false
-                  guestInteractionProxies:
-                    autoSelection: true
-                    proxyIds: []
-                storage:
-                  advancedSettings:
-                    scripts:
-                      dayOfWeek:
-                        - saturday
-                      periodicityType: BackupSessions
-                      postCommand:
-                        command: ""
-                        isEnabled: false
-                      preCommand:
-                        command: ""
-                        isEnabled: false
-                      runScriptEvery: 1
-                    storageIntegration:
-                      failoverToStandardBackup: false
-                      isEnabled: true
-                      limitProcessedVm: false
-                      limitProcessedVmCount: 10
-                    vSphere:
-                      changedBlockTracking:
-                        enableCBTautomatically: true
-                        isEnabled: true
-                        resetCBTonActiveFull: true
-                      enableVMWareToolsQuiescence: false
-                    activeFulls:
-                      isEnabled: false
-                      monthly:
-                        months:
-                          - January
-                          - February
-                          - March
-                          - April
-                          - May
-                          - June
-                          - July
-                          - August
-                          - September
-                          - October
-                          - November
-                          - December
-                        dayNumberInMonth: First
-                        dayOfMonths: 1
-                        dayOfWeek: monday
-                        isEnabled: false
-                      weekly:
-                        days:
-                          - saturday
-                        isEnabled: true
-                    backupModeType: Incremental
-                    fullBackupMaintenance:
-                      defragmentAndCompact:
-                        monthly:
-                          months:
-                            - January
-                            - February
-                            - March
-                            - April
-                            - May
-                            - June
-                            - July
-                            - August
-                            - September
-                            - October
-                            - November
-                            - December
-                          dayNumberInMonth: Last
-                          dayOfMonths: 1
-                          dayOfWeek: saturday
-                          isEnabled: true
-                        weekly:
-                          days:
-                            - saturday
-                          isEnabled: false
-                        isEnabled: false
-                      RemoveData:
-                        afterDays: 14
-                        isEnabled: false
-                    notifications:
-                      sendSNMPNotifications: false
-                      vmAttribute:
-                        notes: Notes
-                        appendToExisitingValue: true
-                        isEnabled: false
-                      emailNotifications:
-                        isEnabled: false
-                        recipients: []
-                    storageData:
-                      encryption:
-                        encryptionPasswordIdOrNull: 00000000-0000-0000-0000-000000000000
-                        isEnabled: false
-                      excludeDeletedFileBlocks: true
-                      excludeSwapFileBlocks: true
-                      storageOptimization: LocalTarget
-                      compressionLevel: Optimal
-                      enableInlineDataDedup: true
-                    synthenticFulls:
-                      isEnabled: false
-                      days:
-                        - saturday
-                    backupHealth:
-                      isEnabled: false
-                      monthly:
-                        dayNumberInMonth: Last
-                        dayOfMonths: 1
-                        dayOfWeek: friday
-                        isEnabled: true
-                        months:
-                          - January
-                          - February
-                          - March
-                          - April
-                          - May
-                          - June
-                          - July
-                          - August
-                          - September
-                          - October
-                          - November
-                          - December
-                      weekly:
-                        days:
-                          - friday
-                        isEnabled: false
-                  backupProxies:
-                    autoSelection: true
-                    proxyIds: []
-                  backupRepositoryId: 49607f55-4cc4-4ea5-a2c9-e750318d0f34
-                  gfsPolicy:
-                    weekly:
-                      desiredTime: sunday
-                      isEnabled: false
-                      keepForNumberOfWeeks: 1
-                    yearly:
-                      desiredTime: January
-                      isEnabled: false
-                      keepForNumberOfYears: 1
-                    isEnabled: false
-                    monthly:
-                      desiredTime: First
-                      isEnabled: false
-                      keepForNumberOfMonths: 1
-                  retentionPolicy:
-                    quantity: 7
-                    type: RestorePoints
-                isDisabled: false
-                id: 75fc491a-d158-4380-a433-ebc42a28e4df
-                name: Oracle Backup
+                isHighPriority: false
                 type: Backup
               schema:
                 $ref: '#/components/schemas/JobModel'
@@ -15252,249 +15252,7 @@ paths:
           application/json:
             example:
               id: 53b87378-7958-477d-8def-fbe6740d4b6f
-              isDisabled: false
-              isHighPriority: true
-              schedule:
-                continuously:
-                  backupWindow:
-                    days:
-                      - day: sunday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: monday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: tuesday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: wednesday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: thursday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: friday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: saturday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                  isEnabled: false
-                daily:
-                  days:
-                    - sunday
-                    - monday
-                    - tuesday
-                    - wednesday
-                    - thursday
-                    - friday
-                    - saturday
-                  isEnabled: true
-                  localTime: 10:00 PM
-                  dailyKind: Everyday
-                monthly:
-                  months:
-                    - January
-                    - February
-                    - March
-                    - April
-                    - May
-                    - June
-                    - July
-                    - August
-                    - September
-                    - October
-                    - November
-                    - December
-                  dayNumberInMonth: Fourth
-                  dayOfMonth: 1
-                  dayOfWeek: saturday
-                  isEnabled: false
-                  localTime: 10:00 PM
-                periodically:
-                  startTimeWithinAnHour: 0
-                  backupWindow:
-                    days:
-                      - day: sunday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: monday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: tuesday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: wednesday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: thursday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: friday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: saturday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                  frequency: 1
-                  isEnabled: false
-                  periodicallyKind: Hours
-                retry:
-                  awaitMinutes: 10
-                  isEnabled: true
-                  retryCount: 3
-                runAutomatically: false
-                afterThisJob:
-                  isEnabled: false
-                backupWindow:
-                  backupWindow:
-                    days:
-                      - day: sunday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: monday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: tuesday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: wednesday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: thursday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: friday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                      - day: saturday
-                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                  isEnabled: false
               name: Exchange Backup
-              storage:
-                gfsPolicy:
-                  isEnabled: false
-                  monthly:
-                    desiredTime: First
-                    isEnabled: false
-                    keepForNumberOfMonths: 1
-                  weekly:
-                    desiredTime: sunday
-                    isEnabled: false
-                    keepForNumberOfWeeks: 1
-                  yearly:
-                    keepForNumberOfYears: 1
-                    desiredTime: January
-                    isEnabled: false
-                retentionPolicy:
-                  quantity: 3
-                  type: RestorePoints
-                advancedSettings:
-                  backupModeType: Incremental
-                  fullBackupMaintenance:
-                    RemoveData:
-                      afterDays: 14
-                      isEnabled: false
-                    defragmentAndCompact:
-                      weekly:
-                        days:
-                          - saturday
-                        isEnabled: false
-                      isEnabled: false
-                      monthly:
-                        dayOfMonths: 1
-                        dayOfWeek: saturday
-                        isEnabled: true
-                        months:
-                          - January
-                          - February
-                          - March
-                          - April
-                          - May
-                          - June
-                          - July
-                          - August
-                          - September
-                          - October
-                          - November
-                          - December
-                        dayNumberInMonth: Last
-                  notifications:
-                    sendSNMPNotifications: false
-                    vmAttribute:
-                      appendToExisitingValue: true
-                      isEnabled: false
-                      notes: Notes
-                    emailNotifications:
-                      isEnabled: false
-                      recipients: []
-                  vSphere:
-                    changedBlockTracking:
-                      enableCBTautomatically: true
-                      isEnabled: true
-                      resetCBTonActiveFull: true
-                    enableVMWareToolsQuiescence: false
-                  activeFulls:
-                    isEnabled: false
-                    monthly:
-                      dayOfWeek: monday
-                      isEnabled: false
-                      months:
-                        - January
-                        - February
-                        - March
-                        - April
-                        - May
-                        - June
-                        - July
-                        - August
-                        - September
-                        - October
-                        - November
-                        - December
-                      dayNumberInMonth: First
-                      dayOfMonths: 1
-                    weekly:
-                      days:
-                        - saturday
-                      isEnabled: true
-                  backupHealth:
-                    isEnabled: false
-                    monthly:
-                      dayNumberInMonth: Last
-                      dayOfMonths: 1
-                      dayOfWeek: friday
-                      isEnabled: true
-                      months:
-                        - January
-                        - February
-                        - March
-                        - April
-                        - May
-                        - June
-                        - July
-                        - August
-                        - September
-                        - October
-                        - November
-                        - December
-                    weekly:
-                      isEnabled: false
-                      days:
-                        - friday
-                  storageIntegration:
-                    failoverToStandardBackup: false
-                    isEnabled: true
-                    limitProcessedVm: false
-                    limitProcessedVmCount: 10
-                  synthenticFulls:
-                    days:
-                      - saturday
-                    isEnabled: false
-                  scripts:
-                    dayOfWeek:
-                      - saturday
-                    periodicityType: BackupSessions
-                    postCommand:
-                      command: ""
-                      isEnabled: false
-                    preCommand:
-                      command: ""
-                      isEnabled: false
-                    runScriptEvery: 1
-                  storageData:
-                    compressionLevel: Optimal
-                    enableInlineDataDedup: true
-                    encryption:
-                      encryptionPasswordIdOrNull: 00000000-0000-0000-0000-000000000000
-                      isEnabled: false
-                    excludeDeletedFileBlocks: true
-                    excludeSwapFileBlocks: true
-                    storageOptimization: LocalTarget
-                backupProxies:
-                  autoSelection: true
-                  proxyIds: []
-                backupRepositoryId: 88788f9e-d8f5-4eb4-bc4f-9b3f5403bcec
               guestProcessing:
                 appAwareProcessing:
                   appSettings:
@@ -15536,13 +15294,255 @@ paths:
                   credsId: d38995da-75ec-4ada-ac31-2138d7a0351f
                   credsType: Standard
                 guestFSIndexing:
-                  indexingSettings: []
                   isEnabled: false
+                  indexingSettings: []
                 guestInteractionProxies:
                   autoSelection: true
                   proxyIds: []
-              type: Backup
+              schedule:
+                daily:
+                  dailyKind: Everyday
+                  days:
+                    - sunday
+                    - monday
+                    - tuesday
+                    - wednesday
+                    - thursday
+                    - friday
+                    - saturday
+                  isEnabled: true
+                  localTime: 10:00 PM
+                monthly:
+                  isEnabled: false
+                  localTime: 10:00 PM
+                  months:
+                    - January
+                    - February
+                    - March
+                    - April
+                    - May
+                    - June
+                    - July
+                    - August
+                    - September
+                    - October
+                    - November
+                    - December
+                  dayNumberInMonth: Fourth
+                  dayOfMonth: 1
+                  dayOfWeek: saturday
+                periodically:
+                  backupWindow:
+                    days:
+                      - day: sunday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: monday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: tuesday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: wednesday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: thursday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: friday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: saturday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                  frequency: 1
+                  isEnabled: false
+                  periodicallyKind: Hours
+                  startTimeWithinAnHour: 0
+                retry:
+                  isEnabled: true
+                  retryCount: 3
+                  awaitMinutes: 10
+                runAutomatically: false
+                afterThisJob:
+                  isEnabled: false
+                backupWindow:
+                  backupWindow:
+                    days:
+                      - day: sunday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: monday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: tuesday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: wednesday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: thursday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: friday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: saturday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                  isEnabled: false
+                continuously:
+                  backupWindow:
+                    days:
+                      - day: sunday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: monday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: tuesday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: wednesday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: thursday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: friday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                      - day: saturday
+                        hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                  isEnabled: false
+              isDisabled: false
+              storage:
+                gfsPolicy:
+                  isEnabled: false
+                  monthly:
+                    desiredTime: First
+                    isEnabled: false
+                    keepForNumberOfMonths: 1
+                  weekly:
+                    desiredTime: sunday
+                    isEnabled: false
+                    keepForNumberOfWeeks: 1
+                  yearly:
+                    desiredTime: January
+                    isEnabled: false
+                    keepForNumberOfYears: 1
+                retentionPolicy:
+                  quantity: 3
+                  type: RestorePoints
+                advancedSettings:
+                  backupHealth:
+                    weekly:
+                      days:
+                        - friday
+                      isEnabled: false
+                    isEnabled: false
+                    monthly:
+                      dayNumberInMonth: Last
+                      dayOfMonths: 1
+                      dayOfWeek: friday
+                      isEnabled: true
+                      months:
+                        - January
+                        - February
+                        - March
+                        - April
+                        - May
+                        - June
+                        - July
+                        - August
+                        - September
+                        - October
+                        - November
+                        - December
+                  backupModeType: Incremental
+                  fullBackupMaintenance:
+                    RemoveData:
+                      afterDays: 14
+                      isEnabled: false
+                    defragmentAndCompact:
+                      isEnabled: false
+                      monthly:
+                        dayOfMonths: 1
+                        dayOfWeek: saturday
+                        isEnabled: true
+                        months:
+                          - January
+                          - February
+                          - March
+                          - April
+                          - May
+                          - June
+                          - July
+                          - August
+                          - September
+                          - October
+                          - November
+                          - December
+                        dayNumberInMonth: Last
+                      weekly:
+                        isEnabled: false
+                        days:
+                          - saturday
+                  scripts:
+                    periodicityType: BackupSessions
+                    postCommand:
+                      isEnabled: false
+                      command: ""
+                    preCommand:
+                      command: ""
+                      isEnabled: false
+                    runScriptEvery: 1
+                    dayOfWeek:
+                      - saturday
+                  synthenticFulls:
+                    days:
+                      - saturday
+                    isEnabled: false
+                  activeFulls:
+                    isEnabled: false
+                    monthly:
+                      dayNumberInMonth: First
+                      dayOfMonths: 1
+                      dayOfWeek: monday
+                      isEnabled: false
+                      months:
+                        - January
+                        - February
+                        - March
+                        - April
+                        - May
+                        - June
+                        - July
+                        - August
+                        - September
+                        - October
+                        - November
+                        - December
+                    weekly:
+                      days:
+                        - saturday
+                      isEnabled: true
+                  storageData:
+                    excludeDeletedFileBlocks: true
+                    excludeSwapFileBlocks: true
+                    storageOptimization: LocalTarget
+                    compressionLevel: Optimal
+                    enableInlineDataDedup: true
+                    encryption:
+                      isEnabled: false
+                      encryptionPasswordIdOrNull: 00000000-0000-0000-0000-000000000000
+                  storageIntegration:
+                    limitProcessedVmCount: 10
+                    failoverToStandardBackup: false
+                    isEnabled: true
+                    limitProcessedVm: false
+                  vSphere:
+                    changedBlockTracking:
+                      resetCBTonActiveFull: true
+                      enableCBTautomatically: true
+                      isEnabled: true
+                    enableVMWareToolsQuiescence: false
+                  notifications:
+                    emailNotifications:
+                      isEnabled: false
+                      recipients: []
+                    sendSNMPNotifications: false
+                    vmAttribute:
+                      appendToExisitingValue: true
+                      isEnabled: false
+                      notes: Notes
+                backupProxies:
+                  autoSelection: true
+                  proxyIds: []
+                backupRepositoryId: 88788f9e-d8f5-4eb4-bc4f-9b3f5403bcec
               description: Created by GAMMA\Administrator
+              isHighPriority: true
+              type: Backup
               virtualMachines:
                 excludes:
                   disks:
@@ -15573,30 +15573,19 @@ paths:
           content:
             application/json:
               example:
-                description: Created by GAMMA\Administrator
-                virtualMachines:
-                  includes:
-                    - inventoryObject:
-                        hostName: 172.17.42.92
-                        name: DLExch
-                        objectId: "516"
-                        type: VirtualMachine
-                      size: 178.1 GB
-                  excludes:
-                    disks:
-                      - disks: []
-                        disksToProcess: AllDisks
-                        removeFromVMConfiguration: true
-                        vmObject:
-                          hostName: 172.17.42.92
-                          name: DLExch
-                          objectId: "516"
-                          type: VirtualMachine
-                    templates:
-                      excludeFromIncremental: true
-                      isEnabled: true
-                    vms: []
+                isDisabled: false
+                id: 53b87378-7958-477d-8def-fbe6740d4b6f
                 guestProcessing:
+                  guestCredentials:
+                    credentialsPerMachine: []
+                    credsId: d38995da-75ec-4ada-ac31-2138d7a0351f
+                    credsType: Standard
+                  guestFSIndexing:
+                    indexingSettings: []
+                    isEnabled: false
+                  guestInteractionProxies:
+                    autoSelection: true
+                    proxyIds: []
                   appAwareProcessing:
                     appSettings:
                       - exclusions:
@@ -15632,169 +15621,7 @@ paths:
                           type: VirtualMachine
                         vss: requireSuccess
                     isEnabled: true
-                  guestCredentials:
-                    credentialsPerMachine: []
-                    credsId: d38995da-75ec-4ada-ac31-2138d7a0351f
-                    credsType: Standard
-                  guestFSIndexing:
-                    indexingSettings: []
-                    isEnabled: false
-                  guestInteractionProxies:
-                    autoSelection: true
-                    proxyIds: []
-                name: Exchange Backup
-                storage:
-                  advancedSettings:
-                    vSphere:
-                      enableVMWareToolsQuiescence: false
-                      changedBlockTracking:
-                        enableCBTautomatically: true
-                        isEnabled: true
-                        resetCBTonActiveFull: true
-                    activeFulls:
-                      isEnabled: false
-                      monthly:
-                        dayNumberInMonth: First
-                        dayOfMonths: 1
-                        dayOfWeek: monday
-                        isEnabled: false
-                        months:
-                          - January
-                          - February
-                          - March
-                          - April
-                          - May
-                          - June
-                          - July
-                          - August
-                          - September
-                          - October
-                          - November
-                          - December
-                      weekly:
-                        days:
-                          - saturday
-                        isEnabled: true
-                    backupHealth:
-                      isEnabled: false
-                      monthly:
-                        isEnabled: true
-                        months:
-                          - January
-                          - February
-                          - March
-                          - April
-                          - May
-                          - June
-                          - July
-                          - August
-                          - September
-                          - October
-                          - November
-                          - December
-                        dayNumberInMonth: Last
-                        dayOfMonths: 1
-                        dayOfWeek: friday
-                      weekly:
-                        days:
-                          - friday
-                        isEnabled: false
-                    backupModeType: Incremental
-                    notifications:
-                      vmAttribute:
-                        isEnabled: false
-                        notes: Notes
-                        appendToExisitingValue: true
-                      emailNotifications:
-                        isEnabled: false
-                        recipients: []
-                      sendSNMPNotifications: false
-                    storageData:
-                      excludeDeletedFileBlocks: true
-                      excludeSwapFileBlocks: true
-                      storageOptimization: LocalTarget
-                      compressionLevel: Optimal
-                      enableInlineDataDedup: true
-                      encryption:
-                        encryptionPasswordIdOrNull: 00000000-0000-0000-0000-000000000000
-                        isEnabled: false
-                    storageIntegration:
-                      failoverToStandardBackup: false
-                      isEnabled: true
-                      limitProcessedVm: false
-                      limitProcessedVmCount: 10
-                    fullBackupMaintenance:
-                      RemoveData:
-                        afterDays: 14
-                        isEnabled: false
-                      defragmentAndCompact:
-                        isEnabled: false
-                        monthly:
-                          dayOfMonths: 1
-                          dayOfWeek: saturday
-                          isEnabled: true
-                          months:
-                            - January
-                            - February
-                            - March
-                            - April
-                            - May
-                            - June
-                            - July
-                            - August
-                            - September
-                            - October
-                            - November
-                            - December
-                          dayNumberInMonth: Last
-                        weekly:
-                          days:
-                            - saturday
-                          isEnabled: false
-                    scripts:
-                      runScriptEvery: 1
-                      dayOfWeek:
-                        - saturday
-                      periodicityType: BackupSessions
-                      postCommand:
-                        command: ""
-                        isEnabled: false
-                      preCommand:
-                        command: ""
-                        isEnabled: false
-                    synthenticFulls:
-                      days:
-                        - saturday
-                      isEnabled: false
-                  backupProxies:
-                    autoSelection: true
-                    proxyIds: []
-                  backupRepositoryId: 88788f9e-d8f5-4eb4-bc4f-9b3f5403bcec
-                  gfsPolicy:
-                    isEnabled: false
-                    monthly:
-                      desiredTime: First
-                      isEnabled: false
-                      keepForNumberOfMonths: 1
-                    weekly:
-                      desiredTime: sunday
-                      isEnabled: false
-                      keepForNumberOfWeeks: 1
-                    yearly:
-                      desiredTime: January
-                      isEnabled: false
-                      keepForNumberOfYears: 1
-                  retentionPolicy:
-                    quantity: 3
-                    type: RestorePoints
-                type: Backup
-                isDisabled: false
-                isHighPriority: true
-                id: 53b87378-7958-477d-8def-fbe6740d4b6f
                 schedule:
-                  runAutomatically: false
-                  afterThisJob:
-                    isEnabled: false
                   backupWindow:
                     backupWindow:
                       days:
@@ -15844,6 +15671,7 @@ paths:
                     isEnabled: true
                     localTime: 10:00 PM
                   monthly:
+                    dayNumberInMonth: Fourth
                     dayOfMonth: 1
                     dayOfWeek: saturday
                     isEnabled: false
@@ -15861,8 +15689,9 @@ paths:
                       - October
                       - November
                       - December
-                    dayNumberInMonth: Fourth
                   periodically:
+                    periodicallyKind: Hours
+                    startTimeWithinAnHour: 0
                     backupWindow:
                       days:
                         - day: sunday
@@ -15881,12 +15710,183 @@ paths:
                           hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
                     frequency: 1
                     isEnabled: false
-                    periodicallyKind: Hours
-                    startTimeWithinAnHour: 0
                   retry:
                     awaitMinutes: 10
                     isEnabled: true
                     retryCount: 3
+                  runAutomatically: false
+                  afterThisJob:
+                    isEnabled: false
+                name: Exchange Backup
+                virtualMachines:
+                  excludes:
+                    disks:
+                      - disks: []
+                        disksToProcess: AllDisks
+                        removeFromVMConfiguration: true
+                        vmObject:
+                          hostName: 172.17.42.92
+                          name: DLExch
+                          objectId: "516"
+                          type: VirtualMachine
+                    templates:
+                      excludeFromIncremental: true
+                      isEnabled: true
+                    vms: []
+                  includes:
+                    - inventoryObject:
+                        hostName: 172.17.42.92
+                        name: DLExch
+                        objectId: "516"
+                        type: VirtualMachine
+                      size: 178.1 GB
+                description: Created by GAMMA\Administrator
+                isHighPriority: true
+                type: Backup
+                storage:
+                  advancedSettings:
+                    backupModeType: Incremental
+                    fullBackupMaintenance:
+                      RemoveData:
+                        afterDays: 14
+                        isEnabled: false
+                      defragmentAndCompact:
+                        isEnabled: false
+                        monthly:
+                          dayOfMonths: 1
+                          dayOfWeek: saturday
+                          isEnabled: true
+                          months:
+                            - January
+                            - February
+                            - March
+                            - April
+                            - May
+                            - June
+                            - July
+                            - August
+                            - September
+                            - October
+                            - November
+                            - December
+                          dayNumberInMonth: Last
+                        weekly:
+                          days:
+                            - saturday
+                          isEnabled: false
+                    notifications:
+                      emailNotifications:
+                        recipients: []
+                        isEnabled: false
+                      sendSNMPNotifications: false
+                      vmAttribute:
+                        appendToExisitingValue: true
+                        isEnabled: false
+                        notes: Notes
+                    scripts:
+                      dayOfWeek:
+                        - saturday
+                      periodicityType: BackupSessions
+                      postCommand:
+                        command: ""
+                        isEnabled: false
+                      preCommand:
+                        isEnabled: false
+                        command: ""
+                      runScriptEvery: 1
+                    storageIntegration:
+                      limitProcessedVmCount: 10
+                      failoverToStandardBackup: false
+                      isEnabled: true
+                      limitProcessedVm: false
+                    vSphere:
+                      enableVMWareToolsQuiescence: false
+                      changedBlockTracking:
+                        enableCBTautomatically: true
+                        isEnabled: true
+                        resetCBTonActiveFull: true
+                    backupHealth:
+                      weekly:
+                        days:
+                          - friday
+                        isEnabled: false
+                      isEnabled: false
+                      monthly:
+                        dayNumberInMonth: Last
+                        dayOfMonths: 1
+                        dayOfWeek: friday
+                        isEnabled: true
+                        months:
+                          - January
+                          - February
+                          - March
+                          - April
+                          - May
+                          - June
+                          - July
+                          - August
+                          - September
+                          - October
+                          - November
+                          - December
+                    storageData:
+                      compressionLevel: Optimal
+                      enableInlineDataDedup: true
+                      encryption:
+                        encryptionPasswordIdOrNull: 00000000-0000-0000-0000-000000000000
+                        isEnabled: false
+                      excludeDeletedFileBlocks: true
+                      excludeSwapFileBlocks: true
+                      storageOptimization: LocalTarget
+                    synthenticFulls:
+                      days:
+                        - saturday
+                      isEnabled: false
+                    activeFulls:
+                      isEnabled: false
+                      monthly:
+                        isEnabled: false
+                        months:
+                          - January
+                          - February
+                          - March
+                          - April
+                          - May
+                          - June
+                          - July
+                          - August
+                          - September
+                          - October
+                          - November
+                          - December
+                        dayNumberInMonth: First
+                        dayOfMonths: 1
+                        dayOfWeek: monday
+                      weekly:
+                        days:
+                          - saturday
+                        isEnabled: true
+                  backupProxies:
+                    autoSelection: true
+                    proxyIds: []
+                  backupRepositoryId: 88788f9e-d8f5-4eb4-bc4f-9b3f5403bcec
+                  gfsPolicy:
+                    isEnabled: false
+                    monthly:
+                      keepForNumberOfMonths: 1
+                      desiredTime: First
+                      isEnabled: false
+                    weekly:
+                      desiredTime: sunday
+                      isEnabled: false
+                      keepForNumberOfWeeks: 1
+                    yearly:
+                      desiredTime: January
+                      isEnabled: false
+                      keepForNumberOfYears: 1
+                  retentionPolicy:
+                    quantity: 3
+                    type: RestorePoints
               schema:
                 $ref: '#/components/schemas/JobModel'
           description: "Job has been updated."
@@ -16005,14 +16005,14 @@ paths:
           content:
             application/json:
               example:
-                name: Oracle Backup
-                id: b1380736-18a9-4fac-adfe-20abc570e8de
-                progressPercent: 0
-                usn: 0
-                state: Starting
-                activityId: 75fc491a-d158-4380-a433-ebc42a28e4df
-                creationTime: "2022-02-04T20:46:49.067+03:00"
                 sessionType: Job
+                state: Starting
+                usn: 0
+                progressPercent: 0
+                activityId: 75fc491a-d158-4380-a433-ebc42a28e4df
+                id: b1380736-18a9-4fac-adfe-20abc570e8de
+                creationTime: "2022-02-04T20:46:49.067+03:00"
+                name: Oracle Backup
               schema:
                 $ref: '#/components/schemas/SessionModel'
           description: "Job session has been started."
@@ -16058,14 +16058,14 @@ paths:
           content:
             application/json:
               example:
-                creationTime: "2022-02-04T20:52:06.387+03:00"
+                progressPercent: 0
+                activityId: 75fc491a-d158-4380-a433-ebc42a28e4df
+                sessionType: Job
                 state: Working
+                usn: 0
                 id: 3b5a044b-f38d-4ae8-85d1-38872095a537
                 name: Oracle Backup
-                usn: 0
-                activityId: 75fc491a-d158-4380-a433-ebc42a28e4df
-                progressPercent: 0
-                sessionType: Job
+                creationTime: "2022-02-04T20:52:06.387+03:00"
               schema:
                 $ref: '#/components/schemas/SessionModel'
           description: "Job session has been stopped."
@@ -16728,15 +16728,15 @@ paths:
           content:
             application/json:
               example:
-                issuedBy: Veeam Backup Server Certificate
-                issuedTo: Veeam Backup Server Certificate
-                thumbprint: 4E916B201930CD9AE44C20019F87F2A4EF227303
+                keyAlgorithm: RSA-PKCS1-KeyEx
                 serialNumber: 65FFC0E36A66B2BA40EF93AF47C2EF7D
+                thumbprint: 4E916B201930CD9AE44C20019F87F2A4EF227303
                 subject: CN=Veeam Backup Server Certificate
                 validBy: "2031-03-17T19:53:54+01:00"
+                issuedBy: Veeam Backup Server Certificate
                 keySize: "2048"
-                keyAlgorithm: RSA-PKCS1-KeyEx
                 validFrom: "2021-03-17T19:53:54+01:00"
+                issuedTo: Veeam Backup Server Certificate
               schema:
                 $ref: '#/components/schemas/CertificateModel'
           description: "OK"
@@ -16852,10 +16852,10 @@ paths:
                   - name: VM Backup API
                     port: 10006
                 pagination:
-                  count: 2
-                  limit: 200
                   skip: 0
                   total: 2
+                  count: 2
+                  limit: 200
               schema:
                 $ref: '#/components/schemas/ServicesResult'
           description: "OK"
@@ -16998,10 +16998,10 @@ paths:
                     state: Stopped
                     usn: 0
                 pagination:
-                  skip: 0
                   total: 307
                   count: 1
                   limit: 1
+                  skip: 0
               schema:
                 $ref: '#/components/schemas/SessionsResult'
           description: "OK"
@@ -17035,19 +17035,19 @@ paths:
           content:
             application/json:
               example:
-                usn: 0
+                creationTime: "2021-11-08T10:00:12.56+01:00"
+                sessionType: ConfigurationBackup
                 id: f848e90c-7f37-4ff5-9d55-04e33f8a4de3
-                state: Stopped
                 result:
                   isCanceled: false
                   message: Success
                   result: Success
-                sessionType: ConfigurationBackup
+                state: Stopped
                 endTime: "2021-11-08T10:00:34.017+01:00"
                 name: Backup Configuration Job
+                usn: 0
                 activityId: 99d1bf3d-e2e0-4bec-b2b3-820c0b87d212
                 progressPercent: 100
-                creationTime: "2021-11-08T10:00:12.56+01:00"
               schema:
                 $ref: '#/components/schemas/SessionModel'
           description: "OK"
@@ -17213,6 +17213,7 @@ paths:
           content:
             application/json:
               example:
+                uploadStreamsCount: 5
                 trafficRules:
                   - encryptionEnabled: true
                     id: 622b0112-a972-49c2-9987-24a57ddc930a
@@ -17241,10 +17242,9 @@ paths:
                           hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
                         - day: saturday
                           hours: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-                uploadStreamsCount: 5
                 preferredNetworks:
-                  isEnabled: false
                   networks: []
+                  isEnabled: false
                 useMultipleStreamsPerJob: true
               schema:
                 $ref: '#/components/schemas/GlobalNetworkTrafficRulesModel'
@@ -17279,6 +17279,7 @@ paths:
                   - cidrNotation: "8"
                     ipAddress: 123.0.0.0
                     subnetMask: 255.0.0.0
+              useMultipleStreamsPerJob: true
               trafficRules:
                 - encryptionEnabled: true
                   id: 622b0112-a972-49c2-9987-24a57ddc930a
@@ -17307,7 +17308,6 @@ paths:
                         hours: 1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
                       - day: saturday
                         hours: 1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-              useMultipleStreamsPerJob: true
               uploadStreamsCount: 5
             schema:
               $ref: '#/components/schemas/GlobalNetworkTrafficRulesModel'
@@ -17317,7 +17317,15 @@ paths:
           content:
             application/json:
               example:
-                uploadStreamsCount: 5
+                preferredNetworks:
+                  isEnabled: true
+                  networks:
+                    - cidrNotation: "8"
+                      ipAddress: 124.0.0.0
+                      subnetMask: 255.0.0.0
+                    - cidrNotation: "8"
+                      ipAddress: 123.0.0.0
+                      subnetMask: 255.0.0.0
                 trafficRules:
                   - encryptionEnabled: true
                     id: 622b0112-a972-49c2-9987-24a57ddc930a
@@ -17346,16 +17354,8 @@ paths:
                           hours: 1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
                         - day: saturday
                           hours: 1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+                uploadStreamsCount: 5
                 useMultipleStreamsPerJob: true
-                preferredNetworks:
-                  isEnabled: true
-                  networks:
-                    - cidrNotation: "8"
-                      ipAddress: 124.0.0.0
-                      subnetMask: 255.0.0.0
-                    - cidrNotation: "8"
-                      ipAddress: 123.0.0.0
-                      subnetMask: 255.0.0.0
               schema:
                 $ref: '#/components/schemas/GlobalNetworkTrafficRulesModel'
           description: "Infrastructure session has been created to edit the traffic rules. To check the progress, track the session `state`."
