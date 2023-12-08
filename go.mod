@@ -9,7 +9,7 @@ require (
 )
 
 // Replace until https://github.com/oapi-codegen/runtime/pull/12 will be fixed
-replace github.com/gomarkdown/markdown v0.0.0-20230716120725-531d2d74bc12 => github.com/gomarkdown/markdown v0.0.0-20230922105210-14b16010c2ee
+replace github.com/gomarkdown/markdown => github.com/gomarkdown/markdown v0.0.0-20230922105210-14b16010c2ee
 
 require (
 	github.com/apapsch/go-jsonmerge/v2 v2.0.0 // indirect
