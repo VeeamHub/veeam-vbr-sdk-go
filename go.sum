@@ -9,8 +9,6 @@ github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ3
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/deepmap/oapi-codegen v1.13.0 h1:cnFHelhsRQbYvanCUAbRSn/ZpkUb1HPRlQcu8YqSORQ=
-github.com/deepmap/oapi-codegen v1.13.0/go.mod h1:Amy7tbubKY9qkZOXqymI3Z6xSbndmu+atMJheLdyg44=
 github.com/deepmap/oapi-codegen/v2 v2.0.0 h1:3TS7w3r+XnjKFXcbFbc16pTWzfTy0OLPkCsutEHjWDA=
 github.com/deepmap/oapi-codegen/v2 v2.0.0/go.mod h1:7zR+ZL3WzLeCkr2k8oWTxEa0v8y/F25ane0l6A5UjLA=
 github.com/dprotaso/go-yit v0.0.0-20191028211022-135eb7262960/go.mod h1:9HQzr9D/0PGwMEbC3d5AB7oi67+h4TsQqItC1GVYG58=

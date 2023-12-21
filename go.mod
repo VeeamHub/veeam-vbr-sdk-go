@@ -3,7 +3,6 @@ module github.com/veeamhub/veeam-vbr-sdk-go/v2
 go 1.20
 
 require (
-	github.com/deepmap/oapi-codegen v1.13.0
 	github.com/deepmap/oapi-codegen/v2 v2.0.0
 	github.com/oapi-codegen/runtime v1.1.0
 	github.com/pb33f/libopenapi v0.9.1
