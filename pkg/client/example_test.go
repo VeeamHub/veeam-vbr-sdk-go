@@ -8,7 +8,7 @@ import (
 
 	"github.com/veeamhub/veeam-vbr-sdk-go/v2/pkg/client"
 
-	"github.com/deepmap/oapi-codegen/pkg/securityprovider"
+	"github.com/deepmap/oapi-codegen/v2/pkg/securityprovider"
 )
 
 const vbrhost = "https://127.0.0.1:9419"
