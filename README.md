@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/license/mit/)
 
 veeam-vbr-sdk-go is the unofficial Veeam Backup & Replication SDK for the Go programming language.
-Client generation is based on https://github.com/deepmap/oapi-codegen generator.
+Client generation is based on https://github.com/oapi-codegen/oapi-codegen generator.
 Due to specific of Golang, we had to make some changes in the original specification to make it work with the generator.
 You can find changes description in the [Specification](#specification) section.
 

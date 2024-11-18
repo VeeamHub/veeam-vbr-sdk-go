@@ -9,9 +9,9 @@ cleanup:
 
 generate: cleanup
 	@echo "Generating types..."
-	go run github.com/deepmap/oapi-codegen/v2/cmd/oapi-codegen -generate types -o ./pkg/client/types.go -package client ${golang_spec}
+	go run github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen -generate types -o ./pkg/client/types.go -package client ${golang_spec}
 	@echo "Generating client..."
-	go run github.com/deepmap/oapi-codegen/v2/cmd/oapi-codegen -generate client -o ./pkg/client/client.go -package client ${golang_spec}
+	go run github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen -generate client -o ./pkg/client/client.go -package client ${golang_spec}
 
 convert:
 	@echo "Converting spec..."
