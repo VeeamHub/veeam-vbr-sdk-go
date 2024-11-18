@@ -15,5 +15,4 @@ generate: cleanup
 
 convert:
 	@echo "Converting spec..."
-	cd tools/oapifixer && go build
-	./tools/oapifixer/oapifixer -input ${vbr_spec} -output ${golang_spec}
+	go run ./tools/oapifixer -input ${vbr_spec} -output ${golang_spec}
