@@ -1,6 +1,6 @@
 module github.com/veeamhub/veeam-vbr-sdk-go/v2
 
-go 1.20
+go 1.21
 
 require (
 	github.com/deepmap/oapi-codegen/v2 v2.0.0
